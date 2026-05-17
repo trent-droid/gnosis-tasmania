@@ -1,5 +1,4 @@
-﻿import { useState, useRef } from 'react'
-import ReCAPTCHA from 'react-google-recaptcha'
+import { useState, useEffect } from 'react'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel, SectionHeading, CheckIcon } from '../components/ui.jsx'
@@ -42,6 +41,37 @@ const HOW_HEARD = [
   'Other',
 ]
 
+// Load the reCAPTCHA v3 script once per page visit.
+// The `render=RECAPTCHA_KEY` param tells v3 which site key to use.
+// We store a ref on window so the effect doesn't re-run on re-renders.
+function useRecaptchaV3(siteKey) {
+  useEffect(() => {
+    if (!siteKey || window.__recaptchaLoaded) return
+    window.__recaptchaLoaded = true
+
+    const script = document.createElement('script')
+    script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
+    script.async = true
+    document.head.appendChild(script)
+
+    return () => {
+      // Leave the script in the DOM — removing it mid-session breaks grecaptcha.
+      // The flag prevents re-injection on HMR / strict-mode double-mount.
+    }
+  }, [siteKey])
+}
+
+// Returns a token from reCAPTCHA v3, or null if unavailable.
+async function getRecaptchaToken(siteKey, action) {
+  try {
+    if (!window.grecaptcha || !siteKey) return null
+    await new Promise(resolve => window.grecaptcha.ready(resolve))
+    return await window.grecaptcha.execute(siteKey, { action })
+  } catch {
+    return null
+  }
+}
+
 export default function ContactPage() {
   usePageMeta(
     'Contact | Gnosis Tasmania',
@@ -49,12 +79,12 @@ export default function ContactPage() {
     '/contact'
   )
 
+  useRecaptchaV3(RECAPTCHA_KEY)
+
   const [formData, setFormData] = useState({
     name: '', email: '', interest: '', howHeard: '', message: '',
   })
   const [status, setStatus] = useState('idle') // idle | sending | success | error
-  const [captchaToken, setCaptchaToken] = useState(null)
-  const recaptchaRef = useRef(null)
 
   function handleChange(e) {
     const { name, value } = e.target
@@ -63,25 +93,23 @@ export default function ContactPage() {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    if (!captchaToken) return
     setStatus('sending')
+
+    // Attempt to get a v3 token — if it fails we still submit (graceful degradation).
+    const token = await getRecaptchaToken(RECAPTCHA_KEY, 'contact_form')
+
     try {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...formData, 'g-recaptcha-response': captchaToken }),
+        body: JSON.stringify({
+          ...formData,
+          ...(token ? { 'g-recaptcha-response': token } : {}),
+        }),
       })
-      if (res.ok) {
-        setStatus('success')
-      } else {
-        setStatus('error')
-        recaptchaRef.current?.reset()
-        setCaptchaToken(null)
-      }
+      setStatus(res.ok ? 'success' : 'error')
     } catch {
       setStatus('error')
-      recaptchaRef.current?.reset()
-      setCaptchaToken(null)
     }
   }
 
@@ -186,16 +214,6 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <div>
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey={RECAPTCHA_KEY}
-                      onChange={token => setCaptchaToken(token)}
-                      onExpired={() => setCaptchaToken(null)}
-                      theme="light"
-                    />
-                  </div>
-
                   {status === 'error' && (
                     <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-sm px-4 py-3">
                       Something went wrong. Please try again or email us directly at{' '}
@@ -205,7 +223,7 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    disabled={status === 'sending' || !captchaToken}
+                    disabled={status === 'sending'}
                     className="w-full bg-[#c9a96e] hover:bg-[#b8963e] disabled:opacity-60 disabled:cursor-not-allowed text-[#1c1409] font-semibold py-3 rounded-sm transition-colors tracking-wide text-sm"
                   >
                     {status === 'sending' ? 'Sending…' : 'Send Message →'}
@@ -216,6 +234,15 @@ export default function ContactPage() {
                     <a href="mailto:gnosis.launceston@gmail.com" className="text-[#c9a96e] hover:underline">
                       gnosis.launceston@gmail.com
                     </a>
+                  </p>
+
+                  {/* Required reCAPTCHA v3 attribution text */}
+                  <p className="text-[10px] text-[#a89a80] text-center leading-relaxed">
+                    This form is protected by reCAPTCHA.{' '}
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#8a6f3f]">Privacy Policy</a>
+                    {' '}and{' '}
+                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#8a6f3f]">Terms of Service</a>
+                    {' '}apply.
                   </p>
                 </form>
               )}
