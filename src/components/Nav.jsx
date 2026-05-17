@@ -10,7 +10,6 @@ const NAV_ITEMS = [
     children: [
       { to: '/community', label: 'Our Community' },
       { to: '/history',   label: 'History of Gnosis' },
-      { to: '/blog',      label: 'Blog & Teachings' },
     ],
   },
   {
@@ -18,7 +17,6 @@ const NAV_ITEMS = [
     children: [
       { to: '/practices', label: 'Practices' },
       { to: '/courses',   label: 'Courses & Classes' },
-      { to: '/resources', label: 'Books & Resources' },
     ],
   },
   { to: '/contact', short: 'Contact', full: 'Contact', children: null },

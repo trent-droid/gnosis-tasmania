@@ -9,8 +9,6 @@ const PAGES = [
   { to: '/courses',                label: 'Courses & Classes' },
   { to: '/introduction-to-gnosis', label: 'Introduction to Gnosis' },
   { to: '/meditation-classes',     label: 'Meditation Classes' },
-  { to: '/blog',                   label: 'Blog' },
-  { to: '/resources',              label: 'Books & Resources' },
   { to: '/community',              label: 'Our Community' },
   { to: '/history',                label: 'History of Gnosis' },
   { to: '/contact',                label: 'Contact' },
