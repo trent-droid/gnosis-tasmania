@@ -4,6 +4,7 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
+import { useJsonLd } from '../hooks/useJsonLd.js'
 import heroEgyptianImg            from '../assets/hero_egyptian.jpg?format=webp'
 import artFluddNaturaImg          from '../assets/art_fludd_natura.jpg?format=webp'
 import artDurerImg                from '../assets/art_durer_melencolia.jpg?format=webp'
@@ -129,12 +130,47 @@ const TIMELINE = [
   },
 ]
 
+const BASE = 'https://gnosistasmania.com.au'
+
 export default function HistoryPage() {
   usePageMeta(
     'History of Gnosis — Egypt to Samael Aun Weor | Gnosis Tasmania',
     'The history of Gnostic wisdom: from ancient Egypt and Greece through Kabbalah, Sufism, and the Renaissance, to Samael Aun Weor\'s modern synthesis. Taught in Tasmania.',
     '/history'
   )
+
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    'headline': 'History of Gnosis — From Ancient Egypt to Samael Aun Weor',
+    'description': 'The history of Gnostic wisdom: from ancient Egypt and Greece through Kabbalah, Sufism, and the Renaissance, to the modern synthesis of Samael Aun Weor.',
+    'url': `${BASE}/history`,
+    'inLanguage': 'en-AU',
+    'author': {
+      '@type': 'Organization',
+      '@id': `${BASE}/#organization`,
+      'name': 'Gnosis Tasmania',
+    },
+    'publisher': {
+      '@type': 'Organization',
+      '@id': `${BASE}/#organization`,
+      'name': 'Gnosis Tasmania',
+      'logo': { '@type': 'ImageObject', 'url': `${BASE}/favicon-512x512.png` },
+    },
+    'about': [
+      { '@type': 'Thing', 'name': 'History of Gnosis' },
+      { '@type': 'Thing', 'name': 'Ancient Mystery Schools' },
+      { '@type': 'Thing', 'name': 'Hermes Trismegistus' },
+      { '@type': 'Thing', 'name': 'Kabbalah' },
+      { '@type': 'Thing', 'name': 'Samael Aun Weor' },
+      { '@type': 'Thing', 'name': 'Perennial Philosophy' },
+    ],
+    'mentions': {
+      '@type': 'Person',
+      '@id': `${BASE}/#samael-aun-weor`,
+      'name': 'Samael Aun Weor',
+    },
+  })
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">

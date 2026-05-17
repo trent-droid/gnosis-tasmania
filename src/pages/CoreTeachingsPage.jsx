@@ -3,6 +3,7 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
+import { useJsonLd } from '../hooks/useJsonLd.js'
 import artKhunrathImg              from '../assets/art_khunrath_rebis.jpg?format=webp'
 import artBouguereauVirginImg      from '../assets/art_bouguereau_virgin_child.jpg?format=webp'
 import artKircherTreeOfLifeImg     from '../assets/art_kircher_tree_of_life.png'
@@ -102,12 +103,47 @@ const SELF_KNOWLEDGE = [
   'All suffering ultimately arises from ignorance of our own true nature; self-knowledge is therefore the foundation of liberation.',
 ]
 
+const BASE = 'https://gnosistasmania.com.au'
+
 export default function CoreTeachingsPage() {
   usePageMeta(
     'Three Factors of the Revolution of Consciousness | Gnosis Tasmania',
     'The core teachings of Gnosis: the Three Factors of the Revolution of Consciousness, the Tree of Life, Kabbalah, and self-knowledge. Classes in Tasmania.',
     '/core-teachings'
   )
+
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    'name': 'Three Factors of the Revolution of Consciousness | Gnosis Tasmania',
+    'description': 'The core teachings of Gnosis as synthesised by Samael Aun Weor: the Three Factors of the Revolution of Consciousness (Psychological Death, Second Birth, Sacrifice for Humanity), the Tree of Life, and Kabbalah.',
+    'url': `${BASE}/core-teachings`,
+    'inLanguage': 'en-AU',
+    'about': [
+      { '@type': 'Thing', 'name': 'Three Factors of the Revolution of Consciousness' },
+      { '@type': 'Thing', 'name': 'Psychological Death' },
+      { '@type': 'Thing', 'name': 'Second Birth' },
+      { '@type': 'Thing', 'name': 'Sacrifice for Humanity' },
+      { '@type': 'Thing', 'name': 'Tree of Life' },
+      { '@type': 'Thing', 'name': 'Kabbalah' },
+      { '@type': 'Thing', 'name': 'Gnosis' },
+    ],
+    'mentions': {
+      '@type': 'Person',
+      '@id': `${BASE}/#samael-aun-weor`,
+      'name': 'Samael Aun Weor',
+    },
+    'isPartOf': {
+      '@type': 'WebSite',
+      'name': 'Gnosis Tasmania',
+      'url': BASE,
+    },
+    'provider': {
+      '@type': 'Organization',
+      '@id': `${BASE}/#organization`,
+      'name': 'Gnosis Tasmania',
+    },
+  })
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">

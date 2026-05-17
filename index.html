@@ -256,5 +256,66 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!--
+      Fallback content for crawlers that do not execute JavaScript.
+      Google CAN render JS, but this ensures Bing, AI crawlers, and
+      Googlebot's first-pass fetch all see meaningful, indexable text.
+      Visually hidden from JS users (the #root div fills the viewport).
+    -->
+    <noscript>
+      <style>
+        .gt-noscript { font-family: Georgia, 'Times New Roman', serif; background: #faf6ef; color: #3a2f1f; margin: 0; padding: 0; }
+        .gt-noscript .wrap { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+        .gt-noscript h1 { font-size: 2.2rem; font-weight: 300; color: #2a1e12; margin-bottom: 0.5rem; }
+        .gt-noscript .sub { font-size: 0.85rem; color: #8a6f3f; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
+        .gt-noscript p { line-height: 1.75; color: #4a3a26; margin-bottom: 1rem; max-width: 640px; }
+        .gt-noscript h2 { font-size: 1.2rem; font-weight: 400; color: #2a1e12; margin-top: 2.5rem; margin-bottom: 0.75rem; border-bottom: 1px solid #e8d5b0; padding-bottom: 0.4rem; }
+        .gt-noscript nav { margin: 1.5rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+        .gt-noscript nav a { color: #8a6f3f; text-decoration: none; font-size: 0.9rem; }
+        .gt-noscript nav a:hover { text-decoration: underline; }
+        .gt-noscript .contact a { color: #8a6f3f; }
+        .gt-noscript .note { font-size: 0.8rem; color: #a89a80; margin-top: 3rem; border-top: 1px solid #e8d5b0; padding-top: 1rem; }
+      </style>
+      <div class="gt-noscript">
+        <div class="wrap">
+          <p class="sub">Hobart &middot; Launceston &middot; Tasmania, Australia</p>
+          <h1>Gnosis Tasmania</h1>
+          <p>Donation-based Gnostic classes in Hobart and Launceston, Tasmania. Practical meditation, self-knowledge, and the perennial wisdom teachings of Samael Aun Weor. All sincere seekers are welcome &mdash; no prior experience required.</p>
+
+          <nav aria-label="Site navigation">
+            <a href="/">Home</a>
+            <a href="/what-is-gnosis">What is Gnosis?</a>
+            <a href="/core-teachings">Core Teachings</a>
+            <a href="/practices">Gnostic Practices</a>
+            <a href="/courses">Courses &amp; Classes</a>
+            <a href="/introduction-to-gnosis">Introduction to Gnosis</a>
+            <a href="/meditation-classes">Meditation Classes</a>
+            <a href="/community">Our Community</a>
+            <a href="/history">History of Gnosis</a>
+            <a href="/contact">Contact</a>
+          </nav>
+
+          <h2>About Gnosis Tasmania</h2>
+          <p>Gnosis Tasmania is a genuine local study group in Hobart and Launceston, Tasmania, teaching in the tradition of Samael Aun Weor (1917&ndash;1977). We are part of the worldwide network of affiliated Gnostic study groups, connected to Gnosis Australia and the broader Gnostic Society Samael Aun Weor.</p>
+          <p>Our community meets weekly for donation-based classes in meditation, self-knowledge, the Three Factors of the Revolution of Consciousness, Kabbalah, dream yoga, and inner alchemy. Classes are open to everyone &mdash; no belief system, prior knowledge, or commitment is required.</p>
+
+          <h2>Our Courses</h2>
+          <p><strong>Introduction to Gnosis</strong> &mdash; A 34-session foundational course covering consciousness, psychology, cosmology, Kabbalah, meditation, dream yoga, and the practical methods of inner transformation. Weekly classes in both Hobart and Launceston.</p>
+          <p><strong>Meditation Classes</strong> &mdash; Ongoing weekly practical classes in Gnostic meditation: relaxation, concentration, meditation, and samadhi. All levels welcome.</p>
+
+          <h2>The Three Factors of the Revolution of Consciousness</h2>
+          <p>The central teaching of the contemporary Gnostic tradition, as synthesised by Samael Aun Weor: (1) <strong>Psychological Death</strong> &mdash; the dissolution of the ego through self-observation; (2) <strong>Second Birth</strong> &mdash; the emergence of the soul as the false self diminishes; (3) <strong>Sacrifice for Humanity</strong> &mdash; living in compassionate service to others.</p>
+
+          <h2>Contact Us</h2>
+          <div class="contact">
+            <p>Email: <a href="mailto:gnosis.launceston@gmail.com">gnosis.launceston@gmail.com</a><br>
+            Hobart and Launceston, Tasmania, Australia</p>
+          </div>
+
+          <p class="note">This website is a JavaScript application. Please enable JavaScript in your browser to view it fully.</p>
+        </div>
+      </div>
+    </noscript>
   </body>
 </html>

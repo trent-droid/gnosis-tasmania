@@ -4,6 +4,7 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
+import { useJsonLd } from '../hooks/useJsonLd.js'
 import heroZenImg            from '../assets/hero_zen.jpg?format=webp'
 import artBlakeJacobsImg     from '../assets/art_blake_jacobs_ladder.jpg?format=webp'
 import artSplendorSolisImg   from '../assets/art_splendor_solis_resurrection.jpg?format=webp'
@@ -115,12 +116,41 @@ const PRACTICES = [
   },
 ]
 
+const BASE = 'https://gnosistasmania.com.au'
+
 export default function PracticesPage() {
   usePageMeta(
     'Gnostic Practices — Meditation, Dream Yoga & Inner Alchemy | Gnosis Tasmania',
     'Gnostic practices taught in Tasmania: meditation, self-observation, dream yoga, mantras, and inner alchemy. Practical tools for genuine inner transformation.',
     '/practices'
   )
+
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'name': 'Gnostic Practices — Meditation, Dream Yoga & Inner Alchemy',
+    'description': 'Gnostic practices taught in Hobart and Launceston, Tasmania: meditation, self-observation, dream yoga, mantras, and inner alchemy. Practical tools for genuine inner transformation in the tradition of Samael Aun Weor.',
+    'url': `${BASE}/practices`,
+    'inLanguage': 'en-AU',
+    'numberOfItems': 5,
+    'itemListElement': [
+      { '@type': 'ListItem', 'position': 1, 'name': 'Meditation',
+        'description': 'The systematic development of consciousness through relaxation, concentration, meditation, and samadhi. The cornerstone of all Gnostic inner work.' },
+      { '@type': 'ListItem', 'position': 2, 'name': 'Self-Observation',
+        'description': 'Dividing attention to be simultaneously aware of what is happening around us and within us — the foundational practice of the Gnostic path.' },
+      { '@type': 'ListItem', 'position': 3, 'name': 'Dream Yoga',
+        'description': 'Cultivating conscious awareness in sleep through mantras and retrospection; developing lucid dreaming and conscious out-of-body experience.' },
+      { '@type': 'ListItem', 'position': 4, 'name': 'Mantras',
+        'description': 'Sacred sounds from Egyptian, Sanskrit, and Hebrew traditions that work directly with the subtle energies of the human organism for awakening and healing.' },
+      { '@type': 'ListItem', 'position': 5, 'name': 'Inner Alchemy',
+        'description': 'The transmutation of creative energies for the development of consciousness and the dissolution of the psychological ego in the Gnostic-Hermetic tradition.' },
+    ],
+    'provider': {
+      '@type': 'Organization',
+      '@id': `${BASE}/#organization`,
+      'name': 'Gnosis Tasmania',
+    },
+  })
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
