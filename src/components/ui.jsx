@@ -115,11 +115,14 @@ export function QuoteParallax({
   )
 }
 
-export function ArtBanner({ src, srcWebp, alt, caption, objectPosition = 'center center', heightClass = 'h-64 sm:h-80' }) {
+export function ArtBanner({ src, srcWebp, srcsetWebp, sizes, alt, caption, objectPosition = 'center center', heightClass = 'h-64 sm:h-80' }) {
   return (
     <figure className="overflow-hidden rounded-sm shadow-xl border border-[#c8b89a]">
       <picture>
-        {srcWebp && <source srcSet={srcWebp} type="image/webp" />}
+        {srcsetWebp
+          ? <source srcSet={srcsetWebp} sizes={sizes} type="image/webp" />
+          : srcWebp && <source srcSet={srcWebp} type="image/webp" />
+        }
         <img
           src={src} alt={alt}
           className={`w-full ${heightClass} object-cover`}

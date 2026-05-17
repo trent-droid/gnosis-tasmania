@@ -10,6 +10,7 @@ import artFluddNaturaImg          from '../assets/art_fludd_natura.jpg?format=we
 import artDurerImg                from '../assets/art_durer_melencolia.jpg?format=webp'
 import artVitruvianManImg         from '../assets/art_vitruvian_man.jpg'
 import artVitruvianManImgWebp     from '../assets/art_vitruvian_man.jpg?format=webp'
+import artVitruvianManImgSrcset   from '../assets/art_vitruvian_man.jpg?w=640;1280&format=webp&as=srcset'
 import heroSchoolAthensImg        from '../assets/hero_school_athens.jpg?format=webp'
 import artHermesTrismegistusImg   from '../assets/art_hermes_trismegistus.jpg?format=webp'
 
@@ -275,6 +276,8 @@ export default function HistoryPage() {
             <ArtBanner
               src={artVitruvianManImg}
               srcWebp={artVitruvianManImgWebp}
+              srcsetWebp={artVitruvianManImgSrcset}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               alt="Vitruvian Man by Leonardo da Vinci"
               caption="Vitruvian Man, Leonardo da Vinci (c. 1490). The human being as microcosm of the divine cosmos: the central teaching of the Hermetic tradition. Public domain."
               objectPosition="center top"

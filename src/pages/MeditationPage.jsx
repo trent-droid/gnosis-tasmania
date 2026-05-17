@@ -6,10 +6,12 @@ import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 
 import heroPrimaveraImg          from '../assets/hero_primavera.jpg?format=webp'
-import esotericLaboratoryImg     from '../assets/esoteric_laboratory.jpg'
-import esotericLaboratoryImgWebp from '../assets/esoteric_laboratory.jpg?format=webp'
-import artMonaLisaImg            from '../assets/art_mona_lisa.jpg'
-import artMonaLisaImgWebp        from '../assets/art_mona_lisa.jpg?format=webp'
+import esotericLaboratoryImg        from '../assets/esoteric_laboratory.jpg'
+import esotericLaboratoryImgWebp    from '../assets/esoteric_laboratory.jpg?format=webp'
+import esotericLaboratoryImgSrcset  from '../assets/esoteric_laboratory.jpg?w=640;1280&format=webp&as=srcset'
+import artMonaLisaImg               from '../assets/art_mona_lisa.jpg'
+import artMonaLisaImgWebp           from '../assets/art_mona_lisa.jpg?format=webp'
+import artMonaLisaImgSrcset         from '../assets/art_mona_lisa.jpg?w=640;1024&format=webp&as=srcset'
 
 /* ─── Page ─────────────────────────────────────────────────────────────────── */
 
@@ -151,7 +153,7 @@ export default function MeditationPage() {
         {/* ── Art banner: Bouguereau - Song of the Angels ──────────────────── */}
         <figure className="overflow-hidden shadow-xl border-y border-[#c8b89a]" aria-label="Artwork">
           <picture>
-            <source srcSet={esotericLaboratoryImgWebp} type="image/webp" />
+            <source srcSet={esotericLaboratoryImgSrcset} sizes="100vw" type="image/webp" />
             <img
               src={esotericLaboratoryImg}
               alt="An alchemical laboratory from an esoteric manuscript - the inner laboratory where the work of consciousness transformation is performed."
@@ -215,10 +217,11 @@ export default function MeditationPage() {
                 <figure className="flex flex-col items-center gap-3">
                   <div className="overflow-hidden rounded-sm shadow-lg border border-[#c8b89a] w-full">
                     <picture>
-                      <source srcSet={artMonaLisaImgWebp} type="image/webp" />
+                      <source srcSet={artMonaLisaImgSrcset} sizes="(min-width: 768px) 40vw, 100vw" type="image/webp" />
                       <img
                         src={artMonaLisaImg}
                         alt="Mona Lisa by Leonardo da Vinci - the serene, inward gaze of one who has turned attention within, an image of the contemplative quality cultivated through Gnostic meditation."
+                        width={2000} height={2981}
                         className="block w-full h-auto"
                         loading="lazy" decoding="async"
                       />

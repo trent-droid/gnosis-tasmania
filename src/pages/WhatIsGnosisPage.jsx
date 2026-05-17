@@ -7,6 +7,7 @@ import { useJsonLd } from '../hooks/useJsonLd.js'
 import heroChristImg             from '../assets/hero_christ.jpg?format=webp'
 import artVitruvianManImg        from '../assets/art_vitruvian_man.jpg'
 import artVitruvianManImgWebp    from '../assets/art_vitruvian_man.jpg?format=webp'
+import artVitruvianManImgSrcset  from '../assets/art_vitruvian_man.jpg?w=640;1280&format=webp&as=srcset'
 import esotericCosmicRoseImg     from '../assets/esoteric_cosmic_rose.jpg?format=webp'
 import samaelAunWeorImg          from '../assets/samael_aun_weor.jpg?format=webp'
 
@@ -331,6 +332,8 @@ export default function WhatIsGnosisPage() {
               <ArtBanner
                 src={artVitruvianManImg}
                 srcWebp={artVitruvianManImgWebp}
+                srcsetWebp={artVitruvianManImgSrcset}
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 alt="Vitruvian Man by Leonardo da Vinci - human proportions inscribed in circle and square"
                 caption="Vitruvian Man, Leonardo da Vinci (c. 1490). The correspondence of the human microcosm with the divine macrocosm, a central teaching of Gnosis. Public domain."
                 objectPosition="center top"

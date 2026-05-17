@@ -6,10 +6,12 @@ import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import artKhunrathImg              from '../assets/art_khunrath_rebis.jpg?format=webp'
 import artBouguereauVirginImg      from '../assets/art_bouguereau_virgin_child.jpg?format=webp'
-import artKircherTreeOfLifeImg     from '../assets/art_kircher_tree_of_life.png'
-import artKircherTreeOfLifeImgWebp from '../assets/art_kircher_tree_of_life.png?format=webp'
-import artRosariumImg              from '../assets/art_rosarium_king_queen.jpg'
-import artRosariumImgWebp          from '../assets/art_rosarium_king_queen.jpg?format=webp'
+import artKircherTreeOfLifeImg        from '../assets/art_kircher_tree_of_life.png'
+import artKircherTreeOfLifeImgWebp    from '../assets/art_kircher_tree_of_life.png?format=webp'
+import artKircherTreeOfLifeImgSrcset  from '../assets/art_kircher_tree_of_life.png?w=448;896&format=webp&as=srcset'
+import artRosariumImg                 from '../assets/art_rosarium_king_queen.jpg'
+import artRosariumImgWebp             from '../assets/art_rosarium_king_queen.jpg?format=webp'
+import artRosariumImgSrcset           from '../assets/art_rosarium_king_queen.jpg?w=640;1280&format=webp&as=srcset'
 import heroCreationImg             from '../assets/hero_creation_adam.jpg?format=webp'
 
 const THREE_FACTORS = [
@@ -308,10 +310,11 @@ export default function CoreTeachingsPage() {
           <div className="flex justify-center">
             <figure className="w-full max-w-md overflow-hidden rounded-sm shadow-xl border border-[#c8b89a]">
               <picture>
-                <source srcSet={artKircherTreeOfLifeImgWebp} type="image/webp" />
+                <source srcSet={artKircherTreeOfLifeImgSrcset} sizes="(min-width: 768px) 448px, 100vw" type="image/webp" />
                 <img
                   src={artKircherTreeOfLifeImg}
                   alt="Kabbalistic Tree of Life by Athanasius Kircher - the ten Sephiroth and the structure of creation"
+                  width={1128} height={1668}
                   className="w-full h-auto"
                   loading="lazy" decoding="async"
                 />
@@ -332,6 +335,8 @@ export default function CoreTeachingsPage() {
               <ArtBanner
                 src={artRosariumImg}
                 srcWebp={artRosariumImgWebp}
+                srcsetWebp={artRosariumImgSrcset}
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 alt="Rosarium Philosophorum, the King and Queen of the alchemical process"
                 caption="Rosarium Philosophorum (c. 1550). The King and Queen, the solar and lunar forces within the human being, whose sacred union is the central alchemical mystery. Public domain."
                 objectPosition="center top"
