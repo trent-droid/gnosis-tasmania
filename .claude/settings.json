@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:glorian.org)",
+      "WebFetch(domain:archive.glorian.org)",
+      "WebFetch(domain:www.metmuseum.org)",
+      "WebFetch(domain:samaelaunweor.org)",
+      "WebFetch(domain:www.gnosisaustralia.com.au)",
+      "WebFetch(domain:www.gnosticmuse.com)",
+      "WebFetch(domain:gnosistr.com)",
+      "WebFetch(domain:www.sacred-texts.com)",
+      "WebFetch(domain:gnosis.org)",
+      "WebFetch(domain:upload.wikimedia.org)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\src\\\\assets\\\\hero_creation_adam.jpg\" \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\public\\\\og-image.jpg\")",
+      "Read(//c/Users/Carbil/.claude/projects/c--Users-Carbil-gnosistasmania/memory/**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Carbil\\.claude\\projects\\c--Users-Carbil-gnosistasmania\\memory"
+    ]
+  }
+}

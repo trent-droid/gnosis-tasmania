@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:publicdomainreview.org)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "PowerShell(Invoke-WebRequest -Uri \"https://upload.wikimedia.org/wikipedia/commons/c/c2/William_A._Bouguereau_-_Virgin_and_Child_-_Google_Art_Project.jpg\" -OutFile \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\src\\\\assets\\\\art_bouguereau_virgin_child.jpg\" -UseBasicParsing; Write-Host \"Downloaded: $\\(\\(Get-Item 'c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\src\\\\assets\\\\art_bouguereau_virgin_child.jpg'\\).Length / 1KB\\) KB\")"
+    ]
+  }
+}
