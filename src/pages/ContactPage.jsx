@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { HeroParallax, GoldRule, SectionLabel, SectionHeading, CheckIcon } from '../components/ui.jsx'
+import { HeroParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import esotericFlammarionImg from '../assets/esoteric_flammarion_colorized.jpg?format=webp'
 
@@ -41,36 +41,59 @@ const HOW_HEARD = [
   'Other',
 ]
 
-// Load the reCAPTCHA v3 script once per page visit.
-// The `render=RECAPTCHA_KEY` param tells v3 which site key to use.
-// We store a ref on window so the effect doesn't re-run on re-renders.
-function useRecaptchaV3(siteKey) {
-  useEffect(() => {
-    if (!siteKey || window.__recaptchaLoaded) return
-    window.__recaptchaLoaded = true
+// ─────────────────────────────────────────────────────────────────────────────
+// reCAPTCHA v3 helpers — completely isolated from React.
+// All paths are guarded; nothing here can throw into the component tree.
+// ─────────────────────────────────────────────────────────────────────────────
 
+// Tracks whether we have already injected the script tag this session.
+let scriptInjected = false
+
+function injectRecaptchaScript(siteKey) {
+  if (!siteKey) {
+    console.error('[reCAPTCHA] VITE_RECAPTCHA_SITE_KEY is not set — skipping script load.')
+    return
+  }
+  if (scriptInjected) return
+  scriptInjected = true
+
+  try {
     const script = document.createElement('script')
     script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
     script.async = true
-    document.head.appendChild(script)
-
-    return () => {
-      // Leave the script in the DOM — removing it mid-session breaks grecaptcha.
-      // The flag prevents re-injection on HMR / strict-mode double-mount.
+    script.onerror = () => {
+      console.error('[reCAPTCHA] Failed to load reCAPTCHA v3 script — form will still work without it.')
+      scriptInjected = false // allow retry on next visit if network recovers
     }
-  }, [siteKey])
+    document.head.appendChild(script)
+  } catch (err) {
+    console.error('[reCAPTCHA] Unexpected error injecting script:', err)
+    scriptInjected = false
+  }
 }
 
-// Returns a token from reCAPTCHA v3, or null if unavailable.
+// Returns a reCAPTCHA v3 token, or null if anything goes wrong.
+// Never throws — the caller can always proceed without a token.
 async function getRecaptchaToken(siteKey, action) {
+  if (!siteKey) {
+    console.error('[reCAPTCHA] No site key — submitting form without token.')
+    return null
+  }
+  if (typeof window === 'undefined' || !window.grecaptcha) {
+    console.error('[reCAPTCHA] grecaptcha not available — submitting form without token.')
+    return null
+  }
   try {
-    if (!window.grecaptcha || !siteKey) return null
-    await new Promise(resolve => window.grecaptcha.ready(resolve))
-    return await window.grecaptcha.execute(siteKey, { action })
-  } catch {
+    await new Promise((resolve) => window.grecaptcha.ready(resolve))
+    const token = await window.grecaptcha.execute(siteKey, { action })
+    return token || null
+  } catch (err) {
+    console.error('[reCAPTCHA] execute() failed — submitting form without token:', err)
     return null
   }
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
 
 export default function ContactPage() {
   usePageMeta(
@@ -79,7 +102,10 @@ export default function ContactPage() {
     '/contact'
   )
 
-  useRecaptchaV3(RECAPTCHA_KEY)
+  // Inject the reCAPTCHA script after mount so it never blocks rendering.
+  useEffect(() => {
+    injectRecaptchaScript(RECAPTCHA_KEY)
+  }, [])
 
   const [formData, setFormData] = useState({
     name: '', email: '', interest: '', howHeard: '', message: '',
@@ -95,20 +121,27 @@ export default function ContactPage() {
     e.preventDefault()
     setStatus('sending')
 
-    // Attempt to get a v3 token — if it fails we still submit (graceful degradation).
+    // Try to get a v3 token. If it returns null, we submit without one.
     const token = await getRecaptchaToken(RECAPTCHA_KEY, 'contact_form')
 
     try {
+      const payload = { ...formData }
+      if (token) payload['g-recaptcha-response'] = token
+
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          ...(token ? { 'g-recaptcha-response': token } : {}),
-        }),
+        body: JSON.stringify(payload),
       })
-      setStatus(res.ok ? 'success' : 'error')
-    } catch {
+
+      if (res.ok) {
+        setStatus('success')
+      } else {
+        console.error('[ContactForm] Formspree returned non-OK status:', res.status)
+        setStatus('error')
+      }
+    } catch (err) {
+      console.error('[ContactForm] Fetch to Formspree failed:', err)
       setStatus('error')
     }
   }
@@ -236,14 +269,15 @@ export default function ContactPage() {
                     </a>
                   </p>
 
-                  {/* Required reCAPTCHA v3 attribution text */}
-                  <p className="text-[10px] text-[#a89a80] text-center leading-relaxed">
-                    This form is protected by reCAPTCHA.{' '}
-                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#8a6f3f]">Privacy Policy</a>
-                    {' '}and{' '}
-                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#8a6f3f]">Terms of Service</a>
-                    {' '}apply.
-                  </p>
+                  {/* Required Google attribution when using reCAPTCHA v3 */}
+                  {RECAPTCHA_KEY && (
+                    <p className="text-[10px] text-[#a89a80] text-center leading-relaxed">
+                      Protected by reCAPTCHA.{' '}
+                      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#8a6f3f]">Privacy Policy</a>
+                      {' '}·{' '}
+                      <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#8a6f3f]">Terms</a>
+                    </p>
+                  )}
                 </form>
               )}
             </div>
