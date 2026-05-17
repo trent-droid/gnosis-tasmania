@@ -58,9 +58,9 @@ export default function Footer() {
             <p className="text-xs font-bold text-[#c9a96e] uppercase tracking-widest mb-3">Connect</p>
             <ul className="space-y-1.5 mb-6">
               <li>
-                <a href="mailto:gnosistasmania@gmail.com"
+                <a href="mailto:gnosis.launceston@gmail.com"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors break-all">
-                  gnosistasmania@gmail.com
+                  gnosis.launceston@gmail.com
                 </a>
               </li>
               <li>
@@ -96,7 +96,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Gnosis Tasmania · Gnostic Society of Tasmania. All teachings shared openly.
           </p>
           <Link to="/" className="text-xs text-[#6b5535] hover:text-[#c9a96e] transition-colors">
-            gnosistasmania.org.au
+            gnosistasmania.com.au
           </Link>
         </div>
       </div>

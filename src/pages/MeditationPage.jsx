@@ -25,9 +25,9 @@ export default function MeditationPage() {
     'provider': {
       '@type': 'EducationalOrganization',
       'name': 'Gnosis Tasmania',
-      'url': 'https://gnosistasmania.org.au',
+      'url': 'https://gnosistasmania.com.au',
     },
-    'url': 'https://gnosistasmania.org.au/meditation-classes',
+    'url': 'https://gnosistasmania.com.au/meditation-classes',
     'courseMode': 'in-person',
     'offers': {
       '@type': 'Offer',

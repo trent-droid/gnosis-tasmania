@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gnosistasmania.org.au/sitemap.xml
+Sitemap: https://gnosistasmania.com.au/sitemap.xml

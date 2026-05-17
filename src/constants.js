@@ -1,4 +1,4 @@
-export const CONTACT_EMAIL = 'gnosistasmania@gmail.com'
+export const CONTACT_EMAIL = 'gnosis.launceston@gmail.com'
 
 export const LOCATIONS = [
   { city: 'Hobart', region: 'Southern Tasmania' },

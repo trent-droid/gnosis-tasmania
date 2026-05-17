@@ -11,13 +11,13 @@ const LOCATIONS = [
     city: 'Hobart',
     description: 'Our Hobart centre serves the greater Hobart area, offering weekly classes.',
     schedule: 'Classes run weekly. Contact us for current times and venue details.',
-    contact: 'gnosistasmania@gmail.com',
+    contact: 'gnosis.launceston@gmail.com',
   },
   {
     city: 'Launceston',
     description: 'The Launceston group meets weekly, bringing Gnostic teachings to the heart of northern Tasmania.',
     schedule: 'Classes run weekly. Contact us for current times and venue details.',
-    contact: 'gnosistasmania@gmail.com',
+    contact: 'gnosis.launceston@gmail.com',
   },
 ]
 

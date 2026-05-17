@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const BASE = 'https://gnosistasmania.org.au'
+const BASE = 'https://gnosistasmania.com.au'
 
 function setMeta(selector, attr, value) {
   const el = document.querySelector(selector)

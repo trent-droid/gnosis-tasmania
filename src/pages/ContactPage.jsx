@@ -14,13 +14,13 @@ const LOCATIONS = [
     city: 'Hobart',
     description: 'Our Hobart centre serves the greater Hobart area, offering weekly classes.',
     schedule: 'Classes run weekly. Contact us for current times and venue details.',
-    contact: 'gnosistasmania@gmail.com',
+    contact: 'gnosis.launceston@gmail.com',
   },
   {
     city: 'Launceston',
     description: 'The Launceston group meets weekly, bringing Gnostic teachings to the heart of northern Tasmania.',
     schedule: 'Classes run weekly. Contact us for current times and venue details.',
-    contact: 'gnosistasmania@gmail.com',
+    contact: 'gnosis.launceston@gmail.com',
   },
 ]
 
@@ -199,7 +199,7 @@ export default function ContactPage() {
                   {status === 'error' && (
                     <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-sm px-4 py-3">
                       Something went wrong. Please try again or email us directly at{' '}
-                      <a href="mailto:gnosistasmania@gmail.com" className="underline">gnosistasmania@gmail.com</a>.
+                      <a href="mailto:gnosis.launceston@gmail.com" className="underline">gnosis.launceston@gmail.com</a>.
                     </p>
                   )}
 
@@ -213,8 +213,8 @@ export default function ContactPage() {
 
                   <p className="text-xs text-[#8a6f3f] text-center">
                     Or email us directly at{' '}
-                    <a href="mailto:gnosistasmania@gmail.com" className="text-[#c9a96e] hover:underline">
-                      gnosistasmania@gmail.com
+                    <a href="mailto:gnosis.launceston@gmail.com" className="text-[#c9a96e] hover:underline">
+                      gnosis.launceston@gmail.com
                     </a>
                   </p>
                 </form>

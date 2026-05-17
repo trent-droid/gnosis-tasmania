@@ -277,9 +277,9 @@ export default function CoursePage() {
     'provider': {
       '@type': 'EducationalOrganization',
       'name': 'Gnosis Tasmania',
-      'url': 'https://gnosistasmania.org.au',
+      'url': 'https://gnosistasmania.com.au',
     },
-    'url': 'https://gnosistasmania.org.au/introduction-to-gnosis',
+    'url': 'https://gnosistasmania.com.au/introduction-to-gnosis',
     'courseMode': 'in-person',
     'offers': {
       '@type': 'Offer',
