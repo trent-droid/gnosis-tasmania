@@ -4,13 +4,15 @@ import gssawLogoImg from '../assets/gssaw_logo.png'
 const PAGES = [
   { to: '/',                       label: 'Home' },
   { to: '/what-is-gnosis',         label: 'What is Gnosis?' },
-  { to: '/community',              label: 'Our Community' },
-  { to: '/history',                label: 'History of Gnosis' },
   { to: '/core-teachings',         label: 'Core Teachings' },
   { to: '/practices',              label: 'Practices' },
   { to: '/courses',                label: 'Courses & Classes' },
   { to: '/introduction-to-gnosis', label: 'Introduction to Gnosis' },
   { to: '/meditation-classes',     label: 'Meditation Classes' },
+  { to: '/blog',                   label: 'Blog' },
+  { to: '/resources',              label: 'Books & Resources' },
+  { to: '/community',              label: 'Our Community' },
+  { to: '/history',                label: 'History of Gnosis' },
   { to: '/contact',                label: 'Contact' },
 ]
 
@@ -56,20 +58,29 @@ export default function Footer() {
           {/* Connect */}
           <div>
             <p className="text-xs font-bold text-[#c9a96e] uppercase tracking-widest mb-3">Connect</p>
-            <ul className="space-y-1.5 mb-6">
-              <li>
+            <address className="not-italic space-y-1.5 mb-4">
+              <p>
                 <a href="mailto:gnosis.launceston@gmail.com"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors break-all">
                   gnosis.launceston@gmail.com
                 </a>
-              </li>
-              <li>
+              </p>
+              <p>
                 <a href="https://www.facebook.com/GnosticSocietyAustralia" target="_blank" rel="noopener noreferrer"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
                   Facebook — Gnostic Society Australia
                 </a>
-              </li>
-            </ul>
+              </p>
+              <p>
+                <a href="https://gnosisaustralia.org.au" target="_blank" rel="noopener noreferrer"
+                  className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
+                  Gnosis Australia — gnosisaustralia.org.au
+                </a>
+              </p>
+            </address>
+            <p className="text-xs text-[#6b5535] leading-relaxed mb-4">
+              Hobart · Launceston · Tasmania, Australia
+            </p>
             <Link
               to="/contact"
               className="inline-block text-xs font-semibold text-[#1c1409] bg-[#c9a96e] hover:bg-[#b8963e] px-4 py-2 rounded-sm transition-colors tracking-wide"

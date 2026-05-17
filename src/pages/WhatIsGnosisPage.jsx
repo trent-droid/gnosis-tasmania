@@ -3,6 +3,7 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
+import { useJsonLd } from '../hooks/useJsonLd.js'
 import heroChristImg             from '../assets/hero_christ.jpg?format=webp'
 import artVitruvianManImg        from '../assets/art_vitruvian_man.jpg'
 import artVitruvianManImgWebp    from '../assets/art_vitruvian_man.jpg?format=webp'
@@ -90,12 +91,94 @@ const PILLARS = [
   },
 ]
 
+const BASE = 'https://gnosistasmania.com.au'
+
 export default function WhatIsGnosisPage() {
   usePageMeta(
     'What is Gnosis? | Gnosis Tasmania',
     'What is Gnosis? Direct, experiential self-knowledge — the universal wisdom at the heart of every tradition. Practical classes in Hobart and Launceston, Tasmania.',
     '/what-is-gnosis'
   )
+
+  // @graph bundles multiple schemas into one <script> tag.
+  // FAQPage enables Google FAQ rich results for high-value queries.
+  // Person schema for Samael Aun Weor strengthens E-E-A-T and topic authority.
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'FAQPage',
+        'url': `${BASE}/what-is-gnosis`,
+        'mainEntity': [
+          {
+            '@type': 'Question',
+            'name': 'What is Gnosis?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Gnosis (from the Greek γνῶσις) is direct, experiential knowledge of oneself and of truth — not belief or dogma, but lived inner experience. It is the universal thread running through every authentic spiritual tradition, from ancient Egypt and Greece to the teachings of Buddha, Jesus, and the perennial wisdom masters.',
+            },
+          },
+          {
+            '@type': 'Question',
+            'name': 'Is Gnosis a religion?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Gnosis is not a religion, nor is it opposed to any religion. It is the esoteric heart — the living mystical core — at the centre of every authentic spiritual tradition. Gnostic students may come from any religious background or none. No belief is required, only sincerity and a genuine desire for self-knowledge.',
+            },
+          },
+          {
+            '@type': 'Question',
+            'name': 'What are the Four Pillars of Gnosis?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'The four pillars of Gnosis are: Science (verifiable through direct inner experience), Philosophy (a coherent map of the cosmos and human being), Art (sacred works as vehicles of esoteric transmission), and Mysticism (direct living contact with the sacred at the heart of every authentic tradition).',
+            },
+          },
+          {
+            '@type': 'Question',
+            'name': 'Who is Samael Aun Weor?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Samael Aun Weor (1917–1977) was a Colombian-born author and teacher who produced more than seventy books synthesising Gnostic, Hermetic, Kabbalistic, Buddhist, and Hindu esoteric traditions into a single comprehensive practical system. His teachings are the foundation of the contemporary Gnostic movement worldwide, including in Australia.',
+            },
+          },
+          {
+            '@type': 'Question',
+            'name': 'What are the Gnostic classes offered in Tasmania?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Gnosis Tasmania offers weekly Gnostic classes in Hobart and Launceston. Classes cover meditation, self-knowledge, the Three Factors of the Revolution of Consciousness, Kabbalah, dream yoga, and inner alchemy. All classes are donation-based and open to everyone — no prior experience required.',
+            },
+          },
+          {
+            '@type': 'Question',
+            'name': 'What are the Three Factors of the Revolution of Consciousness?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'The Three Factors of the Revolution of Consciousness are: (1) Psychological Death — the dissolution of the ego through self-observation and inner work; (2) Second Birth — the emergence of the soul as the false self is dissolved; and (3) Sacrifice for Humanity — living in compassionate service to others. These three factors are the foundation of the Gnostic path as taught by Samael Aun Weor.',
+            },
+          },
+        ],
+      },
+      {
+        '@type': 'Person',
+        '@id': `${BASE}/#samael-aun-weor`,
+        'name': 'Samael Aun Weor',
+        'birthName': 'Victor Manuel Gomez Rodriguez',
+        'birthDate': '1917-03-06',
+        'deathDate': '1977-12-24',
+        'birthPlace': { '@type': 'Place', 'name': 'Bogotá, Colombia' },
+        'nationality': 'Colombian',
+        'description': 'Samael Aun Weor (1917–1977) was a Colombian author and teacher who synthesised Gnostic, esoteric, and perennial wisdom traditions into a comprehensive practical system. He wrote more than seventy books on Gnosis, Kabbalah, alchemy, dream yoga, and meditation, founding the worldwide contemporary Gnostic movement.',
+        'url': `${BASE}/what-is-gnosis`,
+        'sameAs': ['https://en.wikipedia.org/wiki/Samael_Aun_Weor'],
+        'knowsAbout': [
+          'Gnosis', 'Kabbalah', 'Alchemy', 'Meditation', 'Dream Yoga',
+          'Hermeticism', 'Esoteric Philosophy', 'Three Factors of the Revolution of Consciousness',
+        ],
+      },
+    ],
+  })
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
