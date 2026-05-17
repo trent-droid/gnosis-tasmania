@@ -117,8 +117,8 @@ const PRACTICES = [
 
 export default function PracticesPage() {
   usePageMeta(
-    'Practices | Gnosis Tasmania',
-    'Explore the practical methods of the Gnostic path: meditation, self-observation, dream yoga, mantras, and inner alchemy — tools for direct inner transformation.',
+    'Gnostic Practices — Meditation, Dream Yoga & Inner Alchemy | Gnosis Tasmania',
+    'Gnostic practices taught in Tasmania: meditation, self-observation, dream yoga, mantras, and inner alchemy. Practical tools for genuine inner transformation.',
     '/practices'
   )
 

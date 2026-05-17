@@ -92,7 +92,7 @@ const PILLARS = [
 export default function WhatIsGnosisPage() {
   usePageMeta(
     'What is Gnosis? | Gnosis Tasmania',
-    'Gnosis is direct, experiential knowledge of the divine — the universal wisdom at the heart of every great tradition. Learn about Gnosis, its history, and how to begin.',
+    'What is Gnosis? Direct, experiential self-knowledge — the universal wisdom at the heart of every tradition. Practical classes in Hobart and Launceston, Tasmania.',
     '/what-is-gnosis'
   )
 

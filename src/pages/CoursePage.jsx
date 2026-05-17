@@ -265,8 +265,8 @@ function ModuleCard({ number, title, points }) {
 
 export default function CoursePage() {
   usePageMeta(
-    'Introduction to Gnosis - 34-Topic Course | Gnosis Tasmania',
-    'Explore the complete 34-topic Introduction to Gnosis curriculum covering consciousness, psychology, cosmology, Kabbalah, meditation and esoteric practice. Classes in Hobart and Launceston.',
+    'Introduction to Gnosis — 34-Session Course | Gnosis Tasmania',
+    'Introduction to Gnosis: a 34-session course covering consciousness, Kabbalah, meditation, karma, and inner alchemy. Weekly classes in Hobart and Launceston, Tasmania.',
     '/introduction-to-gnosis'
   )
   useJsonLd({

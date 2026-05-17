@@ -23,8 +23,8 @@ const LOCATIONS = [
 
 export default function CommunityPage() {
   usePageMeta(
-    'Our Community | Gnosis Tasmania',
-    'Join the Gnosis Tasmania community - a welcoming, open circle of sincere seekers in Hobart and Launceston. All classes donation-based.',
+    'Gnostic Community in Hobart & Launceston | Gnosis Tasmania',
+    'Join the Gnosis Tasmania community — sincere seekers meeting weekly in Hobart and Launceston. Gnostic study groups, retreats, and donation-based classes.',
     '/community'
   )
 

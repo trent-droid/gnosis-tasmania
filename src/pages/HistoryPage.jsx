@@ -130,8 +130,8 @@ const TIMELINE = [
 
 export default function HistoryPage() {
   usePageMeta(
-    'History of Gnosis | Gnosis Tasmania',
-    'Explore the history of Gnostic wisdom from ancient Egypt and Greece through to the modern synthesis, a continuous thread of inner knowledge across all civilisations.',
+    'History of Gnosis — Egypt to Samael Aun Weor | Gnosis Tasmania',
+    'The history of Gnostic wisdom: from ancient Egypt and Greece through Kabbalah, Sufism, and the Renaissance, to Samael Aun Weor\'s modern synthesis. Taught in Tasmania.',
     '/history'
   )
 

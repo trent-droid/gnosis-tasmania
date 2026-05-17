@@ -3,6 +3,7 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
+import { useJsonLd } from '../hooks/useJsonLd.js'
 import artHermesTrismegistusImg from '../assets/art_hermes_trismegistus.jpg'
 import artBirthVenusImg    from '../assets/art_birth_venus.jpg'
 import esotericAdeptVaseImg from '../assets/esoteric_adept_vase.jpg'
@@ -73,10 +74,56 @@ const LOCATIONS = [
 
 export default function CoursesPage() {
   usePageMeta(
-    'Courses & Classes | Gnosis Tasmania',
-    'Gnostic courses and meditation classes in Hobart and Launceston. Introduction to Gnosis (34 topics) and weekly Meditation Classes. Donation-based, no experience required.',
+    'Gnostic Courses in Hobart & Launceston | Gnosis Tasmania',
+    'Gnostic courses in Hobart and Launceston: Introduction to Gnosis (34 sessions) and weekly Meditation Classes. No experience needed. Donation-based.',
     '/courses'
   )
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': [
+      {
+        '@type': 'Question',
+        'name': 'Do I need any prior knowledge of Gnosis or spirituality?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Not at all. Our introductory course is designed for complete beginners. The only requirement is a sincere desire to learn and a willingness to engage honestly with the practice.',
+        },
+      },
+      {
+        '@type': 'Question',
+        'name': 'How long does the Introduction to Gnosis course run?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'The Introduction to Gnosis course consists of 34 sessions, running weekly. This takes approximately 8 to 9 months to complete.',
+        },
+      },
+      {
+        '@type': 'Question',
+        'name': 'What should I bring to my first Gnosis class?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Just yourself and an open mind. You may wish to bring a notebook, but this is entirely optional. Dress comfortably as we sometimes include physical relaxation exercises.',
+        },
+      },
+      {
+        '@type': 'Question',
+        'name': 'Are Gnosis classes available online?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Many resources are available online and we encourage their use. However, working together in a group creates a shared energy that genuinely supports the inner work in a way that solitary study cannot replicate.',
+        },
+      },
+      {
+        '@type': 'Question',
+        'name': 'How much do the Gnosis classes cost?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'All classes are offered on a voluntary donation basis. There is no fixed fee. Give what you can, when you can. No one is ever turned away for financial reasons.',
+        },
+      },
+    ],
+  })
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">

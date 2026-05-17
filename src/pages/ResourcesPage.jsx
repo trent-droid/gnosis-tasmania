@@ -110,8 +110,9 @@ const ONLINE_RESOURCES = [
 
 export default function ResourcesPage() {
   usePageMeta(
-    'Resources | Gnosis Tasmania',
-    'Recommended books, texts, and online resources for the study of Gnostic wisdom, from the ancient Hermetic texts to the modern synthesis of Samael Aun Weor.'
+    'Gnostic Books & Resources | Gnosis Tasmania',
+    'Recommended Gnostic books and resources: Samael Aun Weor, the Nag Hammadi Library, the Corpus Hermeticum, the Zohar, and more. For seekers in Tasmania and worldwide.',
+    '/resources'
   )
 
   return (

@@ -102,8 +102,8 @@ const SELF_KNOWLEDGE = [
 
 export default function CoreTeachingsPage() {
   usePageMeta(
-    'Core Teachings | Gnosis Tasmania',
-    'Explore the core teachings of Gnosis: self-knowledge, the Three Factors, cosmology and the Tree of Life. Practical wisdom for inner transformation.',
+    'Three Factors of the Revolution of Consciousness | Gnosis Tasmania',
+    'The core teachings of Gnosis: the Three Factors of the Revolution of Consciousness, the Tree of Life, Kabbalah, and self-knowledge. Classes in Tasmania.',
     '/core-teachings'
   )
 

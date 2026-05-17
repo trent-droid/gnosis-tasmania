@@ -82,7 +82,7 @@ const FEATURES = [
 export default function App() {
   usePageMeta(
     'Gnosis Tasmania — Gnostic Classes & Meditation in Hobart & Launceston',
-    'Gnosis Tasmania offers practical, donation-based classes in meditation, self-knowledge, and perennial Gnostic wisdom across Hobart and Launceston, Tasmania.',
+    'Donation-based Gnostic classes in Hobart and Launceston, Tasmania. Meditation, self-knowledge, and the Three Factors of the Revolution of Consciousness.',
     '/'
   )
 

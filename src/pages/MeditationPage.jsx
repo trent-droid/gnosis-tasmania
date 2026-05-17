@@ -13,8 +13,8 @@ import artMonaLisaImg        from '../assets/art_mona_lisa.jpg'
 
 export default function MeditationPage() {
   usePageMeta(
-    'The Revolution of Meditation | Gnosis Tasmania',
-    'A Gnostic approach to meditation - the science of inner stillness, the liberation of consciousness, and the practical methods taught by Samael Aun Weor. Classes in Hobart and Launceston.',
+    'Meditation Classes in Hobart & Launceston | Gnosis Tasmania',
+    'Gnostic meditation classes in Hobart and Launceston. Learn relaxation, concentration, meditation, and samadhi — taught in the tradition of Samael Aun Weor. Weekly, donation-based.',
     '/meditation-classes'
   )
   useJsonLd({
