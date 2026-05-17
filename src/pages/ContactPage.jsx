@@ -1,11 +1,20 @@
 import { useState, useEffect } from 'react'
+import emailjs from '@emailjs/browser'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import esotericFlammarionImg from '../assets/esoteric_flammarion_colorized.jpg?format=webp'
 
-const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID
+// Set in Vercel: Project → Settings → Environment Variables
+// VITE_EMAILJS_SERVICE_ID   — from EmailJS dashboard → Email Services
+// VITE_EMAILJS_TEMPLATE_ID  — from EmailJS dashboard → Email Templates
+// VITE_EMAILJS_PUBLIC_KEY   — from EmailJS dashboard → Account → Public Key
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+// Optional: VITE_RECAPTCHA_SITE_KEY for reCAPTCHA v3 (form works without it)
 const RECAPTCHA_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY
 
 const LOCATIONS = [
@@ -43,52 +52,36 @@ const HOW_HEARD = [
 
 // ─────────────────────────────────────────────────────────────────────────────
 // reCAPTCHA v3 helpers — completely isolated from React.
-// All paths are guarded; nothing here can throw into the component tree.
+// All paths are guarded so nothing here can throw into the component tree.
 // ─────────────────────────────────────────────────────────────────────────────
 
-// Tracks whether we have already injected the script tag this session.
 let scriptInjected = false
 
 function injectRecaptchaScript(siteKey) {
-  if (!siteKey) {
-    console.error('[reCAPTCHA] VITE_RECAPTCHA_SITE_KEY is not set — skipping script load.')
-    return
-  }
-  if (scriptInjected) return
+  if (!siteKey || scriptInjected) return
   scriptInjected = true
-
   try {
     const script = document.createElement('script')
     script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
     script.async = true
     script.onerror = () => {
-      console.error('[reCAPTCHA] Failed to load reCAPTCHA v3 script — form will still work without it.')
-      scriptInjected = false // allow retry on next visit if network recovers
+      console.error('[reCAPTCHA] Failed to load — form will still work without it.')
+      scriptInjected = false
     }
     document.head.appendChild(script)
   } catch (err) {
-    console.error('[reCAPTCHA] Unexpected error injecting script:', err)
+    console.error('[reCAPTCHA] Script injection error:', err)
     scriptInjected = false
   }
 }
 
-// Returns a reCAPTCHA v3 token, or null if anything goes wrong.
-// Never throws — the caller can always proceed without a token.
 async function getRecaptchaToken(siteKey, action) {
-  if (!siteKey) {
-    console.error('[reCAPTCHA] No site key — submitting form without token.')
-    return null
-  }
-  if (typeof window === 'undefined' || !window.grecaptcha) {
-    console.error('[reCAPTCHA] grecaptcha not available — submitting form without token.')
-    return null
-  }
+  if (!siteKey || typeof window === 'undefined' || !window.grecaptcha) return null
   try {
     await new Promise((resolve) => window.grecaptcha.ready(resolve))
-    const token = await window.grecaptcha.execute(siteKey, { action })
-    return token || null
+    return (await window.grecaptcha.execute(siteKey, { action })) || null
   } catch (err) {
-    console.error('[reCAPTCHA] execute() failed — submitting form without token:', err)
+    console.error('[reCAPTCHA] execute() failed:', err)
     return null
   }
 }
@@ -102,15 +95,13 @@ export default function ContactPage() {
     '/contact'
   )
 
-  // Inject the reCAPTCHA script after mount so it never blocks rendering.
-  useEffect(() => {
-    injectRecaptchaScript(RECAPTCHA_KEY)
-  }, [])
+  useEffect(() => { injectRecaptchaScript(RECAPTCHA_KEY) }, [])
 
   const [formData, setFormData] = useState({
     name: '', email: '', interest: '', howHeard: '', message: '',
   })
   const [status, setStatus] = useState('idle') // idle | sending | success | error
+  const [errorDetail, setErrorDetail] = useState('')
 
   function handleChange(e) {
     const { name, value } = e.target
@@ -120,28 +111,41 @@ export default function ContactPage() {
   async function handleSubmit(e) {
     e.preventDefault()
     setStatus('sending')
+    setErrorDetail('')
 
-    // Try to get a v3 token. If it returns null, we submit without one.
+    // Optional reCAPTCHA token — never blocks submission
     const token = await getRecaptchaToken(RECAPTCHA_KEY, 'contact_form')
 
+    // EmailJS template variables — must match your template's {{variable}} names.
+    // In your EmailJS template set: {{from_name}}, {{from_email}}, {{interest}},
+    // {{how_heard}}, {{message}}, and optionally {{recaptcha_token}}.
+    const templateParams = {
+      from_name:        formData.name,
+      from_email:       formData.email,
+      interest:         formData.interest  || 'Not specified',
+      how_heard:        formData.howHeard  || 'Not specified',
+      message:          formData.message,
+      recaptcha_token:  token || 'not available',
+    }
+
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error('[EmailJS] Missing environment variables. Set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY in Vercel.')
+      setErrorDetail('Email service is not configured. Please email us directly.')
+      setStatus('error')
+      return
+    }
+
     try {
-      const payload = { ...formData }
-      if (token) payload['g-recaptcha-response'] = token
-
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(payload),
-      })
-
-      if (res.ok) {
-        setStatus('success')
-      } else {
-        console.error('[ContactForm] Formspree returned non-OK status:', res.status)
-        setStatus('error')
-      }
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      )
+      setStatus('success')
     } catch (err) {
-      console.error('[ContactForm] Fetch to Formspree failed:', err)
+      console.error('[EmailJS] send() failed:', err)
+      setErrorDetail('')
       setStatus('error')
     }
   }
@@ -185,7 +189,7 @@ export default function ContactPage() {
               {status === 'success' ? (
                 <div className="bg-[#faf6ef] border border-[#c9a96e] rounded-sm p-8 text-center">
                   <div className="text-[#c9a96e] text-4xl mb-4" aria-hidden="true">✦</div>
-                  <h3 className="font-display text-2xl font-medium text-[#2a1e12] mb-3">Message Received</h3>
+                  <h3 className="font-display text-2xl font-medium text-[#2a1e12] mb-3">Message Sent Successfully</h3>
                   <p className="text-[#4a3a26] leading-relaxed">
                     Thank you for your enquiry. We will be in touch as soon as possible, usually within a day or two.
                   </p>
@@ -249,7 +253,8 @@ export default function ContactPage() {
 
                   {status === 'error' && (
                     <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-sm px-4 py-3">
-                      Something went wrong. Please try again or email us directly at{' '}
+                      {errorDetail || 'Something went wrong sending your message.'}{' '}
+                      Please try again or email us directly at{' '}
                       <a href="mailto:gnosis.launceston@gmail.com" className="underline">gnosis.launceston@gmail.com</a>.
                     </p>
                   )}
@@ -269,7 +274,6 @@ export default function ContactPage() {
                     </a>
                   </p>
 
-                  {/* Required Google attribution when using reCAPTCHA v3 */}
                   {RECAPTCHA_KEY && (
                     <p className="text-[10px] text-[#a89a80] text-center leading-relaxed">
                       Protected by reCAPTCHA.{' '}
