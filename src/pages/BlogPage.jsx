@@ -1,8 +1,10 @@
-﻿import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote } from '../components/ui.jsx'
+import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, ArtBanner, Blockquote } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
+import { useJsonLd } from '../hooks/useJsonLd.js'
+
 import heroCreationImg         from '../assets/hero_creation_adam.jpg'
 import heroCreationImgWebp     from '../assets/hero_creation_adam.jpg?format=webp'
 import heroZenImg              from '../assets/hero_zen.jpg'
@@ -14,10 +16,13 @@ import artKhunrathImg          from '../assets/art_khunrath_rebis.jpg'
 import artKhunrathImgWebp      from '../assets/art_khunrath_rebis.jpg?format=webp'
 import artCranachImg           from '../assets/art_cranach_garden_eden.jpg?format=webp'
 
+const BASE = 'https://gnosistasmania.com.au'
+
 const ARTICLES = [
   {
     id: 'self-observation',
     date: 'March 2025',
+    dateISO: '2025-03-01',
     label: 'Practice',
     title: 'Daily Self-Observation: A Practical Guide',
     excerpt: 'The most fundamental practice of the Gnostic path is also its most accessible. Self-observation requires no special equipment, no particular place, and no prior training, only a willingness to look honestly at what is actually happening within.',
@@ -48,6 +53,7 @@ const ARTICLES = [
   {
     id: 'meditation',
     date: 'February 2025',
+    dateISO: '2025-02-01',
     label: 'Meditation',
     title: 'Meditation for Busy Lives',
     excerpt: 'One of the most common objections to beginning a meditation practice is time. "I don\'t have time to meditate" is a statement that, on examination, usually reveals itself as a statement about priorities rather than hours.',
@@ -78,6 +84,7 @@ const ARTICLES = [
   {
     id: 'universal-gnosis',
     date: 'January 2025',
+    dateISO: '2025-01-01',
     label: 'Wisdom Traditions',
     title: 'Universal Gnosis: Wisdom Across the Traditions',
     excerpt: 'One of the most striking features of the Gnostic tradition is its insistence that the wisdom it transmits is not the property of any single culture, religion, or historical period, but is universal, perennial, and hidden within the heart of every authentic spiritual tradition.',
@@ -108,6 +115,7 @@ const ARTICLES = [
   {
     id: 'three-factors',
     date: 'December 2024',
+    dateISO: '2024-12-01',
     label: 'Core Teachings',
     title: 'Understanding the Three Factors',
     excerpt: 'The "Three Factors of the Revolution of Consciousness" is perhaps the most central teaching in the contemporary Gnostic tradition, a synthesis of what every authentic path has understood to be the essential movement of genuine spiritual development.',
@@ -139,9 +147,58 @@ const ARTICLES = [
 
 export default function BlogPage() {
   usePageMeta(
-    'Blog | Gnosis Tasmania',
-    'Articles on Gnostic teaching, meditation, self-observation, and the universal wisdom traditions, practical reflections for the sincere seeker.'
+    'Gnostic Teaching Articles — Meditation, Self-Knowledge & Inner Wisdom | Gnosis Tasmania',
+    'Practical articles on Gnostic meditation, self-observation, the Three Factors of the Revolution of Consciousness, and the universal wisdom traditions. Written for sincere seekers in Tasmania and worldwide.',
+    '/blog'
   )
+
+  // BlogPosting collection schema — improves Google search appearance for each article
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    'name': 'Gnosis Tasmania Blog — Gnostic Teaching Articles',
+    'description': 'Practical articles on Gnostic meditation, self-observation, and the universal wisdom traditions.',
+    'url': `${BASE}/blog`,
+    'inLanguage': 'en-AU',
+    'publisher': {
+      '@type': 'Organization',
+      '@id': `${BASE}/#organization`,
+      'name': 'Gnosis Tasmania',
+      'url': BASE,
+      'logo': {
+        '@type': 'ImageObject',
+        'url': `${BASE}/favicon-512x512.png`,
+      },
+    },
+    'hasPart': ARTICLES.map(a => ({
+      '@type': 'BlogPosting',
+      'headline': a.title,
+      'description': a.excerpt,
+      'datePublished': a.dateISO,
+      'dateModified': a.dateISO,
+      'url': `${BASE}/blog#${a.id}`,
+      'mainEntityOfPage': `${BASE}/blog#${a.id}`,
+      'inLanguage': 'en-AU',
+      'articleSection': a.label,
+      'keywords': `Gnosis, ${a.label}, Samael Aun Weor, meditation Tasmania, self-knowledge`,
+      'author': {
+        '@type': 'Organization',
+        '@id': `${BASE}/#organization`,
+        'name': 'Gnosis Tasmania',
+        'url': BASE,
+      },
+      'publisher': {
+        '@type': 'Organization',
+        '@id': `${BASE}/#organization`,
+        'name': 'Gnosis Tasmania',
+        'url': BASE,
+        'logo': {
+          '@type': 'ImageObject',
+          'url': `${BASE}/favicon-512x512.png`,
+        },
+      },
+    })),
+  })
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
@@ -167,24 +224,27 @@ export default function BlogPage() {
       </HeroParallax>
 
       {/* ── Articles ──────────────────────────────────────────────────────────── */}
-      {ARTICLES.map(({ id, date, label, title, excerpt, img, content }, idx) => (
-        <section
+      {ARTICLES.map(({ id, date, dateISO, label, title, excerpt, img, content }, idx) => (
+        <article
           key={id}
           id={id}
+          aria-labelledby={`article-${id}-heading`}
           className={`py-20 px-4 fade-section ${idx % 2 === 0 ? 'bg-white' : 'bg-[#faf6ef]'}`}
         >
           <div className="max-w-5xl mx-auto">
             {/* Article header */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-bold text-[#1c1409] bg-[#c9a96e] uppercase tracking-widest px-2.5 py-1 rounded-sm">{label}</span>
-              <span className="text-xs text-[#8a6f3f]">{date}</span>
-            </div>
-            <h2 className="font-display text-3xl sm:text-4xl font-light text-[#2a1e12] mb-5 leading-snug max-w-3xl">
-              {title}
-            </h2>
-            <p className="text-[#4a3a26] text-lg leading-relaxed mb-8 max-w-3xl italic">{excerpt}</p>
+            <header>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-xs font-bold text-[#1c1409] bg-[#c9a96e] uppercase tracking-widest px-2.5 py-1 rounded-sm">{label}</span>
+                <time dateTime={dateISO} className="text-xs text-[#8a6f3f]">{date}</time>
+              </div>
+              <h2 id={`article-${id}-heading`} className="font-display text-3xl sm:text-4xl font-light text-[#2a1e12] mb-5 leading-snug max-w-3xl">
+                {title}
+              </h2>
+              <p className="text-[#4a3a26] text-lg leading-relaxed mb-8 max-w-3xl italic">{excerpt}</p>
+            </header>
 
-            {/* Image */}
+            {/* Artwork */}
             <div className="mb-10">
               <ArtBanner
                 src={img.src}
@@ -207,7 +267,7 @@ export default function BlogPage() {
 
             <div className={`h-[1px] ${idx < ARTICLES.length - 1 ? 'bg-gradient-to-r from-transparent via-[#c9a96e] to-transparent mt-10' : ''}`} aria-hidden="true" />
           </div>
-        </section>
+        </article>
       ))}
 
       {/* ── Cranach Parallax ──────────────────────────────────────────────────── */}
@@ -219,8 +279,8 @@ export default function BlogPage() {
         cite="Samael Aun Weor, Dream Yoga"
       />
 
-      {/* ── Blockquote ────────────────────────────────────────────────────────── */}
-      <section className="py-16 px-4 bg-[#faf6ef] fade-section">
+      {/* ── Closing quote ─────────────────────────────────────────────────────── */}
+      <section className="py-16 px-4 bg-[#faf6ef] fade-section" aria-label="Closing reflection">
         <div className="max-w-3xl mx-auto">
           <Blockquote cite="Samael Aun Weor">
             "We must become serious. The spiritual journey is not a hobby. The awakening of consciousness is the most important work a human being can undertake."
@@ -229,12 +289,13 @@ export default function BlogPage() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────────────── */}
-      <section className="py-16 px-4 bg-[#2a1e12] fade-section">
+      <section className="py-16 px-4 bg-[#2a1e12] fade-section" aria-label="Call to action">
         <div className="max-w-3xl mx-auto text-center">
+          <SectionLabel>Study in Community</SectionLabel>
           <h2 className="font-display text-4xl font-light text-[#f8f1e3] mb-4">Come and Study in Community</h2>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] leading-relaxed mb-8">
-            These articles are a taste of the teaching. The full depth of Gnostic wisdom is best explored in community, in the shared work of a sincere study group.
+            These articles are a taste of the teaching. The full depth of Gnostic wisdom is best explored in community, in the shared work of a sincere study group meeting weekly in Hobart and Launceston.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -244,8 +305,14 @@ export default function BlogPage() {
               View Our Courses
             </Link>
             <Link
-              to="/contact"
+              to="/practices"
               className="border border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
+            >
+              Explore Practices
+            </Link>
+            <Link
+              to="/contact"
+              className="border border-[#c9a96e]/60 text-[#c8b89a] hover:bg-[#c9a96e] hover:text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               Contact Us
             </Link>

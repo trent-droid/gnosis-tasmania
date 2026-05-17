@@ -51,11 +51,22 @@
     {
       "@context": "https://schema.org",
       "@type": ["Organization", "EducationalOrganization"],
+      "@id": "https://gnosistasmania.com.au/#organization",
       "name": "Gnosis Tasmania",
       "alternateName": "Gnostic Society of Tasmania",
       "url": "https://gnosistasmania.com.au",
       "email": "gnosis.launceston@gmail.com",
-      "sameAs": ["https://www.facebook.com/GnosticSocietyAustralia"],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gnosistasmania.com.au/favicon-512x512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://gnosistasmania.com.au/og-image.jpg",
+      "sameAs": [
+        "https://www.facebook.com/GnosticSocietyAustralia",
+        "https://gnosisaustralia.org.au"
+      ],
       "description": "Gnosis Tasmania offers practical, donation-based classes in meditation, self-knowledge, and the perennial Gnostic wisdom of Samael Aun Weor, open to all sincere seekers in Hobart and Launceston, Tasmania.",
       "address": [
         {
@@ -145,6 +156,100 @@
         },
         "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+    <!-- JSON-LD: Local Group — Hobart (LocalBusiness for Google local search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "EducationalOrganization"],
+      "@id": "https://gnosistasmania.com.au/#hobart",
+      "name": "Gnosis Tasmania — Hobart",
+      "description": "Weekly Gnostic meditation and self-knowledge classes in Hobart, Tasmania. Donation-based and open to all. Taught in the tradition of Samael Aun Weor.",
+      "url": "https://gnosistasmania.com.au",
+      "email": "gnosis.launceston@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hobart",
+        "addressRegion": "TAS",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -42.8821,
+        "longitude": 147.3272
+      },
+      "priceRange": "Free",
+      "image": "https://gnosistasmania.com.au/favicon-512x512.png",
+      "logo": "https://gnosistasmania.com.au/favicon-512x512.png",
+      "parentOrganization": { "@id": "https://gnosistasmania.com.au/#organization" },
+      "sameAs": ["https://gnosisaustralia.org.au"]
+    }
+    </script>
+
+    <!-- JSON-LD: Local Group — Launceston (LocalBusiness for Google local search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "EducationalOrganization"],
+      "@id": "https://gnosistasmania.com.au/#launceston",
+      "name": "Gnosis Tasmania — Launceston",
+      "description": "Weekly Gnostic meditation and self-knowledge classes in Launceston, Tasmania. Donation-based and open to all. Taught in the tradition of Samael Aun Weor.",
+      "url": "https://gnosistasmania.com.au",
+      "email": "gnosis.launceston@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Launceston",
+        "addressRegion": "TAS",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -41.4332,
+        "longitude": 147.1441
+      },
+      "priceRange": "Free",
+      "image": "https://gnosistasmania.com.au/favicon-512x512.png",
+      "logo": "https://gnosistasmania.com.au/favicon-512x512.png",
+      "parentOrganization": { "@id": "https://gnosistasmania.com.au/#organization" },
+      "sameAs": ["https://gnosisaustralia.org.au"]
+    }
+    </script>
+
+    <!-- JSON-LD: Recurring weekly classes (Event schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Introduction to Gnosis — Weekly Classes",
+      "description": "Weekly Gnostic classes covering meditation, self-knowledge, the Three Factors of the Revolution of Consciousness, dream yoga, Kabbalah, and inner alchemy. Taught in the tradition of Samael Aun Weor. All levels welcome, donation-based.",
+      "url": "https://gnosistasmania.com.au/courses",
+      "organizer": { "@id": "https://gnosistasmania.com.au/#organization" },
+      "isAccessibleForFree": true,
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": [
+        {
+          "@type": "Place",
+          "name": "Gnosis Tasmania — Hobart",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hobart",
+            "addressRegion": "TAS",
+            "addressCountry": "AU"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Gnosis Tasmania — Launceston",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Launceston",
+            "addressRegion": "TAS",
+            "addressCountry": "AU"
+          }
+        }
+      ]
     }
     </script>
   </head>

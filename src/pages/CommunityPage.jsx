@@ -3,6 +3,7 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
+import { useJsonLd } from '../hooks/useJsonLd.js'
 import artBouguereauImg  from '../assets/art_bouguereau_angels.jpg?format=webp'
 import artCranachImg     from '../assets/art_cranach_garden_eden.jpg?format=webp'
 
@@ -21,12 +22,39 @@ const LOCATIONS = [
   },
 ]
 
+const BASE = 'https://gnosistasmania.com.au'
+
 export default function CommunityPage() {
   usePageMeta(
     'Gnostic Community in Hobart & Launceston | Gnosis Tasmania',
-    'Join the Gnosis Tasmania community — sincere seekers meeting weekly in Hobart and Launceston. Gnostic study groups, retreats, and donation-based classes.',
+    'Join the Gnosis Tasmania community — sincere seekers meeting weekly in Hobart and Launceston, Tasmania. Donation-based Gnostic study, meditation retreats, and the teachings of Samael Aun Weor.',
     '/community'
   )
+
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    'url': `${BASE}/community`,
+    'name': 'Gnosis Tasmania Community — Hobart & Launceston',
+    'description': 'Gnosis Tasmania is a local study group in Hobart and Launceston, Tasmania, part of the worldwide Gnostic Society Samael Aun Weor network. Donation-based classes, retreats, and inner-work community.',
+    'inLanguage': 'en-AU',
+    'about': {
+      '@type': 'Organization',
+      '@id': `${BASE}/#organization`,
+      'name': 'Gnosis Tasmania',
+      'memberOf': [
+        {
+          '@type': 'Organization',
+          'name': 'Gnosis Australia',
+          'url': 'https://gnosisaustralia.org.au',
+        },
+        {
+          '@type': 'Organization',
+          'name': 'Gnostic Society Samael Aun Weor',
+        },
+      ],
+    },
+  })
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
@@ -105,9 +133,17 @@ export default function CommunityPage() {
           </div>
 
           <div className="bg-white border border-[#e8d5b0] rounded-sm p-8 text-center">
-            <p className="text-[#4a3a26] leading-relaxed max-w-2xl mx-auto">
+            <p className="text-[#4a3a26] leading-relaxed max-w-2xl mx-auto mb-4">
               The Gnostic Society operates through affiliated study groups across more than twenty countries, sharing a common body of teaching while remaining locally rooted. Gnosis Tasmania is part of this worldwide network, connected to sister organisations across Australia and beyond.
             </p>
+            <a
+              href="https://gnosisaustralia.org.au"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-sm text-[#c9a96e] hover:text-[#b8963e] transition-colors font-medium"
+            >
+              Visit Gnosis Australia →
+            </a>
           </div>
         </div>
       </section>
@@ -172,19 +208,30 @@ export default function CommunityPage() {
                 Whether you are entirely new to spiritual enquiry or have been exploring for years, you will find something of genuine value in our community. What we offer is not a new belief system, but a set of practical tools for discovering what is already within you.
               </p>
               <ul className="space-y-3">
-                {[
-                  'A structured approach for sincere enquiry',
-                  'Practical meditation and self-observation techniques',
-                  'Study of the world\'s great esoteric and mystical traditions',
-                  'The company of others genuinely committed to inner work',
-                  'Access to a rich body of written and recorded teachings',
-                  'A community that supports you without demanding conformity',
-                ].map(item => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-[#4a3a26]">
-                    <CheckIcon />
-                    <span>{item}</span>
-                  </li>
-                ))}
+                <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
+                  <CheckIcon />
+                  <span>A structured approach for sincere enquiry — beginning with our <Link to="/introduction-to-gnosis" className="text-[#c9a96e] hover:underline">Introduction to Gnosis course</Link></span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
+                  <CheckIcon />
+                  <span>Practical <Link to="/meditation-classes" className="text-[#c9a96e] hover:underline">meditation and self-observation techniques</Link> taught weekly</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
+                  <CheckIcon />
+                  <span>Study of the world's great esoteric and mystical traditions through our <Link to="/core-teachings" className="text-[#c9a96e] hover:underline">core Gnostic teachings</Link></span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
+                  <CheckIcon />
+                  <span>The company of others genuinely committed to inner work</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
+                  <CheckIcon />
+                  <span>Access to a rich body of <Link to="/resources" className="text-[#c9a96e] hover:underline">written teachings and recommended books</Link></span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
+                  <CheckIcon />
+                  <span>A community that supports you without demanding conformity</span>
+                </li>
               </ul>
             </div>
             <div className="space-y-5">
@@ -311,6 +358,12 @@ export default function CommunityPage() {
               className="border border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               View Courses & Classes
+            </Link>
+            <Link
+              to="/what-is-gnosis"
+              className="border border-[#c9a96e]/50 text-[#c8b89a] hover:bg-[#c9a96e]/10 font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
+            >
+              What is Gnosis?
             </Link>
           </div>
         </div>
