@@ -3,8 +3,8 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
-import artBouguereauImg  from '../assets/art_bouguereau_angels.jpg'
-import artCranachImg     from '../assets/art_cranach_garden_eden.jpg'
+import artBouguereauImg  from '../assets/art_bouguereau_angels.jpg?format=webp'
+import artCranachImg     from '../assets/art_cranach_garden_eden.jpg?format=webp'
 
 const LOCATIONS = [
   {

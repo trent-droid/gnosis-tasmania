@@ -3,10 +3,11 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
-import heroChristImg          from '../assets/hero_christ.jpg'
-import artVitruvianManImg    from '../assets/art_vitruvian_man.jpg'
-import esotericCosmicRoseImg from '../assets/esoteric_cosmic_rose.jpg'
-import samaelAunWeorImg     from '../assets/samael_aun_weor.jpg'
+import heroChristImg             from '../assets/hero_christ.jpg?format=webp'
+import artVitruvianManImg        from '../assets/art_vitruvian_man.jpg'
+import artVitruvianManImgWebp    from '../assets/art_vitruvian_man.jpg?format=webp'
+import esotericCosmicRoseImg     from '../assets/esoteric_cosmic_rose.jpg?format=webp'
+import samaelAunWeorImg          from '../assets/samael_aun_weor.jpg?format=webp'
 
 const TRADITIONS = [
   {
@@ -246,6 +247,7 @@ export default function WhatIsGnosisPage() {
             <div>
               <ArtBanner
                 src={artVitruvianManImg}
+                srcWebp={artVitruvianManImgWebp}
                 alt="Vitruvian Man by Leonardo da Vinci - human proportions inscribed in circle and square"
                 caption="Vitruvian Man, Leonardo da Vinci (c. 1490). The correspondence of the human microcosm with the divine macrocosm, a central teaching of Gnosis. Public domain."
                 objectPosition="center top"

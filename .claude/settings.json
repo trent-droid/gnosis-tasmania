@@ -14,7 +14,11 @@
       "WebFetch(domain:en.wikipedia.org)",
       "PowerShell(Copy-Item \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\src\\\\assets\\\\hero_creation_adam.jpg\" \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\public\\\\og-image.jpg\")",
       "Read(//c/Users/Carbil/.claude/projects/c--Users-Carbil-gnosistasmania/memory/**)",
-      "Bash(Copy-Item \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\src\\\\assets\\\\gssaw_logo.png\" \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\public\\\\favicon.png\" -Force)"
+      "Bash(Copy-Item \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\src\\\\assets\\\\gssaw_logo.png\" \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\public\\\\favicon.png\" -Force)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('version:', d.get\\('version'\\)\\)\")",
+      "Bash(node --input-type=module)"
     ],
     "additionalDirectories": [
       "c:\\Users\\Carbil\\.claude\\projects\\c--Users-Carbil-gnosistasmania\\memory"

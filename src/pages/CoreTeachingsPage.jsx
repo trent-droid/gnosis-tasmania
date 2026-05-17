@@ -3,11 +3,13 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
-import artKhunrathImg           from '../assets/art_khunrath_rebis.jpg'
-import artBouguereauVirginImg   from '../assets/art_bouguereau_virgin_child.jpg'
-import artKircherTreeOfLifeImg from '../assets/art_kircher_tree_of_life.png'
-import artRosariumImg        from '../assets/art_rosarium_king_queen.jpg'
-import heroCreationImg       from '../assets/hero_creation_adam.jpg'
+import artKhunrathImg              from '../assets/art_khunrath_rebis.jpg?format=webp'
+import artBouguereauVirginImg      from '../assets/art_bouguereau_virgin_child.jpg?format=webp'
+import artKircherTreeOfLifeImg     from '../assets/art_kircher_tree_of_life.png'
+import artKircherTreeOfLifeImgWebp from '../assets/art_kircher_tree_of_life.png?format=webp'
+import artRosariumImg              from '../assets/art_rosarium_king_queen.jpg'
+import artRosariumImgWebp          from '../assets/art_rosarium_king_queen.jpg?format=webp'
+import heroCreationImg             from '../assets/hero_creation_adam.jpg?format=webp'
 
 const THREE_FACTORS = [
   {
@@ -269,12 +271,15 @@ export default function CoreTeachingsPage() {
 
           <div className="flex justify-center">
             <figure className="w-full max-w-md overflow-hidden rounded-sm shadow-xl border border-[#c8b89a]">
-              <img
-                src={artKircherTreeOfLifeImg}
-                alt="Kabbalistic Tree of Life by Athanasius Kircher - the ten Sephiroth and the structure of creation"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={artKircherTreeOfLifeImgWebp} type="image/webp" />
+                <img
+                  src={artKircherTreeOfLifeImg}
+                  alt="Kabbalistic Tree of Life by Athanasius Kircher - the ten Sephiroth and the structure of creation"
+                  className="w-full h-auto"
+                  loading="lazy" decoding="async"
+                />
+              </picture>
               <figcaption className="text-xs text-[#6b5535] italic text-center py-2.5 px-4 bg-[#f8f1e3] border-t border-[#c8b89a]">
                 Athanasius Kircher, Oedipus Aegyptiacus (1652). The most influential rendering of the Kabbalistic Tree of Life in the Western esoteric tradition, mapping the ten Sephiroth and the structure of divine creation. Public domain.
               </figcaption>
@@ -290,6 +295,7 @@ export default function CoreTeachingsPage() {
             <div>
               <ArtBanner
                 src={artRosariumImg}
+                srcWebp={artRosariumImgWebp}
                 alt="Rosarium Philosophorum, the King and Queen of the alchemical process"
                 caption="Rosarium Philosophorum (c. 1550). The King and Queen, the solar and lunar forces within the human being, whose sacred union is the central alchemical mystery. Public domain."
                 objectPosition="center top"

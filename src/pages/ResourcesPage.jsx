@@ -3,8 +3,8 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
-import artFluddNaturaImg  from '../assets/art_fludd_natura.jpg'
-import heroMysticLambImg  from '../assets/hero_mystic_lamb.jpg'
+import artFluddNaturaImg  from '../assets/art_fludd_natura.jpg?format=webp'
+import heroMysticLambImg  from '../assets/hero_mystic_lamb.jpg?format=webp'
 
 const SAMAEL_BOOKS = [
   {

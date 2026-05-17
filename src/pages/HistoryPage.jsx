@@ -4,12 +4,13 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
-import heroEgyptianImg         from '../assets/hero_egyptian.jpg'
-import artFluddNaturaImg       from '../assets/art_fludd_natura.jpg'
-import artDurerImg             from '../assets/art_durer_melencolia.jpg'
-import artVitruvianManImg      from '../assets/art_vitruvian_man.jpg'
-import heroSchoolAthensImg     from '../assets/hero_school_athens.jpg'
-import artHermesTrismegistusImg from '../assets/art_hermes_trismegistus.jpg'
+import heroEgyptianImg            from '../assets/hero_egyptian.jpg?format=webp'
+import artFluddNaturaImg          from '../assets/art_fludd_natura.jpg?format=webp'
+import artDurerImg                from '../assets/art_durer_melencolia.jpg?format=webp'
+import artVitruvianManImg         from '../assets/art_vitruvian_man.jpg'
+import artVitruvianManImgWebp     from '../assets/art_vitruvian_man.jpg?format=webp'
+import heroSchoolAthensImg        from '../assets/hero_school_athens.jpg?format=webp'
+import artHermesTrismegistusImg   from '../assets/art_hermes_trismegistus.jpg?format=webp'
 
 const TIMELINE = [
   {
@@ -237,6 +238,7 @@ export default function HistoryPage() {
           <div>
             <ArtBanner
               src={artVitruvianManImg}
+              srcWebp={artVitruvianManImgWebp}
               alt="Vitruvian Man by Leonardo da Vinci"
               caption="Vitruvian Man, Leonardo da Vinci (c. 1490). The human being as microcosm of the divine cosmos: the central teaching of the Hermetic tradition. Public domain."
               objectPosition="center top"

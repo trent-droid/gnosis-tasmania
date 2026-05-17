@@ -6,13 +6,13 @@ import { GoldRule, QuoteParallax } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 
-import heroAngkorImg             from '../assets/hero_angkor.jpg'
-import artTreeOfLifeImg          from '../assets/art_tree_of_life.png'
-import artFluddNaturaImg         from '../assets/art_fludd_natura.jpg'
-import artKhunrathSyzygyImg      from '../assets/art_khunrath_syzygy.jpg'
-import artKhunrathKabbalismImg   from '../assets/art_khunrath_kabbalism.jpg'
-import artFluddSummumImg         from '../assets/art_fludd_summum.jpg'
-import esotericFlammarionColorizedImg from '../assets/esoteric_flammarion_colorized.jpg'
+import heroAngkorImg             from '../assets/hero_angkor.jpg?format=webp'
+import artTreeOfLifeImg          from '../assets/art_tree_of_life.png?format=webp'
+import artFluddNaturaImg         from '../assets/art_fludd_natura.jpg?format=webp'
+import artKhunrathSyzygyImg      from '../assets/art_khunrath_syzygy.jpg?format=webp'
+import artKhunrathKabbalismImg   from '../assets/art_khunrath_kabbalism.jpg?format=webp'
+import artFluddSummumImg         from '../assets/art_fludd_summum.jpg?format=webp'
+import esotericFlammarionColorizedImg from '../assets/esoteric_flammarion_colorized.jpg?format=webp'
 
 /* ─── Course data ──────────────────────────────────────────────────────────── */
 

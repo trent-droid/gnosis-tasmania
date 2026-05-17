@@ -4,11 +4,11 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
-import heroZenImg            from '../assets/hero_zen.jpg'
-import artBlakeJacobsImg     from '../assets/art_blake_jacobs_ladder.jpg'
-import artSplendorSolisImg   from '../assets/art_splendor_solis_resurrection.jpg'
-import esotericPeacockImg   from '../assets/esoteric_peacock.jpg'
-import artKhunrathRebisImg  from '../assets/art_khunrath_rebis.jpg'
+import heroZenImg            from '../assets/hero_zen.jpg?format=webp'
+import artBlakeJacobsImg     from '../assets/art_blake_jacobs_ladder.jpg?format=webp'
+import artSplendorSolisImg   from '../assets/art_splendor_solis_resurrection.jpg?format=webp'
+import esotericPeacockImg   from '../assets/esoteric_peacock.jpg?format=webp'
+import artKhunrathRebisImg  from '../assets/art_khunrath_rebis.jpg?format=webp'
 
 const PRACTICES = [
   {

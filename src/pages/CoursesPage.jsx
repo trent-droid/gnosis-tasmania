@@ -4,9 +4,9 @@ import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
-import artHermesTrismegistusImg from '../assets/art_hermes_trismegistus.jpg'
-import artBirthVenusImg    from '../assets/art_birth_venus.jpg'
-import esotericAdeptVaseImg from '../assets/esoteric_adept_vase.jpg'
+import artHermesTrismegistusImg from '../assets/art_hermes_trismegistus.jpg?format=webp'
+import artBirthVenusImg    from '../assets/art_birth_venus.jpg?format=webp'
+import esotericAdeptVaseImg from '../assets/esoteric_adept_vase.jpg?format=webp'
 
 const COURSES = [
   {

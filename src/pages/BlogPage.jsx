@@ -3,12 +3,16 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
-import heroCreationImg      from '../assets/hero_creation_adam.jpg'
-import heroZenImg           from '../assets/hero_zen.jpg'
-import heroSchoolAthensImg  from '../assets/hero_school_athens.jpg'
-import artBlakeJacobsImg    from '../assets/art_blake_jacobs_ladder.jpg'
-import artKhunrathImg       from '../assets/art_khunrath_rebis.jpg'
-import artCranachImg        from '../assets/art_cranach_garden_eden.jpg'
+import heroCreationImg         from '../assets/hero_creation_adam.jpg'
+import heroCreationImgWebp     from '../assets/hero_creation_adam.jpg?format=webp'
+import heroZenImg              from '../assets/hero_zen.jpg'
+import heroZenImgWebp          from '../assets/hero_zen.jpg?format=webp'
+import heroSchoolAthensImg     from '../assets/hero_school_athens.jpg'
+import heroSchoolAthensImgWebp from '../assets/hero_school_athens.jpg?format=webp'
+import artBlakeJacobsImg       from '../assets/art_blake_jacobs_ladder.jpg?format=webp'
+import artKhunrathImg          from '../assets/art_khunrath_rebis.jpg'
+import artKhunrathImgWebp      from '../assets/art_khunrath_rebis.jpg?format=webp'
+import artCranachImg           from '../assets/art_cranach_garden_eden.jpg?format=webp'
 
 const ARTICLES = [
   {
@@ -17,7 +21,7 @@ const ARTICLES = [
     label: 'Practice',
     title: 'Daily Self-Observation: A Practical Guide',
     excerpt: 'The most fundamental practice of the Gnostic path is also its most accessible. Self-observation requires no special equipment, no particular place, and no prior training, only a willingness to look honestly at what is actually happening within.',
-    img: { src: heroCreationImg, alt: 'Creation of Adam by Michelangelo', pos: 'center top' },
+    img: { src: heroCreationImg, srcWebp: heroCreationImgWebp, alt: 'Creation of Adam by Michelangelo', pos: 'center top' },
     content: [
       {
         heading: 'What Self-Observation Actually Means',
@@ -47,7 +51,7 @@ const ARTICLES = [
     label: 'Meditation',
     title: 'Meditation for Busy Lives',
     excerpt: 'One of the most common objections to beginning a meditation practice is time. "I don\'t have time to meditate" is a statement that, on examination, usually reveals itself as a statement about priorities rather than hours.',
-    img: { src: heroZenImg, alt: 'A place of stillness and peace for meditation', pos: 'center center' },
+    img: { src: heroZenImg, srcWebp: heroZenImgWebp, alt: 'A place of stillness and peace for meditation', pos: 'center center' },
     content: [
       {
         heading: 'The Time Objection',
@@ -77,7 +81,7 @@ const ARTICLES = [
     label: 'Wisdom Traditions',
     title: 'Universal Gnosis: Wisdom Across the Traditions',
     excerpt: 'One of the most striking features of the Gnostic tradition is its insistence that the wisdom it transmits is not the property of any single culture, religion, or historical period, but is universal, perennial, and hidden within the heart of every authentic spiritual tradition.',
-    img: { src: heroSchoolAthensImg, alt: 'School of Athens by Raphael, philosophers of many traditions gathered in dialogue', pos: 'center 30%' },
+    img: { src: heroSchoolAthensImg, srcWebp: heroSchoolAthensImgWebp, alt: 'School of Athens by Raphael, philosophers of many traditions gathered in dialogue', pos: 'center 30%' },
     content: [
       {
         heading: 'The One in Many',
@@ -107,7 +111,7 @@ const ARTICLES = [
     label: 'Core Teachings',
     title: 'Understanding the Three Factors',
     excerpt: 'The "Three Factors of the Revolution of Consciousness" is perhaps the most central teaching in the contemporary Gnostic tradition, a synthesis of what every authentic path has understood to be the essential movement of genuine spiritual development.',
-    img: { src: artKhunrathImg, alt: 'Heinrich Khunrath alchemical diagram, the oratory and laboratory', pos: 'center center' },
+    img: { src: artKhunrathImg, srcWebp: artKhunrathImgWebp, alt: 'Heinrich Khunrath alchemical diagram, the oratory and laboratory', pos: 'center center' },
     content: [
       {
         heading: 'Why Three?',
@@ -184,6 +188,7 @@ export default function BlogPage() {
             <div className="mb-10">
               <ArtBanner
                 src={img.src}
+                srcWebp={img.srcWebp}
                 alt={img.alt}
                 objectPosition={img.pos}
                 heightClass="h-56 sm:h-72"

@@ -5,25 +5,31 @@ import Footer from './components/Footer.jsx'
 import { GoldRule, SectionLabel, CheckIcon, Blockquote } from './components/ui.jsx'
 import { usePageMeta } from './hooks/usePageMeta.js'
 
-import fourThreeTwoOneImg  from './assets/esoteric_four_three_two_one.jpg'
-import heroCreationAdamImg from './assets/hero_creation_adam.jpg'
-import heroSchoolAthensImg from './assets/hero_school_athens.jpg'
-import heroMysticLambImg   from './assets/hero_mystic_lamb.jpg'
-import heroPrimaveraImg    from './assets/hero_primavera.jpg'
-import esotericSunMoonImg  from './assets/esoteric_sun_moon.jpg'
-import artBouguereauImg    from './assets/art_bouguereau_angels.jpg'
+import fourThreeTwoOneImg      from './assets/esoteric_four_three_two_one.jpg'
+import fourThreeTwoOneImgWebp  from './assets/esoteric_four_three_two_one.jpg?format=webp'
+import heroCreationAdamImg     from './assets/hero_creation_adam.jpg'
+import heroCreationAdamImgWebp from './assets/hero_creation_adam.jpg?format=webp'
+import heroSchoolAthensImg     from './assets/hero_school_athens.jpg'
+import heroSchoolAthensImgWebp from './assets/hero_school_athens.jpg?format=webp'
+import heroMysticLambImg       from './assets/hero_mystic_lamb.jpg'
+import heroMysticLambImgWebp   from './assets/hero_mystic_lamb.jpg?format=webp'
+import heroPrimaveraImg        from './assets/hero_primavera.jpg'
+import heroPrimaveraImgWebp    from './assets/hero_primavera.jpg?format=webp'
+import esotericSunMoonImg      from './assets/esoteric_sun_moon.jpg'
+import esotericSunMoonImgWebp  from './assets/esoteric_sun_moon.jpg?format=webp'
+import artBouguereauImg        from './assets/art_bouguereau_angels.jpg?format=webp'
 
 const HERO_IMAGES = [
-  { id: 'creation-adam', src: heroCreationAdamImg, objectPosition: 'center center',
+  { id: 'creation-adam', src: heroCreationAdamImg, srcWebp: heroCreationAdamImgWebp, objectPosition: 'center center',
     overlay: 'bg-gradient-to-b from-black/65 via-black/40 to-black/70',
     credit: 'Creation of Adam, Michelangelo, Sistine Chapel (1512). Public domain.' },
-  { id: 'school-athens', src: heroSchoolAthensImg, objectPosition: 'center 35%',
+  { id: 'school-athens', src: heroSchoolAthensImg, srcWebp: heroSchoolAthensImgWebp, objectPosition: 'center 35%',
     overlay: 'bg-gradient-to-b from-black/60 via-black/35 to-black/65',
     credit: 'The School of Athens, Raphael, Vatican (1511). Public domain.' },
-  { id: 'mystic-lamb',   src: heroMysticLambImg,   objectPosition: 'center 55%',
+  { id: 'mystic-lamb',   src: heroMysticLambImg,   srcWebp: heroMysticLambImgWebp,   objectPosition: 'center 55%',
     overlay: 'bg-gradient-to-b from-black/55 via-black/30 to-black/60',
     credit: 'Adoration of the Mystic Lamb, Jan & Hubert van Eyck, Ghent Altarpiece (c.1432). Public domain.' },
-  { id: 'primavera',     src: heroPrimaveraImg,    objectPosition: 'center 30%',
+  { id: 'primavera',     src: heroPrimaveraImg,    srcWebp: heroPrimaveraImgWebp,    objectPosition: 'center 30%',
     overlay: 'bg-gradient-to-b from-black/70 via-black/45 to-black/65',
     credit: 'La Primavera, Sandro Botticelli, Uffizi Gallery (c.1482). Public domain.' },
 ]
@@ -117,12 +123,17 @@ export default function App() {
         >
           <div className="absolute inset-0" aria-hidden="true">
             {HERO_IMAGES.map((img, i) => mounted.has(i) && (
-              <img key={img.id} src={img.src} alt=""
-                fetchpriority={i === 0 ? 'high' : 'low'}
-                decoding={i === 0 ? 'sync' : 'async'}
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ objectPosition: img.objectPosition, opacity: i === currentBg ? 1 : 0, transition: 'opacity 2s ease-in-out', willChange: 'opacity' }}
-              />
+              <picture key={img.id} className="absolute inset-0 w-full h-full"
+                style={{ opacity: i === currentBg ? 1 : 0, transition: 'opacity 2s ease-in-out', willChange: 'opacity' }}
+              >
+                <source srcSet={img.srcWebp} type="image/webp" />
+                <img src={img.src} alt=""
+                  fetchpriority={i === 0 ? 'high' : 'low'}
+                  decoding={i === 0 ? 'sync' : 'async'}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: img.objectPosition }}
+                />
+              </picture>
             ))}
             {HERO_IMAGES.map((img, i) => mounted.has(i) && (
               <div key={`ov-${img.id}`}
@@ -221,9 +232,12 @@ export default function App() {
               <div className="md:col-span-2">
                 <figure className="flex flex-col gap-3">
                   <div className="overflow-hidden rounded-sm shadow-lg border border-[#c8b89a]">
-                    <img src={esotericSunMoonImg}
-                      alt="Esoteric illustration of the sun and moon - the two great luminaries representing the inner masculine and feminine principles in the Gnostic tradition."
-                      className="block w-full h-auto" loading="lazy" />
+                    <picture>
+                      <source srcSet={esotericSunMoonImgWebp} type="image/webp" />
+                      <img src={esotericSunMoonImg}
+                        alt="Esoteric illustration of the sun and moon - the two great luminaries representing the inner masculine and feminine principles in the Gnostic tradition."
+                        className="block w-full h-auto" loading="lazy" decoding="async" />
+                    </picture>
                   </div>
                   <figcaption className="text-xs text-[#6b5535] italic text-center leading-relaxed">
                     The sun and moon as inner principles. Public domain.
@@ -251,11 +265,14 @@ export default function App() {
             <div className="flex justify-center mb-14">
               <figure className="flex flex-col items-center gap-3 max-w-sm w-full">
                 <div className="overflow-hidden rounded-sm shadow-xl border border-[#c8b89a]">
-                  <img src={fourThreeTwoOneImg}
-                    alt="Heinrich Khunrath's engraving 'The Four, the Three, the Two, and the One' - an alchemical symbol of the threefold path of inner transformation."
-                    className="block w-full h-auto" loading="lazy"
-                    style={{ filter: 'sepia(15%) contrast(1.08) brightness(0.97)' }}
-                  />
+                  <picture>
+                    <source srcSet={fourThreeTwoOneImgWebp} type="image/webp" />
+                    <img src={fourThreeTwoOneImg}
+                      alt="Heinrich Khunrath's engraving 'The Four, the Three, the Two, and the One' - an alchemical symbol of the threefold path of inner transformation."
+                      className="block w-full h-auto" loading="lazy" decoding="async"
+                      style={{ filter: 'sepia(15%) contrast(1.08) brightness(0.97)' }}
+                    />
+                  </picture>
                 </div>
                 <figcaption className="text-xs text-[#6b5535] italic text-center leading-relaxed">
                   "The Four, the Three, the Two, and the One," Heinrich Khunrath, Amphitheatrum Sapientiae Aeternae (1595). Public domain.

@@ -4,7 +4,7 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel, SectionHeading, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
-import esotericFlammarionImg from '../assets/esoteric_flammarion_colorized.jpg'
+import esotericFlammarionImg from '../assets/esoteric_flammarion_colorized.jpg?format=webp'
 
 const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID
 const RECAPTCHA_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY

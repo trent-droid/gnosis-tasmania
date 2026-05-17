@@ -5,9 +5,11 @@ import { GoldRule, SectionLabel } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 
-import heroPrimaveraImg     from '../assets/hero_primavera.jpg'
-import esotericLaboratoryImg from '../assets/esoteric_laboratory.jpg'
-import artMonaLisaImg        from '../assets/art_mona_lisa.jpg'
+import heroPrimaveraImg          from '../assets/hero_primavera.jpg?format=webp'
+import esotericLaboratoryImg     from '../assets/esoteric_laboratory.jpg'
+import esotericLaboratoryImgWebp from '../assets/esoteric_laboratory.jpg?format=webp'
+import artMonaLisaImg            from '../assets/art_mona_lisa.jpg'
+import artMonaLisaImgWebp        from '../assets/art_mona_lisa.jpg?format=webp'
 
 /* ─── Page ─────────────────────────────────────────────────────────────────── */
 
@@ -148,13 +150,16 @@ export default function MeditationPage() {
 
         {/* ── Art banner: Bouguereau - Song of the Angels ──────────────────── */}
         <figure className="overflow-hidden shadow-xl border-y border-[#c8b89a]" aria-label="Artwork">
-          <img
-            src={esotericLaboratoryImg}
-            alt="An alchemical laboratory from an esoteric manuscript - the inner laboratory where the work of consciousness transformation is performed."
-            className="w-full h-72 sm:h-96 object-cover"
-            style={{ objectPosition: 'center 30%' }}
-            loading="lazy"
-          />
+          <picture>
+            <source srcSet={esotericLaboratoryImgWebp} type="image/webp" />
+            <img
+              src={esotericLaboratoryImg}
+              alt="An alchemical laboratory from an esoteric manuscript - the inner laboratory where the work of consciousness transformation is performed."
+              className="w-full h-72 sm:h-96 object-cover"
+              style={{ objectPosition: 'center 30%' }}
+              loading="lazy" decoding="async"
+            />
+          </picture>
           <figcaption className="text-xs text-[#6b5535] italic text-center py-2.5 px-4 bg-[#f8f1e3] border-t border-[#c8b89a]">
             The alchemical laboratory, from an esoteric manuscript. The inner work of transformation. Public domain.
           </figcaption>
@@ -209,12 +214,15 @@ export default function MeditationPage() {
               <div className="md:col-span-2">
                 <figure className="flex flex-col items-center gap-3">
                   <div className="overflow-hidden rounded-sm shadow-lg border border-[#c8b89a] w-full">
-                    <img
-                      src={artMonaLisaImg}
-                      alt="Mona Lisa by Leonardo da Vinci - the serene, inward gaze of one who has turned attention within, an image of the contemplative quality cultivated through Gnostic meditation."
-                      className="block w-full h-auto"
-                      loading="lazy"
-                    />
+                    <picture>
+                      <source srcSet={artMonaLisaImgWebp} type="image/webp" />
+                      <img
+                        src={artMonaLisaImg}
+                        alt="Mona Lisa by Leonardo da Vinci - the serene, inward gaze of one who has turned attention within, an image of the contemplative quality cultivated through Gnostic meditation."
+                        className="block w-full h-auto"
+                        loading="lazy" decoding="async"
+                      />
+                    </picture>
                   </div>
                   <figcaption className="text-xs text-[#6b5535] italic text-center leading-relaxed">
                     Mona Lisa, Leonardo da Vinci (c. 1503-1519). Louvre, Paris. Public domain.
