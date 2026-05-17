@@ -88,12 +88,18 @@ export default function App() {
 
   const [currentBg, setCurrentBg] = useState(0)
   const [paused,    setPaused]    = useState(false)
+  const [mounted,   setMounted]   = useState(() => new Set([0]))
 
   useEffect(() => {
     if (paused) return
     const t = setInterval(() => setCurrentBg(i => (i + 1) % HERO_IMAGES.length), 8000)
     return () => clearInterval(t)
   }, [paused])
+
+  useEffect(() => {
+    const next = (currentBg + 1) % HERO_IMAGES.length
+    setMounted(prev => prev.has(next) ? prev : new Set([...prev, next]))
+  }, [currentBg])
 
   const goTo = useCallback(i => { setCurrentBg(i); setPaused(true) }, [])
 
@@ -110,13 +116,15 @@ export default function App() {
           onMouseLeave={() => setPaused(false)}
         >
           <div className="absolute inset-0" aria-hidden="true">
-            {HERO_IMAGES.map((img, i) => (
-              <img key={img.id} src={img.src} alt="" loading={i === 0 ? 'eager' : 'lazy'}
+            {HERO_IMAGES.map((img, i) => mounted.has(i) && (
+              <img key={img.id} src={img.src} alt=""
+                fetchpriority={i === 0 ? 'high' : 'low'}
+                decoding={i === 0 ? 'sync' : 'async'}
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ objectPosition: img.objectPosition, opacity: i === currentBg ? 1 : 0, transition: 'opacity 2s ease-in-out', willChange: 'opacity' }}
               />
             ))}
-            {HERO_IMAGES.map((img, i) => (
+            {HERO_IMAGES.map((img, i) => mounted.has(i) && (
               <div key={`ov-${img.id}`}
                 className={`absolute inset-0 ${img.overlay}`}
                 style={{ opacity: i === currentBg ? 1 : 0, transition: 'opacity 2s ease-in-out' }}
