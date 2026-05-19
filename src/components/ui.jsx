@@ -1,7 +1,14 @@
-﻿/* Shared UI primitives used across all pages */
+/* Shared UI primitives used across all pages */
 
+// ─── Parallax-style hero banner ─────────────────────────────────────────────
+// Uses a real <img> element (not background-attachment:fixed) so the browser
+// can apply fetchpriority, srcset, and correct compositing on all devices.
+// background-attachment:fixed was the cause of the "starts large/sticky then
+// snaps" CLS bug on iOS and mobile Chrome — this completely eliminates it.
 export function HeroParallax({
   src,
+  srcset,
+  sizes,
   alt = '',
   overlay = 'bg-gradient-to-b from-[#1c1409]/65 via-[#1c1409]/50 to-[#1c1409]/80',
   heightClass = 'h-[65vh] min-h-[440px]',
@@ -10,44 +17,48 @@ export function HeroParallax({
 }) {
   return (
     <header className={`relative ${heightClass} flex items-center justify-center overflow-hidden`}>
-      <div
-        className="absolute inset-0 bg-cover bg-fixed"
-        style={{ backgroundImage: `url(${src})`, backgroundPosition: position }}
-        role="img"
-        aria-label={alt}
+      <img
+        src={src}
+        srcSet={srcset}
+        sizes={sizes || (srcset ? '100vw' : undefined)}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: position }}
+        fetchpriority="high"
+        decoding="async"
       />
       <div className={`absolute inset-0 ${overlay}`} aria-hidden="true" />
+      {/* Alt text for screen readers — headings inside children cover this */}
+      {alt && <span className="sr-only">{alt}</span>}
       {children}
     </header>
   )
 }
 
+// ─── Parallax-style CTA banner ──────────────────────────────────────────────
 export function ParallaxCTA({
   src,
+  srcset,
+  sizes,
   alt = '',
   overlay = 'bg-[#1c1409]/80',
   position = 'center center',
-  fixed = true,
   children,
 }) {
   return (
     <section className="relative py-24 px-4 overflow-hidden fade-section">
-      {fixed ? (
-        <div
-          className="absolute inset-0 bg-cover bg-fixed"
-          style={{ backgroundImage: `url(${src})`, backgroundPosition: position }}
-          role="img"
-          aria-label={alt}
-        />
-      ) : (
-        <img
-          src={src}
-          alt={alt}
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: position }}
-          aria-hidden="true"
-        />
-      )}
+      <img
+        src={src}
+        srcSet={srcset}
+        sizes={sizes || (srcset ? '100vw' : undefined)}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: position }}
+        loading="lazy"
+        decoding="async"
+      />
       <div className={`absolute inset-0 ${overlay}`} aria-hidden="true" />
       <div className="relative z-10">{children}</div>
     </section>
@@ -80,8 +91,11 @@ export function CheckIcon() {
   )
 }
 
+// ─── Parallax-style quote block ─────────────────────────────────────────────
 export function QuoteParallax({
   src,
+  srcset,
+  sizes,
   alt = '',
   position = 'center center',
   overlay = 'bg-[#1c1409]/75',
@@ -90,11 +104,16 @@ export function QuoteParallax({
 }) {
   return (
     <section className="relative py-24 px-4 overflow-hidden fade-section">
-      <div
-        className="absolute inset-0 bg-cover bg-fixed"
-        style={{ backgroundImage: `url(${src})`, backgroundPosition: position }}
-        role="img"
-        aria-label={alt}
+      <img
+        src={src}
+        srcSet={srcset}
+        sizes={sizes || (srcset ? '100vw' : undefined)}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: position }}
+        loading="lazy"
+        decoding="async"
       />
       <div className={`absolute inset-0 ${overlay}`} aria-hidden="true" />
       <div className="relative z-10 max-w-3xl mx-auto text-center">
@@ -166,4 +185,3 @@ export function SectionHeading({ label, title, subtitle, children, light = false
     </div>
   )
 }
-

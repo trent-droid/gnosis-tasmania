@@ -63,9 +63,13 @@ export default function MeditationPage() {
         {/* ── Hero - La Primavera ───────────────────────────────────────────── */}
         <header className="relative flex flex-col items-center justify-center text-center px-4 pt-16 min-h-[60vh] overflow-hidden" aria-label="Page hero">
           <div className="absolute inset-0" aria-hidden="true">
-            <div
-              className="absolute inset-0 bg-cover bg-fixed"
-              style={{ backgroundImage: `url(${heroPrimaveraImg})`, backgroundPosition: 'center 25%' }}
+            <img
+              src={heroPrimaveraImg}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: 'center 25%' }}
+              fetchpriority="high"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-[#1c1409]/65 via-[#1c1409]/45 to-[#1c1409]/75" />
           </div>

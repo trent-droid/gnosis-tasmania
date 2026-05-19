@@ -311,9 +311,13 @@ export default function CoursePage() {
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
         <header className="relative flex flex-col items-center justify-center text-center px-4 pt-16 min-h-[55vh] overflow-hidden" aria-label="Course hero">
           <div className="absolute inset-0" aria-hidden="true">
-            <div
-              className="absolute inset-0 bg-cover bg-fixed"
-              style={{ backgroundImage: `url(${heroAngkorImg})`, backgroundPosition: 'center 30%' }}
+            <img
+              src={heroAngkorImg}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: 'center 30%' }}
+              fetchpriority="high"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-[#1c1409]/70 via-[#1c1409]/50 to-[#1c1409]/75" />
           </div>

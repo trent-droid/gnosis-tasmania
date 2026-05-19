@@ -3,14 +3,23 @@
 @tailwind utilities;
 
 /* ── Scroll fade-in ─────────────────────────────────────────────────────────── */
+/* will-change on the initial state promotes the element to its own GPU layer   */
+/* before the animation fires, eliminating the first-frame jank where the       */
+/* browser has to promote the layer mid-animation.                               */
 section.fade-section {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(16px);
+  /* ease-out-quint: snappy start, smooth deceleration — far less janky than    */
+  /* the default "ease" which has a slow start that looks laggy on scroll.      */
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 section.fade-section.is-visible {
   opacity: 1;
-  transform: none;
+  transform: translateY(0);
+  /* Release the GPU layer once animation is complete to free memory. */
+  will-change: auto;
 }
 
 /* ── Respect prefers-reduced-motion ─────────────────────────────────────────── */
@@ -19,13 +28,7 @@ section.fade-section.is-visible {
     opacity: 1;
     transform: none;
     transition: none;
-  }
-}
-
-/* ── Mobile: disable parallax (background-attachment: fixed unsupported on iOS) */
-@media (hover: none) {
-  .bg-fixed {
-    background-attachment: scroll !important;
+    will-change: auto;
   }
 }
 

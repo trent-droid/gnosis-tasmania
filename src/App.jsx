@@ -328,10 +328,14 @@ export default function App() {
 
         {/* ── Divine Mother CTA ─────────────────────────────────────────────── */}
         <section className="relative py-24 px-4 overflow-hidden fade-section" aria-label="Call to action">
-          <div
-            className="absolute inset-0 bg-cover bg-fixed"
-            style={{ backgroundImage: `url(${artBouguereauImg})`, backgroundPosition: 'center 20%' }}
+          <img
+            src={artBouguereauImg}
+            alt=""
             aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: 'center 20%' }}
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1c1409]/95 via-[#1c1409]/80 to-[#1c1409]/60" aria-hidden="true" />
           <div className="relative z-10 max-w-3xl mx-auto">
