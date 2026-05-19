@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { GoldRule, QuoteParallax } from '../components/ui.jsx'
+import { GoldRule, QuoteParallax, ParallaxImage } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 
@@ -311,13 +311,12 @@ export default function CoursePage() {
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
         <header className="relative flex flex-col items-center justify-center text-center px-4 pt-16 min-h-[55vh] overflow-hidden" aria-label="Course hero">
           <div className="absolute inset-0" aria-hidden="true">
-            <img
+            <ParallaxImage
               src={heroAngkorImg}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ objectPosition: 'center 30%' }}
-              fetchpriority="high"
-              decoding="async"
+              position="center 30%"
+              travelPx={80}
+              fetchPriority="high"
+              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-[#1c1409]/70 via-[#1c1409]/50 to-[#1c1409]/75" />
           </div>

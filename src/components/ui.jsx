@@ -1,13 +1,120 @@
 /* Shared UI primitives used across all pages */
 
-// ─── Parallax-style hero banner ─────────────────────────────────────────────
-// Uses a real <img> element (not background-attachment:fixed) so the browser
-// can apply fetchpriority, srcset, and correct compositing on all devices.
-// background-attachment:fixed was the cause of the "starts large/sticky then
-// snaps" CLS bug on iOS and mobile Chrome — this completely eliminates it.
+import { useRef, useEffect, useCallback } from 'react'
+
+// ─── Parallax engine ────────────────────────────────────────────────────────
+//
+// How it works:
+//   The image is made `travelPx` pixels taller than its container and offset
+//   upward by half that amount so it always covers the container regardless of
+//   scroll position.  A passive scroll listener (throttled via RAF) reads the
+//   section's viewport position and sets `transform: translateY()` on the image
+//   — which runs entirely on the GPU compositing layer and never triggers layout.
+//
+//   progress = rect.bottom / (rect.height + vh)
+//     → 1.0 when the section first enters the viewport from the bottom
+//     → 0.5 when the section is centred in the viewport
+//     → 0.0 when the section fully exits the top of the viewport
+//
+//   offset = (progress − 0.5) × travelPx
+//     → image sits high in frame when section enters, low when it exits,
+//       creating the slow-depth effect the user expects.
+//
+// Disabled automatically for:
+//   • prefers-reduced-motion
+//   • touch/stylus-primary devices (no fine pointer = phone/tablet)
+//     On those devices the image is centred statically — no CLS, no jank.
+//
+// CLS prevention:
+//   The container div sets its height via CSS classes (e.g. h-[65vh]).  The
+//   image never influences layout because it is `position: absolute` inside an
+//   `overflow-hidden` parent.  Space is always reserved correctly before the
+//   image loads.
+
+export function ParallaxImage({
+  src,
+  srcSet,
+  sizes,
+  position = 'center center',
+  travelPx = 80,
+  fetchPriority,
+  loading = 'lazy',
+  className = '',
+}) {
+  const wrapRef = useRef(null)
+  const imgRef  = useRef(null)
+  const rafRef  = useRef(null)
+  const liveRef = useRef(false) // true only while listeners are active
+
+  const update = useCallback(() => {
+    if (!wrapRef.current || !imgRef.current || !liveRef.current) return
+    const rect    = wrapRef.current.getBoundingClientRect()
+    const vh      = window.innerHeight
+    const raw     = rect.bottom / (rect.height + vh)
+    const progress = Math.min(1, Math.max(0, raw))
+    const offset  = (progress - 0.5) * travelPx
+    imgRef.current.style.transform = `translateY(${offset.toFixed(2)}px)`
+  }, [travelPx])
+
+  useEffect(() => {
+    const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    // "fine" pointer = mouse; absence means touch/pen primary device
+    const noHover  = !window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    if (noMotion || noHover) return // static image on those devices
+
+    liveRef.current = true
+
+    const onScroll = () => {
+      if (rafRef.current) return
+      rafRef.current = requestAnimationFrame(() => {
+        update()
+        rafRef.current = null
+      })
+    }
+
+    update() // set position on mount before first scroll
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', update, { passive: true })
+
+    return () => {
+      liveRef.current = false
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', update)
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    }
+  }, [update])
+
+  return (
+    // overflow-hidden clips the image that is intentionally taller than its container
+    <div ref={wrapRef} className={`absolute inset-0 overflow-hidden ${className}`} aria-hidden="true">
+      <img
+        ref={imgRef}
+        src={src}
+        srcSet={srcSet || undefined}
+        sizes={srcSet ? (sizes || '100vw') : undefined}
+        alt=""
+        className="absolute left-0 right-0 w-full object-cover pointer-events-none select-none"
+        style={{
+          // Taller than container by travelPx; centred so half overflows each edge
+          height: `calc(100% + ${travelPx}px)`,
+          top: `${-(travelPx / 2)}px`,
+          objectPosition: position,
+          willChange: 'transform',
+        }}
+        fetchpriority={fetchPriority}
+        loading={loading}
+        decoding="async"
+      />
+    </div>
+  )
+}
+
+// ─── HeroParallax ───────────────────────────────────────────────────────────
+// Above-fold page banner. fetchpriority="high" for LCP; larger travelPx since
+// the section is tall and the user sees the parallax immediately on scroll.
 export function HeroParallax({
   src,
-  srcset,
+  srcSet,
   sizes,
   alt = '',
   overlay = 'bg-gradient-to-b from-[#1c1409]/65 via-[#1c1409]/50 to-[#1c1409]/80',
@@ -17,29 +124,28 @@ export function HeroParallax({
 }) {
   return (
     <header className={`relative ${heightClass} flex items-center justify-center overflow-hidden`}>
-      <img
+      <ParallaxImage
         src={src}
-        srcSet={srcset}
-        sizes={sizes || (srcset ? '100vw' : undefined)}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: position }}
-        fetchpriority="high"
-        decoding="async"
+        srcSet={srcSet}
+        sizes={sizes}
+        position={position}
+        travelPx={80}
+        fetchPriority="high"
+        loading="eager"
       />
       <div className={`absolute inset-0 ${overlay}`} aria-hidden="true" />
-      {/* Alt text for screen readers — headings inside children cover this */}
       {alt && <span className="sr-only">{alt}</span>}
       {children}
     </header>
   )
 }
 
-// ─── Parallax-style CTA banner ──────────────────────────────────────────────
+// ─── ParallaxCTA ────────────────────────────────────────────────────────────
+// Below-fold call-to-action banner. loading="lazy"; smaller travel since these
+// sections are shorter.
 export function ParallaxCTA({
   src,
-  srcset,
+  srcSet,
   sizes,
   alt = '',
   overlay = 'bg-[#1c1409]/80',
@@ -48,16 +154,13 @@ export function ParallaxCTA({
 }) {
   return (
     <section className="relative py-24 px-4 overflow-hidden fade-section">
-      <img
+      <ParallaxImage
         src={src}
-        srcSet={srcset}
-        sizes={sizes || (srcset ? '100vw' : undefined)}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: position }}
+        srcSet={srcSet}
+        sizes={sizes}
+        position={position}
+        travelPx={60}
         loading="lazy"
-        decoding="async"
       />
       <div className={`absolute inset-0 ${overlay}`} aria-hidden="true" />
       <div className="relative z-10">{children}</div>
@@ -91,10 +194,11 @@ export function CheckIcon() {
   )
 }
 
-// ─── Parallax-style quote block ─────────────────────────────────────────────
+// ─── QuoteParallax ──────────────────────────────────────────────────────────
+// Pull-quote banner with background image parallax.
 export function QuoteParallax({
   src,
-  srcset,
+  srcSet,
   sizes,
   alt = '',
   position = 'center center',
@@ -104,16 +208,13 @@ export function QuoteParallax({
 }) {
   return (
     <section className="relative py-24 px-4 overflow-hidden fade-section">
-      <img
+      <ParallaxImage
         src={src}
-        srcSet={srcset}
-        sizes={sizes || (srcset ? '100vw' : undefined)}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: position }}
+        srcSet={srcSet}
+        sizes={sizes}
+        position={position}
+        travelPx={60}
         loading="lazy"
-        decoding="async"
       />
       <div className={`absolute inset-0 ${overlay}`} aria-hidden="true" />
       <div className="relative z-10 max-w-3xl mx-auto text-center">

@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
-import { GoldRule, SectionLabel, CheckIcon, Blockquote } from './components/ui.jsx'
+import { GoldRule, SectionLabel, CheckIcon, Blockquote, ParallaxImage } from './components/ui.jsx'
 import { usePageMeta } from './hooks/usePageMeta.js'
 
 import fourThreeTwoOneImg           from './assets/esoteric_four_three_two_one.jpg'
@@ -328,14 +328,11 @@ export default function App() {
 
         {/* ── Divine Mother CTA ─────────────────────────────────────────────── */}
         <section className="relative py-24 px-4 overflow-hidden fade-section" aria-label="Call to action">
-          <img
+          <ParallaxImage
             src={artBouguereauImg}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: 'center 20%' }}
+            position="center 20%"
+            travelPx={60}
             loading="lazy"
-            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1c1409]/95 via-[#1c1409]/80 to-[#1c1409]/60" aria-hidden="true" />
           <div className="relative z-10 max-w-3xl mx-auto">
