@@ -331,8 +331,6 @@ export default function App() {
           <ParallaxImage
             src={artBouguereauImg}
             position="center 20%"
-            travelPx={60}
-            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1c1409]/95 via-[#1c1409]/80 to-[#1c1409]/60" aria-hidden="true" />
           <div className="relative z-10 max-w-3xl mx-auto">

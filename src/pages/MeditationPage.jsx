@@ -66,9 +66,6 @@ export default function MeditationPage() {
             <ParallaxImage
               src={heroPrimaveraImg}
               position="center 25%"
-              travelPx={80}
-              fetchPriority="high"
-              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-[#1c1409]/65 via-[#1c1409]/45 to-[#1c1409]/75" />
           </div>

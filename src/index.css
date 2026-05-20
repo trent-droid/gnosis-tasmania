@@ -3,22 +3,21 @@
 @tailwind utilities;
 
 /* ── Scroll fade-in ─────────────────────────────────────────────────────────── */
-/* will-change on the initial state promotes the element to its own GPU layer   */
-/* before the animation fires, eliminating the first-frame jank where the       */
-/* browser has to promote the layer mid-animation.                               */
+/*                                                                               */
+/* Opacity-only fade — intentionally no translateY.                              */
+/*                                                                               */
+/* WHY: CSS `background-attachment: fixed` breaks inside any ancestor that has   */
+/* a CSS transform applied (even translateY(0) keeps the stacking context).      */
+/* Using transform: translateY on fade-section elements silently disables CSS    */
+/* parallax on all QuoteParallax and ParallaxCTA children.  Opacity-only fade    */
+/* avoids creating a stacking context so parallax works in every section.        */
 section.fade-section {
   opacity: 0;
-  transform: translateY(16px);
-  /* ease-out-quint: snappy start, smooth deceleration — far less janky than    */
-  /* the default "ease" which has a slow start that looks laggy on scroll.      */
-  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity;
 }
 section.fade-section.is-visible {
   opacity: 1;
-  transform: translateY(0);
-  /* Release the GPU layer once animation is complete to free memory. */
   will-change: auto;
 }
 
@@ -26,9 +25,12 @@ section.fade-section.is-visible {
 @media (prefers-reduced-motion: reduce) {
   section.fade-section {
     opacity: 1;
-    transform: none;
     transition: none;
     will-change: auto;
+  }
+  /* Keep backgrounds static for users who prefer reduced motion */
+  .parallax-bg {
+    background-attachment: scroll !important;
   }
 }
 
@@ -50,4 +52,30 @@ section.fade-section.is-visible {
 :focus-visible {
   outline: 2px solid #c9a96e;
   outline-offset: 2px;
+}
+
+/* ── CSS Parallax ───────────────────────────────────────────────────────────── */
+/*                                                                               */
+/* How it works:                                                                  */
+/*   background-attachment: fixed positions the background relative to the       */
+/*   viewport instead of the element.  As the user scrolls, the section moves   */
+/*   but the background stays in place — the "window" reveals different parts    */
+/*   of the image, creating a slow-depth parallax effect.                        */
+/*                                                                               */
+/* Default: scroll (safe on all devices)                                         */
+/*   — iOS Safari has a well-known rendering bug with background-attachment:fixed */
+/*     that causes images to render at viewport size and then snap.  The default */
+/*     of scroll prevents this completely.                                        */
+/*                                                                               */
+/* Desktop (hover:hover) and (pointer:fine) = mouse-primary device:             */
+/*   — Upgraded to fixed.  This is the parallax tier.                            */
+/*   — Touch/pen/stylus devices continue to get scroll (no snapping, no CLS).   */
+
+.parallax-bg {
+  background-attachment: scroll;
+}
+@media (hover: hover) and (pointer: fine) {
+  .parallax-bg {
+    background-attachment: fixed;
+  }
 }

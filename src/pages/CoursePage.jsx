@@ -314,9 +314,6 @@ export default function CoursePage() {
             <ParallaxImage
               src={heroAngkorImg}
               position="center 30%"
-              travelPx={80}
-              fetchPriority="high"
-              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-[#1c1409]/70 via-[#1c1409]/50 to-[#1c1409]/75" />
           </div>
