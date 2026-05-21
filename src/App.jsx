@@ -161,7 +161,7 @@ export default function App() {
             </p>
             <p className="text-sm text-[#c8b89a] mb-10 max-w-xl mx-auto leading-relaxed drop-shadow">
               Practical classes in meditation, self-knowledge, and perennial wisdom,
-              drawing from every authentic spiritual tradition.
+              unveiling every authentic spiritual tradition.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/courses" className="bg-[#c9a96e] text-[#1c1409] px-8 py-3 rounded-sm text-sm font-semibold hover:bg-[#e0bf80] transition-colors duration-200 tracking-wide shadow-lg">
