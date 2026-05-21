@@ -264,7 +264,7 @@ export default function App() {
                 The Three Factors of the Revolution of Consciousness
               </h2>
               <p className="text-base text-[#4a3a26] max-w-2xl mx-auto mb-8">
-                Across Gnostic traditions, three universal movements describe the inner journey: the dissolution of what is false, the birth of what is real, and the offering of that reality in service to others.
+                Across Gnostic traditions, three universal movements describe the inner path: the dissolution of what is false, the birth of what is real, and the offering of that reality in service to others.
               </p>
               <GoldRule className="mb-10" />
             </div>
@@ -334,7 +334,7 @@ export default function App() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1c1409]/95 via-[#1c1409]/80 to-[#1c1409]/60" aria-hidden="true" />
           <div className="relative z-10 max-w-3xl mx-auto">
-            <SectionLabel>Begin your journey</SectionLabel>
+            <SectionLabel>Begin your path</SectionLabel>
             <h2 className="font-display text-4xl sm:text-5xl font-light text-[#f8f1e3] mb-5 leading-tight">
               The path of self-knowledge
             </h2>
@@ -348,6 +348,9 @@ export default function App() {
               </Link>
               <Link to="/courses" className="border border-[#c9a96e]/70 text-[#e8d5b0] px-8 py-3 rounded-sm text-sm font-medium hover:bg-white/10 hover:border-[#c9a96e] transition-colors duration-200 tracking-wide">
                 View Classes
+              </Link>
+              <Link to="/gnostic-centres" className="border border-[#c9a96e]/40 text-[#c8b89a] px-8 py-3 rounded-sm text-sm font-medium hover:bg-white/10 hover:border-[#c9a96e]/70 transition-colors duration-200 tracking-wide">
+                Find a Centre Near You
               </Link>
             </div>
             <p className="text-xs text-[#9e8a6e] mt-6 italic">

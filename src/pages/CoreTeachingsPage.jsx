@@ -76,7 +76,7 @@ const COSMOLOGY_POINTS = [
   },
   {
     title: 'The Tree of Life',
-    body: 'The Kabbalistic Tree of Life maps the structure of the cosmos from the infinite divine (Ain Soph Aur) through ten Sephiroth, spheres of divine emanation, down to the material world of Malkuth. It is simultaneously a map of the cosmos, the human being, and the soul\'s journey of return.',
+    body: 'The Kabbalistic Tree of Life maps the structure of the cosmos from the infinite divine (Ain Soph Aur) through ten Sephiroth, spheres of divine emanation, down to the material world of Malkuth. It is simultaneously a map of the cosmos, the human being, and the soul\'s path of return.',
   },
   {
     title: 'The Law of Three',
@@ -84,7 +84,7 @@ const COSMOLOGY_POINTS = [
   },
   {
     title: 'Karma and Dharma',
-    body: 'Karma, the law of cause and effect, governs the soul\'s journey across multiple lives. Every thought, emotion, and action has consequences that must eventually be faced. Dharma is conscious action in alignment with cosmic law: the path that creates liberation rather than further binding.',
+    body: 'Karma, the law of cause and effect, governs the soul\'s path across multiple lives. Every thought, emotion, and action has consequences that must eventually be faced. Dharma is conscious action in alignment with cosmic law: the path that creates liberation rather than further binding.',
   },
   {
     title: 'The Ray of Creation',
@@ -92,7 +92,7 @@ const COSMOLOGY_POINTS = [
   },
   {
     title: 'The Many Lives of the Soul',
-    body: 'Reincarnation, the transmigration of the soul through many lives, is taught in Egyptian, Greek, Hindu, Buddhist, Kabbalistic, and Gnostic traditions alike. The soul takes on successive physical bodies as part of a long journey of experience, purification, and eventual liberation.',
+    body: 'Reincarnation, the transmigration of the soul through many lives, is taught in Egyptian, Greek, Hindu, Buddhist, Kabbalistic, and Gnostic traditions alike. The soul takes on successive physical bodies as part of a long path of experience, purification, and eventual liberation.',
   },
 ]
 
@@ -205,7 +205,7 @@ export default function CoreTeachingsPage() {
                 Revelation is not doctrine received from outside, but the direct inner experience that genuine practice makes possible. It is the living fire within the Tradition - the actual encounter with truth that occurs when consciousness is genuinely awakened through sustained inner work.
               </p>
               <p className="text-sm text-[#6b5535] leading-relaxed">
-                The Tradition provides the map, the methods, and the context. Revelation is the journey itself - the personal, immediate experience of the realities the Tradition describes. Without practice, the Tradition becomes mere scholarship. Without the Tradition, personal experience lacks orientation and depth. Together, they constitute the complete Gnostic path.
+                The Tradition provides the map, the methods, and the context. Revelation is the path itself - the personal, immediate experience of the realities the Tradition describes. Without practice, the Tradition becomes mere scholarship. Without the Tradition, personal experience lacks orientation and depth. Together, they constitute the complete Gnostic path.
               </p>
             </div>
           </div>

@@ -216,7 +216,7 @@ const PARTS = [
       },
       {
         number: '32', title: 'The Age of Aquarius',
-        points: ['The Dionysian wave and its two poles', 'The Zodiac and the Sidereal journey', 'The Four Ages - Gold, Silver, Bronze and Iron', 'The characteristics of the Aquarian Age'],
+        points: ['The Dionysian wave and its two poles', 'The Zodiac and the Sidereal path', 'The Four Ages - Gold, Silver, Bronze and Iron', 'The characteristics of the Aquarian Age'],
       },
       {
         number: '33', title: 'The Pancatattwa Ritual',
@@ -391,7 +391,7 @@ export default function CoursePage() {
               Hobart &amp; Launceston · Donation-Based
             </p>
             <h2 className="font-display text-4xl sm:text-5xl font-light text-[#f8f1e3] mb-5 leading-tight">
-              Begin Your Journey
+              Begin Your Path
             </h2>
             <GoldRule className="mb-7" />
             <p className="text-sm text-[#c8b89a] mb-8 leading-relaxed">

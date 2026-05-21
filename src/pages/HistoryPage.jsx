@@ -79,7 +79,7 @@ const TIMELINE = [
     content: [
       {
         heading: 'Kabbalah and the Tree of Life',
-        body: 'The Jewish mystical tradition of Kabbalah reached its great flowering in medieval Spain and southern France. The Zohar, composed in 13th-century Castile, presented a vast symbolic map of the divine: the Tree of Life with its ten Sephiroth, the four worlds of manifestation, and the soul\'s journey through and beyond them.',
+        body: 'The Jewish mystical tradition of Kabbalah reached its great flowering in medieval Spain and southern France. The Zohar, composed in 13th-century Castile, presented a vast symbolic map of the divine: the Tree of Life with its ten Sephiroth, the four worlds of manifestation, and the soul\'s path through and beyond them.',
       },
       {
         heading: 'Sufism: the Mystical Heart of Islam',

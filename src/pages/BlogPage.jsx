@@ -96,7 +96,7 @@ const ARTICLES = [
       },
       {
         heading: 'The Inner Path',
-        body: 'Every major tradition preserves, within its exoteric religious forms, an inner path of direct experience, a mystical core accessible to those who seek it sincerely. Christian mysticism, Sufi mysticism, Jewish Kabbalah, Hindu Vedanta, Buddhist meditation: each describes the same inner journey in its own language, the dissolution of the false self, the discovery of the Being, and the union of the individual soul with the divine source.',
+        body: 'Every major tradition preserves, within its exoteric religious forms, an inner path of direct experience, a mystical core accessible to those who seek it sincerely. Christian mysticism, Sufi mysticism, Jewish Kabbalah, Hindu Vedanta, Buddhist meditation: each describes the same inner path in its own language, the dissolution of the false self, the discovery of the Being, and the union of the individual soul with the divine source.',
       },
       {
         heading: 'The Great Figures',
@@ -283,7 +283,7 @@ export default function BlogPage() {
       <section className="py-16 px-4 bg-[#faf6ef] fade-section" aria-label="Closing reflection">
         <div className="max-w-3xl mx-auto">
           <Blockquote cite="Samael Aun Weor">
-            "We must become serious. The spiritual journey is not a hobby. The awakening of consciousness is the most important work a human being can undertake."
+            "We must become serious. The spiritual path is not a hobby. The awakening of consciousness is the most important work a human being can undertake."
           </Blockquote>
         </div>
       </section>

@@ -19,7 +19,13 @@ const NAV_ITEMS = [
       { to: '/courses',   label: 'Courses & Classes' },
     ],
   },
-  { to: '/contact', short: 'Contact', full: 'Contact', children: null },
+  {
+    to: '/contact', short: 'Contact', full: 'Contact',
+    children: [
+      { to: '/contact',          label: 'Contact Us' },
+      { to: '/gnostic-centres',  label: 'Gnostic Centres Worldwide' },
+    ],
+  },
 ]
 
 const desktopCls = (isActive) =>

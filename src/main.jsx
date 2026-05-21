@@ -14,6 +14,7 @@ const CoursesPage       = lazy(() => import('./pages/CoursesPage.jsx'))
 const CoursePage        = lazy(() => import('./pages/CoursePage.jsx'))
 const MeditationPage    = lazy(() => import('./pages/MeditationPage.jsx'))
 const ContactPage       = lazy(() => import('./pages/ContactPage.jsx'))
+const CentresPage       = lazy(() => import('./pages/CentresPage.jsx'))
 
 function PageFallback() {
   return <div style={{ minHeight: '100vh', background: '#faf6ef' }} />
@@ -34,6 +35,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/introduction-to-gnosis" element={<CoursePage />} />
           <Route path="/meditation-classes"     element={<MeditationPage />} />
           <Route path="/contact"                element={<ContactPage />} />
+          <Route path="/gnostic-centres"        element={<CentresPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

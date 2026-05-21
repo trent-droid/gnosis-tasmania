@@ -30,7 +30,7 @@ const TRADITIONS = [
   },
   {
     label: 'Eastern Wisdom',
-    body: 'The Buddha\'s Eightfold Path, the Hindu concept of Self-realisation (Atman = Brahman), and the Sufi path of the heart each describe the same inner journey through different cultural and symbolic languages.',
+    body: 'The Buddha\'s Eightfold Path, the Hindu concept of Self-realisation (Atman = Brahman), and the Sufi path of the heart each describe the same inner path through different cultural and symbolic languages.',
   },
   {
     label: 'Alchemy & Rosicrucianism',
@@ -412,7 +412,7 @@ export default function WhatIsGnosisPage() {
         overlay="bg-[#1c1409]/45"
       >
         <div className="max-w-3xl mx-auto text-center">
-          <SectionLabel>Begin the Journey</SectionLabel>
+          <SectionLabel>Begin the Path</SectionLabel>
           <h2 className="font-display text-4xl sm:text-5xl font-light text-[#f8f1e3] mb-6">
             Ready to Explore Gnosis?
           </h2>

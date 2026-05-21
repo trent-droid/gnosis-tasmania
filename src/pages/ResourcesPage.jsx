@@ -30,12 +30,12 @@ const SAMAEL_BOOKS = [
   {
     title: 'The Three Mountains',
     subtitle: 'Samael Aun Weor',
-    description: 'Samael Aun Weor\'s autobiographical account of his own initiatic journey, a vivid description of the inner experiences, trials, and realisations of the path of liberation as he lived it.',
+    description: 'Samael Aun Weor\'s autobiographical account of his own initiatic path, a vivid description of the inner experiences, trials, and realisations of the path of liberation as he lived it.',
   },
   {
     title: 'The Esoteric Treatise of Hermetic Astrology',
     subtitle: 'Samael Aun Weor',
-    description: 'A comprehensive study of astrology from an esoteric perspective, not as a system of prediction, but as a map of cosmic forces and their influence on the soul\'s journey through successive lives.',
+    description: 'A comprehensive study of astrology from an esoteric perspective, not as a system of prediction, but as a map of cosmic forces and their influence on the soul\'s path through successive lives.',
   },
 ]
 

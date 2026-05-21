@@ -68,6 +68,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Directory pages -->
+  <url>
+    <loc>https://gnosistasmania.com.au/gnostic-centres</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Supporting informational pages -->
   <url>
     <loc>https://gnosistasmania.com.au/history</loc>
