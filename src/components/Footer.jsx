@@ -65,16 +65,18 @@ export default function Footer() {
                   gnosis.launceston@gmail.com
                 </a>
               </p>
+              {/* Fixed: old URL /GnosticSocietyAustralia was wrong; official page is /GSSAW.Australia */}
               <p>
-                <a href="https://www.facebook.com/GnosticSocietyAustralia" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.facebook.com/GSSAW.Australia/" target="_blank" rel="noopener noreferrer"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
                   Facebook — Gnostic Society Australia
                 </a>
               </p>
+              {/* Fixed: gnosisaustralia.org.au is a dead domain; replaced with working national directory */}
               <p>
-                <a href="https://gnosisaustralia.org.au" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.newcastlegnosis.org/about-us/australia-gnosis/" target="_blank" rel="noopener noreferrer"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
-                  Gnosis Australia — gnosisaustralia.org.au
+                  Gnosis Australia — national centre directory
                 </a>
               </p>
             </address>

@@ -338,8 +338,9 @@ export default function ContactPage() {
             subtitle="Stay connected with Gnosis Tasmania through our social channels."
           />
           <div className="flex justify-center">
+            {/* Fixed: old URL /GnosticSocietyAustralia was wrong; official page is /GSSAW.Australia */}
             <a
-              href="https://www.facebook.com/GnosticSocietyAustralia"
+              href="https://www.facebook.com/GSSAW.Australia/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 bg-white border border-[#e8d5b0] rounded-sm px-8 py-5 hover:border-[#c9a96e] transition-colors group"

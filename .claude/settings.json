@@ -24,7 +24,12 @@
       "Read(//mnt/c/Users/Carbil/gnosistasmania/node_modules/vite-imagetools/**)",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d['version']\\)\")",
       "PowerShell(Select-String -Path \"C:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\node_modules\\\\vite-imagetools\\\\dist\\\\index.js\" -Pattern \"srcset|as=\" | Select-Object -First 20 | ForEach-Object { $_.Line })",
-      "WebFetch(domain:www.newcastlegnosis.org)"
+      "WebFetch(domain:www.newcastlegnosis.org)",
+      "WebFetch(domain:www.facebook.com)",
+      "WebFetch(domain:gnosisaustralia.org.au)",
+      "WebFetch(domain:policies.google.com)",
+      "WebFetch(domain:gnosisaustralia.com.au)",
+      "WebFetch(domain:melbournegnosis.com)"
     ],
     "additionalDirectories": [
       "c:\\Users\\Carbil\\.claude\\projects\\c--Users-Carbil-gnosistasmania\\memory"
