@@ -12,6 +12,8 @@ const PAGES = [
   { to: '/community',              label: 'Our Community' },
   { to: '/history',                label: 'History of Gnosis' },
   { to: '/contact',                label: 'Contact' },
+  { to: '/gnostic-centres',        label: 'Gnostic Centres Worldwide' },
+  { to: '/resources',              label: 'Resources' },
 ]
 
 export default function Footer() {
