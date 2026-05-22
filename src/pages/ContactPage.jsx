@@ -25,6 +25,12 @@ const LOCATIONS = [
     contact: 'gnosis.launceston@gmail.com',
   },
   {
+    city: 'Hobart (Eastern Shore)',
+    description: 'Our Eastern Shore centre brings weekly Gnostic classes to the eastern suburbs of Hobart.',
+    schedule: 'Classes run weekly. Contact us for current times and venue details.',
+    contact: 'gnosis.hobarteast@gmail.com',
+  },
+  {
     city: 'Launceston',
     description: 'The Launceston group meets weekly, bringing Gnostic teachings to the heart of northern Tasmania.',
     schedule: 'Classes run weekly. Contact us for current times and venue details.',
@@ -91,7 +97,7 @@ async function getRecaptchaToken(siteKey, action) {
 export default function ContactPage() {
   usePageMeta(
     'Contact | Gnosis Tasmania',
-    'Get in touch with Gnosis Tasmania. Find a weekly Gnostic class in Hobart or Launceston. All enquiries welcome. Classes are donation-based.',
+    'Get in touch with Gnosis Tasmania. Find a weekly Gnostic class in Hobart, Hobart Eastern Shore, or Launceston. All enquiries welcome. Classes are donation-based.',
     '/contact'
   )
 
@@ -165,7 +171,7 @@ export default function ContactPage() {
         heightClass="h-[55vh] min-h-[380px]"
       >
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-          <p className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest mb-4">Hobart · Launceston</p>
+          <p className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest mb-4">Hobart · Eastern Shore · Launceston</p>
           <h1 className="font-display text-5xl sm:text-6xl font-light text-[#f8f1e3] mb-6 leading-tight">
             Get in Touch
           </h1>

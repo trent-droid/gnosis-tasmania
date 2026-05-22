@@ -85,7 +85,7 @@ const FEATURES = [
       </svg>
     ),
     title: 'Community',
-    body: 'A welcoming community of sincere seekers meeting weekly across Hobart and Launceston. No experience required. All classes are donation-based.',
+    body: 'A welcoming community of sincere seekers meeting weekly across Hobart, Hobart Eastern Shore, and Launceston. No experience required. All classes are donation-based.',
     link: '/community',
     linkLabel: 'Our Community',
   },
@@ -93,8 +93,8 @@ const FEATURES = [
 
 export default function App() {
   usePageMeta(
-    'Gnosis Tasmania — Gnostic Classes & Meditation in Hobart & Launceston',
-    'Donation-based Gnostic classes in Hobart and Launceston, Tasmania. Meditation, self-knowledge, and the Three Factors of the Revolution of Consciousness.',
+    'Gnosis Tasmania — Gnostic Classes & Meditation in Hobart, Eastern Shore & Launceston',
+    'Donation-based Gnostic classes in Hobart, Hobart Eastern Shore, and Launceston, Tasmania. Meditation, self-knowledge, and the Three Factors of the Revolution of Consciousness.',
     '/'
   )
 
@@ -151,7 +151,7 @@ export default function App() {
 
           <div className="relative z-10 max-w-3xl mx-auto">
             <p className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest mb-4">
-              Hobart · Launceston
+              Hobart · Eastern Shore · Launceston
             </p>
             <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl font-light text-[#f8f1e3] tracking-wide mb-5 leading-tight drop-shadow-lg">
               Know Thyself

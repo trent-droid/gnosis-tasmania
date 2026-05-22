@@ -62,7 +62,7 @@ export default function ArticlesPage() {
           <h2 className="font-display text-4xl font-light text-[#f8f1e3] mb-4">Study in Community</h2>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] leading-relaxed mb-8">
-            Reading is a beginning. The deeper teaching unfolds in practice, in meditation, and in the company of fellow seekers. Join us in Hobart or Launceston.
+            Reading is a beginning. The deeper teaching unfolds in practice, in meditation, and in the company of fellow seekers. Join us in Hobart, Eastern Shore, or Launceston.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -15,6 +15,12 @@ const LOCATIONS = [
     contact: 'gnosis.launceston@gmail.com',
   },
   {
+    city: 'Hobart (Eastern Shore)',
+    description: 'Our Eastern Shore centre brings weekly Gnostic classes to the eastern suburbs of Hobart.',
+    schedule: 'Classes run weekly. Contact us for current times and venue details.',
+    contact: 'gnosis.hobarteast@gmail.com',
+  },
+  {
     city: 'Launceston',
     description: 'The Launceston group meets weekly, bringing Gnostic teachings to the heart of northern Tasmania.',
     schedule: 'Classes run weekly. Contact us for current times and venue details.',
@@ -26,8 +32,8 @@ const BASE = 'https://gnosistasmania.com.au'
 
 export default function CommunityPage() {
   usePageMeta(
-    'Gnostic Community in Hobart & Launceston | Gnosis Tasmania',
-    'Join the Gnosis Tasmania community — sincere seekers meeting weekly in Hobart and Launceston, Tasmania. Donation-based Gnostic study, meditation retreats, and the teachings of Samael Aun Weor.',
+    'Gnostic Community in Hobart, Eastern Shore & Launceston | Gnosis Tasmania',
+    'Join the Gnosis Tasmania community — sincere seekers meeting weekly in Hobart, Hobart Eastern Shore, and Launceston, Tasmania. Donation-based Gnostic study, meditation retreats, and the teachings of Samael Aun Weor.',
     '/community'
   )
 
@@ -67,7 +73,7 @@ export default function CommunityPage() {
         overlay="bg-gradient-to-b from-[#1c1409]/60 via-[#1c1409]/45 to-[#1c1409]/75"
       >
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-          <p className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest mb-4">Hobart · Launceston</p>
+          <p className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest mb-4">Hobart · Eastern Shore · Launceston</p>
           <h1 className="font-display text-5xl sm:text-6xl font-light text-[#f8f1e3] mb-6 leading-tight">
             Our Community
           </h1>

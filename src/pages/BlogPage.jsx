@@ -295,7 +295,7 @@ export default function BlogPage() {
           <h2 className="font-display text-4xl font-light text-[#f8f1e3] mb-4">Come and Study in Community</h2>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] leading-relaxed mb-8">
-            These articles are a taste of the teaching. The full depth of Gnostic wisdom is best explored in community, in the shared work of a sincere study group meeting weekly in Hobart and Launceston.
+            These articles are a taste of the teaching. The full depth of Gnostic wisdom is best explored in community, in the shared work of a sincere study group meeting weekly in Hobart, Hobart Eastern Shore, and Launceston.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

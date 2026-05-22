@@ -69,7 +69,7 @@ export const ARTICLES = [
       {
         heading: 'A Living Tradition in Tasmania',
         paragraphs: [
-          'The Gnostic teaching is not a relic from antiquity. It is alive, active, and entirely applicable to the realities of modern life — including life in Tasmania, in this very year. Weekly classes in Hobart and Launceston offer a genuine entry point: structured, friendly, practically oriented, and free of charge.',
+          'The Gnostic teaching is not a relic from antiquity. It is alive, active, and entirely applicable to the realities of modern life — including life in Tasmania, in this very year. Weekly classes in Hobart, Hobart Eastern Shore, and Launceston offer a genuine entry point: structured, friendly, practically oriented, and free of charge.',
           'Whether you arrive with decades of spiritual searching behind you or with no prior experience at all, the door is open. The teaching begins wherever you are.',
         ],
       },
@@ -79,7 +79,7 @@ export const ARTICLES = [
       'It is open to people of every background and prior belief',
       'The path works with all four dimensions of the human being: science, philosophy, art, mysticism',
       'The central question is personal: who are you, really, beneath the noise?',
-      'Classes are available weekly in Hobart and Launceston, free of charge',
+      'Classes are available weekly in Hobart, Hobart Eastern Shore, and Launceston, free of charge',
     ],
     relatedSlugs: ['three-factors-of-conscious-awakening', 'self-observation-watching-your-mind', 'path-of-inner-transformation'],
   },
@@ -511,12 +511,12 @@ export const ARTICLES = [
         quote: { text: 'Where two or three are gathered together in my name, there am I in the midst of them.', author: 'Matthew 18:20' },
       },
       {
-        heading: 'Gnosis Tasmania: Hobart and Launceston',
+        heading: 'Gnosis Tasmania: Three Centres Across the State',
         paragraphs: [
-          'In Tasmania, weekly classes run in both Hobart and Launceston. These are small and informal gatherings — typically between five and fifteen people, meeting in a comfortable domestic or community setting. The format varies slightly from session to session but usually includes a period of meditation or relaxation, a discussion of a teaching topic, and time for open questions.',
+          'In Tasmania, weekly classes run in Hobart, Hobart (Eastern Shore), and Launceston. These are small and informal gatherings — typically between five and fifteen people, meeting in a comfortable domestic or community setting. The format varies slightly from session to session but usually includes a period of meditation or relaxation, a discussion of a teaching topic, and time for open questions.',
           'The classes are entirely free of charge, supported by donations from those who wish to contribute. No prior knowledge is required, and no commitment is expected. The Introduction to Gnosis course is the usual starting point for new students — a structured overview of the fundamental teachings across several weeks, designed to give a clear and solid foundation.',
         ],
-        list: ['Weekly classes in Hobart and Launceston', 'No prior experience required', 'Donation-based — no fixed fee', 'Introduction to Gnosis course for new students', 'Questions are always welcome'],
+        list: ['Weekly classes in Hobart, Hobart Eastern Shore, and Launceston', 'No prior experience required', 'Donation-based — no fixed fee', 'Introduction to Gnosis course for new students', 'Questions are always welcome'],
       },
       {
         heading: 'Centres Across Australia',
@@ -536,7 +536,7 @@ export const ARTICLES = [
     keyPoints: [
       'Community is not optional on the inner path — it provides what solitary study cannot',
       'A Gnostic study group has no hierarchy, no membership, and no pressure to commit',
-      'Weekly classes run in Hobart and Launceston — donation-based, all welcome',
+      'Weekly classes run in Hobart, Hobart Eastern Shore, and Launceston — donation-based, all welcome',
       'Australian centres operate in every major city and some regional areas',
       'Online study is available for those without a nearby group',
     ],

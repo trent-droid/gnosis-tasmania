@@ -297,6 +297,12 @@ export default function CoursePage() {
       {
         '@type': 'CourseInstance',
         'courseMode': 'in-person',
+        'location': { '@type': 'Place', 'name': 'Hobart (Eastern Shore)', 'address': { '@type': 'PostalAddress', 'addressLocality': 'Hobart', 'addressRegion': 'Tasmania', 'addressCountry': 'AU' } },
+        'courseSchedule': { '@type': 'Schedule', 'repeatFrequency': 'P1W' },
+      },
+      {
+        '@type': 'CourseInstance',
+        'courseMode': 'in-person',
         'location': { '@type': 'Place', 'name': 'Launceston', 'address': { '@type': 'PostalAddress', 'addressLocality': 'Launceston', 'addressRegion': 'Tasmania', 'addressCountry': 'AU' } },
         'courseSchedule': { '@type': 'Schedule', 'repeatFrequency': 'P1W' },
       },

@@ -62,6 +62,15 @@ const LOCATIONS = [
     note: 'Contact us for current venue details and times.',
   },
   {
+    city: 'Hobart (Eastern Shore)',
+    region: 'Southern Tasmania',
+    schedule: [
+      'Introduction to Gnosis, weekly',
+      'Meditation Class, weekly',
+    ],
+    note: 'Contact us for current venue details and times.',
+  },
+  {
     city: 'Launceston',
     region: 'Northern Tasmania',
     schedule: [
@@ -74,8 +83,8 @@ const LOCATIONS = [
 
 export default function CoursesPage() {
   usePageMeta(
-    'Gnostic Courses in Hobart & Launceston | Gnosis Tasmania',
-    'Gnostic courses in Hobart and Launceston: Introduction to Gnosis (34 sessions) and weekly Meditation Classes. No experience needed. Donation-based.',
+    'Gnostic Courses in Hobart, Eastern Shore & Launceston | Gnosis Tasmania',
+    'Gnostic courses in Hobart, Hobart Eastern Shore, and Launceston: Introduction to Gnosis (34 sessions) and weekly Meditation Classes. No experience needed. Donation-based.',
     '/courses'
   )
   useJsonLd({
@@ -136,7 +145,7 @@ export default function CoursesPage() {
         position="center 10%"
       >
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-          <p className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest mb-4">Hobart · Launceston</p>
+          <p className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest mb-4">Hobart · Eastern Shore · Launceston</p>
           <h1 className="font-display text-5xl sm:text-6xl font-light text-[#f8f1e3] mb-6 leading-tight">
             Courses & Classes
           </h1>
