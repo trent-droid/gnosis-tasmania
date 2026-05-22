@@ -20,6 +20,14 @@ const NAV_ITEMS = [
     ],
   },
   {
+    to: '/articles', short: 'Articles', full: 'Articles',
+    children: [
+      { to: '/articles/what-is-gnosis-direct-inner-knowledge',  label: 'What is Gnosis?' },
+      { to: '/articles/meditation-practices-for-inner-peace',   label: 'Meditation Practices' },
+      { to: '/articles/three-factors-of-conscious-awakening',   label: 'The Three Factors' },
+    ],
+  },
+  {
     to: '/contact', short: 'Contact', full: 'Contact',
     children: [
       { to: '/contact',          label: 'Contact Us' },

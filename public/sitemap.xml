@@ -76,6 +76,86 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Articles section -->
+  <url>
+    <loc>https://gnosistasmania.com.au/articles</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://gnosistasmania.com.au/articles/what-is-gnosis-direct-inner-knowledge</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gnosistasmania.com.au/articles/three-factors-of-conscious-awakening</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gnosistasmania.com.au/articles/psychological-death-letting-go-of-the-ego</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gnosistasmania.com.au/articles/self-observation-watching-your-mind</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gnosistasmania.com.au/articles/meditation-practices-for-inner-peace</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gnosistasmania.com.au/articles/dream-work-and-astral-exploration</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gnosistasmania.com.au/articles/path-of-inner-transformation</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gnosistasmania.com.au/articles/remembering-past-lives-retrospection</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gnosistasmania.com.au/articles/gnostic-centres-in-australia</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gnosistasmania.com.au/articles/living-the-gnostic-path-in-australia</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gnosistasmania.com.au/articles/the-sacred-in-relationships-and-sexuality</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gnosistasmania.com.au/articles/sacrifice-and-service-heart-of-the-gnostic-way</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
   <!-- Supporting informational pages -->
   <url>
     <loc>https://gnosistasmania.com.au/resources</loc>

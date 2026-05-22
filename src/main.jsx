@@ -16,6 +16,8 @@ const MeditationPage    = lazy(() => import('./pages/MeditationPage.jsx'))
 const ContactPage       = lazy(() => import('./pages/ContactPage.jsx'))
 const CentresPage       = lazy(() => import('./pages/CentresPage.jsx'))
 const ResourcesPage     = lazy(() => import('./pages/ResourcesPage.jsx'))
+const ArticlesPage      = lazy(() => import('./pages/ArticlesPage.jsx'))
+const ArticlePage       = lazy(() => import('./pages/ArticlePage.jsx'))
 
 function PageFallback() {
   return <div style={{ minHeight: '100vh', background: '#faf6ef' }} />
@@ -38,6 +40,8 @@ createRoot(document.getElementById('root')).render(
           <Route path="/contact"                element={<ContactPage />} />
           <Route path="/gnostic-centres"        element={<CentresPage />} />
           <Route path="/resources"              element={<ResourcesPage />} />
+          <Route path="/articles"               element={<ArticlesPage />} />
+          <Route path="/articles/:slug"         element={<ArticlePage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

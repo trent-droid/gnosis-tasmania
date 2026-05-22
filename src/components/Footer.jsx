@@ -14,6 +14,7 @@ const PAGES = [
   { to: '/contact',                label: 'Contact' },
   { to: '/gnostic-centres',        label: 'Gnostic Centres Worldwide' },
   { to: '/resources',              label: 'Resources' },
+  { to: '/articles',               label: 'Articles' },
 ]
 
 export default function Footer() {

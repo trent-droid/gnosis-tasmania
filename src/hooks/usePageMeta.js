@@ -13,6 +13,7 @@ const PATH_LABELS = {
   '/history':               'History of Gnosis',
   '/community':             'Our Community',
   '/resources':             'Books & Resources',
+  '/articles':              'Articles',
   '/blog':                  'Blog',
   '/contact':               'Contact',
 }
