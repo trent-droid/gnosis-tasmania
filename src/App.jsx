@@ -216,10 +216,12 @@ export default function App() {
         </section>
 
         {/* ── What is Gnosis? teaser ───────────────────────────────────────── */}
-        <section className="py-20 px-4 bg-[#faf6ef] fade-section" aria-labelledby="gnosis-home-heading">
+        {/* No fade-section: section contains an <img>. Text column uses fade-content
+            so only text fades; the image column is outside the fading ancestor. */}
+        <section className="py-20 px-4 bg-[#faf6ef]" aria-labelledby="gnosis-home-heading">
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-5 gap-12 items-center">
-              <div className="md:col-span-3">
+              <div className="md:col-span-3 fade-content">
                 <SectionLabel>Ancient wisdom, practical today</SectionLabel>
                 <h2 id="gnosis-home-heading" className="font-display text-4xl sm:text-5xl font-light text-[#2a1e12] mb-5">
                   What is Gnosis?
@@ -256,9 +258,11 @@ export default function App() {
         </section>
 
         {/* ── Three Factors ────────────────────────────────────────────────── */}
-        <section className="py-20 px-4 bg-white fade-section" aria-labelledby="three-factors-heading">
+        {/* No fade-section: section contains a centred <img>. The heading block
+            and the three cards use fade-content individually so only text fades. */}
+        <section className="py-20 px-4 bg-white" aria-labelledby="three-factors-heading">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
+            <div className="text-center mb-10 fade-content">
               <SectionLabel>The path of inner transformation</SectionLabel>
               <h2 id="three-factors-heading" className="font-display text-4xl sm:text-5xl font-light text-[#2a1e12] mb-4">
                 The Three Factors of the Revolution of Consciousness
@@ -288,7 +292,7 @@ export default function App() {
               </figure>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 fade-content">
               {[
                 { title: 'Psychological Death', sub: 'The dissolution of the ego',
                   body: 'To observe, understand, and dissolve the psychological "I" - the bundle of habits, fears, desires, and conditioning that obscures our true nature. Done through deep self-observation and meditation in daily life.',

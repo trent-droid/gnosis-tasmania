@@ -31,7 +31,7 @@ export default function ArticlesPage() {
           </h1>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] text-lg font-light leading-relaxed max-w-2xl mx-auto">
-            A growing library of articles on Gnostic wisdom — practical, accessible, and grounded in the living tradition.
+            A growing library of articles on Gnostic wisdom: practical, accessible, and grounded in the living tradition.
           </p>
         </div>
       </HeroParallax>
@@ -40,7 +40,7 @@ export default function ArticlesPage() {
       <section className="py-12 px-4 bg-white fade-section">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[#4a3a26] text-lg leading-relaxed">
-            The following articles are drawn from the Gnostic teachings of Samael Aun Weor and the perennial wisdom tradition — written for sincere seekers at every stage of the path. Whether you are entirely new to Gnosis or deepening an existing practice, you are welcome here.
+            The following articles are drawn from the Gnostic teachings of Samael Aun Weor and the perennial wisdom tradition, written for sincere seekers at every stage of the path. Whether you are entirely new to Gnosis or deepening an existing practice, you are welcome here.
           </p>
         </div>
       </section>

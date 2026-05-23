@@ -324,7 +324,8 @@ export const ARTICLES = [
           'When the selected state appears, the practice is simply to notice it as clearly and precisely as possible: the physical sensations in the body, the quality and intensity of the feeling, the thoughts that accompany it, and any impulse to act that arises. This noticing is done without any immediate attempt to change, suppress, or analyse what is observed. For the purpose of this initial practice, the observation itself is the complete act.',
           'Students often discover, with some genuine surprise, that the simple act of clear observation changes the inner landscape significantly. When a psychological state is clearly seen and acknowledged without identification, it does not necessarily vanish immediately, but it loses a degree of its compulsive authority. This discovery is itself an important confirmation that the practice is real and that it works, and it usually provides the motivation needed to continue and deepen the work.',
         ],
-        quote: { text: 'The most important kind of freedom is to be what you really are. You trade in your reality for a role. You trade in your sense of self for an act.', author: 'Jim Morrison' },
+        // Replaced Jim Morrison quote with Lao Tzu — relevant to beginning the practice
+        quote: { text: 'A journey of a thousand miles begins with a single step.', author: 'Lao Tzu, Tao Te Ching 64' },
       },
     ],
     keyPoints: [

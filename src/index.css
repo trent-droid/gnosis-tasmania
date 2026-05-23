@@ -11,6 +11,12 @@
 /* Using transform: translateY on fade-section elements silently disables CSS    */
 /* parallax on all QuoteParallax and ParallaxCTA children.  Opacity-only fade    */
 /* avoids creating a stacking context so parallax works in every section.        */
+/*                                                                               */
+/* .fade-section  — applied to text-only <section> elements.                    */
+/* .fade-content  — applied to text-only <div> containers inside sections that  */
+/*   also contain <img> or <figure> elements.  Because CSS opacity is inherited, */
+/*   images inside a .fade-section parent would fade too.  .fade-content lets   */
+/*   only the text column fade while the image column stays fully visible.       */
 section.fade-section {
   opacity: 0;
   transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1);
@@ -21,9 +27,20 @@ section.fade-section.is-visible {
   will-change: auto;
 }
 
+.fade-content {
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity;
+}
+.fade-content.is-visible {
+  opacity: 1;
+  will-change: auto;
+}
+
 /* ── Respect prefers-reduced-motion ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  section.fade-section {
+  section.fade-section,
+  .fade-content {
     opacity: 1;
     transition: none;
     will-change: auto;

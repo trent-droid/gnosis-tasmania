@@ -19,6 +19,7 @@ const NAV_ITEMS = [
       { to: '/courses',   label: 'Courses & Classes' },
     ],
   },
+  { to: '/meditation-classes', short: 'Meditation', full: 'Meditation', children: null },
   {
     to: '/articles', short: 'Articles', full: 'Articles',
     children: [

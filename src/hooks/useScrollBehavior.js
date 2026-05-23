@@ -34,7 +34,10 @@ export function useScrollFadeIn() {
     // This replaces the arbitrary 80ms setTimeout which could fire too early
     // or too late depending on device speed.
     const rafId = requestAnimationFrame(() => {
-      document.querySelectorAll('section.fade-section').forEach(el => {
+      // Observe text-only sections AND text-only div containers (.fade-content).
+      // .fade-content exists so that in mixed text+image layouts the text column
+      // can fade in without the image column being inside a fading ancestor.
+      document.querySelectorAll('section.fade-section, .fade-content').forEach(el => {
         observer.observe(el)
       })
     })
