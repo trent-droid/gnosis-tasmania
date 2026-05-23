@@ -1,21 +1,13 @@
-import { useState, useEffect } from 'react'
-import emailjs from '@emailjs/browser'
+// ContactPage — simplified per user request:
+// - Removed the "Send a message" email form and all EmailJS/reCAPTCHA infrastructure
+// - Removed the "Before You Come" section
+// - Now shows 3 location tiles (each with email) + a standalone Facebook section
+
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import esotericFlammarionImg from '../assets/esoteric_flammarion_colorized.jpg?format=webp'
-
-// Set in Vercel: Project → Settings → Environment Variables
-// VITE_EMAILJS_SERVICE_ID   — from EmailJS dashboard → Email Services
-// VITE_EMAILJS_TEMPLATE_ID  — from EmailJS dashboard → Email Templates
-// VITE_EMAILJS_PUBLIC_KEY   — from EmailJS dashboard → Account → Public Key
-const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-
-// Optional: VITE_RECAPTCHA_SITE_KEY for reCAPTCHA v3 (form works without it)
-const RECAPTCHA_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY
 
 const LOCATIONS = [
   {
@@ -38,126 +30,12 @@ const LOCATIONS = [
   },
 ]
 
-const INTERESTS = [
-  'Introduction to Gnosis Course',
-  'Meditation Classes',
-  'General Enquiry',
-  'Visiting a Class',
-  'Online Participation',
-  'Other',
-]
-
-const HOW_HEARD = [
-  'Search engine (Google etc.)',
-  'Social media',
-  'Friend or family',
-  'Event or talk',
-  'Poster or flyer',
-  'Other',
-]
-
-// ─────────────────────────────────────────────────────────────────────────────
-// reCAPTCHA v3 helpers — completely isolated from React.
-// All paths are guarded so nothing here can throw into the component tree.
-// ─────────────────────────────────────────────────────────────────────────────
-
-let scriptInjected = false
-
-function injectRecaptchaScript(siteKey) {
-  if (!siteKey || scriptInjected) return
-  scriptInjected = true
-  try {
-    const script = document.createElement('script')
-    script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
-    script.async = true
-    script.onerror = () => {
-      console.error('[reCAPTCHA] Failed to load — form will still work without it.')
-      scriptInjected = false
-    }
-    document.head.appendChild(script)
-  } catch (err) {
-    console.error('[reCAPTCHA] Script injection error:', err)
-    scriptInjected = false
-  }
-}
-
-async function getRecaptchaToken(siteKey, action) {
-  if (!siteKey || typeof window === 'undefined' || !window.grecaptcha) return null
-  try {
-    await new Promise((resolve) => window.grecaptcha.ready(resolve))
-    return (await window.grecaptcha.execute(siteKey, { action })) || null
-  } catch (err) {
-    console.error('[reCAPTCHA] execute() failed:', err)
-    return null
-  }
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-
 export default function ContactPage() {
   usePageMeta(
     'Contact | Gnosis Tasmania',
-    'Get in touch with Gnosis Tasmania. Find a weekly Gnostic class in Hobart, Hobart Eastern Shore, or Launceston. All enquiries welcome. Classes are donation-based.',
+    'Find a weekly Gnostic class in Hobart, Hobart Eastern Shore, or Launceston. Email us or connect on Facebook. All sincere enquiries welcome.',
     '/contact'
   )
-
-  useEffect(() => { injectRecaptchaScript(RECAPTCHA_KEY) }, [])
-
-  const [formData, setFormData] = useState({
-    name: '', email: '', interest: '', howHeard: '', message: '',
-  })
-  const [status, setStatus] = useState('idle') // idle | sending | success | error
-  const [errorDetail, setErrorDetail] = useState('')
-
-  function handleChange(e) {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault()
-    setStatus('sending')
-    setErrorDetail('')
-
-    // Optional reCAPTCHA token — never blocks submission
-    const token = await getRecaptchaToken(RECAPTCHA_KEY, 'contact_form')
-
-    // EmailJS template variables — must match your template's {{variable}} names.
-    // In your EmailJS template set: {{from_name}}, {{from_email}}, {{interest}},
-    // {{how_heard}}, {{message}}, and optionally {{recaptcha_token}}.
-    const templateParams = {
-      from_name:        formData.name,
-      from_email:       formData.email,
-      interest:         formData.interest  || 'Not specified',
-      how_heard:        formData.howHeard  || 'Not specified',
-      message:          formData.message,
-      recaptcha_token:  token || 'not available',
-    }
-
-    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-      console.error('[EmailJS] Missing environment variables. Set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY in Vercel.')
-      setErrorDetail('Email service is not configured. Please email us directly.')
-      setStatus('error')
-      return
-    }
-
-    try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        { publicKey: EMAILJS_PUBLIC_KEY }
-      )
-      setStatus('success')
-    } catch (err) {
-      console.error('[EmailJS] send() failed:', err)
-      setErrorDetail('')
-      setStatus('error')
-    }
-  }
-
-  const inputCls = 'w-full bg-white border border-[#e8d5b0] rounded-sm px-4 py-3 text-sm text-[#3a2f1f] placeholder:text-[#a89a80] focus:outline-none focus:border-[#c9a96e] transition-colors'
-  const labelCls = 'block text-xs font-semibold text-[#6b5535] uppercase tracking-wider mb-2'
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
@@ -177,199 +55,64 @@ export default function ContactPage() {
           </h1>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] text-lg font-light leading-relaxed max-w-2xl mx-auto">
-            The easiest way to reach us is by email or through our Facebook page. We welcome all sincere enquiries and aim to respond within a day or two.
+            Email us directly or reach us through our Facebook page. We welcome all sincere enquiries and aim to respond within a day or two.
           </p>
         </div>
       </HeroParallax>
 
-      {/* ── Form + Info ───────────────────────────────────────────────────────── */}
-      <section className="py-20 px-4 bg-white fade-section">
+      {/* ── Locations ─────────────────────────────────────────────────────────── */}
+      <section className="py-20 px-4 bg-white fade-section" aria-label="Our locations">
         <div className="max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-14">
+          <div className="text-center mb-12">
+            <SectionLabel>Where to Find Us</SectionLabel>
+            <h2 className="font-display text-4xl font-light text-[#2a1e12] mb-4">Three Centres in Tasmania</h2>
+            <GoldRule className="mx-auto" />
+          </div>
 
-            {/* Form */}
-            <div>
-              <SectionLabel>Send a Message</SectionLabel>
-              <h2 className="font-display text-3xl font-light text-[#2a1e12] mb-8">We'd Love to Hear From You</h2>
-
-              {status === 'success' ? (
-                <div className="bg-[#faf6ef] border border-[#c9a96e] rounded-sm p-8 text-center">
-                  <div className="text-[#c9a96e] text-4xl mb-4" aria-hidden="true">✦</div>
-                  <h3 className="font-display text-2xl font-medium text-[#2a1e12] mb-3">Message Sent Successfully</h3>
-                  <p className="text-[#4a3a26] leading-relaxed">
-                    Thank you for your enquiry. We will be in touch as soon as possible, usually within a day or two.
-                  </p>
+          <div className="grid sm:grid-cols-3 gap-8">
+            {LOCATIONS.map(({ city, description, schedule, contact }) => (
+              <div key={city} className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-7 flex flex-col">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-2 h-2 rounded-full bg-[#c9a96e] shrink-0" aria-hidden="true" />
+                  <h3 className="font-display text-xl font-medium text-[#2a1e12]">{city}</h3>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    <div>
-                      <label htmlFor="name" className={labelCls}>Your Name *</label>
-                      <input
-                        id="name" name="name" type="text" required
-                        value={formData.name} onChange={handleChange}
-                        placeholder="Jane Smith"
-                        className={inputCls}
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className={labelCls}>Email Address *</label>
-                      <input
-                        id="email" name="email" type="email" required
-                        value={formData.email} onChange={handleChange}
-                        placeholder="jane@example.com"
-                        className={inputCls}
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="interest" className={labelCls}>I'm interested in</label>
-                    <select
-                      id="interest" name="interest"
-                      value={formData.interest} onChange={handleChange}
-                      className={inputCls}
-                    >
-                      <option value="">Select an option…</option>
-                      {INTERESTS.map(o => <option key={o} value={o}>{o}</option>)}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="howHeard" className={labelCls}>How did you hear about us?</label>
-                    <select
-                      id="howHeard" name="howHeard"
-                      value={formData.howHeard} onChange={handleChange}
-                      className={inputCls}
-                    >
-                      <option value="">Select an option…</option>
-                      {HOW_HEARD.map(o => <option key={o} value={o}>{o}</option>)}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className={labelCls}>Your Message *</label>
-                    <textarea
-                      id="message" name="message" rows={5} required
-                      value={formData.message} onChange={handleChange}
-                      placeholder="Tell us a little about yourself and what you're looking for…"
-                      className={`${inputCls} resize-none`}
-                    />
-                  </div>
-
-                  {status === 'error' && (
-                    <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-sm px-4 py-3">
-                      {errorDetail || 'Something went wrong sending your message.'}{' '}
-                      Please try again or email us directly at{' '}
-                      <a href="mailto:gnosishobart@gmail.com" className="underline">gnosishobart@gmail.com</a>.
-                    </p>
-                  )}
-
-                  <button
-                    type="submit"
-                    disabled={status === 'sending'}
-                    className="w-full bg-[#c9a96e] hover:bg-[#b8963e] disabled:opacity-60 disabled:cursor-not-allowed text-[#1c1409] font-semibold py-3 rounded-sm transition-colors tracking-wide text-sm"
-                  >
-                    {status === 'sending' ? 'Sending…' : 'Send Message →'}
-                  </button>
-
-                  <p className="text-xs text-[#8a6f3f] text-center">
-                    Or email us directly at{' '}
-                    <a href="mailto:gnosishobart@gmail.com" className="text-[#c9a96e] hover:underline">
-                      gnosishobart@gmail.com
-                    </a>
-                  </p>
-
-                  {RECAPTCHA_KEY && (
-                    <p className="text-[10px] text-[#a89a80] text-center leading-relaxed">
-                      Protected by reCAPTCHA.{' '}
-                      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#8a6f3f]">Privacy Policy</a>
-                      {' '}·{' '}
-                      <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#8a6f3f]">Terms</a>
-                    </p>
-                  )}
-                </form>
-              )}
-            </div>
-
-            {/* Info panel */}
-            <div>
-              <SectionLabel>Contact Information</SectionLabel>
-              <h2 className="font-display text-3xl font-light text-[#2a1e12] mb-8">Find Us</h2>
-
-              <div className="space-y-5 mb-10">
-                {LOCATIONS.map(({ city, description, schedule, contact }) => (
-                  <div key={city} className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-2 h-2 rounded-full bg-[#c9a96e]" aria-hidden="true" />
-                      <h3 className="font-display text-xl font-medium text-[#2a1e12]">{city}</h3>
-                    </div>
-                    <p className="text-sm text-[#4a3a26] leading-relaxed mb-3">{description}</p>
-                    <p className="text-xs text-[#8a6f3f] font-medium mb-3">{schedule}</p>
-                    <a href={`mailto:${contact}`} className="text-xs text-[#c9a96e] hover:text-[#b8963e] transition-colors font-medium">
-                      {contact}
-                    </a>
-                  </div>
-                ))}
+                <p className="text-sm text-[#4a3a26] leading-relaxed mb-3">{description}</p>
+                <p className="text-xs text-[#8a6f3f] font-medium mb-5">{schedule}</p>
+                <a
+                  href={`mailto:${contact}`}
+                  className="mt-auto inline-block text-sm font-semibold text-[#c9a96e] hover:text-[#b8963e] transition-colors break-all"
+                >
+                  {contact}
+                </a>
               </div>
-
-              <div className="bg-[#2a1e12] rounded-sm p-6">
-                <h3 className="font-display text-xl font-medium text-[#f8f1e3] mb-4">Before You Come</h3>
-                <ul className="space-y-3">
-                  {[
-                    'No prior knowledge or experience required',
-                    'All classes are donation-based, no fixed fee',
-                    'Dress comfortably; we sometimes include relaxation exercises',
-                    'Arrive 5-10 minutes early for your first visit',
-                    'Questions are always welcome, before and after class',
-                  ].map(item => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-[#c8b89a]">
-                      <span className="text-[#c9a96e] shrink-0 mt-0.5" aria-hidden="true">◦</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── Connect ───────────────────────────────────────────────────────────── */}
-      {/* Email and Facebook are our two primary contact channels */}
+      {/* ── Facebook ──────────────────────────────────────────────────────────── */}
+      {/* Simple, single Facebook link — the primary social contact channel */}
       <section className="py-16 px-4 bg-[#faf6ef] fade-section">
-        <div className="max-w-4xl mx-auto">
-          <SectionHeading
-            label="Connect"
-            title="Two Ways to Reach Us"
-            subtitle="Email is the most direct way to get in touch. You can also follow and message us on Facebook."
-          />
-          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            {/* Email */}
-            <a
-              href="mailto:gnosishobart@gmail.com"
-              className="flex items-center gap-4 bg-white border border-[#e8d5b0] rounded-sm px-8 py-6 hover:border-[#c9a96e] transition-colors group"
-            >
-              <span className="text-[#c9a96e] text-2xl shrink-0" aria-hidden="true">✉</span>
-              <div>
-                <p className="font-medium text-[#2a1e12] group-hover:text-[#c9a96e] transition-colors text-sm">Email Us</p>
-                <p className="text-xs text-[#8a6f3f] break-all">gnosishobart@gmail.com</p>
-              </div>
-            </a>
-            {/* Facebook — fixed: official page is /GSSAW.Australia */}
-            <a
-              href="https://www.facebook.com/GSSAW.Australia/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 bg-white border border-[#e8d5b0] rounded-sm px-8 py-6 hover:border-[#c9a96e] transition-colors group"
-            >
-              <span className="text-[#c9a96e] text-2xl shrink-0" aria-hidden="true">f</span>
-              <div>
-                <p className="font-medium text-[#2a1e12] group-hover:text-[#c9a96e] transition-colors text-sm">Facebook</p>
-                <p className="text-xs text-[#8a6f3f]">Gnostic Society Australia</p>
-              </div>
-            </a>
-          </div>
+        <div className="max-w-xl mx-auto text-center">
+          <SectionLabel>Follow Us</SectionLabel>
+          <h2 className="font-display text-3xl font-light text-[#2a1e12] mb-4">Connect on Facebook</h2>
+          <GoldRule className="mx-auto mb-6" />
+          <p className="text-[#4a3a26] leading-relaxed mb-8">
+            You can also follow us and send us a message through our Facebook page.
+          </p>
+          {/* Fixed: official page is /GSSAW.Australia */}
+          <a
+            href="https://www.facebook.com/GSSAW.Australia/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-white border border-[#e8d5b0] hover:border-[#c9a96e] rounded-sm px-8 py-4 transition-colors group"
+          >
+            <span className="text-[#c9a96e] text-xl font-bold" aria-hidden="true">f</span>
+            <div className="text-left">
+              <p className="font-semibold text-[#2a1e12] group-hover:text-[#c9a96e] transition-colors text-sm">Gnostic Society Australia</p>
+              <p className="text-xs text-[#8a6f3f]">facebook.com/GSSAW.Australia</p>
+            </div>
+          </a>
         </div>
       </section>
 

@@ -27,7 +27,7 @@ const THREE_FACTORS = [
       </svg>
     ),
     body: 'The ego, our collection of psychological defects, fears, desires, and conditioned reactions, is the primary obstacle to self-knowledge and genuine spiritual development. Through sustained self-observation and inner work, these psychological patterns can be dissolved one by one, freeing the consciousness from its mechanical chains.',
-    detail: 'This is not merely the suppression of impulses. It is a genuine alchemical dissolution: the transmutation of psychological lead into the gold of awakened consciousness. The Gnostic tradition provides specific, practical methods for this inner work.',
+    detail: 'This is not merely the suppression of impulses. It is a genuine alchemical dissolution: the transmutation of psychological lead into the gold of awakened consciousness. Gnostic practice provides specific, practical methods for this inner work.',
   },
   {
     number: '02',

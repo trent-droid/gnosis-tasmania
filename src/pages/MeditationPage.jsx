@@ -25,7 +25,7 @@ export default function MeditationPage() {
     '@context': 'https://schema.org',
     '@type': 'Course',
     'name': 'The Revolution of Meditation',
-    'description': 'Weekly practical meditation classes in the Gnostic tradition: the science of inner stillness and the liberation of consciousness. Classes in Hobart and Launceston, Tasmania.',
+    'description': 'Weekly practical Gnostic meditation classes: the science of inner stillness and the liberation of consciousness. Classes in Hobart and Launceston, Tasmania.',
     'provider': {
       '@type': 'EducationalOrganization',
       'name': 'Gnosis Tasmania',

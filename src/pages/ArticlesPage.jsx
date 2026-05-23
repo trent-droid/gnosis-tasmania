@@ -44,7 +44,7 @@ export default function ArticlesPage() {
           </p>
           {/* Lead qualifier: signals that the path involves real inner work */}
           <p className="text-[#6b5535] text-base leading-relaxed">
-            The Gnostic path is a demanding one. These articles are written for those who come with a genuine desire to understand and apply the teachings in their own lives, not merely to read about them. Sustained inner work, honest self-observation, and consistent practice over time are what the tradition asks of those who would take it seriously.
+            The Gnostic path is a demanding one. These articles are written for those who come with a genuine desire to understand and apply the teachings in their own lives, not merely to read about them. Sustained inner work, honest self-observation, and consistent practice over time are what the path asks of those who would take it seriously.
           </p>
         </div>
       </section>

@@ -22,11 +22,11 @@ const FAQS = [
   },
   {
     q: 'How much time commitment is required for serious practice?',
-    a: 'The tradition asks for consistency rather than intensity. A daily meditation practice of fifteen to thirty minutes, combined with self-observation throughout the day and the retrospective meditation before sleep, forms the practical minimum for genuine progress. Weekly attendance at a class deepens both understanding and motivation significantly. The inner work is not separate from daily life; it is lived within it, and every situation in an ordinary day is an opportunity for genuine practice.',
+    a: 'Consistency matters more than intensity. A daily meditation practice of fifteen to thirty minutes, combined with self-observation throughout the day and the retrospective meditation before sleep, forms the practical minimum for genuine progress. Weekly attendance at a class deepens both understanding and motivation significantly. The inner work is not separate from daily life; it is lived within it, and every situation in an ordinary day is an opportunity for genuine practice.',
   },
   {
     q: 'Is Gnosis compatible with other spiritual or religious traditions?',
-    a: "Yes. The Gnostic tradition does not ask students to abandon their existing spiritual background. It regards the world's authentic traditions as different expressions of the same inner wisdom, and many students come to Gnosis from Christian, Buddhist, Jewish, or other backgrounds and find that the Gnostic teaching deepens rather than displaces their original path. What is asked is sincerity and a genuine willingness to practise, not the adoption of a new religious identity.",
+    a: "Yes. Gnosis does not ask students to abandon their existing spiritual background. The world's authentic traditions are understood as different expressions of the same inner wisdom, and many students come to Gnosis from Christian, Buddhist, Jewish, or other backgrounds and find that the Gnostic teaching deepens rather than displaces their original path. What is asked is sincerity and a genuine willingness to practise, not the adoption of a new religious identity.",
   },
   {
     q: 'Do I need previous experience to join classes?',
@@ -34,7 +34,7 @@ const FAQS = [
   },
   {
     q: 'What is the difference between Gnosis and ordinary meditation?',
-    a: 'Meditation in the Gnostic tradition is one element of a comprehensive path, not a standalone technique. Ordinary mindfulness or secular meditation practice typically focuses on stress reduction, mental calm, or present-moment awareness, and these are genuinely valuable. Gnostic meditation goes further: it is practised alongside the specific inner work of ego dissolution, the conscious management of the creative energy, dream yoga, and self-observation in daily life. Together these practices form a complete science whose explicit aim is the awakening of consciousness, not merely its temporary quieting.',
+    a: 'In Gnosis, meditation is one element of a comprehensive path, not a standalone technique. Ordinary mindfulness or secular meditation practice typically focuses on stress reduction, mental calm, or present-moment awareness, and these are genuinely valuable. Gnostic meditation goes further: it is practised alongside the specific inner work of ego dissolution, the conscious management of the creative energy, dream yoga, and self-observation in daily life. Together these practices form a complete science whose explicit aim is the awakening of consciousness, not merely its temporary quieting.',
   },
   {
     q: 'How can I prepare for my first class or meeting?',
@@ -42,7 +42,7 @@ const FAQS = [
   },
   {
     q: 'Are classes free or is there a cost?',
-    a: "All Gnosis Tasmania classes are donation-based. There is no fixed fee and no financial obligation of any kind. Students are invited to contribute what they genuinely can; those who cannot contribute at all are welcomed equally. This approach reflects the tradition's understanding that genuine spiritual teaching should be accessible to all who seek it sincerely, regardless of their material circumstances.",
+    a: "All Gnosis Tasmania classes are donation-based. There is no fixed fee and no financial obligation of any kind. Students are invited to contribute what they genuinely can; those who cannot contribute at all are welcomed equally. This approach reflects the understanding that genuine spiritual teaching should be accessible to all who seek it sincerely, regardless of their material circumstances.",
   },
   {
     q: 'How does the community support new students on the path?',

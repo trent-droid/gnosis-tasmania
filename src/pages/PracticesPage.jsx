@@ -18,7 +18,7 @@ const PRACTICES = [
     title: 'The Stillness Within',
     body: [
       'Meditation is the cornerstone of Gnostic practice. It is not simply relaxation, nor the mere quieting of surface thoughts. It is the systematic development of consciousness: the progressive stilling of the inner machinery until the deep silence of the Being becomes accessible.',
-      'In the Gnostic tradition, meditation unfolds through four stages: relaxation (releasing physical and psychological tension), concentration (fixing the attention on a single point), meditation proper (allowing the concentrated mind to penetrate into the nature of things), and samadhi (the state of union in which the meditator, the act of meditation, and the object of meditation become one).',
+      'In Gnosis, meditation unfolds through four stages: relaxation (releasing physical and psychological tension), concentration (fixing the attention on a single point), meditation proper (allowing the concentrated mind to penetrate into the nature of things), and samadhi (the state of union in which the meditator, the act of meditation, and the object of meditation become one).',
       'With regular practice, even brief meditations begin to produce tangible results: greater presence, clarity, equanimity, and moments of genuine insight into the nature of the self.',
     ],
     practices: [
@@ -51,8 +51,8 @@ const PRACTICES = [
     label: '03 · Dream Yoga',
     title: 'Consciousness in the Inner Worlds',
     body: [
-      'The Gnostic tradition teaches that what we call sleep is not a loss of consciousness, but a shift of awareness into subtler planes of existence. The astral body, the vehicle of consciousness that interpenetrates the physical, continues to function during sleep, navigating inner worlds that are as real and structured as the physical world, if governed by different laws.',
-      'Dream yoga, the cultivation of lucid awareness in sleep, is among the most ancient practices of the world\'s esoteric traditions. In the Tibetan Vajrayana tradition it is called Milam; in the Gnostic tradition it is developed through specific mantras, exercises, and techniques that induce lucid dreaming and conscious out-of-body experience.',
+      'What we call sleep is not a loss of consciousness, but a shift of awareness into subtler planes of existence. The astral body, the vehicle of consciousness that interpenetrates the physical, continues to function during sleep, navigating inner worlds that are as real and structured as the physical world, if governed by different laws.',
+      'Dream yoga, the cultivation of lucid awareness in sleep, is among the most ancient practices of the world\'s esoteric traditions. In the Tibetan Vajrayana tradition it is called Milam; in Gnosis it is developed through specific mantras, exercises, and techniques that induce lucid dreaming and conscious out-of-body experience.',
       'The purpose of this practice is not merely to have interesting dreams. It is to awaken consciousness in a realm where it can encounter higher aspects of the self, receive genuine teaching and guidance, and explore the inner structure of the cosmos directly.',
     ],
     practices: [
@@ -69,7 +69,7 @@ const PRACTICES = [
     title: 'The Science of Sound',
     body: [
       'The word mantra comes from Sanskrit: man (mind) and tra (instrument or tool). A mantra is a sound, a syllable, word, or phrase, that when correctly pronounced produces specific effects in the energy of the practitioner. This is not superstition but a precise science.',
-      'The Gnostic tradition teaches that the universe was created through sound: the primordial Word, the Logos, that brings form out of formlessness. Every letter of every sacred alphabet is a vibration; every sacred name is a key to specific forces within the cosmos and within the human organism.',
+      'The universe was created through sound: the primordial Word, the Logos, that brings form out of formlessness. Every letter of every sacred alphabet is a vibration; every sacred name is a key to specific forces within the cosmos and within the human organism.',
       'Mantric practice works directly with the subtle energies of the human organism. Different mantras work on different centres and different bodies, awakening the chakras, elevating the vital force, harmonising the emotional body, and opening the higher faculties of consciousness.',
     ],
     practices: [
@@ -87,7 +87,7 @@ const PRACTICES = [
     body: [
       'The alchemists devoted their lives to the transmutation of base metals into gold. The outer work was symbolic; the real laboratory was the human organism, and the real gold was awakened consciousness. Inner alchemy, the transmutation of the creative energies of the human being into the higher forces of soul development, is the most exalted and demanding practice of the Gnostic path.',
       'All living beings are powered by a creative force, called chi in Chinese medicine, prana in Indian tradition, the Holy Spirit in Christian mysticism, and the Philosophical Mercury in alchemy. This force, when directed downward through mechanical desire and reaction, becomes the fuel of the ego. When transmuted and directed upward, it becomes the nourishment of the awakening soul.',
-      'The Gnostic tradition provides a complete science of this transmutation: the specific practices, understandings, and inner work required to redirect the most powerful energies of the human organism toward their highest possible purpose.',
+      'Gnostic practice provides a complete science of this transmutation: the specific practices, understandings, and inner work required to redirect the most powerful energies of the human organism toward their highest possible purpose.',
     ],
     practices: [
       'Understanding the role of sexual energy in spiritual development',
@@ -143,7 +143,7 @@ export default function PracticesPage() {
       { '@type': 'ListItem', 'position': 4, 'name': 'Mantras',
         'description': 'Sacred sounds from Egyptian, Sanskrit, and Hebrew traditions that work directly with the subtle energies of the human organism for awakening and healing.' },
       { '@type': 'ListItem', 'position': 5, 'name': 'Inner Alchemy',
-        'description': 'The transmutation of creative energies for the development of consciousness and the dissolution of the psychological ego in the Gnostic-Hermetic tradition.' },
+        'description': 'The conscious transmutation of creative energies for the development of consciousness and the dissolution of the psychological ego — the practical heart of Gnostic inner alchemy.' },
     ],
     'provider': {
       '@type': 'Organization',

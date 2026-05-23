@@ -397,7 +397,7 @@ export default function CoursesPage() {
             <div className="w-12 h-[2px] bg-[#c9a96e] mx-auto mb-6" aria-hidden="true" />
             <h3 className="font-display text-2xl font-medium text-[#2a1e12] mb-4">Classes Are Donation-Based</h3>
             <p className="text-[#4a3a26] leading-relaxed mb-4">
-              We do not charge a fixed fee for our classes. All teaching is offered on the basis of voluntary donation. This is in keeping with the tradition that genuine wisdom should never be withheld for financial reasons.
+              We do not charge a fixed fee for our classes. All teaching is offered on the basis of voluntary donation. Genuine wisdom should never be withheld for financial reasons.
             </p>
             <p className="text-[#4a3a26] leading-relaxed mb-4">
               If you are in a position to give, your generosity directly supports the continuation of these teachings and helps make them available to those who cannot afford to pay. If you cannot give at this time, you are still warmly welcome.

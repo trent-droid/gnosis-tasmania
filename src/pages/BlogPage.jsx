@@ -34,7 +34,7 @@ const ARTICLES = [
       },
       {
         heading: 'Divided Attention',
-        body: 'The key to genuine self-observation is what the tradition calls "divided attention": being simultaneously aware of what is happening around us and of what is happening within. Ordinary consciousness is almost entirely extroverted, absorbed in external circumstances. Divided attention begins to reverse this, creating a genuine interior witness.',
+        body: 'The key to genuine self-observation is "divided attention": being simultaneously aware of what is happening around us and of what is happening within. Ordinary consciousness is almost entirely extroverted, absorbed in external circumstances. Divided attention begins to reverse this, creating a genuine interior witness.',
       },
       {
         heading: 'Starting Simply',
@@ -61,7 +61,7 @@ const ARTICLES = [
     content: [
       {
         heading: 'The Time Objection',
-        body: 'The tradition is clear: even ten minutes of genuine, focused meditation is worth more than an hour of unfocused sitting. The issue is never the quantity of time but the quality of attention. And the capacity for quality attention grows, over time, with practice.',
+        body: 'Even ten minutes of genuine, focused meditation is worth more than an hour of unfocused sitting. The issue is never the quantity of time but the quality of attention. And the capacity for quality attention grows, over time, with practice.',
       },
       {
         heading: 'Start with Five Minutes',
@@ -69,7 +69,7 @@ const ARTICLES = [
       },
       {
         heading: 'The Moments Between',
-        body: 'Beyond formal sitting, the Gnostic tradition places great emphasis on the inner work that happens between periods of meditation, in the car, in the queue, between meetings. Every moment of genuine self-recollection, of returning from mechanical absorption to present awareness, is a meditation. Cultivate these moments as carefully as any formal practice.',
+        body: 'Beyond formal sitting, great emphasis falls on the inner work that happens between periods of meditation, in the car, in the queue, between meetings. Every moment of genuine self-recollection, of returning from mechanical absorption to present awareness, is a meditation. Cultivate these moments as carefully as any formal practice.',
       },
       {
         heading: 'The Body as Anchor',
@@ -108,7 +108,7 @@ const ARTICLES = [
       },
       {
         heading: 'Practical Universality',
-        body: 'This universality has a practical consequence: the practices of the Gnostic path can be enriched by immersion in any authentic tradition. A practitioner who is also a sincere Christian, Buddhist, or practitioner of Kabbalah is not in conflict with the Gnostic teaching; they are drinking from the same source. The Gnostic tradition is, ultimately, the tradition of universal human wisdom.',
+        body: 'This universality has a practical consequence: the practices of the Gnostic path can be enriched by immersion in any authentic tradition. A practitioner who is also a sincere Christian, Buddhist, or practitioner of Kabbalah is not in conflict with the Gnostic teaching; they are drinking from the same source. Gnosis is, ultimately, the expression of universal human wisdom.',
       },
     ],
   },
@@ -127,7 +127,7 @@ const ARTICLES = [
       },
       {
         heading: 'Death: The Dissolution of the Ego',
-        body: 'The first factor is the "death" of the ego, the gradual dissolution of the psychological conditionings, fears, desires, and reactive patterns that constitute the false self. This is not a metaphor. The Gnostic tradition teaches specific, practical methods for working directly with these psychological elements, observing them without identification, understanding them without justification, and working with the inner forces that can genuinely dissolve them.',
+        body: 'The first factor is the "death" of the ego, the gradual dissolution of the psychological conditionings, fears, desires, and reactive patterns that constitute the false self. This is not a metaphor. Gnostic practice provides specific, practical methods for working directly with these psychological elements, observing them without identification, understanding them without justification, and working with the inner forces that can genuinely dissolve them.',
       },
       {
         heading: 'Birth: The Emergence of the Soul',
