@@ -3,32 +3,35 @@
 // title removed from metaTitle (title field preserved per user request); added siteLinks
 // for internal navigation; improved quotes; ensured no em-dashes or en-dashes in body content.
 
-import artHermesImg            from '../assets/art_hermes_trismegistus.jpg?format=webp'
-import artSplendorImg          from '../assets/art_splendor_solis_resurrection.jpg?format=webp'
-import artDurerImg             from '../assets/art_durer_melencolia.jpg?format=webp'
-import artKhunrathImg          from '../assets/art_khunrath_rebis.jpg?format=webp'
-import heroZenImg              from '../assets/hero_zen.jpg?format=webp'
-import esotericFlammarionImg   from '../assets/esoteric_flammarion_colorized.jpg?format=webp'
-import artBlakeImg             from '../assets/art_blake_jacobs_ladder.jpg?format=webp'
-import esotericSunMoonImg      from '../assets/esoteric_sun_moon.jpg?format=webp'
-import heroSchoolAthensImg     from '../assets/hero_school_athens.jpg?format=webp'
-import artVitruvianImg         from '../assets/art_vitruvian_man.jpg?format=webp'
-import artRosariumImg          from '../assets/art_rosarium_king_queen.jpg?format=webp'
-import artBouguereauAngelsImg  from '../assets/art_bouguereau_angels.jpg?format=webp'
+// Article thumbnail images — each unique, no overlap with page hero/parallax images.
+// All works are public domain. Sources: Wikimedia Commons, existing project assets.
+//
+// art_rembrandt_philosopher.jpg    — Rembrandt, The Philosopher in Meditation (1632), Louvre. Wikimedia Commons.
+// esoteric_four_three_two_one.jpg  — Anon. esoteric hierarchy diagram (public domain). Project asset.
+// art_friedrich_wanderer.jpg       — C.D. Friedrich, Wanderer above the Sea of Fog (1818). Wikimedia Commons.
+// art_lady_ermine.jpg              — Leonardo da Vinci, Lady with an Ermine (c. 1489). Project asset.
+// hero_angkor.jpg                  — Angkor Wat temple complex, Cambodia (public domain photo). Project asset.
+// esoteric_flammarion_original.jpg — Flammarion engraving, original B&W woodcut (1888). Project asset.
+//                                    (distinct from the colourised version used as the Contact page hero)
+// art_watts_hope.jpg               — G.F. Watts, Hope (1886), Tate Britain. Wikimedia Commons.
+// art_burne_jones_fortune.jpg      — E. Burne-Jones, La Ruota della Fortuna (1875-83). Wikimedia Commons.
+// art_friedrich_moon.jpg           — C.D. Friedrich, Two Men Contemplating the Moon (c.1825). Wikimedia Commons.
+// art_fludd_summum.jpg             — Robert Fludd, Summum Bonum (1629). Project asset.
+// art_rosarium_conjunction.jpg     — Rosarium Philosophorum, conjunction plate (c. 1550). Project asset.
+// art_lamentation.jpg              — Rogier van der Weyden, The Lamentation (c. 1460-64). Project asset.
 
-// All images are public-domain artworks already present in the project assets:
-// art_hermes_trismegistus.jpg       — Hermes Trismegistus mosaic, Siena Cathedral (c. 1480)
-// art_splendor_solis_resurrection.jpg — Splendor Solis alchemical ms. (c. 1582)
-// art_durer_melencolia.jpg          — Albrecht Durer, Melencolia I (1514)
-// art_khunrath_rebis.jpg            — Khunrath, Amphitheatrum Sapientiae Aeternae (1595)
-// hero_zen.jpg                      — Zen garden, Kyoto (public domain photograph)
-// esoteric_flammarion_colorized.jpg — Flammarion engraving (1888, colourised)
-// art_blake_jacobs_ladder.jpg       — William Blake, Jacob's Ladder (c. 1805)
-// esoteric_sun_moon.jpg             — Alchemical sun-and-moon symbol (public domain)
-// hero_school_athens.jpg            — Raphael, The School of Athens (1511)
-// art_vitruvian_man.jpg             — Leonardo da Vinci, Vitruvian Man (c. 1490)
-// art_rosarium_king_queen.jpg       — Rosarium Philosophorum (c. 1550)
-// art_bouguereau_angels.jpg         — W.-A. Bouguereau, Song of the Angels (1881)
+import artRembrandtImg         from '../assets/art_rembrandt_philosopher.jpg?format=webp'
+import esotericFourThreeImg    from '../assets/esoteric_four_three_two_one.jpg?format=webp'
+import artFriedrichWandererImg from '../assets/art_friedrich_wanderer.jpg?format=webp'
+import artLadyErmineImg        from '../assets/art_lady_ermine.jpg?format=webp'
+import heroAngkorImg           from '../assets/hero_angkor.jpg?format=webp'
+import esotericFlammarionBWImg from '../assets/esoteric_flammarion_original.jpg?format=webp'
+import artWattsHopeImg         from '../assets/art_watts_hope.jpg?format=webp'
+import artBurneJonesImg        from '../assets/art_burne_jones_fortune.jpg?format=webp'
+import artFriedrichMoonImg     from '../assets/art_friedrich_moon.jpg?format=webp'
+import artFluddSummumImg       from '../assets/art_fludd_summum.jpg?format=webp'
+import artRosariumConjImg      from '../assets/art_rosarium_conjunction.jpg?format=webp'
+import artLamentationImg       from '../assets/art_lamentation.jpg?format=webp'
 
 // Data structure per article:
 // slug, title, metaTitle, metaDescription, excerpt,
@@ -47,9 +50,9 @@ export const ARTICLES = [
     metaTitle: 'What is Gnosis? Direct Inner Knowledge for Modern Life | Gnosis Tasmania',
     metaDescription: 'Gnosis is the direct, experiential knowledge of spiritual reality available to every sincere aspirant. Discover what this ancient wisdom means and how it applies to modern life.',
     excerpt: 'Gnosis is the direct, living experience of spiritual reality rather than belief or theory. This introduction explores what that means and why it matters for aspirants today.',
-    image: artHermesImg,
-    imageAlt: 'Hermes Trismegistus mosaic, Siena Cathedral (c. 1480), depicting the legendary sage credited with the foundational axiom: as above, so below',
-    imagePosition: 'center top',
+    image: artRembrandtImg,
+    imageAlt: 'Rembrandt van Rijn, The Philosopher in Meditation (1632), Louvre — a solitary figure bent over a book in a spiral staircase of golden interior light, the perfect image of inner contemplation',
+    imagePosition: 'center center',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'The word Gnosis comes from ancient Greek and means simply "knowledge," but it refers to a very specific kind of knowing: not the accumulation of facts or the adoption of beliefs, but direct, living experience of spiritual reality. Every genuine mystical tradition in history has pointed toward this inner knowing under different names. Every sincere aspirant who has followed a contemplative path deeply enough has arrived at the same recognition: that the most important truths of existence can be known firsthand, not merely believed or theorised about. This is the heart of what Gnosis offers, and it is as relevant today as it has ever been.',
@@ -130,8 +133,8 @@ export const ARTICLES = [
     metaTitle: 'The Three Factors of Conscious Awakening | Gnosis Tasmania',
     metaDescription: 'Genuine spiritual awakening requires three interwoven factors: the death of the ego, the birth of the soul, and sacrifice for humanity. Explore how they work together.',
     excerpt: 'Genuine spiritual transformation requires three things working simultaneously: the dissolution of the false self, the development of genuine inner capacities, and sincere service to others.',
-    image: artSplendorImg,
-    imageAlt: 'Splendor Solis alchemical manuscript (c. 1582), depicting the resurrection scene that symbolises genuine inner rebirth through conscious and sustained transformation',
+    image: esotericFourThreeImg,
+    imageAlt: 'Esoteric hierarchy diagram depicting the fourfold, threefold, twofold, and singular principles that underlie the structure of consciousness and creation in the perennial tradition',
     imagePosition: 'center center',
     date: '2026-05-23',
     readTime: '10 min read',
@@ -207,9 +210,9 @@ export const ARTICLES = [
     metaTitle: 'Psychological Death: Letting Go of the Inner Ego | Gnosis Tasmania',
     metaDescription: 'Psychological death is the progressive dissolution of the ego through self-observation and comprehension. A practical guide to understanding and beginning this foundational inner work.',
     excerpt: 'Psychological death is the gradual, conscious dissolution of the accumulated ego patterns that obscure our true nature. Understanding this process is central to genuine spiritual practice.',
-    image: artDurerImg,
-    imageAlt: 'Albrecht Durer, Melencolia I (1514), a masterwork of introspective symbolism depicting the soul surrounded by instruments of knowledge yet absorbed in deep inner contemplation',
-    imagePosition: 'center center',
+    image: artFriedrichWandererImg,
+    imageAlt: 'Caspar David Friedrich, Wanderer above the Sea of Fog (1818) — a solitary figure standing at the edge of a precipice, contemplating the vast and unknown landscape before him, an enduring image of interior meditation',
+    imagePosition: 'center top',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'Psychological death is one of the most central and distinctive teachings of the Gnostic tradition. It refers not to physical death but to the progressive, conscious dissolution of the psychological ego: the accumulated structure of habitual patterns, reactive states, fears, vanities, and conditioned behaviours that together constitute our ordinary sense of personal identity. This process of inner dissolution is understood as the fundamental prerequisite for genuine spiritual awakening, because it is precisely this structure that prevents the authentic consciousness from expressing itself freely. The teaching is practical, not theoretical: it describes a real process that unfolds in the actual conditions of daily life.',
@@ -279,9 +282,9 @@ export const ARTICLES = [
     metaTitle: 'Self-Observation: The Art of Watching Your Mind | Gnosis Tasmania',
     metaDescription: 'Self-observation is the foundational practice of the Gnostic path: the capacity to watch your own inner states clearly and non-judgementally as they arise. A practical guide to beginning.',
     excerpt: 'Self-observation is the foundational Gnostic practice: the disciplined, non-judgemental watching of inner states as they actually arise in present experience. Here is how to begin.',
-    image: artKhunrathImg,
-    imageAlt: 'Heinrich Khunrath, Amphitheatrum Sapientiae Aeternae (1595), depicting the alchemist\'s inner laboratory where careful inner observation and sincere prayer work together as one practice',
-    imagePosition: 'center center',
+    image: artLadyErmineImg,
+    imageAlt: 'Leonardo da Vinci, Lady with an Ermine (c. 1489-1490), Czartoryski Museum — the watchful, clear-eyed gaze of the figure renders visible the quality of alert inner presence that self-observation requires',
+    imagePosition: 'center top',
     date: '2026-05-23',
     readTime: '9 min read',
     intro: 'Self-observation is the foundational practical discipline of the Gnostic path. It is the capacity to watch one\'s own psychological states clearly, honestly, and without immediate identification or reaction, as they actually arise in present experience. Without this capacity, the deeper work of comprehension and psychological dissolution cannot proceed, because one cannot work with what one has not first clearly seen. Self-observation is therefore not merely one practice among others but the essential preparation for all other aspects of the inner work. Everything else depends on it, and everything else becomes more effective as it deepens.',
@@ -363,8 +366,8 @@ export const ARTICLES = [
     metaTitle: 'Gnostic Meditation Practices for Inner Peace and Clarity | Gnosis Tasmania',
     metaDescription: 'Explore the progressive science of Gnostic meditation: from physical relaxation and concentration through to genuine meditative absorption and samadhi. Practical guidance for all levels.',
     excerpt: 'Meditation in the Gnostic tradition is a precise inner science with clear progressive stages. This article provides a practical overview for students at every level of experience.',
-    image: heroZenImg,
-    imageAlt: 'A serene Japanese Zen garden with raked gravel and stone, evoking the stillness and clarity that consistent meditation practice cultivates in the inner life',
+    image: artFriedrichMoonImg,
+    imageAlt: 'Caspar David Friedrich, Two Men Contemplating the Moon (c. 1825-1830) — two silent figures standing together under a luminous moon in a bare winter landscape, an image of shared nocturnal contemplation',
     imagePosition: 'center center',
     date: '2026-05-23',
     readTime: '10 min read',
@@ -436,8 +439,8 @@ export const ARTICLES = [
     metaTitle: 'Dream Work and Astral Exploration in Gnosis | Gnosis Tasmania',
     metaDescription: 'The Gnostic tradition teaches that conscious dreaming and astral exploration are genuine, learnable capacities. This article explains the methods and their role in inner development.',
     excerpt: 'The Gnostic tradition offers a complete science of conscious dreaming and astral exploration. This article introduces the methods and explains their significance for inner development.',
-    image: esotericFlammarionImg,
-    imageAlt: 'The Flammarion Engraving (1888, colourised), depicting a pilgrim who peers through the firmament into the vast cosmic dimensions that lie beyond ordinary sensory experience',
+    image: esotericFlammarionBWImg,
+    imageAlt: 'The Flammarion Engraving (1888), original woodcut — a medieval traveller kneels at the edge of the world and peers through the boundary between the visible and the infinite, the perfect symbol of astral exploration',
     imagePosition: 'center 60%',
     date: '2026-05-23',
     readTime: '10 min read',
@@ -517,9 +520,9 @@ export const ARTICLES = [
     metaTitle: 'The Path of Inner Transformation | Gnosis Tasmania',
     metaDescription: 'The Gnostic initiatic path has a precise structure of stages, thresholds, and genuine transformations. An overview of what the path involves and what it genuinely requires.',
     excerpt: 'The Gnostic path of inner transformation has a precise structure of stages and genuine thresholds. This article provides an honest overview of the path and what it genuinely asks of us.',
-    image: artBlakeImg,
-    imageAlt: 'William Blake, Jacob\'s Ladder (c. 1805), depicting luminous figures ascending between earth and heaven, one of history\'s most enduring images of the soul\'s upward path',
-    imagePosition: 'center top',
+    image: artWattsHopeImg,
+    imageAlt: 'George Frederic Watts, Hope (1886), Tate Britain — a blindfolded figure seated atop the globe, playing a lyre with a single remaining string, one of the most resonant images of the soul persisting through inner difficulty',
+    imagePosition: 'center center',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'Every genuine spiritual tradition has understood that inner transformation is not an accidental process but one that follows a recognisable structure: that there are stages, thresholds, tests, and genuine arrivals on the path from ordinary unconscious existence to fully awakened consciousness. The Gnostic tradition describes this structure with unusual precision, drawing on the initiatic traditions of Egypt, Kabbalah, Christianity, Buddhism, and classical antiquity to map a path that, while genuinely demanding, is entirely possible for those who are willing to engage with it honestly and consistently over an extended period of time.',
@@ -592,9 +595,9 @@ export const ARTICLES = [
     metaTitle: 'Remembering Past Lives: Gnostic Retrospection Methods | Gnosis Tasmania',
     metaDescription: 'The Gnostic tradition offers gentle, practical methods for exploring the soul\'s continuity across lifetimes through retrospective meditation and conscious work in the dream state.',
     excerpt: 'Through retrospective meditation and conscious dreamwork, the Gnostic tradition offers practical methods for exploring the soul\'s continuity across many lifetimes.',
-    image: esotericSunMoonImg,
-    imageAlt: 'Sun and moon in alchemical symbolism, representing the great cycles of manifestation and rest through which the soul passes in its long path across successive incarnations',
-    imagePosition: 'center center',
+    image: artBurneJonesImg,
+    imageAlt: 'Edward Burne-Jones, La Ruota della Fortuna (1875-1883) — the great Wheel of Fortune turned by a robed figure, bearing souls upward and downward through the cycle of destiny, a timeless image of karma and reincarnation',
+    imagePosition: 'center top',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'The doctrine of reincarnation, the teaching that the soul passes through successive lives in the process of its long evolution toward awakening, is one of the most ancient and widely attested teachings in the world\'s spiritual traditions. It appears in the major Eastern traditions of Hinduism and Buddhism, in the Platonic and Neoplatonic philosophy of ancient Greece, in the Kabbalistic understanding of the soul\'s path, and in the esoteric dimensions of early Christianity. The Gnostic tradition not only affirms this teaching but provides practical methods through which the sincere student can begin to explore, through direct inner experience, the continuity of their own soul across multiple lifetimes. These methods are gentle, systematic, and accessible to anyone willing to apply them consistently.',
@@ -666,8 +669,8 @@ export const ARTICLES = [
     metaTitle: 'Gnostic Centres and Communities in Australia | Gnosis Tasmania',
     metaDescription: 'Find Gnostic study groups and centres across Australia. An overview of the Australian Gnostic community, what to expect from classes, and how to connect with your nearest group.',
     excerpt: 'The Gnostic tradition is actively studied across Australia. An overview of the national community, what Gnostic classes actually look like, and how to find your nearest group.',
-    image: heroSchoolAthensImg,
-    imageAlt: 'Raphael, The School of Athens (1511), depicting the philosophers of antiquity gathered in open and equal exchange of sincere inquiry, a timeless image of genuine community learning',
+    image: heroAngkorImg,
+    imageAlt: 'Angkor Wat temple complex at dawn, Cambodia — a vast living monument to the timeless impulse toward inner knowledge and sacred community that the Gnostic tradition carries forward in Australia and worldwide',
     imagePosition: 'center center',
     date: '2026-05-23',
     readTime: '9 min read',
@@ -745,8 +748,8 @@ export const ARTICLES = [
     metaTitle: 'Living the Gnostic Path in Everyday Australian Life | Gnosis Tasmania',
     metaDescription: 'How does Gnostic practice actually integrate into a busy modern Australian life? Practical guidance for bringing the inner work into the ordinary texture of each day.',
     excerpt: 'The Gnostic path is not practised only in meditation sessions and weekly classes; it is lived in the ordinary texture of each day. Practical guidance for integration into Australian life.',
-    image: artVitruvianImg,
-    imageAlt: 'Leonardo da Vinci, Vitruvian Man (c. 1490), depicting the human being as a microcosm that contains within itself the proportions of the greater cosmos',
+    image: artFluddSummumImg,
+    imageAlt: 'Robert Fludd, Summum Bonum (1629) — an esoteric diagram of the divine principle radiating through all levels of being, from the highest to the most ordinary, the cosmological ground of living a Gnostic life',
     imagePosition: 'center center',
     date: '2026-05-23',
     readTime: '9 min read',
@@ -827,8 +830,8 @@ export const ARTICLES = [
     metaTitle: 'The Sacred in Relationships and Sexuality | Gnosis Tasmania',
     metaDescription: 'The Gnostic tradition understands the creative force as sacred: not to be suppressed or indulged mechanically, but understood and transformed as a vehicle for inner awakening.',
     excerpt: 'The Gnostic tradition understands the creative force as sacred, and the relationship between man and woman as a potential vehicle of genuine spiritual transformation. An introduction.',
-    image: artRosariumImg,
-    imageAlt: 'Rosarium Philosophorum (c. 1550), depicting the alchemical king and queen whose sacred union represents the integration of complementary principles at the heart of the great work',
+    image: artRosariumConjImg,
+    imageAlt: 'Rosarium Philosophorum, conjunction plate (c. 1550) — the alchemical king and queen descend together into the sacred bath, the foundational image of the great work of sacred union and inner integration',
     imagePosition: 'center center',
     date: '2026-05-23',
     readTime: '10 min read',
@@ -906,8 +909,8 @@ export const ARTICLES = [
     metaTitle: 'Sacrifice and Service: The Heart of the Gnostic Way | Gnosis Tasmania',
     metaDescription: 'Sacrifice and service are not peripheral to the Gnostic path but essential to it. This article explores what genuine service means and why it is central to authentic spiritual development.',
     excerpt: 'Sacrifice and service are not peripheral to the Gnostic path but essential to it. Genuine giving, freely offered from sincere love, is one of the most reliable engines of inner development.',
-    image: artBouguereauAngelsImg,
-    imageAlt: 'William-Adolphe Bouguereau, Song of the Angels (1881), depicting luminous figures gathered in compassionate attendance, evoking the grace and gentleness of love expressed in pure service',
+    image: artLamentationImg,
+    imageAlt: 'Rogier van der Weyden, The Lamentation of Christ (c. 1460-64) — figures bent in profound compassionate grief over the body of Christ, one of Western art\'s most powerful images of selfless sacrifice and love for another',
     imagePosition: 'center top',
     date: '2026-05-23',
     readTime: '9 min read',
