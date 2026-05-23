@@ -18,14 +18,14 @@ import artMonaLisaImgSrcset         from '../assets/art_mona_lisa.jpg?w=640;1024
 export default function MeditationPage() {
   usePageMeta(
     'Meditation Classes in Hobart & Launceston | Gnosis Tasmania',
-    'Gnostic meditation classes in Hobart and Launceston. Learn relaxation, concentration, meditation, and samadhi — taught in the tradition of Samael Aun Weor. Weekly, donation-based.',
+    'Gnostic meditation classes in Hobart and Launceston, taught in the tradition of Samael Aun Weor. Learn relaxation, concentration, meditation, and samadhi. Weekly, donation-based.',
     '/meditation-classes'
   )
   useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'Course',
     'name': 'The Revolution of Meditation',
-    'description': 'Weekly practical meditation classes in the Gnostic tradition — the science of inner stillness and the liberation of consciousness. Classes in Hobart and Launceston, Tasmania.',
+    'description': 'Weekly practical meditation classes in the Gnostic tradition: the science of inner stillness and the liberation of consciousness. Classes in Hobart and Launceston, Tasmania.',
     'provider': {
       '@type': 'EducationalOrganization',
       'name': 'Gnosis Tasmania',
@@ -37,7 +37,7 @@ export default function MeditationPage() {
       '@type': 'Offer',
       'price': '0',
       'priceCurrency': 'AUD',
-      'description': 'Donation-based — attend freely, give what you can',
+      'description': 'Donation-based: attend freely, give what you can',
     },
     'hasCourseInstance': [
       {
@@ -174,9 +174,10 @@ export default function MeditationPage() {
         </figure>
 
         {/* ── The Essence & Ecstasy ─────────────────────────────────────────── */}
-        <section className="py-20 px-4 bg-white fade-section" aria-labelledby="essence-heading">
+        {/* No fade-section: Mona Lisa image is inside. Heading and text column use fade-content. */}
+        <section className="py-20 px-4 bg-white" aria-labelledby="essence-heading">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-14">
+            <div className="text-center mb-14 fade-content">
               <SectionLabel>The mystical fruit of stillness</SectionLabel>
               <h2 id="essence-heading" className="font-display text-4xl sm:text-5xl font-light text-[#2a1e12] mb-5">
                 The Essence and Ecstasy
@@ -185,7 +186,7 @@ export default function MeditationPage() {
             </div>
 
             <div className="grid md:grid-cols-5 gap-12 items-start">
-              <div className="md:col-span-3 space-y-5 text-base leading-relaxed text-[#3a2f1f]">
+              <div className="md:col-span-3 space-y-5 text-base leading-relaxed text-[#3a2f1f] fade-content">
                 <p>
                   The stillness and silence of the mind has a single objective: to liberate the Essence
                   from the mind, so that when fused with the Monad or Inner Self, it can experience

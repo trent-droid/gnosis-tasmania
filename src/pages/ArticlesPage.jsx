@@ -9,7 +9,7 @@ import heroSchoolAthensImg from '../assets/hero_school_athens.jpg?format=webp'
 export default function ArticlesPage() {
   usePageMeta(
     'Gnostic Articles & Teachings | Gnosis Tasmania',
-    'Explore our library of Gnostic articles — covering inner awakening, meditation, self-observation, the ego, astral exploration, and more. Based on the teachings of Samael Aun Weor.',
+    'Explore our library of Gnostic articles covering inner awakening, meditation, self-observation, the ego, astral exploration, and more. Based on the teachings of Samael Aun Weor.',
     '/articles'
   )
 
@@ -20,7 +20,7 @@ export default function ArticlesPage() {
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}
       <HeroParallax
         src={heroSchoolAthensImg}
-        alt="Raphael's School of Athens — the great thinkers of antiquity gathered in open philosophical exchange"
+        alt="Raphael's School of Athens, depicting the great thinkers of antiquity gathered in open philosophical exchange"
         heightClass="h-[55vh] min-h-[380px]"
         position="center center"
       >

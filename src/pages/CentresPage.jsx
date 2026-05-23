@@ -99,7 +99,7 @@ const INTERNATIONAL = [
     entries: [
       { country: 'Germany', detail: 'Pforzheim', website: 'https://studienkreis-gnosis.org', email: 'studienkreis.gnosis@gmail.com' },
       { country: 'Italy', detail: 'Bari · Bologna · Florence · Genoa · Naples · Padua · Palermo · Rome · Turin' },
-      { country: 'Spain', detail: '23 centres — Barcelona, Madrid, Bilbao, Valencia and more' },
+      { country: 'Spain', detail: '23 centres: Barcelona, Madrid, Bilbao, Valencia and more' },
       { country: 'UK & Ireland', detail: 'Bristol · Dublin · Edinburgh · Glasgow · London · Nottingham' },
     ],
   },
@@ -109,13 +109,13 @@ const INTERNATIONAL = [
       { country: 'Canada', detail: 'Vancouver, BC', website: 'https://gnosisbc.com' },
       { country: 'Mexico', detail: '18 centres nationwide' },
       { country: 'Puerto Rico', detail: 'Bayamón' },
-      { country: 'United States', detail: '23+ centres — Albany, Austin, Portland, Seattle, San Diego and more' },
+      { country: 'United States', detail: '23+ centres: Albany, Austin, Portland, Seattle, San Diego and more' },
     ],
   },
   {
     region: 'Central & South America',
     entries: [
-      { country: 'Argentina', detail: 'Buenos Aires region — Cañuelas, La Plata, Quilmes' },
+      { country: 'Argentina', detail: 'Buenos Aires region: Cañuelas, La Plata, Quilmes' },
       { country: 'Brazil', detail: 'Belo Horizonte · Balneário Camboriú · Campinas' },
       { country: 'Colombia', detail: 'Bogotá · Medellín–Rionegro' },
       { country: 'Costa Rica', detail: 'Alajuela · Liberia · San José' },
@@ -224,7 +224,7 @@ function IntlRegionCard({ region, entries }) {
 export default function CentresPage() {
   usePageMeta(
     'Gnostic Centres Worldwide | Gnosis Tasmania',
-    'Find Gnostic centres across Australia and worldwide — from Hobart and Launceston to every state in Australia, New Zealand, and international centres across Europe, the Americas, Asia, and Africa.',
+    'Find Gnostic centres across Australia and worldwide, from Hobart and Launceston to every state in Australia, New Zealand, and international centres across Europe, the Americas, Asia, and Africa.',
     '/gnostic-centres'
   )
 
@@ -233,7 +233,7 @@ export default function CentresPage() {
     '@type': 'WebPage',
     'name': 'Gnostic Centres Worldwide',
     'url': 'https://gnosistasmania.com.au/gnostic-centres',
-    'description': 'A global directory of Gnostic study centres affiliated with the teachings of Samael Aun Weor — including every Australian centre and international centres across five continents.',
+    'description': 'A global directory of Gnostic study centres affiliated with the teachings of Samael Aun Weor, including every Australian centre and international centres across five continents.',
     'inLanguage': 'en-AU',
   })
 
@@ -244,7 +244,7 @@ export default function CentresPage() {
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}
       <HeroParallax
         src={heroImg}
-        alt="The School of Athens by Raphael — philosophers of every tradition gathered in one place"
+        alt="The School of Athens by Raphael, depicting philosophers of every tradition gathered in one place"
         overlay="bg-gradient-to-b from-[#1c1409]/70 via-[#1c1409]/50 to-[#1c1409]/80"
         position="center 35%"
       >
@@ -257,7 +257,7 @@ export default function CentresPage() {
           </h1>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] text-lg font-light leading-relaxed max-w-2xl mx-auto">
-            A worldwide community of sincere seekers — sharing the ancient science of Gnosis across every continent.
+            A worldwide community of sincere seekers, sharing the ancient science of Gnosis across every continent.
           </p>
         </div>
       </HeroParallax>
@@ -292,7 +292,7 @@ export default function CentresPage() {
                 Gnostic Centres in Australia
               </h2>
               <p className="text-base text-[#4a3a26] max-w-2xl mx-auto leading-relaxed mb-5">
-                Centres across every state and territory — all part of the Australian Gnostic Association,
+                Centres across every state and territory, all part of the Australian Gnostic Association,
                 offering weekly meditation and study classes free of charge.
               </p>
               <GoldRule />
@@ -376,7 +376,7 @@ export default function CentresPage() {
             </h2>
             <GoldRule className="mb-6" />
             <p className="text-[#c8b89a] text-base leading-relaxed mb-8">
-              Our weekly classes are open to all — no experience necessary, no fees charged.
+              Our weekly classes are open to all. No experience necessary, no fees charged.
               We would love to welcome you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

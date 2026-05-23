@@ -120,7 +120,7 @@ const BASE = 'https://gnosistasmania.com.au'
 
 export default function PracticesPage() {
   usePageMeta(
-    'Gnostic Practices — Meditation, Dream Yoga & Inner Alchemy | Gnosis Tasmania',
+    'Gnostic Practices: Meditation, Dream Yoga & Inner Alchemy | Gnosis Tasmania',
     'Gnostic practices taught in Tasmania: meditation, self-observation, dream yoga, mantras, and inner alchemy. Practical tools for genuine inner transformation.',
     '/practices'
   )
@@ -128,7 +128,7 @@ export default function PracticesPage() {
   useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    'name': 'Gnostic Practices — Meditation, Dream Yoga & Inner Alchemy',
+    'name': 'Gnostic Practices: Meditation, Dream Yoga & Inner Alchemy',
     'description': 'Gnostic practices taught in Hobart and Launceston, Tasmania: meditation, self-observation, dream yoga, mantras, and inner alchemy. Practical tools for genuine inner transformation in the tradition of Samael Aun Weor.',
     'url': `${BASE}/practices`,
     'inLanguage': 'en-AU',
@@ -137,7 +137,7 @@ export default function PracticesPage() {
       { '@type': 'ListItem', 'position': 1, 'name': 'Meditation',
         'description': 'The systematic development of consciousness through relaxation, concentration, meditation, and samadhi. The cornerstone of all Gnostic inner work.' },
       { '@type': 'ListItem', 'position': 2, 'name': 'Self-Observation',
-        'description': 'Dividing attention to be simultaneously aware of what is happening around us and within us — the foundational practice of the Gnostic path.' },
+        'description': 'Dividing attention to be simultaneously aware of what is happening around us and within us: the foundational practice of the Gnostic path.' },
       { '@type': 'ListItem', 'position': 3, 'name': 'Dream Yoga',
         'description': 'Cultivating conscious awareness in sleep through mantras and retrospection; developing lucid dreaming and conscious out-of-body experience.' },
       { '@type': 'ListItem', 'position': 4, 'name': 'Mantras',

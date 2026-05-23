@@ -33,6 +33,7 @@ const NAV_ITEMS = [
     children: [
       { to: '/contact',          label: 'Contact Us' },
       { to: '/gnostic-centres',  label: 'Gnostic Centres Worldwide' },
+      { to: '/faq',              label: 'FAQ' },
     ],
   },
 ]

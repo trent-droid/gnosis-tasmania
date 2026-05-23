@@ -97,7 +97,7 @@ const BASE = 'https://gnosistasmania.com.au'
 export default function WhatIsGnosisPage() {
   usePageMeta(
     'What is Gnosis? | Gnosis Tasmania',
-    'What is Gnosis? Direct, experiential self-knowledge — the universal wisdom at the heart of every tradition. Practical classes in Hobart and Launceston, Tasmania.',
+    'What is Gnosis? Direct, experiential self-knowledge: the universal wisdom at the heart of every tradition. Practical classes in Hobart and Launceston, Tasmania.',
     '/what-is-gnosis'
   )
 
@@ -116,7 +116,7 @@ export default function WhatIsGnosisPage() {
             'name': 'What is Gnosis?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Gnosis (from the Greek γνῶσις) is direct, experiential knowledge of oneself and of truth — not belief or dogma, but lived inner experience. It is the universal thread running through every authentic spiritual tradition, from ancient Egypt and Greece to the teachings of Buddha, Jesus, and the perennial wisdom masters.',
+              'text': 'Gnosis (from the Greek γνῶσις) is direct, experiential knowledge of oneself and of truth, not belief or dogma, but lived inner experience. It is the universal thread running through every authentic spiritual tradition, from ancient Egypt and Greece to the teachings of Buddha, Jesus, and the perennial wisdom masters.',
             },
           },
           {
@@ -124,7 +124,7 @@ export default function WhatIsGnosisPage() {
             'name': 'Is Gnosis a religion?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Gnosis is not a religion, nor is it opposed to any religion. It is the esoteric heart — the living mystical core — at the centre of every authentic spiritual tradition. Gnostic students may come from any religious background or none. No belief is required, only sincerity and a genuine desire for self-knowledge.',
+              'text': 'Gnosis is not a religion, nor is it opposed to any religion. It is the esoteric heart, the living mystical core, at the centre of every authentic spiritual tradition. Gnostic students may come from any religious background or none. No belief is required, only sincerity and a genuine desire for self-knowledge.',
             },
           },
           {
@@ -148,7 +148,7 @@ export default function WhatIsGnosisPage() {
             'name': 'What are the Gnostic classes offered in Tasmania?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Gnosis Tasmania offers weekly Gnostic classes in Hobart and Launceston. Classes cover meditation, self-knowledge, the Three Factors of the Revolution of Consciousness, Kabbalah, dream yoga, and inner alchemy. All classes are donation-based and open to everyone — no prior experience required.',
+              'text': 'Gnosis Tasmania offers weekly Gnostic classes in Hobart and Launceston. Classes cover meditation, self-knowledge, the Three Factors of the Revolution of Consciousness, Kabbalah, dream yoga, and inner alchemy. All classes are donation-based and open to everyone. No prior experience required.',
             },
           },
           {
@@ -156,7 +156,7 @@ export default function WhatIsGnosisPage() {
             'name': 'What are the Three Factors of the Revolution of Consciousness?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'The Three Factors of the Revolution of Consciousness are: (1) Psychological Death — the dissolution of the ego through self-observation and inner work; (2) Second Birth — the emergence of the soul as the false self is dissolved; and (3) Sacrifice for Humanity — living in compassionate service to others. These three factors are the foundation of the Gnostic path as taught by Samael Aun Weor.',
+              'text': 'The Three Factors of the Revolution of Consciousness are: (1) Psychological Death, the dissolution of the ego through self-observation and inner work; (2) Second Birth, the emergence of the soul as the false self is dissolved; and (3) Sacrifice for Humanity, living in compassionate service to others. These three factors are the foundation of the Gnostic path as taught by Samael Aun Weor.',
             },
           },
         ],
@@ -295,10 +295,11 @@ export default function WhatIsGnosisPage() {
       </section>
 
       {/* ── What Gnosis offers ───────────────────────────────────────────────── */}
-      <section className="py-20 px-4 bg-white fade-section">
+      {/* No fade-section: ArtBanner image is inside. Text column uses fade-content. */}
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <div>
+            <div className="fade-content">
               <SectionLabel>What Gnosis Offers</SectionLabel>
               <h2 className="font-display text-4xl font-light text-[#2a1e12] mb-6 leading-snug">
                 A Practical Path of Inner Transformation
@@ -345,10 +346,11 @@ export default function WhatIsGnosisPage() {
       </section>
 
       {/* ── Samael Aun Weor ───────────────────────────────────────────────────── */}
-      <section className="py-20 px-4 bg-[#faf6ef] fade-section">
+      {/* No fade-section: background-image photo is inside. Text column uses fade-content. */}
+      <section className="py-20 px-4 bg-[#faf6ef]">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-14 items-start">
-            <div>
+            <div className="fade-content">
               <SectionLabel>The Modern Synthesis</SectionLabel>
               <h2 className="font-display text-4xl font-light text-[#2a1e12] mb-6 leading-snug">
                 Samael Aun Weor

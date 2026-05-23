@@ -328,7 +328,8 @@ export default function CoreTeachingsPage() {
       </section>
 
       {/* ── Rosarium + The Path ────────────────────────────────────────────────── */}
-      <section className="py-20 px-4 bg-[#faf6ef] fade-section">
+      {/* No fade-section: ArtBanner image is inside. Text column uses fade-content. */}
+      <section className="py-20 px-4 bg-[#faf6ef]">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-14 items-start">
             <div>
@@ -343,7 +344,7 @@ export default function CoreTeachingsPage() {
                 heightClass="h-80 sm:h-[400px]"
               />
             </div>
-            <div>
+            <div className="fade-content">
               <SectionLabel>The Path</SectionLabel>
               <h2 className="font-display text-4xl font-light text-[#2a1e12] mb-6 leading-snug">
                 Inner Alchemy: The Royal Art

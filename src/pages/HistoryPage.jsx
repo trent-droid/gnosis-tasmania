@@ -135,7 +135,7 @@ const BASE = 'https://gnosistasmania.com.au'
 
 export default function HistoryPage() {
   usePageMeta(
-    'History of Gnosis — Egypt to Samael Aun Weor | Gnosis Tasmania',
+    'History of Gnosis: Egypt to Samael Aun Weor | Gnosis Tasmania',
     'The history of Gnostic wisdom: from ancient Egypt and Greece through Kabbalah, Sufism, and the Renaissance, to Samael Aun Weor\'s modern synthesis. Taught in Tasmania.',
     '/history'
   )
@@ -143,7 +143,7 @@ export default function HistoryPage() {
   useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'Article',
-    'headline': 'History of Gnosis — From Ancient Egypt to Samael Aun Weor',
+    'headline': 'History of Gnosis: From Ancient Egypt to Samael Aun Weor',
     'description': 'The history of Gnostic wisdom: from ancient Egypt and Greece through Kabbalah, Sufism, and the Renaissance, to the modern synthesis of Samael Aun Weor.',
     'url': `${BASE}/history`,
     'inLanguage': 'en-AU',
@@ -270,7 +270,8 @@ export default function HistoryPage() {
       ))}
 
       {/* ── Vitruvian Man Quote ───────────────────────────────────────────────── */}
-      <section className="py-16 px-4 bg-white fade-section">
+      {/* No fade-section: ArtBanner image is inside. Text column uses fade-content. */}
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <ArtBanner
@@ -284,7 +285,7 @@ export default function HistoryPage() {
               heightClass="h-[400px]"
             />
           </div>
-          <div>
+          <div className="fade-content">
             <SectionLabel>The Unbroken Thread</SectionLabel>
             <h2 className="font-display text-3xl font-light text-[#2a1e12] mb-6 leading-snug">
               The Flame Never Goes Out

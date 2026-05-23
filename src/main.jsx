@@ -18,6 +18,7 @@ const CentresPage       = lazy(() => import('./pages/CentresPage.jsx'))
 const ResourcesPage     = lazy(() => import('./pages/ResourcesPage.jsx'))
 const ArticlesPage      = lazy(() => import('./pages/ArticlesPage.jsx'))
 const ArticlePage       = lazy(() => import('./pages/ArticlePage.jsx'))
+const FaqPage           = lazy(() => import('./pages/FaqPage.jsx'))
 
 function PageFallback() {
   return <div style={{ minHeight: '100vh', background: '#faf6ef' }} />
@@ -42,6 +43,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/resources"              element={<ResourcesPage />} />
           <Route path="/articles"               element={<ArticlesPage />} />
           <Route path="/articles/:slug"         element={<ArticlePage />} />
+          <Route path="/faq"                    element={<FaqPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

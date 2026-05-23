@@ -201,7 +201,7 @@ function ArticleContent({ article }) {
           <h2 className="font-display text-3xl font-light text-[#f8f1e3] mb-4">Take the Next Step</h2>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] leading-relaxed mb-8">
-            Reading opens the door. The living teaching unfolds in practice, in community, and in the inner work of day-to-day life. We meet weekly in Hobart, Eastern Shore, and Launceston — all are welcome.
+            Reading opens the door. The living teaching unfolds in practice, in community, and in the inner work of day-to-day life. We meet weekly in Hobart, Eastern Shore, and Launceston. All are welcome.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

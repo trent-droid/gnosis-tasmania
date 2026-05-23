@@ -33,7 +33,7 @@ const BASE = 'https://gnosistasmania.com.au'
 export default function CommunityPage() {
   usePageMeta(
     'Gnostic Community in Hobart, Eastern Shore & Launceston | Gnosis Tasmania',
-    'Join the Gnosis Tasmania community — sincere seekers meeting weekly in Hobart, Hobart Eastern Shore, and Launceston, Tasmania. Donation-based Gnostic study, meditation retreats, and the teachings of Samael Aun Weor.',
+    'Join the Gnosis Tasmania community of sincere seekers meeting weekly in Hobart, Hobart Eastern Shore, and Launceston, Tasmania. Donation-based Gnostic study, meditation retreats, and the teachings of Samael Aun Weor.',
     '/community'
   )
 
@@ -41,7 +41,7 @@ export default function CommunityPage() {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     'url': `${BASE}/community`,
-    'name': 'Gnosis Tasmania Community — Hobart & Launceston',
+    'name': 'Gnosis Tasmania Community: Hobart and Launceston',
     'description': 'Gnosis Tasmania is a local study group in Hobart and Launceston, Tasmania, part of the worldwide Gnostic Society Samael Aun Weor network. Donation-based classes, retreats, and inner-work community.',
     'inLanguage': 'en-AU',
     'about': {
@@ -216,7 +216,7 @@ export default function CommunityPage() {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
                   <CheckIcon />
-                  <span>A structured approach for sincere enquiry — beginning with our <Link to="/introduction-to-gnosis" className="text-[#c9a96e] hover:underline">Introduction to Gnosis course</Link></span>
+                  <span>A structured approach for sincere enquiry, beginning with our <Link to="/introduction-to-gnosis" className="text-[#c9a96e] hover:underline">Introduction to Gnosis course</Link></span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
                   <CheckIcon />

@@ -147,7 +147,7 @@ const ARTICLES = [
 
 export default function BlogPage() {
   usePageMeta(
-    'Gnostic Teaching Articles — Meditation, Self-Knowledge & Inner Wisdom | Gnosis Tasmania',
+    'Gnostic Teaching Articles: Meditation, Self-Knowledge & Inner Wisdom | Gnosis Tasmania',
     'Practical articles on Gnostic meditation, self-observation, the Three Factors of the Revolution of Consciousness, and the universal wisdom traditions. Written for sincere seekers in Tasmania and worldwide.',
     '/blog'
   )
@@ -156,7 +156,7 @@ export default function BlogPage() {
   useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    'name': 'Gnosis Tasmania Blog — Gnostic Teaching Articles',
+    'name': 'Gnosis Tasmania Blog: Gnostic Teaching Articles',
     'description': 'Practical articles on Gnostic meditation, self-observation, and the universal wisdom traditions.',
     'url': `${BASE}/blog`,
     'inLanguage': 'en-AU',

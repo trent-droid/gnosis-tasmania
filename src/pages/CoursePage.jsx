@@ -23,7 +23,7 @@ const PARTS = [
     description: 'The nature of Gnosis, the human constitution, and the foundational principles of inner work.',
     art: {
       src: artTreeOfLifeImg,
-      alt: 'The Kabbalistic Tree of Life — the ten Sephiroth and the structure of divine creation, illustrating the foundations of Gnostic cosmology.',
+      alt: 'The Kabbalistic Tree of Life, depicting the ten Sephiroth and the structure of divine creation, illustrating the foundations of Gnostic cosmology.',
       position: 'center center',
       quote: 'The lips of wisdom are closed, except to the ears of Understanding.',
       cite: 'The Kybalion, The Three Initiates',
@@ -61,9 +61,9 @@ const PARTS = [
     description: 'The three brains, the nature of mind at every level, the awakening of consciousness, and the art of true listening.',
     art: {
       src: artFluddNaturaImg,
-      alt: "Robert Fludd's Integrae Naturae Speculum — a cosmic diagram showing the great chain of being, connecting the human mind to the universal mind through levels of creation.",
+      alt: "Robert Fludd's Integrae Naturae Speculum, a cosmic diagram showing the great chain of being, connecting the human mind to the universal mind through levels of creation.",
       position: 'center 25%',
-      quote: 'When the mind is in a passive and receptive state — absolutely still and in silence — the Essence is liberated from the mind, and ecstasy arrives.',
+      quote: 'When the mind is in a passive and receptive state, absolutely still and in silence, the Essence is liberated from the mind, and ecstasy arrives.',
       cite: 'Samael Aun Weor, The Revolution of the Dialectic',
     },
     modules: [
@@ -99,7 +99,7 @@ const PARTS = [
     description: 'The laws of karma and dharma, the mysteries of life and death, evolution, and the great cycles of existence.',
     art: {
       src: artKhunrathSyzygyImg,
-      alt: "Heinrich Khunrath's alchemical syzygy — the conjunction of opposites illustrating the cosmic law of polarity that governs all cycles of birth, death, and return.",
+      alt: "Heinrich Khunrath's alchemical syzygy, depicting the conjunction of opposites illustrating the cosmic law of polarity that governs all cycles of birth, death, and return.",
       position: 'center 30%',
       quote: 'Karma is not a punishment but a teaching. Every cause has its effect; every action returns to its source. The wise man acts knowing this law, and in so doing, transcends it.',
       cite: 'Samael Aun Weor',
@@ -137,7 +137,7 @@ const PARTS = [
     description: 'The origin of the ego, lunar and cosmic influences, universal sound, and the Kabbalistic Tree of Life.',
     art: {
       src: artKhunrathKabbalismImg,
-      alt: "Heinrich Khunrath's kabbalistic diagram — the divine names and spheres of the Tree of Life, illustrating the Kabbalistic cosmology at the heart of Gnostic teaching.",
+      alt: "Heinrich Khunrath's kabbalistic diagram of the divine names and spheres of the Tree of Life, illustrating the Kabbalistic cosmology at the heart of Gnostic teaching.",
       position: 'center 15%',
       quote: 'The ALL is MIND; the Universe is Mental. He who grasps this truth hath attained to wisdom in all things.',
       cite: 'The Kybalion, The Principle of Mentalism',
@@ -175,9 +175,9 @@ const PARTS = [
     description: 'The existential bodies of the Being, the solar human, psychic development, and the transmutation of vital energies.',
     art: {
       src: artFluddSummumImg,
-      alt: "Robert Fludd's Summum Bonum — the divine rose at the summit of all being, representing the highest spiritual attainment: the solar human who has developed all existential bodies.",
+      alt: "Robert Fludd's Summum Bonum, depicting the divine rose at the summit of all being, representing the highest spiritual attainment: the solar human who has developed all existential bodies.",
       position: 'center center',
-      quote: 'The human being has the possibility of developing consciousness and of attaining a state of complete awakening — this is the meaning and purpose of existence.',
+      quote: 'The human being has the possibility of developing consciousness and of attaining a state of complete awakening. This is the meaning and purpose of existence.',
       cite: 'Samael Aun Weor',
     },
     modules: [
@@ -213,7 +213,7 @@ const PARTS = [
     description: 'Astral travel, the Aquarian Age, ritual work with the five elements, and the path of esoteric initiation.',
     art: {
       src: esotericFlammarionColorizedImg,
-      alt: 'The Flammarion engraving — a pilgrim kneeling at the edge of the firmament, gazing into the celestial mysteries beyond the visible world.',
+      alt: 'The Flammarion engraving, depicting a pilgrim kneeling at the edge of the firmament, gazing into the celestial mysteries beyond the visible world.',
       position: 'center 40%',
       quote: 'Cease not to seek day and night, and do not withdraw until ye find the mysteries of the Light, which will purify you and make you into pure light.',
       cite: 'Pistis Sophia, Chapter 100',
@@ -265,7 +265,7 @@ function ModuleCard({ number, title, points }) {
 
 export default function CoursePage() {
   usePageMeta(
-    'Introduction to Gnosis — 34-Session Course | Gnosis Tasmania',
+    'Introduction to Gnosis: 34-Session Course | Gnosis Tasmania',
     'Introduction to Gnosis: a 34-session course covering consciousness, Kabbalah, meditation, karma, and inner alchemy. Weekly classes in Hobart and Launceston, Tasmania.',
     '/introduction-to-gnosis'
   )
@@ -273,7 +273,7 @@ export default function CoursePage() {
     '@context': 'https://schema.org',
     '@type': 'Course',
     'name': 'Introduction to Gnosis',
-    'description': 'A 34-topic foundational course covering the complete body of Gnostic teaching — consciousness, psychology, cosmology, Kabbalah, meditation and esoteric practice. Classes in Hobart and Launceston, Tasmania.',
+    'description': 'A 34-topic foundational course covering the complete body of Gnostic teaching: consciousness, psychology, cosmology, Kabbalah, meditation and esoteric practice. Classes in Hobart and Launceston, Tasmania.',
     'provider': {
       '@type': 'EducationalOrganization',
       'name': 'Gnosis Tasmania',
@@ -285,7 +285,7 @@ export default function CoursePage() {
       '@type': 'Offer',
       'price': '0',
       'priceCurrency': 'AUD',
-      'description': 'Donation-based — attend freely, give what you can',
+      'description': 'Donation-based: attend freely, give what you can',
     },
     'hasCourseInstance': [
       {
@@ -386,7 +386,7 @@ export default function CoursePage() {
             </p>
             <p className="text-base leading-relaxed text-[#3a2f1f]">
               Classes are held regularly in <strong>Hobart and Launceston</strong> on a donation basis.
-              No prior experience is required — only sincere interest and a willingness to look inward.
+              No prior experience is required. Only sincere interest and a willingness to look inward.
             </p>
           </div>
         </section>
