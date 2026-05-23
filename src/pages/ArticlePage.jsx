@@ -179,6 +179,7 @@ function ArticleContent({ article }) {
                       src={a.image}
                       alt={a.imageAlt}
                       className="w-full h-full object-cover"
+                      style={{ objectPosition: a.imagePosition || 'center center' }}
                       loading="lazy"
                     />
                   </div>

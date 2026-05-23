@@ -94,7 +94,7 @@ export default function ArticlesPage() {
 }
 
 function ArticleCard({ article }) {
-  const { slug, title, excerpt, image, imageAlt, date, readTime } = article
+  const { slug, title, excerpt, image, imageAlt, imagePosition, date, readTime } = article
 
   const formattedDate = new Date(date).toLocaleDateString('en-AU', {
     day: 'numeric', month: 'long', year: 'numeric',
@@ -108,6 +108,7 @@ function ArticleCard({ article }) {
           src={image}
           alt={imageAlt}
           className="w-full h-full object-cover"
+          style={{ objectPosition: imagePosition || 'center center' }}
           loading="lazy"
         />
       </Link>
