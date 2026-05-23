@@ -24,7 +24,7 @@ function ArticleContent({ article }) {
     slug, title, metaTitle, metaDescription,
     image, imageAlt, imagePosition,
     date, readTime,
-    intro, sections, keyPoints, relatedSlugs,
+    intro, sections, keyPoints, relatedSlugs, siteLinks,
   } = article
 
   const canonicalPath = `/articles/${slug}`
@@ -116,9 +116,30 @@ function ArticleContent({ article }) {
             <Section key={i} section={section} />
           ))}
 
+          {/* Internal site navigation links */}
+          {siteLinks?.length > 0 && (
+            <aside className="mt-10 border border-[#e8d5b0] rounded-sm p-6 bg-white" aria-label="Explore further on this site">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-6 h-[2px] bg-[#c9a96e]" aria-hidden="true" />
+                <h2 className="font-display text-base font-medium text-[#2a1e12] tracking-wide">Explore Further</h2>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {siteLinks.map(({ to, label }) => (
+                  <Link
+                    key={to}
+                    to={to}
+                    className="text-xs font-semibold text-[#c9a96e] hover:text-[#b8963e] border border-[#e8d5b0] hover:border-[#c9a96e] px-3 py-1.5 rounded-sm transition-colors tracking-wide uppercase"
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </aside>
+          )}
+
           {/* Key takeaways */}
           {keyPoints?.length > 0 && (
-            <aside className="mt-14 bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-8" aria-label="Key takeaways">
+            <aside className="mt-8 bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-8" aria-label="Key takeaways">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-8 h-[2px] bg-[#c9a96e]" aria-hidden="true" />
                 <h2 className="font-display text-lg font-medium text-[#2a1e12]">Key Takeaways</h2>
