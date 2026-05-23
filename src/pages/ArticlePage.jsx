@@ -157,9 +157,11 @@ function ArticleContent({ article }) {
         </div>
       </article>
 
-      {/* ── Related articles ──────────────────────────────────────────────────── */}
+      {/* ── Related articles ─────────────────────────────────────────────────────
+           No fade-section: thumbnail images must not be hidden by opacity inheritance.
+           The section appears immediately; hover states are handled at the card level. */}
       {relatedArticles.length > 0 && (
-        <section className="py-16 px-4 bg-[#faf6ef] fade-section" aria-label="Related articles">
+        <section className="py-16 px-4 bg-[#faf6ef]" aria-label="Related articles">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-8 h-[2px] bg-[#c9a96e]" aria-hidden="true" />
@@ -176,7 +178,7 @@ function ArticleContent({ article }) {
                     <img
                       src={a.image}
                       alt={a.imageAlt}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover"
                       loading="lazy"
                     />
                   </div>

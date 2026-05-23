@@ -82,8 +82,8 @@ export default function Nav() {
             </span>
           </Link>
 
-          {/* Desktop nav */}
-          <ul className="hidden xl:flex items-center gap-6 flex-1 justify-end" role="list">
+          {/* Desktop nav — lg (1024px) so Articles tab is visible on standard laptops */}
+          <ul className="hidden lg:flex items-center gap-6 flex-1 justify-end" role="list">
             {NAV_ITEMS.map(({ to, short, children }) => {
               if (!children) {
                 return (
@@ -129,9 +129,9 @@ export default function Nav() {
             })}
           </ul>
 
-          {/* Hamburger */}
+          {/* Hamburger — hidden at lg+ where desktop nav shows */}
           <button
-            className="xl:hidden p-2 text-[#3a2f1f] hover:bg-[#f8f1e3] rounded-sm transition-colors"
+            className="lg:hidden p-2 text-[#3a2f1f] hover:bg-[#f8f1e3] rounded-sm transition-colors"
             onClick={() => setOpen(o => !o)}
             aria-expanded={open}
             aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
@@ -147,7 +147,7 @@ export default function Nav() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="xl:hidden border-t border-[#e8d5b0] pb-4" id="mobile-menu">
+          <div className="lg:hidden border-t border-[#e8d5b0] pb-4" id="mobile-menu">
             <ul className="flex flex-col gap-0.5 pt-2" role="list">
               {NAV_ITEMS.map(({ to, full, children }) => (
                 <li key={to}>

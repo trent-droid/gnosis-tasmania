@@ -45,8 +45,11 @@ export default function ArticlesPage() {
         </div>
       </section>
 
-      {/* ── Article Grid ──────────────────────────────────────────────────────── */}
-      <section className="py-16 px-4 bg-[#faf6ef] fade-section" aria-label="Article list">
+      {/* ── Article Grid ─────────────────────────────────────────────────────────
+           No fade-section: images inside sections inherit opacity 0→1 from the
+           parent transition, making thumbnails appear to load slowly. Image grids
+           should be immediately visible; text-only sections below keep fade-section. */}
+      <section className="py-16 px-4 bg-[#faf6ef]" aria-label="Article list">
         <div className="max-w-6xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {ARTICLES.map((article) => (
@@ -100,7 +103,7 @@ function ArticleCard({ article }) {
         <img
           src={image}
           alt={imageAlt}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover"
           loading="lazy"
         />
       </Link>
