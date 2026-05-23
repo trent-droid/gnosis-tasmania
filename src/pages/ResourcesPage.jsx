@@ -111,7 +111,7 @@ const ONLINE_RESOURCES = [
 export default function ResourcesPage() {
   usePageMeta(
     'Gnostic Books & Resources | Gnosis Tasmania',
-    'Recommended Gnostic books and resources: Samael Aun Weor, the Nag Hammadi Library, the Corpus Hermeticum, the Zohar, and more. For seekers in Tasmania and worldwide.',
+    'Recommended Gnostic books and resources: Samael Aun Weor, the Nag Hammadi Library, the Corpus Hermeticum, the Zohar, and more. For aspirants in Tasmania and worldwide.',
     '/resources'
   )
 
@@ -265,7 +265,7 @@ export default function ResourcesPage() {
           <h2 className="font-display text-4xl font-light text-[#f8f1e3] mb-4">Study in Community</h2>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] leading-relaxed mb-8">
-            Books are a wonderful beginning; but the Gnostic teaching is best studied in community, with guidance and the mutual support of fellow seekers. Come and join us.
+            Books are a wonderful beginning; but the Gnostic teaching is best studied in community, with guidance and the mutual support of fellow aspirants. Come and join us.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

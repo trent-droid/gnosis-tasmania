@@ -212,7 +212,7 @@ export default function CoreTeachingsPage() {
 
           <div className="bg-[#2a1e12] rounded-sm p-8 text-center">
             <p className="text-[#c8b89a] text-lg leading-relaxed max-w-3xl mx-auto mb-4">
-              The modern synthesis of this perennial wisdom was produced by Samael Aun Weor (1917-1977), whose more than seventy books draw together the esoteric teachings of Egypt, Greece, Christianity, Judaism, Buddhism, Hinduism, and the Western alchemical tradition into a single coherent and practical system - accessible to any sincere seeker, regardless of background.
+              The modern synthesis of this perennial wisdom was produced by Samael Aun Weor (1917-1977), whose more than seventy books draw together the esoteric teachings of Egypt, Greece, Christianity, Judaism, Buddhism, Hinduism, and the Western alchemical tradition into a single coherent and practical system - accessible to any sincere aspirant, regardless of background.
             </p>
             <GoldRule className="mb-0" />
           </div>
@@ -229,7 +229,7 @@ export default function CoreTeachingsPage() {
                 Know Thyself
               </h2>
               <p className="text-[#4a3a26] leading-relaxed mb-5">
-                The instruction carved above the entrance to the Oracle at Delphi, <em>Γνῶθι σεαυτόν, Know Thyself</em>, is the master key of all Gnostic teaching. Before anything else can be understood, the seeker must turn their attention inward and begin the patient, honest work of self-knowledge.
+                The instruction carved above the entrance to the Oracle at Delphi, <em>Γνῶθι σεαυτόν, Know Thyself</em>, is the master key of all Gnostic teaching. Before anything else can be understood, the aspirant must turn their attention inward and begin the patient, honest work of self-knowledge.
               </p>
               <p className="text-[#4a3a26] leading-relaxed mb-5">
                 This is not a simple matter. The ordinary human being knows almost nothing of their own inner life. We believe we know why we feel what we feel, why we do what we do; but in reality, the vast majority of our inner life operates mechanically, below the threshold of conscious awareness.

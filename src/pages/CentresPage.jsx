@@ -75,7 +75,6 @@ const AU_STATES = [
 const NZ_CENTRES = [
   { city: 'Auckland (Albany)', website: 'https://gnosisnz.org', email: 'insightgnosis@gmail.com' },
   { city: 'Auckland (City)', website: 'https://newzealandgnosis.co.nz', email: 'AucklandGnosis@gmail.com' },
-  { city: 'Christchurch', website: 'https://newzealandgnosis.co.nz', email: 'christchurchnzgnosis@gmail.com' },
 ]
 
 // ─── Data: International centres (source: gnosistr.com/centros-gnosticos-...) ──────────
@@ -257,7 +256,7 @@ export default function CentresPage() {
           </h1>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] text-lg font-light leading-relaxed max-w-2xl mx-auto">
-            A worldwide community of sincere seekers, sharing the ancient science of Gnosis across every continent.
+            A worldwide community of sincere aspirants, sharing the ancient science of Gnosis across every continent.
           </p>
         </div>
       </HeroParallax>

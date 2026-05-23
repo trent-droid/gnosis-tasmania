@@ -148,7 +148,7 @@ const ARTICLES = [
 export default function BlogPage() {
   usePageMeta(
     'Gnostic Teaching Articles: Meditation, Self-Knowledge & Inner Wisdom | Gnosis Tasmania',
-    'Practical articles on Gnostic meditation, self-observation, the Three Factors of the Revolution of Consciousness, and the universal wisdom traditions. Written for sincere seekers in Tasmania and worldwide.',
+    'Practical articles on Gnostic meditation, self-observation, the Three Factors of the Revolution of Consciousness, and the universal wisdom traditions. Written for sincere aspirants in Tasmania and worldwide.',
     '/blog'
   )
 

@@ -199,7 +199,7 @@ export default function WhatIsGnosisPage() {
           </h1>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] text-lg sm:text-xl font-light leading-relaxed max-w-2xl mx-auto">
-            Direct knowledge of the soul: the universal wisdom preserved in every great tradition, available to every sincere seeker.
+            Direct knowledge of the soul: the universal wisdom preserved in every great tradition, available to every sincere aspirant.
           </p>
         </div>
       </HeroParallax>
@@ -314,7 +314,7 @@ export default function WhatIsGnosisPage() {
                   'Cultivate concentration, mindfulness, and deep states of meditation',
                   'Explore the nature of dreams and develop lucid awareness',
                   'Discover the esoteric meaning of sacred symbols and scriptures',
-                  'Connect with a living community of sincere seekers',
+                  'Connect with a living community of sincere aspirants',
                 ].map(item => (
                   <li key={item} className="flex items-start gap-3 text-sm text-[#4a3a26]">
                     <CheckIcon />
@@ -359,7 +359,7 @@ export default function WhatIsGnosisPage() {
                 Born Victor Manuel Gomez Rodriguez in Bogota, Colombia in 1917, Samael Aun Weor dedicated his life to the study, practice, and transmission of Gnostic wisdom. Over the course of his life he produced more than seventy books, a body of work widely regarded as one of the most comprehensive modern syntheses of the perennial wisdom tradition.
               </p>
               <p className="text-[#4a3a26] leading-relaxed mb-5">
-                Drawing on the Egyptian, Greek, Jewish, Christian, Hindu, Buddhist, and Islamic esoteric traditions, as well as the inner alchemical teaching of the medieval masters, Samael Aun Weor presented the ancient wisdom in a language accessible to the modern seeker. His teaching is neither theoretical nor speculative; it is grounded in verified inner experience and practical application.
+                Drawing on the Egyptian, Greek, Jewish, Christian, Hindu, Buddhist, and Islamic esoteric traditions, as well as the inner alchemical teaching of the medieval masters, Samael Aun Weor presented the ancient wisdom in a language accessible to the modern aspirant. His teaching is neither theoretical nor speculative; it is grounded in verified inner experience and practical application.
               </p>
               <p className="text-[#4a3a26] leading-relaxed mb-5">
                 Central to his teaching is the conviction that genuine self-knowledge, the foundation of all authentic spirituality, requires both deep inner honesty and concrete practical work. He taught that the awakening of consciousness is not a distant mystical ideal, but something that can be approached through disciplined daily practice.
@@ -400,7 +400,7 @@ export default function WhatIsGnosisPage() {
                 </ul>
               </div>
               <Blockquote cite="Samael Aun Weor">
-                "Gnosis is lived upon facts, withers away in abstractions, and is difficult to find even in the noblest of thoughts."
+                "Gnosis lives in deeds, withers away in abstractions, and is difficult to find even in the noblest of thoughts."
               </Blockquote>
             </div>
           </div>

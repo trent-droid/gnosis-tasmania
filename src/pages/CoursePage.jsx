@@ -443,7 +443,7 @@ export default function CoursePage() {
             </h2>
             <GoldRule className="mb-7" />
             <p className="text-sm text-[#c8b89a] mb-8 leading-relaxed">
-              We welcome sincere seekers of every background. Reach out to register your interest
+              We welcome sincere aspirants of every background. Reach out to register your interest
               or ask any questions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

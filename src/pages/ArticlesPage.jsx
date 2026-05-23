@@ -40,7 +40,7 @@ export default function ArticlesPage() {
       <section className="py-12 px-4 bg-white fade-section">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[#4a3a26] text-lg leading-relaxed">
-            The following articles are drawn from the Gnostic teachings of Samael Aun Weor and the perennial wisdom tradition, written for sincere seekers at every stage of the path. Whether you are entirely new to Gnosis or deepening an existing practice, you are welcome here.
+            The following articles are drawn from the Gnostic teachings of Samael Aun Weor and the perennial wisdom tradition, written for sincere aspirants at every stage of the path. Whether you are entirely new to Gnosis or deepening an existing practice, you are welcome here.
           </p>
         </div>
       </section>
@@ -65,7 +65,7 @@ export default function ArticlesPage() {
           <h2 className="font-display text-4xl font-light text-[#f8f1e3] mb-4">Study in Community</h2>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] leading-relaxed mb-8">
-            Reading is a beginning. The deeper teaching unfolds in practice, in meditation, and in the company of fellow seekers. Join us in Hobart, Eastern Shore, or Launceston.
+            Reading is a beginning. The deeper teaching unfolds in practice, in meditation, and in the company of fellow aspirants. Join us in Hobart, Eastern Shore, or Launceston.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

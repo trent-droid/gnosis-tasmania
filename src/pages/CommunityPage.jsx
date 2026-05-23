@@ -33,7 +33,7 @@ const BASE = 'https://gnosistasmania.com.au'
 export default function CommunityPage() {
   usePageMeta(
     'Gnostic Community in Hobart, Eastern Shore & Launceston | Gnosis Tasmania',
-    'Join the Gnosis Tasmania community of sincere seekers meeting weekly in Hobart, Hobart Eastern Shore, and Launceston, Tasmania. Donation-based Gnostic study, meditation retreats, and the teachings of Samael Aun Weor.',
+    'Join the Gnosis Tasmania community of sincere aspirants meeting weekly in Hobart, Hobart Eastern Shore, and Launceston, Tasmania. Donation-based Gnostic study, meditation retreats, and the teachings of Samael Aun Weor.',
     '/community'
   )
 
@@ -79,7 +79,7 @@ export default function CommunityPage() {
           </h1>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] text-lg font-light leading-relaxed max-w-2xl mx-auto">
-            A living circle of sincere seekers - open, welcoming, and grounded in practical inner work.
+            A living circle of sincere aspirants - open, welcoming, and grounded in practical inner work.
           </p>
         </div>
       </HeroParallax>
@@ -123,14 +123,14 @@ export default function CommunityPage() {
                 The Tradition is the unbroken transmission of wisdom that has flowed through the initiatory schools of every authentic civilisation - from ancient Egypt and Greece through the early Gnostic and Hermetic lineages, the Kabbalistic tradition, the Rosicrucian brotherhoods, and the great spiritual teachers of the modern era.
               </p>
               <p className="text-sm text-[#6b5535] leading-relaxed">
-                Samael Aun Weor (1917-1977) synthesised this Tradition in more than seventy books, drawing together the esoteric knowledge of Egypt, Greece, Christianity, Judaism, Buddhism, Hinduism, and the Western alchemical lineage into a single coherent and practical system - accessible to any sincere seeker.
+                Samael Aun Weor (1917-1977) synthesised this Tradition in more than seventy books, drawing together the esoteric knowledge of Egypt, Greece, Christianity, Judaism, Buddhism, Hinduism, and the Western alchemical lineage into a single coherent and practical system - accessible to any sincere aspirant.
               </p>
             </div>
             <div className="bg-white border border-[#e8d5b0] rounded-sm p-8">
               <div className="w-8 h-[2px] bg-[#c9a96e] mb-5" aria-hidden="true" />
               <h3 className="font-display text-2xl font-medium text-[#2a1e12] mb-4">Revelation</h3>
               <p className="text-[#4a3a26] leading-relaxed mb-4">
-                Revelation is not doctrine received from outside, but the direct inner experience that genuine practice makes possible. The Gnostic Society teaches that every seeker must personally verify the teachings through their own consciousness - not through faith or belief, but through direct experience of inner realities.
+                Revelation is not doctrine received from outside, but the direct inner experience that genuine practice makes possible. The Gnostic Society teaches that every aspirant must personally verify the teachings through their own consciousness - not through faith or belief, but through direct experience of inner realities.
               </p>
               <p className="text-sm text-[#6b5535] leading-relaxed">
                 "I do not follow anyone, therefore no one should follow me." Samael Aun Weor was unambiguous: the purpose of the Tradition is to make Revelation possible for each individual. The outer teaching points always toward inner experience - never toward dependence on authority or personality.

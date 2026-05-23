@@ -32,7 +32,7 @@ export default function Footer() {
               <p className="font-display text-lg font-medium text-[#f8f1e3]">Gnosis Tasmania</p>
             </div>
             <p className="text-xs leading-relaxed text-[#9e8a6e] mb-4">
-              Practical Gnostic teachings across Hobart, Hobart Eastern Shore, and Launceston for sincere seekers of inner knowledge.
+              Practical Gnostic teachings across Hobart, Hobart Eastern Shore, and Launceston for sincere aspirants of inner knowledge.
             </p>
             <div className="border-t border-[#3a2f1f] pt-4">
               <p className="text-xs text-[#8a6f3f] font-semibold mb-1">Classes are donation-based.</p>

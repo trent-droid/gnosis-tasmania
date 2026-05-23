@@ -85,7 +85,7 @@ const FEATURES = [
       </svg>
     ),
     title: 'Community',
-    body: 'A welcoming community of sincere seekers meeting weekly across Hobart, Hobart Eastern Shore, and Launceston. No experience required. All classes are donation-based.',
+    body: 'A welcoming community of sincere aspirants meeting weekly across Hobart, Hobart Eastern Shore, and Launceston. No experience required. All classes are donation-based.',
     link: '/community',
     linkLabel: 'Our Community',
   },
@@ -157,7 +157,7 @@ export default function App() {
               Know Thyself
             </h1>
             <p className="font-display text-xl sm:text-2xl text-[#e8d5b0] font-light italic mb-6 leading-relaxed drop-shadow max-w-2xl mx-auto">
-              "Gnosis is lived upon facts, withers away in abstractions, and is difficult to find even in the noblest of thoughts."
+              "Gnosis lives in deeds, withers away in abstractions, and is difficult to find even in the noblest of thoughts."
             </p>
             <p className="text-sm text-[#c8b89a] mb-10 max-w-xl mx-auto leading-relaxed drop-shadow">
               Practical classes in meditation, self-knowledge, and perennial wisdom,
@@ -344,7 +344,7 @@ export default function App() {
             </h2>
             <GoldRule className="justify-start mb-6" />
             <p className="text-base text-[#c8b89a] mb-8 max-w-xl leading-relaxed">
-              Whether you are curious, seeking, or ready to begin, reach out. We welcome sincere seekers of every background. Just honest inner work and genuine community.
+              Whether you are curious, seeking, or ready to begin, reach out. We welcome sincere aspirants of every background. Just honest inner work and genuine community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/contact" className="bg-[#c9a96e] text-[#1c1409] px-8 py-3 rounded-sm text-sm font-semibold hover:bg-[#e0bf80] transition-colors duration-200 tracking-wide shadow-lg">
