@@ -22,7 +22,7 @@ const LOCATIONS = [
     city: 'Hobart',
     description: 'Our Hobart centre serves the greater Hobart area, offering weekly classes.',
     schedule: 'Classes run weekly. Contact us for current times and venue details.',
-    contact: 'gnosis.launceston@gmail.com',
+    contact: 'gnosishobart@gmail.com',
   },
   {
     city: 'Hobart (Eastern Shore)',
@@ -177,7 +177,7 @@ export default function ContactPage() {
           </h1>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] text-lg font-light leading-relaxed max-w-2xl mx-auto">
-            We welcome all sincere enquiries. Whether you're curious about our classes, want to visit a session, or simply have a question, we'd love to hear from you.
+            The easiest way to reach us is by email or through our Facebook page. We welcome all sincere enquiries and aim to respond within a day or two.
           </p>
         </div>
       </HeroParallax>
@@ -261,7 +261,7 @@ export default function ContactPage() {
                     <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-sm px-4 py-3">
                       {errorDetail || 'Something went wrong sending your message.'}{' '}
                       Please try again or email us directly at{' '}
-                      <a href="mailto:gnosis.launceston@gmail.com" className="underline">gnosis.launceston@gmail.com</a>.
+                      <a href="mailto:gnosishobart@gmail.com" className="underline">gnosishobart@gmail.com</a>.
                     </p>
                   )}
 
@@ -275,8 +275,8 @@ export default function ContactPage() {
 
                   <p className="text-xs text-[#8a6f3f] text-center">
                     Or email us directly at{' '}
-                    <a href="mailto:gnosis.launceston@gmail.com" className="text-[#c9a96e] hover:underline">
-                      gnosis.launceston@gmail.com
+                    <a href="mailto:gnosishobart@gmail.com" className="text-[#c9a96e] hover:underline">
+                      gnosishobart@gmail.com
                     </a>
                   </p>
 
@@ -335,23 +335,35 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── Social / Connect ──────────────────────────────────────────────────── */}
+      {/* ── Connect ───────────────────────────────────────────────────────────── */}
+      {/* Email and Facebook are our two primary contact channels */}
       <section className="py-16 px-4 bg-[#faf6ef] fade-section">
         <div className="max-w-4xl mx-auto">
           <SectionHeading
             label="Connect"
-            title="Follow Us Online"
-            subtitle="Stay connected with Gnosis Tasmania through our social channels."
+            title="Two Ways to Reach Us"
+            subtitle="Email is the most direct way to get in touch. You can also follow and message us on Facebook."
           />
-          <div className="flex justify-center">
-            {/* Fixed: old URL /GnosticSocietyAustralia was wrong; official page is /GSSAW.Australia */}
+          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {/* Email */}
+            <a
+              href="mailto:gnosishobart@gmail.com"
+              className="flex items-center gap-4 bg-white border border-[#e8d5b0] rounded-sm px-8 py-6 hover:border-[#c9a96e] transition-colors group"
+            >
+              <span className="text-[#c9a96e] text-2xl shrink-0" aria-hidden="true">✉</span>
+              <div>
+                <p className="font-medium text-[#2a1e12] group-hover:text-[#c9a96e] transition-colors text-sm">Email Us</p>
+                <p className="text-xs text-[#8a6f3f] break-all">gnosishobart@gmail.com</p>
+              </div>
+            </a>
+            {/* Facebook — fixed: official page is /GSSAW.Australia */}
             <a
               href="https://www.facebook.com/GSSAW.Australia/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 bg-white border border-[#e8d5b0] rounded-sm px-8 py-5 hover:border-[#c9a96e] transition-colors group"
+              className="flex items-center gap-4 bg-white border border-[#e8d5b0] rounded-sm px-8 py-6 hover:border-[#c9a96e] transition-colors group"
             >
-              <span className="text-[#c9a96e] text-2xl" aria-hidden="true">f</span>
+              <span className="text-[#c9a96e] text-2xl shrink-0" aria-hidden="true">f</span>
               <div>
                 <p className="font-medium text-[#2a1e12] group-hover:text-[#c9a96e] transition-colors text-sm">Facebook</p>
                 <p className="text-xs text-[#8a6f3f]">Gnostic Society Australia</p>

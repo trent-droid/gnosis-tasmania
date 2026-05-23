@@ -12,7 +12,7 @@ const LOCATIONS = [
     city: 'Hobart',
     description: 'Our Hobart centre serves the greater Hobart area, offering weekly classes.',
     schedule: 'Classes run weekly. Contact us for current times and venue details.',
-    contact: 'gnosis.launceston@gmail.com',
+    contact: 'gnosishobart@gmail.com',
   },
   {
     city: 'Hobart (Eastern Shore)',

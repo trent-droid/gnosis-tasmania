@@ -61,9 +61,9 @@ export default function Footer() {
             <p className="text-xs font-bold text-[#c9a96e] uppercase tracking-widest mb-3">Connect</p>
             <address className="not-italic space-y-1.5 mb-4">
               <p>
-                <a href="mailto:gnosis.launceston@gmail.com"
+                <a href="mailto:gnosishobart@gmail.com"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors break-all">
-                  gnosis.launceston@gmail.com
+                  gnosishobart@gmail.com
                 </a>
               </p>
               {/* Fixed: old URL /GnosticSocietyAustralia was wrong; official page is /GSSAW.Australia */}

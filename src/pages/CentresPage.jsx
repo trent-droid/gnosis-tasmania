@@ -45,7 +45,7 @@ const AU_STATES = [
     state: 'Tasmania', abbr: 'TAS',
     highlight: true,
     centres: [
-      { city: 'Hobart', website: 'https://gnosistasmania.com.au', email: 'peterandhaidee@gmail.com', phone: '03 6294 6751', note: 'You are here' },
+      { city: 'Hobart', website: 'https://gnosistasmania.com.au', email: 'gnosishobart@gmail.com', note: 'You are here' },
       { city: 'Hobart (Eastern Shore)', website: 'https://gnosistasmania.com.au', email: 'gnosis.hobarteast@gmail.com', note: 'You are here' },
       { city: 'Launceston', email: 'gnoss.launceston@gmail.com', phone: '0415 088 410', note: 'You are here' },
     ],

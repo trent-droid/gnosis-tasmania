@@ -1,4 +1,6 @@
-﻿import { Link } from 'react-router-dom'
+﻿import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, CheckIcon } from '../components/ui.jsx'
@@ -7,6 +9,11 @@ import { useJsonLd } from '../hooks/useJsonLd.js'
 import artHermesTrismegistusImg from '../assets/art_hermes_trismegistus.jpg?format=webp'
 import artBirthVenusImg    from '../assets/art_birth_venus.jpg?format=webp'
 import esotericAdeptVaseImg from '../assets/esoteric_adept_vase.jpg?format=webp'
+
+// Shared EmailJS config — same credentials used by ContactPage
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 const COURSES = [
   {
@@ -82,6 +89,43 @@ const LOCATIONS = [
 ]
 
 export default function CoursesPage() {
+  // Waiting list form state
+  const [wlData, setWlData]     = useState({ name: '', email: '', location: '' })
+  const [wlStatus, setWlStatus] = useState('idle') // idle | sending | success | error
+
+  function handleWlChange(e) {
+    const { name, value } = e.target
+    setWlData(prev => ({ ...prev, [name]: value }))
+  }
+
+  async function handleWlSubmit(e) {
+    e.preventDefault()
+    setWlStatus('sending')
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      setWlStatus('error')
+      return
+    }
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name:       wlData.name,
+          from_email:      wlData.email,
+          interest:        'Introduction to Gnosis — Waiting List',
+          how_heard:       'Not specified',
+          message:         `Preferred location: ${wlData.location || 'Any'}\n\nThis person has joined the Introduction to Gnosis waiting list.`,
+          recaptcha_token: 'not available',
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      )
+      setWlStatus('success')
+    } catch (err) {
+      console.error('[EmailJS] Waiting list send failed:', err)
+      setWlStatus('error')
+    }
+  }
+
   usePageMeta(
     'Gnostic Courses in Hobart, Eastern Shore & Launceston | Gnosis Tasmania',
     'Gnostic courses in Hobart, Hobart Eastern Shore, and Launceston: Introduction to Gnosis (34 sessions) and weekly Meditation Classes. No experience needed. Donation-based.',
@@ -163,10 +207,10 @@ export default function CoursesPage() {
           <h2 className="font-display text-4xl font-light text-[#2a1e12] mb-6">Learning That Transforms</h2>
           <GoldRule className="mb-8" />
           <p className="text-[#4a3a26] text-lg leading-relaxed mb-6 max-w-3xl mx-auto">
-            Our classes are designed to be practical, accessible, and immediately applicable to daily life. We do not simply transmit information; we provide a framework for direct inner experience. Every session includes both theoretical study and practical exercises.
+            Our classes are designed to be practical, accessible, and immediately applicable to daily life. We do not simply transmit information; we provide a framework for direct inner experience. Every session includes both theoretical study and practical exercises, and students are expected to engage with the material honestly and apply it in their own lives between sessions.
           </p>
-          <p className="text-[#4a3a26] leading-relaxed max-w-3xl mx-auto">
-            All classes are offered on a donation basis. We believe that genuine wisdom should never be withheld for financial reasons. Give what you can, when you can. New students are always warmly welcome.
+          <p className="text-[#6b5535] leading-relaxed max-w-3xl mx-auto">
+            The Gnostic path is a serious undertaking that asks genuine commitment over an extended period. These classes are for those who come with a sincere desire to understand themselves and to work honestly on what they discover. All classes are offered on a donation basis: give what you can, when you can.
           </p>
         </div>
       </section>
@@ -230,15 +274,100 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* ── Location Schedule ─────────────────────────────────────────────────── */}
+      {/* ── Waiting List ──────────────────────────────────────────────────────── */}
+      {/* Intro course runs periodically when there are enough students */}
       <section className="py-20 px-4 bg-white fade-section">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-10">
+            <SectionLabel className="text-center">Introduction to Gnosis</SectionLabel>
+            <h2 className="font-display text-3xl font-light text-[#2a1e12] mb-4 text-center">
+              Join the Waiting List
+            </h2>
+            <GoldRule className="mb-6" />
+            <p className="text-[#4a3a26] leading-relaxed mb-3 text-center">
+              Our introductory course runs periodically, when there are enough students ready to begin together. If you are interested in the next intake, add your name below and we will contact you when a course is forming in your area.
+            </p>
+            <p className="text-[#6b5535] text-sm leading-relaxed mb-8 text-center">
+              This course is for those with a genuine desire to study and apply the teachings — not as a passive intellectual exercise, but as a sustained, practical commitment to inner work. If that is where you are, you are warmly welcome.
+            </p>
+
+            {wlStatus === 'success' ? (
+              <div className="text-center py-4">
+                <div className="text-[#c9a96e] text-3xl mb-4" aria-hidden="true">✦</div>
+                <h3 className="font-display text-xl font-medium text-[#2a1e12] mb-2">You're on the list</h3>
+                <p className="text-sm text-[#4a3a26] leading-relaxed">
+                  Thank you. We will be in touch when a new course is forming near you.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleWlSubmit} className="space-y-4" noValidate>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="wl-name" className="block text-xs font-semibold text-[#6b5535] uppercase tracking-wider mb-2">
+                      Your Name *
+                    </label>
+                    <input
+                      id="wl-name" name="name" type="text" required
+                      value={wlData.name} onChange={handleWlChange}
+                      placeholder="Jane Smith"
+                      className="w-full bg-white border border-[#e8d5b0] rounded-sm px-4 py-3 text-sm text-[#3a2f1f] placeholder:text-[#a89a80] focus:outline-none focus:border-[#c9a96e] transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="wl-email" className="block text-xs font-semibold text-[#6b5535] uppercase tracking-wider mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      id="wl-email" name="email" type="email" required
+                      value={wlData.email} onChange={handleWlChange}
+                      placeholder="jane@example.com"
+                      className="w-full bg-white border border-[#e8d5b0] rounded-sm px-4 py-3 text-sm text-[#3a2f1f] placeholder:text-[#a89a80] focus:outline-none focus:border-[#c9a96e] transition-colors"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="wl-location" className="block text-xs font-semibold text-[#6b5535] uppercase tracking-wider mb-2">
+                    Preferred Location
+                  </label>
+                  <select
+                    id="wl-location" name="location"
+                    value={wlData.location} onChange={handleWlChange}
+                    className="w-full bg-white border border-[#e8d5b0] rounded-sm px-4 py-3 text-sm text-[#3a2f1f] focus:outline-none focus:border-[#c9a96e] transition-colors"
+                  >
+                    <option value="">Any location</option>
+                    <option value="Hobart">Hobart</option>
+                    <option value="Hobart (Eastern Shore)">Hobart (Eastern Shore)</option>
+                    <option value="Launceston">Launceston</option>
+                  </select>
+                </div>
+                {wlStatus === 'error' && (
+                  <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-sm px-4 py-3">
+                    Something went wrong. Please try again or email us at{' '}
+                    <a href="mailto:gnosishobart@gmail.com" className="underline">gnosishobart@gmail.com</a>.
+                  </p>
+                )}
+                <button
+                  type="submit"
+                  disabled={wlStatus === 'sending'}
+                  className="w-full bg-[#c9a96e] hover:bg-[#b8963e] disabled:opacity-60 disabled:cursor-not-allowed text-[#1c1409] font-semibold py-3 rounded-sm transition-colors tracking-wide text-sm"
+                >
+                  {wlStatus === 'sending' ? 'Sending…' : 'Join the Waiting List →'}
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Location Schedule ─────────────────────────────────────────────────── */}
+      <section className="py-20 px-4 bg-[#faf6ef] fade-section">
         <div className="max-w-5xl mx-auto">
           <SectionHeading
             label="Where & When"
             title="Find a Class Near You"
-            subtitle="Classes are held weekly across two locations in Tasmania. All are welcome, just turn up."
+            subtitle="Classes are held weekly across three locations in Tasmania. Contact us for current times and venue details."
           />
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {LOCATIONS.map(({ city, region, schedule, note }) => (
               <div key={city} className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-7">
                 <div className="flex items-center gap-3 mb-2">
@@ -262,7 +391,7 @@ export default function CoursesPage() {
       </section>
 
       {/* ── Donation Note ─────────────────────────────────────────────────────── */}
-      <section className="py-16 px-4 bg-[#faf6ef] fade-section">
+      <section className="py-16 px-4 bg-white fade-section">
         <div className="max-w-3xl mx-auto">
           <div className="bg-white border border-[#e8d5b0] rounded-sm p-8 text-center">
             <div className="w-12 h-[2px] bg-[#c9a96e] mx-auto mb-6" aria-hidden="true" />

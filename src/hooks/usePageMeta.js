@@ -63,7 +63,7 @@ export function usePageMeta(title, description, path = '/') {
         '@id':   `${BASE}/#organization`,
         'name':  'Gnosis Tasmania',
         'url':   BASE,
-        'email': 'gnosis.launceston@gmail.com',
+        'email': 'gnosishobart@gmail.com',
         'logo': {
           '@type': 'ImageObject',
           'url':   `${BASE}/favicon-512x512.png`,
