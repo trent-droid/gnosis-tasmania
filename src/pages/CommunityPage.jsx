@@ -168,10 +168,11 @@ export default function CommunityPage() {
         <div className="max-w-5xl mx-auto">
           <SectionHeading
             label="Where We Meet"
-            title="Two Locations Across Tasmania"
+            title="Three Locations Across Tasmania"
             subtitle="All classes are held in welcoming, accessible venues. Contact us for the current schedule and address."
           />
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Three equal columns — one per location */}
+          <div className="grid sm:grid-cols-3 gap-8">
             {LOCATIONS.map(({ city, description, schedule, contact }) => (
               <div key={city} className="bg-[#faf6ef] rounded-sm border border-[#e8d5b0] p-7">
                 <div className="flex items-center gap-3 mb-4">
