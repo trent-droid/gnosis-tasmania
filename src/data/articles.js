@@ -597,7 +597,7 @@ export const ARTICLES = [
     excerpt: 'Through retrospective meditation and conscious dreamwork, Gnosis offers practical methods for exploring the soul\'s continuity across many lifetimes.',
     image: artRossettiBeatrixImg,
     imageAlt: 'Dante Gabriel Rossetti, Beata Beatrix (1864-70), Tate Britain. A figure suspended between two worlds, eyes closed, bathed in golden light, the vision of a soul at the threshold between lives',
-    imagePosition: 'center 85%',
+    imagePosition: 'center 5%',
     imageCredit: 'Public domain / Wikimedia Commons. Dante Gabriel Rossetti, Beata Beatrix (c. 1864-70), Tate Britain, London.',
     date: '2026-05-23',
     readTime: '10 min read',
