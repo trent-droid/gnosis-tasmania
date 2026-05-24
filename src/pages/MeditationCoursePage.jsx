@@ -1,8 +1,15 @@
 // MeditationCoursePage.jsx
 // New dedicated page for the Meditation Course (/meditation-course).
 // Covers the seven core topics taught in the course: relaxation, pranayama,
-// breathing exercises, the science of meditation, interiorization/concentration,
+// breathing exercises, the science of meditation, interiorisation/concentration,
 // self-observation, and the development of higher faculties.
+//
+// Changes (2026-05-24):
+//   1. "The course proceeds through seven carefully ordered areas of study and practice."
+//      → "The course proceeds through ordered stages."
+//   2. All instances of "interiorization/Interiorization" converted to
+//      "interiorisation/Interiorisation" (AU/UK spelling) — 7 occurrences total:
+//      topic id, label, title, body text (×2), JSON-LD description, and file comment.
 
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
@@ -85,13 +92,13 @@ const TOPICS = [
     ],
   },
   {
-    id: 'interiorization',
-    label: '05 · Interiorization',
-    title: 'Interiorization, Concentration, and Silence of the Mind',
+    id: 'interiorisation',
+    label: '05 · Interiorisation',
+    title: 'Interiorisation, Concentration, and Silence of the Mind',
     body: [
       'Ordinary consciousness is perpetually outward-moving: drawn toward sensory experience, absorbed in memory and anticipation, pulled by the currents of association and reaction that constitute the surface of the mind. Genuine meditation requires a reversal of this habitual direction of attention: a deliberate withdrawal of consciousness from the periphery toward the centre.',
-      'The Gnostic tradition calls this movement interiorization, and it corresponds to the yogic concept of pratyahara: the withdrawal of the senses, the collecting of scattered attention into a single point. This is not suppression of experience but a change in the relationship between the observer and what is observed. The practitioner does not fight the senses but gently withdraws the fuel of attention from them.',
-      'One-pointed concentration, the sustained fixing of attention on a single object without wavering, is the direct result of successful interiorization. When concentration deepens sufficiently, the constant internal commentary of the mind begins to quiet. In the spaces between thoughts, a genuine silence opens: not the silence of suppression, but the natural silence of a mind that has momentarily ceased to generate its own noise. This is the doorway to meditation proper.',
+      'The Gnostic tradition calls this movement interiorisation, and it corresponds to the yogic concept of pratyahara: the withdrawal of the senses, the collecting of scattered attention into a single point. This is not suppression of experience but a change in the relationship between the observer and what is observed. The practitioner does not fight the senses but gently withdraws the fuel of attention from them.',
+      'One-pointed concentration, the sustained fixing of attention on a single object without wavering, is the direct result of successful interiorisation. When concentration deepens sufficiently, the constant internal commentary of the mind begins to quiet. In the spaces between thoughts, a genuine silence opens: not the silence of suppression, but the natural silence of a mind that has momentarily ceased to generate its own noise. This is the doorway to meditation proper.',
     ],
     practices: [
       'Pratyahara: the practice of withdrawing attention from the senses',
@@ -148,7 +155,7 @@ export default function MeditationCoursePage() {
     '@context': 'https://schema.org',
     '@type': 'Course',
     name: 'Meditation Course',
-    description: 'A structured course in Gnostic meditation covering relaxation, pranayama, breathing exercises, the science of meditation, interiorization and concentration, self-observation, and the development of imagination, inspiration, and intuition.',
+    description: 'A structured course in Gnostic meditation covering relaxation, pranayama, breathing exercises, the science of meditation, interiorisation and concentration, self-observation, and the development of imagination, inspiration, and intuition.',
     provider: {
       '@type': 'Organization',
       '@id': `${BASE}/#organization`,
@@ -206,7 +213,7 @@ export default function MeditationCoursePage() {
             </div>
             <div>
               <p className="mb-5">
-                The course proceeds through seven carefully ordered areas of study and practice. Each builds on the one before it: without genuine relaxation, concentration cannot arise; without concentration, meditation proper is impossible; without meditation proper, the higher faculties of imagination, inspiration, and intuition remain dormant. The sequence is not arbitrary but reflects the actual structure of inner development as the tradition understands it.
+                The course proceeds through ordered stages. Each builds on the one before it: without genuine relaxation, concentration cannot arise; without concentration, meditation proper is impossible; without meditation proper, the higher faculties of imagination, inspiration, and intuition remain dormant. The sequence is not arbitrary but reflects the actual structure of inner development as the tradition understands it.
               </p>
               <p>
                 Classes are held weekly. Students are expected to maintain a personal daily practice between sessions, bringing their observations, questions, and difficulties back to the group. The work is supported by the community of practice, but it is ultimately individual: each student must develop their own inner life through their own sustained effort.
