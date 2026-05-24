@@ -1,3 +1,10 @@
+// Introductory SAW attribution reductions (2026-05-24):
+//   hero cite:       "Samael Aun Weor"                       → "The Gnostic tradition"
+//   opening quote 1: "Samael Aun Weor, The Revolution of the Dialectic" → "The Revolution of the Dialectic"
+//   opening quote 2: "Samael Aun Weor, The Revolution of the Dialectic" → "The Revolution of the Dialectic"
+//   opening quote 3: "Samael Aun Weor, The Revolution of the Dialectic" → "The Revolution of the Dialectic"
+// Body-section cite attributions (lines 402-899) are unchanged.
+
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
@@ -84,7 +91,7 @@ export default function MeditationPage() {
                 Only then does illumination arrive of itself."
               </p>
               <cite className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest not-italic">
-                Samael Aun Weor
+                The Gnostic tradition
               </cite>
             </blockquote>
           </div>
@@ -109,7 +116,7 @@ export default function MeditationPage() {
                   and the revolution of the dialectic.
                 </p>
                 <cite className="text-sm text-[#c9a96e] not-italic mt-3 block font-medium">
-                  Samael Aun Weor, The Revolution of the Dialectic
+                  The Revolution of the Dialectic
                 </cite>
               </blockquote>
             </div>
@@ -136,7 +143,7 @@ export default function MeditationPage() {
                 the moment in doses.
               </p>
               <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">
-                Samael Aun Weor, The Revolution of the Dialectic
+                The Revolution of the Dialectic
               </cite>
             </blockquote>
 
@@ -150,7 +157,7 @@ export default function MeditationPage() {
                 Master Ummom said to his disciples: <em>"If you walk, walk; if you sit, sit; but do not vacillate."</em>
               </p>
               <cite className="text-sm text-[#c9a96e] not-italic font-medium block border-t border-[#e8d5b0] pt-4">
-                Samael Aun Weor, The Revolution of the Dialectic
+                The Revolution of the Dialectic
               </cite>
             </div>
           </div>
