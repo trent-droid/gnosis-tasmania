@@ -1,4 +1,5 @@
-﻿import { Link } from 'react-router-dom'
+﻿// Change (2026-05-24): "Visit Gnosis Australia" link changed from external gnosisaustralia.org.au to internal /gnostic-centres
+import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote, CheckIcon } from '../components/ui.jsx'
@@ -143,14 +144,12 @@ export default function CommunityPage() {
             <p className="text-[#4a3a26] leading-relaxed max-w-2xl mx-auto mb-4">
               The Gnostic Society operates through affiliated study groups across more than twenty countries, sharing a common body of teaching while remaining locally rooted. Gnosis Tasmania is part of this worldwide network, connected to sister organisations across Australia and beyond.
             </p>
-            <a
-              href="https://gnosisaustralia.org.au"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/gnostic-centres"
               className="inline-block text-sm text-[#c9a96e] hover:text-[#b8963e] transition-colors font-medium"
             >
               Visit Gnosis Australia →
-            </a>
+            </Link>
           </div>
         </div>
       </section>
