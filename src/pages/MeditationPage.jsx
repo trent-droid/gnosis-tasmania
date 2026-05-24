@@ -618,11 +618,6 @@ export default function MeditationPage() {
             </div>
             <div className="space-y-6 text-base leading-relaxed text-[#3a2f1f]">
               <p>
-                One of the most important questions a sincere beginner can ask is how long a daily
-                meditation session needs to be. This question deserves a direct and honest answer,
-                because the Gnostic path does not flatter its students with comfortable half-truths.
-              </p>
-              <p>
                 For a student genuinely committed to the development of consciousness, not merely
                 seeking relaxation or a few pleasant minutes of quiet, <strong>a minimum of thirty
                 minutes per sitting is the realistic starting point.</strong> For serious students,
@@ -654,19 +649,19 @@ export default function MeditationPage() {
               <p>
                 Gnostic teaching recommends establishing a consistent daily rhythm. The morning period,
                 before the demands of the day have accumulated, is well suited to the sitting practice.
-                The evening period, just before sleep, is suited to the retrospection exercise and
-                mantric work. Between these two anchors, self-observation is practised continuously
-                throughout the ordinary activities of the day.
+                The evening period provides a natural anchor for the retrospection exercise. Between
+                these two periods, self-observation is practised continuously throughout the ordinary
+                activities of the day.
               </p>
               <p>
                 A workable framework for a sincere practitioner looks something like this. In the
                 morning: thirty to sixty minutes of meditation, beginning with complete physical
-                relaxation and moving through Pratyahara toward sustained concentration. During the day:
-                self-observation maintained through ordinary work, conversation, and activity, watching
-                thoughts, emotions, and mechanical reactions without identifying with them. In the
-                evening: the retrospection exercise described below. Before sleep: a sacred syllable
-                or mantra, held in awareness as consciousness passes through the hypnagogic state
-                into the inner worlds.
+                relaxation and moving through Pratyahara toward sustained concentration. Mantric
+                practice can be incorporated into any sitting according to the student's stage of
+                study and individual instruction. During the day: self-observation maintained
+                through ordinary work, conversation, and activity, watching thoughts, emotions, and
+                mechanical reactions without identifying with them. In the evening: the retrospection
+                exercise described below.
               </p>
               <p>
                 This is not an extreme or monastic schedule. It is, as Samael Aun Weor repeatedly
