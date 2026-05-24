@@ -14,7 +14,7 @@
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { HeroParallax, GoldRule, SectionLabel } from '../components/ui.jsx'
+import { HeroParallax, GoldRule, SectionLabel, QuoteParallax } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 
@@ -22,8 +22,7 @@ import { useJsonLd } from '../hooks/useJsonLd.js'
 // Warm amber tones align with the earth-tone palette; strong symbolic resonance.
 import heroMeditationImg from '../assets/art_rembrandt_philosopher.jpg?format=webp'
 
-import esotericLaboratoryImg       from '../assets/esoteric_laboratory.jpg'
-import esotericLaboratoryImgSrcset from '../assets/esoteric_laboratory.jpg?w=640;1280&format=webp&as=srcset'
+import hermesTrismegistusImg       from '../assets/art_hermes_trismegistus.jpg?format=webp'
 import artMonaLisaImg              from '../assets/art_mona_lisa.jpg'
 import artMonaLisaImgSrcset        from '../assets/art_mona_lisa.jpg?w=640;1024&format=webp&as=srcset'
 
@@ -86,7 +85,7 @@ export default function MeditationPage() {
         <HeroParallax
           src={heroMeditationImg}
           alt="Philosopher in Meditation by Rembrandt van Rijn, 1632. A figure seated in contemplative stillness before a great arched window, warm amber light streaming into the interior, a winding staircase rising in the background."
-          position="center 10%"
+          position="center bottom"
           heightClass="h-[65vh] min-h-[500px]"
           overlay="bg-gradient-to-b from-[#1c1409]/60 via-[#1c1409]/40 to-[#1c1409]/70"
         >
@@ -379,23 +378,15 @@ export default function MeditationPage() {
           </div>
         </section>
 
-        {/* ── Art banner: alchemical laboratory ────────────────────────────── */}
-        {/* Standalone figure with no fade-section wrapper: image must not fade in. */}
-        <figure className="overflow-hidden shadow-xl border-y border-[#c8b89a]" aria-label="Artwork">
-          <picture>
-            <source srcSet={esotericLaboratoryImgSrcset} sizes="100vw" type="image/webp" />
-            <img
-              src={esotericLaboratoryImg}
-              alt="An alchemical laboratory from an esoteric manuscript, the inner laboratory where the work of consciousness transformation is performed."
-              className="w-full h-72 sm:h-96 object-cover"
-              style={{ objectPosition: 'center 30%' }}
-              loading="lazy" decoding="async"
-            />
-          </picture>
-          <figcaption className="text-xs text-[#6b5535] italic text-center py-2.5 px-4 bg-[#f8f1e3] border-t border-[#c8b89a]">
-            The alchemical laboratory, from an esoteric manuscript. The inner work of transformation. Public domain.
-          </figcaption>
-        </figure>
+        {/* ── Quote parallax: Hermes Trismegistus / Corpus Hermeticum ─────────── */}
+        {/* Renaissance mosaic of Hermes Trismegistus (Siena Cathedral, c.1480–82, public domain). */}
+        <QuoteParallax
+          src={hermesTrismegistusImg}
+          alt="Hermes Trismegistus mosaic, Siena Cathedral floor, circa 1480"
+          position="center 35%"
+          quote="Silence is a great sea of mystery. The one who enters into it perceives all, and becomes all."
+          cite="Hermes Trismegistus, Corpus Hermeticum"
+        />
 
         {/* ── The Essence & Ecstasy ─────────────────────────────────────────── */}
         {/* No fade-section: Mona Lisa image is inside. Heading and text column use
