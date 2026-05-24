@@ -100,7 +100,6 @@ const AU_STATES = [
 const NZ_CENTRES = [
   { city: 'Auckland (Albany)', website: 'https://gnosisnz.org' },
   { city: 'Auckland (City)',   website: 'https://newzealandgnosis.co.nz', email: 'AucklandGnosis@gmail.com' },
-  { city: 'Christchurch',      website: 'https://newzealandgnosis.co.nz', email: 'christchurchnzgnosis@gmail.com' },
 ]
 
 /* ─── Data: International centres organised by region and country ─────────────
