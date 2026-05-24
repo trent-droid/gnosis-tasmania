@@ -1,11 +1,14 @@
-﻿import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { GoldRule, SectionLabel, ParallaxImage } from '../components/ui.jsx'
+// Removed ParallaxImage (hero now uses HeroParallax); added HeroParallax
+import { HeroParallax, GoldRule, SectionLabel } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 
-import heroPrimaveraImg          from '../assets/hero_primavera.jpg?format=webp'
+// Hero image: replaced La Primavera (Botticelli) with a zen garden — more directly
+// symbolic of meditation, inner stillness, and the Gnostic contemplative path.
+import heroZenImg                   from '../assets/hero_zen.jpg?format=webp'
 import esotericLaboratoryImg        from '../assets/esoteric_laboratory.jpg'
 import esotericLaboratoryImgWebp    from '../assets/esoteric_laboratory.jpg?format=webp'
 import esotericLaboratoryImgSrcset  from '../assets/esoteric_laboratory.jpg?w=640;1280&format=webp&as=srcset'
@@ -66,41 +69,36 @@ export default function MeditationPage() {
       <Nav />
       <main>
 
-        {/* ── Hero - La Primavera ───────────────────────────────────────────── */}
-        <header className="relative flex flex-col items-center justify-center text-center px-4 pt-16 min-h-[60vh] overflow-hidden" aria-label="Page hero">
-          <div className="absolute inset-0" aria-hidden="true">
-            <ParallaxImage
-              src={heroPrimaveraImg}
-              position="center 25%"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#1c1409]/65 via-[#1c1409]/45 to-[#1c1409]/75" />
-          </div>
-
-          <div className="relative z-10 max-w-3xl mx-auto py-16">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-1.5 text-xs font-medium text-[#c8b89a] hover:text-[#c9a96e] transition-colors mb-8 tracking-wide uppercase"
-            >
-              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Back to Gnosis Tasmania
-            </Link>
-            <p className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest mb-3">
+        {/* ── Hero — zen garden + Samael Aun Weor quote ────────────────────
+             Removed: "Back to Gnosis Tasmania" link.
+             Changed: image from La Primavera to hero_zen.jpg (more relevant to meditation).
+             Added: parallax via HeroParallax + inspiring quote overlay. */}
+        <HeroParallax
+          src={heroZenImg}
+          alt="A serene Zen garden of raked gravel and stone — evoking the inner stillness cultivated through Gnostic meditation"
+          position="center center"
+          heightClass="h-[65vh] min-h-[500px]"
+          overlay="bg-gradient-to-b from-[#1c1409]/65 via-[#1c1409]/45 to-[#1c1409]/75"
+        >
+          <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
+            <p className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest mb-4">
               Ongoing · Weekly · Donation-Based
             </p>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-light text-[#f8f1e3] tracking-wide mb-5 leading-tight drop-shadow-lg">
               The Revolution<br className="hidden sm:block" /> of Meditation
             </h1>
-            <p className="font-display text-xl sm:text-2xl text-[#e8d5b0] font-light italic leading-relaxed drop-shadow">
-              A Gnostic approach to inner stillness and awakening
-            </p>
+            <GoldRule className="mb-6" />
+            <blockquote className="max-w-2xl mx-auto">
+              <p className="font-display text-xl sm:text-2xl text-[#e8d5b0] font-light italic leading-relaxed drop-shadow mb-3">
+                "When the mind is still and in silence, the Essence is liberated from its prison.
+                Only then does illumination arrive of itself."
+              </p>
+              <cite className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest not-italic">
+                Samael Aun Weor
+              </cite>
+            </blockquote>
           </div>
-
-          <p className="absolute bottom-5 left-0 right-0 text-center z-10 text-[10px] text-white/35 px-4">
-            La Primavera, Sandro Botticelli, Uffizi Gallery, Florence (c. 1482). Public domain.
-          </p>
-        </header>
+        </HeroParallax>
 
         {/* ── Opening quote ────────────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-[#faf6ef] fade-section" aria-label="Opening teaching">
@@ -156,7 +154,62 @@ export default function MeditationPage() {
           </div>
         </section>
 
-        {/* ── Art banner: Bouguereau - Song of the Angels ──────────────────── */}
+        {/* ── The Four Stages ──────────────────────────────────────────────────
+             NEW SECTION: introduces the complete systematic framework before
+             moving into the detailed theory of stillness and ecstasy. */}
+        <section className="py-20 px-4 bg-white fade-section" aria-labelledby="stages-heading">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-14">
+              <SectionLabel>A complete inner science</SectionLabel>
+              <h2 id="stages-heading" className="font-display text-4xl sm:text-5xl font-light text-[#2a1e12] mb-5">
+                The Four Stages of Gnostic Meditation
+              </h2>
+              <GoldRule />
+            </div>
+
+            <p className="text-base text-center text-[#4a3a26] max-w-2xl mx-auto mb-12 leading-relaxed">
+              In the Gnostic teaching, meditation is not a single, undifferentiated practice but
+              a systematic science of inner development that unfolds through four progressive stages.
+              Understanding these stages gives the sincere student a clear map of what is being
+              developed and where they stand in the work.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-8">
+              {[
+                {
+                  number: '01',
+                  title: 'Relaxation',
+                  body: 'Before the mind can be gathered and directed, the body and nervous system must be genuinely released. This is not ordinary tiredness or passive inattention, but a conscious, deliberate process — releasing physical tension from the feet upward through the body until the organism is at rest and the student is fully present within it. Without this foundation, deeper states remain inaccessible.',
+                },
+                {
+                  number: '02',
+                  title: 'Concentration',
+                  body: 'With the body at rest, the practitioner gathers the attention and fixes it on a single point: a candle flame, a geometric form, a mantra, or an inner image. Concentration is not effort or strain — it is the patient, gentle return of awareness to the chosen object each time it wanders. Over time, this creates a unified, directed field of attention: the necessary foundation for meditation proper.',
+                },
+                {
+                  number: '03',
+                  title: 'Meditation Proper',
+                  body: 'With concentrated attention established, the practitioner allows the mind to penetrate into the inner nature of the object of contemplation. This is where genuine psychological comprehension begins — where the student moves from surface understanding to direct inner knowing. The quality of mind here is not analytical but receptive: open, still, and profoundly attentive.',
+                },
+                {
+                  number: '04',
+                  title: 'Samadhi',
+                  body: 'The fourth stage cannot be achieved by effort alone, but arrives by grace: the state in which the meditator, the act of meditation, and the object of meditation become one. The separate sense of self dissolves temporarily, and the Essence — freed from its bottle — experiences directly that which lies beyond the mind. This is the mystical state toward which all genuine traditions have pointed.',
+                },
+              ].map(({ number, title, body }) => (
+                <article key={title} className="bg-[#faf6ef] rounded-sm p-8 border border-[#e8d5b0]">
+                  <span className="font-display text-4xl font-light text-[#c9a96e]/50 mb-3 block leading-none" aria-hidden="true">
+                    {number}
+                  </span>
+                  <h3 className="font-display text-xl font-medium text-[#2a1e12] mb-4">{title}</h3>
+                  <p className="text-sm leading-relaxed text-[#3a2f1f]">{body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Art banner: alchemical laboratory ────────────────────────────── */}
         <figure className="overflow-hidden shadow-xl border-y border-[#c8b89a]" aria-label="Artwork">
           <picture>
             <source srcSet={esotericLaboratoryImgSrcset} sizes="100vw" type="image/webp" />
@@ -359,6 +412,71 @@ export default function MeditationPage() {
               the Consciousness. When the Buddhata awakens, we remain illuminated. The entire work of
               Gnostic Meditation is the awakening of this inner light.
             </p>
+          </div>
+        </section>
+
+        {/* ── How Long to Practice ─────────────────────────────────────────────
+             NEW SECTION: sets honest, realistic expectations about daily commitment.
+             Emphasises 30 minutes to 1 hour minimum for serious students. */}
+        <section className="py-20 px-4 bg-white fade-section" aria-labelledby="time-heading">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <SectionLabel>Setting realistic expectations</SectionLabel>
+              <h2 id="time-heading" className="font-display text-4xl sm:text-5xl font-light text-[#2a1e12] mb-5">
+                How Long Does Practice Require?
+              </h2>
+              <GoldRule />
+            </div>
+            <div className="space-y-6 text-base leading-relaxed text-[#3a2f1f]">
+              <p>
+                One of the most important questions a sincere beginner can ask is how long a daily
+                meditation session needs to be. This question deserves a direct and honest answer,
+                because the Gnostic path does not flatter its students with comfortable half-truths.
+              </p>
+              <p>
+                For a student who is genuinely committed to the development of consciousness — not merely
+                to relaxation or a few pleasant minutes of quiet — <strong>a minimum of thirty minutes
+                per sitting is the realistic starting point.</strong> For serious students, one hour per
+                day is the natural foundation on which sustained progress is built. This applies whether
+                the practice is divided into a morning session and an evening session, or concentrated
+                into a single daily sitting.
+              </p>
+              <p>
+                This does not mean that shorter sittings have no value. Even fifteen minutes of genuine
+                inner work — real relaxation, real concentration, real self-observation — is far better
+                than an hour of mechanical sitting in which the mind has simply been left to wander.
+                Quality always precedes quantity. But as the practice deepens and the student begins to
+                recognise what genuine stillness actually feels like, the natural impulse becomes to sit
+                longer, not shorter.
+              </p>
+              <div className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-7 my-4">
+                <p className="font-display text-lg sm:text-xl text-[#2a1e12] italic leading-relaxed mb-3">
+                  "The student who meditates faithfully for thirty minutes each morning and thirty minutes
+                  each evening — combined with self-observation throughout the day and retrospection before
+                  sleep — creates the conditions in which real transformation becomes possible."
+                </p>
+                <cite className="text-sm text-[#c9a96e] not-italic font-medium block">
+                  — Based on the teachings of Samael Aun Weor
+                </cite>
+              </div>
+              <p>
+                The Gnostic teaching is also clear that meditation must not stand alone. The student who
+                sits for an hour each morning but lives the remainder of their day in complete
+                identification with their thoughts and emotional reactions will progress far more slowly
+                than the student who combines regular sitting practice with genuine self-observation
+                throughout the day, the retrospection exercise each evening, and the mantric practices
+                before sleep. Meditation is one instrument in an orchestra; all the instruments must be
+                played together.
+              </p>
+              <p>
+                Do not be discouraged if this seems demanding. Begin where you are, and add to your
+                practice faithfully over time. Even fifteen to twenty minutes of genuine daily practice,
+                maintained without interruption for several months, builds the foundation upon which
+                deeper work becomes possible. The path begins wherever you are, at whatever hour you can
+                consistently protect from distraction. What matters most is that you begin — and that
+                you return, day after day, with patience and sincerity.
+              </p>
+            </div>
           </div>
         </section>
 
