@@ -11,7 +11,7 @@
 // art_rossetti_beata_beatrix.jpg    — Dante Gabriel Rossetti, Beata Beatrix (1864-70), Tate Britain.
 // art_ingres_apotheosis_homer.jpg   — J.-A.-D. Ingres, The Apotheosis of Homer (1827), Louvre, Paris.
 // art_millet_angelus.jpg            — Jean-François Millet, The Angelus (1857-59), Musée d'Orsay, Paris.
-// art_hayez_kiss.jpg                 — Francesco Hayez, The Kiss (Il bacio, 1859), Pinacoteca di Brera, Milan.
+// art_rosarium_king_queen.jpg        — Rosarium Philosophorum (c. 1550), Woodcut: Sol (King) and Luna (Queen) facing each other in sacred union, dove above. Wellcome Collection. Public domain.
 // art_bouguereau_charity.jpg        — W.-A. Bouguereau, Charity (1878). Wikimedia Commons.
 
 import artDurerSelfPortraitImg     from '../assets/art_durer_self_portrait.jpg?format=webp'
@@ -24,7 +24,7 @@ import artRaphaelTransfigImg       from '../assets/art_raphael_transfiguration.j
 import artRossettiBeatrixImg       from '../assets/art_rossetti_beata_beatrix.jpg?format=webp'
 import artIngresApotheosisImg      from '../assets/art_ingres_apotheosis_homer.jpg?format=webp'
 import artMilletAngelusImg         from '../assets/art_millet_angelus.jpg?format=webp'
-import artHayezKissImg             from '../assets/art_hayez_kiss.jpg?format=webp'
+import artRosariumKingQueenImg     from '../assets/art_rosarium_king_queen.jpg?format=webp'
 import artBouguereauCharityImg     from '../assets/art_bouguereau_charity.jpg?format=webp'
 
 // Data structure per article:
@@ -833,10 +833,10 @@ export const ARTICLES = [
     metaTitle: 'The Sacred in Relationships and Sexuality | Gnosis Tasmania',
     metaDescription: 'In Gnosis, the creative force is sacred: not to be suppressed or indulged mechanically, but understood and consciously transformed as a vehicle for inner awakening.',
     excerpt: 'The creative force is sacred in Gnosis, and the relationship between man and woman is understood as a potential vehicle of genuine spiritual transformation. An introduction.',
-    image: artHayezKissImg,
-    imageAlt: 'Francesco Hayez, The Kiss (Il bacio, 1859), Pinacoteca di Brera, Milan. A man and woman in a tender, passionate embrace, the Romantic vision of love consecrated and spiritually purposeful',
-    imagePosition: 'center 30%',
-    imageCredit: 'Public domain / Wikimedia Commons. Francesco Hayez, The Kiss (Il bacio, 1859), Pinacoteca di Brera, Milan.',
+    image: artRosariumKingQueenImg,
+    imageAlt: 'Rosarium Philosophorum (c. 1550). The King (Sol) and Queen (Luna) standing in robes facing one another, a dove descending between them — the classic alchemical image of the Sacred Marriage and the union of masculine and feminine principles',
+    imagePosition: 'center 35%',
+    imageCredit: 'Public domain. Rosarium Philosophorum (c. 1550), woodcut engraving: the King and Queen in Sacred Union (the Chemical Wedding). Wellcome Collection, London.',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'The Gnostic approach to love, relationships, and sexuality stands in a genuinely distinctive position relative to the two dominant cultural attitudes of our time. It does not share the repressive position of much traditional religion, which regards sexuality primarily as a problem to be managed or an obstacle to be overcome on the path to holiness. Nor does it endorse the permissive attitude of much contemporary culture, which treats sexual energy as a natural appetite without particular spiritual significance. Something fundamentally different is proposed: that the creative force is sacred, that its conscious transformation is one of the most powerful vehicles of genuine inner development available to human beings, and that the relationship between a man and a woman can, when approached with understanding and sincere intention, become a genuine path of spiritual initiation.',

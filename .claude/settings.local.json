@@ -53,7 +53,21 @@
       "Bash(npx vite *)",
       "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url&iiurlwidth=1280&format=json&titles=File:Francesco_Hayez_008.jpg\")",
       "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); pages=d['query']['pages']; p=list\\(pages.values\\(\\)\\)[0]; ii=p.get\\('imageinfo',[{}]\\)[0]; print\\('thumburl:', ii.get\\('thumburl',''\\)\\); print\\('url:', ii.get\\('url',''\\)\\)\")",
-      "Bash(curl -L -o \"c:/Users/Carbil/gnosistasmania/src/assets/art_hayez_kiss.jpg\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Francesco_Hayez_008.jpg/1280px-Francesco_Hayez_008.jpg\" --user-agent \"Mozilla/5.0\")"
+      "Bash(curl -L -o \"c:/Users/Carbil/gnosistasmania/src/assets/art_hayez_kiss.jpg\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Francesco_Hayez_008.jpg/1280px-Francesco_Hayez_008.jpg\" --user-agent \"Mozilla/5.0\")",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url&iiurlwidth=1280&format=json&titles=File:Rosarium_philosophorum_1.jpg\")",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url&iiurlwidth=1024&format=json&titles=File:Rosarium_philosophorum_1.jpg\")",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=rosarium+philosophorum+king+queen&srnamespace=6&srlimit=10&format=json\")",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url&iiurlwidth=1280&format=json&titles=File:Image_depicting_the_holy_wedding_or_conjunction_Wellcome_L0073564.jpg|File:Woodcut_depicting_the_king_%26_queen_standing_atop_a_sun_%26_moon_Wellcome_L0073562.jpg|File:Roi_et_Reine_Alchimie.jpg\")",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=alchemical+wedding+king+queen+sacred+marriage+engraving&srnamespace=6&srlimit=10&format=json\")",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=rosarium+philosophorum+conjunction&srnamespace=6&srlimit=8&format=json\")",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url&iiurlwidth=1280&format=json&titles=File:Chymische_Hochzeit_Titelblatt.jpg|File:Mutus_liber_1677_p15.jpg|File:Atalanta_fugiens_emblem_38.jpg\")",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=chemical+wedding+chymische+hochzeit&srnamespace=6&srlimit=8&format=json\")",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=atalanta+fugiens+engraving&srnamespace=6&srlimit=8&format=json\")",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url&iiurlwidth=1280&format=json&titles=File:Michael_Maier._Atalanta_Fugiens_1618_Emblem_XXVII.JPG|File:Michael_Maier_Atalanta_Fugiens_Emblem_24.jpeg|File:Atalanta_Fugiens_-_DPLA_-_010d4b4a0bc98218f8323bbd7cb8973c_\\(page_47\\).jpg\")",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=rosarium+philosophorum+wellcome&srnamespace=6&srlimit=10&format=json\")",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url&iiurlwidth=1280&format=json&titles=File:Rosarium_Philosophorum_Wellcome_L0026378.jpg|File:Rosarium_Philosophorum_Wellcome_L0026378_\\(cropped\\).jpg\")",
+      "Bash(curl -L -o \"c:/Users/Carbil/gnosistasmania/src/assets/art_rosarium_sacred_marriage.jpg\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Image_depicting_the_holy_wedding_or_conjunction_Wellcome_L0073564.jpg/1280px-Image_depicting_the_holy_wedding_or_conjunction_Wellcome_L0073564.jpg\" --user-agent \"Mozilla/5.0\")",
+      "Bash(curl -L -o \"c:/Users/Carbil/gnosistasmania/src/assets/art_rosarium_king_queen_temp.jpg\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Woodcut_depicting_the_king_%26_queen_standing_atop_a_sun_%26_moon_Wellcome_L0073562.jpg/1280px-Woodcut_depicting_the_king_%26_queen_standing_atop_a_sun_%26_moon_Wellcome_L0073562.jpg\" --user-agent \"Mozilla/5.0\")"
     ]
   }
 }
