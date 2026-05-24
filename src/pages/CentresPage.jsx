@@ -6,97 +6,105 @@ import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import heroImg from '../assets/hero_school_athens.jpg?format=webp'
 
-// ─── Data: Australian centres (source: newcastlegnosis.org/about-us/australia-gnosis/) ─
+// Email obfuscation: every address is stored as [localPart, domain] so it never appears
+// as a complete string in source or markup. The helpers below reassemble it in JS at
+// runtime — invisible to simple scrapers that regex-scan HTML for @ symbols.
+// Phone numbers have been removed entirely from all listings.
+
+const emailAddr = ([u, d]) => u + '@' + d
+const emailHref = (parts) => 'mailto:' + emailAddr(parts)
+
+// ─── Data: Australian centres ────────────────────────────────────────────────
 
 const AU_STATES = [
   {
     state: 'New South Wales', abbr: 'NSW',
     centres: [
-      { city: 'Blue Mountains', email: 'australiangnosis@gmail.com', phone: '0401 243 119' },
-      { city: 'Byron Bay', email: 'gnosisbyron@gmail.com', phone: '0412 020 234' },
-      { city: 'Lismore', website: 'http://lismoregnosis.blogspot.com.au', email: 'lismoregnosis@gmail.com', phone: '0449 071 507' },
-      { city: 'Newcastle', website: 'https://www.newcastlegnosis.org', email: 'newcastlegnosis@gmail.com', phone: '0421 631 663' },
-      { city: 'Sydney', website: 'https://www.gnosissydney.com', email: 'gnosissydney@gmail.com' },
-      { city: 'Sydney – Western', email: 'selfknowledge2010@hotmail.com', phone: '0466 446 267' },
-      { city: 'Sydney – South Western', email: 'swsgnosis@gmail.com', phone: '0403 006 208' },
+      { city: 'Blue Mountains', email: ['australiangnosis', 'gmail.com'] },
+      { city: 'Byron Bay', email: ['gnosisbyron', 'gmail.com'] },
+      { city: 'Lismore', website: 'http://lismoregnosis.blogspot.com.au', email: ['lismoregnosis', 'gmail.com'] },
+      { city: 'Newcastle', website: 'https://www.newcastlegnosis.org', email: ['newcastlegnosis', 'gmail.com'] },
+      { city: 'Sydney', website: 'https://www.gnosissydney.com', email: ['gnosissydney', 'gmail.com'] },
+      { city: 'Sydney – Western', email: ['selfknowledge2010', 'hotmail.com'] },
+      { city: 'Sydney – South Western', email: ['swsgnosis', 'gmail.com'] },
     ],
   },
   {
     state: 'Queensland', abbr: 'QLD',
     centres: [
-      { city: 'Gold Coast', website: 'https://www.gnosisgoldcoast.com.au', email: 'gnosisgc@gmail.com', phone: '0433 755 059' },
-      { city: 'Sunshine Coast', website: 'https://www.sunshinecoastgnosis.org', email: 'ben@sunshinecoastgnosis.org' },
+      { city: 'Gold Coast', website: 'https://www.gnosisgoldcoast.com.au', email: ['gnosisgc', 'gmail.com'] },
+      { city: 'Sunshine Coast', website: 'https://www.sunshinecoastgnosis.org', email: ['ben', 'sunshinecoastgnosis.org'] },
     ],
   },
   {
     state: 'South Australia', abbr: 'SA',
     centres: [
-      { city: 'Adelaide', website: 'https://adelaide.gnosticsociety.org.au', email: 'gnosisadelaide@gmail.com', phone: '0403 760 538' },
-      { city: 'Adelaide – Para Hills', email: 'gnosisparahills@gmail.com', phone: '0401 683 649' },
+      { city: 'Adelaide', website: 'https://adelaide.gnosticsociety.org.au', email: ['gnosisadelaide', 'gmail.com'] },
+      { city: 'Adelaide – Para Hills', email: ['gnosisparahills', 'gmail.com'] },
     ],
   },
   {
     state: 'Tasmania', abbr: 'TAS',
     highlight: true,
     centres: [
-      { city: 'Hobart', website: 'https://gnosistasmania.com.au', email: 'gnosishobart@gmail.com', note: 'You are here' },
-      { city: 'Hobart (Eastern Shore)', website: 'https://gnosistasmania.com.au', email: 'gnosis.hobarteast@gmail.com', note: 'You are here' },
-      { city: 'Launceston', email: 'gnoss.launceston@gmail.com', phone: '0415 088 410', note: 'You are here' },
+      { city: 'Hobart', website: 'https://gnosistasmania.com.au', email: ['gnosishobart', 'gmail.com'], note: 'You are here' },
+      { city: 'Hobart (Eastern Shore)', website: 'https://gnosistasmania.com.au', email: ['gnosis.hobarteast', 'gmail.com'], note: 'You are here' },
+      { city: 'Launceston', email: ['gnoss.launceston', 'gmail.com'], note: 'You are here' },
     ],
   },
   {
     state: 'Victoria', abbr: 'VIC',
     centres: [
-      { city: 'Melbourne', website: 'https://www.melbournegnosis.com', email: 'info@melbournegnosis.com', phone: '0421 451 565' },
-      { city: 'Melbourne – Chadstone', email: 'australiangnostic@gmail.com' },
-      { city: 'Melbourne – Heathmont', website: 'https://www.melbournegnosis.com', email: 'heathmontgnosis@outlook.com', phone: '0420 660 439' },
-      { city: 'Melbourne – Mornington', website: 'https://www.melbournegnosis.com', email: 'gnosismtmartha@gmail.com', phone: '0403 282 129' },
+      { city: 'Melbourne', website: 'https://www.melbournegnosis.com', email: ['info', 'melbournegnosis.com'] },
+      { city: 'Melbourne – Chadstone', email: ['australiangnostic', 'gmail.com'] },
+      { city: 'Melbourne – Heathmont', website: 'https://www.melbournegnosis.com', email: ['heathmontgnosis', 'outlook.com'] },
+      { city: 'Melbourne – Mornington', website: 'https://www.melbournegnosis.com', email: ['gnosismtmartha', 'gmail.com'] },
     ],
   },
   {
     state: 'Western Australia', abbr: 'WA',
     centres: [
-      { city: 'Mandurah', website: 'https://www.gnosismandurah.com', email: 'gnosismandurah@inbox.com', phone: '0431 108 339' },
-      { city: 'Perth – Balga', email: 'holygrailseeker@me.com' },
-      { city: 'Perth – Como', email: 'gnosisaustralia@optusnet.com.au', phone: '08 6161 9299' },
-      { city: 'Perth – Darch', phone: '0421 661 467' },
-      { city: 'Perth – Fremantle', website: 'https://www.gnosisperth.com', email: 'freognosis@gnosisperth.com', phone: '0451 046 711' },
-      { city: 'Perth – Scarborough', email: 'gnosisforever@gmail.com', phone: '0413 587 533' },
+      { city: 'Mandurah', website: 'https://www.gnosismandurah.com', email: ['gnosismandurah', 'inbox.com'] },
+      { city: 'Perth – Balga', email: ['holygrailseeker', 'me.com'] },
+      { city: 'Perth – Como', email: ['gnosisaustralia', 'optusnet.com.au'] },
+      { city: 'Perth – Darch' },
+      { city: 'Perth – Fremantle', website: 'https://www.gnosisperth.com', email: ['freognosis', 'gnosisperth.com'] },
+      { city: 'Perth – Scarborough', email: ['gnosisforever', 'gmail.com'] },
     ],
   },
   {
     state: 'Australian Capital Territory', abbr: 'ACT',
     centres: [
-      { city: 'Canberra', website: 'https://gnosiscanberra.org', email: 'gnosiscanberra@gmail.com', phone: '0422 594 992' },
+      { city: 'Canberra', website: 'https://gnosiscanberra.org', email: ['gnosiscanberra', 'gmail.com'] },
     ],
   },
 ]
 
 const NZ_CENTRES = [
-  { city: 'Auckland (Albany)', website: 'https://gnosisnz.org', email: 'insightgnosis@gmail.com' },
-  { city: 'Auckland (City)', website: 'https://newzealandgnosis.co.nz', email: 'AucklandGnosis@gmail.com' },
+  { city: 'Auckland (Albany)', website: 'https://gnosisnz.org', email: ['insightgnosis', 'gmail.com'] },
+  { city: 'Auckland (City)', website: 'https://newzealandgnosis.co.nz', email: ['AucklandGnosis', 'gmail.com'] },
 ]
 
-// ─── Data: International centres (source: gnosistr.com/centros-gnosticos-...) ──────────
+// ─── Data: International centres ─────────────────────────────────────────────
 
 const INTERNATIONAL = [
   {
     region: 'Africa',
     entries: [
-      { country: 'South Africa', detail: 'Johannesburg (Olivedale)', website: 'https://www.gnosissouthafrica.com', email: 'info@gnosissouthafrica.com' },
+      { country: 'South Africa', detail: 'Johannesburg (Olivedale)', website: 'https://www.gnosissouthafrica.com', email: ['info', 'gnosissouthafrica.com'] },
     ],
   },
   {
     region: 'Asia & Pacific',
     entries: [
-      { country: 'Cambodia', detail: 'Phnom Penh', email: 'gnosticclasses@gmail.com' },
+      { country: 'Cambodia', detail: 'Phnom Penh', email: ['gnosticclasses', 'gmail.com'] },
       { country: 'Japan', detail: 'Yokohama', website: 'https://gnosticsociety.jp' },
     ],
   },
   {
     region: 'Europe',
     entries: [
-      { country: 'Germany', detail: 'Pforzheim', website: 'https://studienkreis-gnosis.org', email: 'studienkreis.gnosis@gmail.com' },
+      { country: 'Germany', detail: 'Pforzheim', website: 'https://studienkreis-gnosis.org', email: ['studienkreis.gnosis', 'gmail.com'] },
       { country: 'Italy', detail: 'Bari · Bologna · Florence · Genoa · Naples · Padua · Palermo · Rome · Turin' },
       { country: 'Spain', detail: '23 centres: Barcelona, Madrid, Bilbao, Valencia and more' },
       { country: 'UK & Ireland', detail: 'Bristol · Dublin · Edinburgh · Glasgow · London · Nottingham' },
@@ -124,7 +132,7 @@ const INTERNATIONAL = [
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
 
-function CentreRow({ city, website, email, phone, note }) {
+function CentreRow({ city, website, email, note }) {
   return (
     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 py-3 border-b border-[#ede3d0] last:border-0">
       <div>
@@ -143,15 +151,9 @@ function CentreRow({ city, website, email, phone, note }) {
           </a>
         )}
         {email && (
-          <a href={`mailto:${email}`}
+          <a href={emailHref(email)}
             className="text-[11px] text-[#8a6f3f] hover:text-[#c9a96e] transition-colors">
-            {email}
-          </a>
-        )}
-        {phone && (
-          <a href={`tel:${phone.replace(/\s/g, '')}`}
-            className="text-[11px] text-[#6b5535]">
-            {phone}
+            {emailAddr(email)}
           </a>
         )}
       </div>
@@ -205,9 +207,9 @@ function IntlRegionCard({ region, entries }) {
                 </a>
               )}
               {email && (
-                <a href={`mailto:${email}`}
+                <a href={emailHref(email)}
                   className="text-[11px] text-[#8a6f3f] hover:text-[#c9a96e] transition-colors">
-                  {email}
+                  {emailAddr(email)}
                 </a>
               )}
             </div>
