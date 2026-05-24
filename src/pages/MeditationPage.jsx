@@ -1,5 +1,5 @@
 // Introductory SAW attribution reductions (2026-05-24):
-//   hero cite:       "Samael Aun Weor"                       → "The Gnostic tradition"
+//   hero cite:       restored to "Samael Aun Weor" (2026-05-24)
 //   opening quote 1: "Samael Aun Weor, The Revolution of the Dialectic" → "The Revolution of the Dialectic"
 //   opening quote 2: "Samael Aun Weor, The Revolution of the Dialectic" → "The Revolution of the Dialectic"
 //   opening quote 3: "Samael Aun Weor, The Revolution of the Dialectic" → "The Revolution of the Dialectic"
@@ -91,7 +91,7 @@ export default function MeditationPage() {
                 Only then does illumination arrive of itself."
               </p>
               <cite className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest not-italic">
-                The Gnostic tradition
+                Samael Aun Weor
               </cite>
             </blockquote>
           </div>

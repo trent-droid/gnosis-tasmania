@@ -1,3 +1,6 @@
+// Changes (2026-05-24):
+//   Facebook link → https://www.facebook.com/GnosisTasmania (Tasmanian page)
+//   Gnosis Australia link → internal /gnostic-centres (no longer external Newcastle URL)
 import { Link } from 'react-router-dom'
 import gssawLogoImg from '../assets/gssaw_logo.png'
 import ProtectedEmail from './ProtectedEmail.jsx'
@@ -68,19 +71,17 @@ export default function Footer() {
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors break-all"
                 />
               </p>
-              {/* Fixed: old URL /GnosticSocietyAustralia was wrong; official page is /GSSAW.Australia */}
               <p>
-                <a href="https://www.facebook.com/GSSAW.Australia/" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.facebook.com/GnosisTasmania" target="_blank" rel="noopener noreferrer"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
-                  Gnostic Society Australia on Facebook
+                  Gnosis Tasmania on Facebook
                 </a>
               </p>
-              {/* Fixed: gnosisaustralia.org.au is a dead domain; replaced with working national directory */}
               <p>
-                <a href="https://www.newcastlegnosis.org/about-us/australia-gnosis/" target="_blank" rel="noopener noreferrer"
+                <Link to="/gnostic-centres"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
-                  Gnosis Australia national centre directory
-                </a>
+                  Gnostic Centres Worldwide
+                </Link>
               </p>
             </address>
             <p className="text-xs text-[#6b5535] leading-relaxed mb-4">
