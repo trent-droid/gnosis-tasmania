@@ -22,9 +22,8 @@ import { useJsonLd } from '../hooks/useJsonLd.js'
 // Warm amber tones align with the earth-tone palette; strong symbolic resonance.
 import heroMeditationImg from '../assets/art_rembrandt_philosopher.jpg?format=webp'
 
-// Art banner: Friedrich "Wanderer above the Sea of Fog" (1818, public domain).
-// Solitary figure in perfect stillness before a vast misty landscape — the visual embodiment of meditation.
-import friedrichWandererImg from '../assets/art_friedrich_wanderer.jpg?format=webp'
+// Art banner: Zen hero image — serene, misty, contemplative atmosphere aligned with the meditation theme.
+import zenBannerImg from '../assets/hero_zen.jpg?format=webp'
 import artMonaLisaImg              from '../assets/art_mona_lisa.jpg'
 import artMonaLisaImgSrcset        from '../assets/art_mona_lisa.jpg?w=640;1024&format=webp&as=srcset'
 
@@ -380,14 +379,14 @@ export default function MeditationPage() {
           </div>
         </section>
 
-        {/* ── Quote parallax: Friedrich "Wanderer above the Sea of Fog" ───────── */}
-        {/* Caspar David Friedrich (1818, Kunsthalle Hamburg, public domain).
+        {/* ── Quote parallax: Zen contemplative scene ──────────────────────────── */}
+        {/* Serene zen imagery evoking a meditative figure in peaceful, misty surroundings.
             Parallax background with Lao Tzu quote overlaid. */}
         <QuoteParallax
-          src={friedrichWandererImg}
-          alt="Wanderer above the Sea of Fog by Caspar David Friedrich, 1818. A solitary figure stands in stillness on a rocky summit, contemplating a vast misty landscape below."
-          position="center 30%"
-          quote="To the mind that is still, the whole universe surrenders."
+          src={zenBannerImg}
+          alt="A serene, contemplative zen scene — misty mountains and still water, evoking the atmosphere of deep meditation."
+          position="center 40%"
+          quote="Silence is a source of great strength."
           cite="Lao Tzu"
         />
 
