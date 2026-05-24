@@ -1,19 +1,17 @@
-﻿import { useState } from 'react'
+// CoursesPage — simplified per user request:
+// - Removed the waiting-list email form and all EmailJS / useState infrastructure
+// - Replaced form with a clean "Reserve Your Place" section: 3 email tiles + Facebook link
+// - All other sections (course cards, locations, FAQ, CTA, parallax) unchanged
+
 import { Link } from 'react-router-dom'
-import emailjs from '@emailjs/browser'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, CheckIcon } from '../components/ui.jsx'
+import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import artHermesTrismegistusImg from '../assets/art_hermes_trismegistus.jpg?format=webp'
-import artBirthVenusImg    from '../assets/art_birth_venus.jpg?format=webp'
-import esotericAdeptVaseImg from '../assets/esoteric_adept_vase.jpg?format=webp'
-
-// Shared EmailJS config — same credentials used by ContactPage
-const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+import artBirthVenusImg         from '../assets/art_birth_venus.jpg?format=webp'
+import esotericAdeptVaseImg     from '../assets/esoteric_adept_vase.jpg?format=webp'
 
 const COURSES = [
   {
@@ -88,44 +86,14 @@ const LOCATIONS = [
   },
 ]
 
+// Email addresses for each centre — kept in one place for easy maintenance
+const CENTRE_CONTACTS = [
+  { city: 'Hobart',                email: 'gnosishobart@gmail.com' },
+  { city: 'Hobart (Eastern Shore)', email: 'gnosis.hobarteast@gmail.com' },
+  { city: 'Launceston',             email: 'gnosis.launceston@gmail.com' },
+]
+
 export default function CoursesPage() {
-  // Waiting list form state
-  const [wlData, setWlData]     = useState({ name: '', email: '', location: '' })
-  const [wlStatus, setWlStatus] = useState('idle') // idle | sending | success | error
-
-  function handleWlChange(e) {
-    const { name, value } = e.target
-    setWlData(prev => ({ ...prev, [name]: value }))
-  }
-
-  async function handleWlSubmit(e) {
-    e.preventDefault()
-    setWlStatus('sending')
-    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-      setWlStatus('error')
-      return
-    }
-    try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name:       wlData.name,
-          from_email:      wlData.email,
-          interest:        'Introduction to Gnosis — Waiting List',
-          how_heard:       'Not specified',
-          message:         `Preferred location: ${wlData.location || 'Any'}\n\nThis person has joined the Introduction to Gnosis waiting list.`,
-          recaptcha_token: 'not available',
-        },
-        { publicKey: EMAILJS_PUBLIC_KEY }
-      )
-      setWlStatus('success')
-    } catch (err) {
-      console.error('[EmailJS] Waiting list send failed:', err)
-      setWlStatus('error')
-    }
-  }
-
   usePageMeta(
     'Gnostic Courses in Hobart, Eastern Shore & Launceston | Gnosis Tasmania',
     'Gnostic courses in Hobart, Hobart Eastern Shore, and Launceston: Introduction to Gnosis (34 sessions) and weekly Meditation Classes. No experience needed. Donation-based.',
@@ -240,7 +208,7 @@ export default function CoursesPage() {
                 <h3 className={`font-display text-3xl font-medium mb-1 ${highlight ? 'text-[#f8f1e3]' : 'text-[#2a1e12]'}`}>
                   {title}
                 </h3>
-                <p className={`text-sm font-medium mb-4 ${highlight ? 'text-[#c9a96e]' : 'text-[#c9a96e]'}`}>{subtitle}</p>
+                <p className="text-sm font-medium mb-4 text-[#c9a96e]">{subtitle}</p>
                 <div className="flex gap-4 mb-5">
                   <span className={`text-xs px-2 py-1 rounded-sm border ${highlight ? 'text-[#c8b89a] border-[#5a4a2e]' : 'text-[#6b5535] border-[#e8d5b0]'}`}>
                     {duration}
@@ -253,7 +221,7 @@ export default function CoursesPage() {
                 <div className="space-y-2 mb-8 flex-1">
                   {topics.map(t => (
                     <div key={t} className="flex items-start gap-2">
-                      <span className={`text-[#c9a96e] mt-0.5 shrink-0`} aria-hidden="true">◦</span>
+                      <span className="text-[#c9a96e] mt-0.5 shrink-0" aria-hidden="true">◦</span>
                       <span className={`text-xs leading-relaxed ${highlight ? 'text-[#c8b89a]' : 'text-[#4a3a26]'}`}>{t}</span>
                     </div>
                   ))}
@@ -274,87 +242,59 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* ── Waiting List ──────────────────────────────────────────────────────── */}
-      {/* Intro course runs periodically when there are enough students */}
+      {/* ── Reserve Your Place ────────────────────────────────────────────────────
+           Replaced the EmailJS waiting-list form with a simple, stateless contact
+           section. Courses run periodically; places are limited; the two ways to
+           connect are email (per centre) and Facebook. */}
       <section className="py-20 px-4 bg-white fade-section">
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-10">
-            <SectionLabel className="text-center">Introduction to Gnosis</SectionLabel>
-            <h2 className="font-display text-3xl font-light text-[#2a1e12] mb-4 text-center">
-              Join the Waiting List
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <SectionLabel>Introduction to Gnosis</SectionLabel>
+            <h2 className="font-display text-3xl font-light text-[#2a1e12] mb-4">
+              Reserve Your Place
             </h2>
             <GoldRule className="mb-6" />
-            <p className="text-[#4a3a26] leading-relaxed mb-3 text-center">
-              Our introductory course runs periodically, when there are enough students ready to begin together. If you are interested in the next intake, add your name below and we will contact you when a course is forming in your area.
+            <p className="text-[#4a3a26] leading-relaxed mb-3 max-w-2xl mx-auto">
+              New courses form periodically when enough students are ready to begin together. Places are limited. If you are interested in joining, contact the centre closest to you — we will add your name to the waiting list and be in touch when a course is forming in your area.
             </p>
-            <p className="text-[#6b5535] text-sm leading-relaxed mb-8 text-center">
-              This course is for those with a genuine desire to study and apply the teachings — not as a passive intellectual exercise, but as a sustained, practical commitment to inner work. If that is where you are, you are warmly welcome.
+            <p className="text-[#6b5535] text-sm leading-relaxed max-w-2xl mx-auto">
+              This course is for those with a genuine desire to study and apply the teachings — not as a passive intellectual exercise, but as a sustained, practical commitment to inner work. If that describes where you are, you are warmly welcome.
             </p>
+          </div>
 
-            {wlStatus === 'success' ? (
-              <div className="text-center py-4">
-                <div className="text-[#c9a96e] text-3xl mb-4" aria-hidden="true">✦</div>
-                <h3 className="font-display text-xl font-medium text-[#2a1e12] mb-2">You're on the list</h3>
-                <p className="text-sm text-[#4a3a26] leading-relaxed">
-                  Thank you. We will be in touch when a new course is forming near you.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleWlSubmit} className="space-y-4" noValidate>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="wl-name" className="block text-xs font-semibold text-[#6b5535] uppercase tracking-wider mb-2">
-                      Your Name *
-                    </label>
-                    <input
-                      id="wl-name" name="name" type="text" required
-                      value={wlData.name} onChange={handleWlChange}
-                      placeholder="Jane Smith"
-                      className="w-full bg-white border border-[#e8d5b0] rounded-sm px-4 py-3 text-sm text-[#3a2f1f] placeholder:text-[#a89a80] focus:outline-none focus:border-[#c9a96e] transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="wl-email" className="block text-xs font-semibold text-[#6b5535] uppercase tracking-wider mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      id="wl-email" name="email" type="email" required
-                      value={wlData.email} onChange={handleWlChange}
-                      placeholder="jane@example.com"
-                      className="w-full bg-white border border-[#e8d5b0] rounded-sm px-4 py-3 text-sm text-[#3a2f1f] placeholder:text-[#a89a80] focus:outline-none focus:border-[#c9a96e] transition-colors"
-                    />
-                  </div>
+          {/* One email tile per centre */}
+          <div className="grid sm:grid-cols-3 gap-6 mb-10">
+            {CENTRE_CONTACTS.map(({ city, email }) => (
+              <div key={city} className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-6 flex flex-col">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2 h-2 rounded-full bg-[#c9a96e] shrink-0" aria-hidden="true" />
+                  <h3 className="font-display text-base font-medium text-[#2a1e12]">{city}</h3>
                 </div>
-                <div>
-                  <label htmlFor="wl-location" className="block text-xs font-semibold text-[#6b5535] uppercase tracking-wider mb-2">
-                    Preferred Location
-                  </label>
-                  <select
-                    id="wl-location" name="location"
-                    value={wlData.location} onChange={handleWlChange}
-                    className="w-full bg-white border border-[#e8d5b0] rounded-sm px-4 py-3 text-sm text-[#3a2f1f] focus:outline-none focus:border-[#c9a96e] transition-colors"
-                  >
-                    <option value="">Any location</option>
-                    <option value="Hobart">Hobart</option>
-                    <option value="Hobart (Eastern Shore)">Hobart (Eastern Shore)</option>
-                    <option value="Launceston">Launceston</option>
-                  </select>
-                </div>
-                {wlStatus === 'error' && (
-                  <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-sm px-4 py-3">
-                    Something went wrong. Please try again or email us at{' '}
-                    <a href="mailto:gnosishobart@gmail.com" className="underline">gnosishobart@gmail.com</a>.
-                  </p>
-                )}
-                <button
-                  type="submit"
-                  disabled={wlStatus === 'sending'}
-                  className="w-full bg-[#c9a96e] hover:bg-[#b8963e] disabled:opacity-60 disabled:cursor-not-allowed text-[#1c1409] font-semibold py-3 rounded-sm transition-colors tracking-wide text-sm"
+                <a
+                  href={`mailto:${email}`}
+                  className="mt-auto text-sm font-semibold text-[#c9a96e] hover:text-[#b8963e] transition-colors break-all"
                 >
-                  {wlStatus === 'sending' ? 'Sending…' : 'Join the Waiting List →'}
-                </button>
-              </form>
-            )}
+                  {email}
+                </a>
+              </div>
+            ))}
+          </div>
+
+          {/* Facebook as secondary contact channel */}
+          <div className="text-center">
+            <p className="text-sm text-[#4a3a26] mb-5">You can also reach us through our Facebook page:</p>
+            <a
+              href="https://www.facebook.com/GSSAW.Australia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-[#faf6ef] border border-[#e8d5b0] hover:border-[#c9a96e] rounded-sm px-8 py-4 transition-colors group"
+            >
+              <span className="text-[#c9a96e] text-xl font-bold" aria-hidden="true">f</span>
+              <div className="text-left">
+                <p className="font-semibold text-[#2a1e12] group-hover:text-[#c9a96e] transition-colors text-sm">Gnostic Society Australia</p>
+                <p className="text-xs text-[#8a6f3f]">facebook.com/GSSAW.Australia</p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -403,7 +343,7 @@ export default function CoursesPage() {
               If you are in a position to give, your generosity directly supports the continuation of these teachings and helps make them available to those who cannot afford to pay. If you cannot give at this time, you are still warmly welcome.
             </p>
             <p className="text-sm text-[#8a6f3f] italic">
-              "Freely you have received; freely give." - Matthew 10:8
+              "Freely you have received; freely give." — Matthew 10:8
             </p>
           </div>
         </div>
