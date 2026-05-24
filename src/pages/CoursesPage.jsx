@@ -275,7 +275,7 @@ export default function CoursesPage() {
           <div className="text-center">
             <p className="text-sm text-[#4a3a26] mb-5">You can also reach us through our Facebook page:</p>
             <a
-              href="https://www.facebook.com/GSSAW.Australia/"
+              href="https://www.facebook.com/GnosticSocietyAustralia"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#faf6ef] border border-[#e8d5b0] hover:border-[#c9a96e] rounded-sm px-8 py-4 transition-colors group"
@@ -283,7 +283,7 @@ export default function CoursesPage() {
               <span className="text-[#c9a96e] text-xl font-bold" aria-hidden="true">f</span>
               <div className="text-left">
                 <p className="font-semibold text-[#2a1e12] group-hover:text-[#c9a96e] transition-colors text-sm">Gnostic Society Australia</p>
-                <p className="text-xs text-[#8a6f3f]">facebook.com/GSSAW.Australia</p>
+                <p className="text-xs text-[#8a6f3f]">facebook.com/GnosticSocietyAustralia</p>
               </div>
             </a>
           </div>

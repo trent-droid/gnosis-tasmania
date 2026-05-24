@@ -94,9 +94,8 @@ export default function ContactPage() {
           <p className="text-[#4a3a26] leading-relaxed mb-8">
             You can also follow us and send us a message through our Facebook page.
           </p>
-          {/* Fixed: official page is /GSSAW.Australia */}
           <a
-            href="https://www.facebook.com/GSSAW.Australia/"
+            href="https://www.facebook.com/GnosticSocietyAustralia"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-white border border-[#e8d5b0] hover:border-[#c9a96e] rounded-sm px-8 py-4 transition-colors group"
@@ -104,7 +103,7 @@ export default function ContactPage() {
             <span className="text-[#c9a96e] text-xl font-bold" aria-hidden="true">f</span>
             <div className="text-left">
               <p className="font-semibold text-[#2a1e12] group-hover:text-[#c9a96e] transition-colors text-sm">Gnostic Society Australia</p>
-              <p className="text-xs text-[#8a6f3f]">facebook.com/GSSAW.Australia</p>
+              <p className="text-xs text-[#8a6f3f]">facebook.com/GnosticSocietyAustralia</p>
             </div>
           </a>
         </div>
