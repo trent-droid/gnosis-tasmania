@@ -37,7 +37,8 @@
       "Bash(curl -L -s -o art_burne_jones_fortune.jpg \"https://upload.wikimedia.org/wikipedia/commons/5/51/Burne-Jones-The_Wheel_of_Fortune.jpg\")",
       "Bash(curl -L -s -o art_friedrich_moon.jpg \"https://upload.wikimedia.org/wikipedia/commons/d/da/Caspar_David_Friedrich_-_Two_Men_Contemplating_the_Moon_-_Google_Art_Project.jpg\")",
       "Bash(curl -L -s -o art_burne_jones_fortune.jpg \"https://upload.wikimedia.org/wikipedia/commons/a/a8/Edward_Burne-Jones_-_La_ruota_della_fortuna%2C_1875-83.jpg\")",
-      "Bash(curl -L -s -o art_friedrich_moon.jpg \"https://upload.wikimedia.org/wikipedia/commons/f/ff/Caspar_David_Friedrich_-_Two_Men_Contemplating_the_Moon_-_Google_Art_Project.jpg\")"
+      "Bash(curl -L -s -o art_friedrich_moon.jpg \"https://upload.wikimedia.org/wikipedia/commons/f/ff/Caspar_David_Friedrich_-_Two_Men_Contemplating_the_Moon_-_Google_Art_Project.jpg\")",
+      "Bash(git checkout *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\Carbil\\.claude\\projects\\c--Users-Carbil-gnosistasmania\\memory"
