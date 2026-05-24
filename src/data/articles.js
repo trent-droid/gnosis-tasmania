@@ -4,7 +4,7 @@
 // art_durer_self_portrait.jpg       — Albrecht Dürer, Self-Portrait (1500), Alte Pinakothek, Munich.
 // art_fra_angelico_annunciation.jpg — Fra Angelico, The Annunciation (c. 1425-26), Prado, Madrid.
 // art_rembrandt_prodigal_son.jpg    — Rembrandt, Return of the Prodigal Son (c. 1668), Hermitage, St Petersburg.
-// art_vermeer_astronomer.jpg        — Johannes Vermeer, The Astronomer (1668), Louvre, Paris.
+// art_rembrandt_scholar_study.jpg   — Rembrandt van Rijn, A Scholar in His Study (1634), Sternberg Palace, Prague.
 // art_friedrich_monk_sea.jpg        — Caspar David Friedrich, The Monk by the Sea (1808-10), Nationalgalerie, Berlin.
 // art_fuseli_nightmare.jpg          — Henry Fuseli, The Nightmare (1781), Detroit Institute of Arts.
 // art_raphael_transfiguration.jpg   — Raphael, The Transfiguration (1516-20), Vatican Museums.
@@ -17,7 +17,7 @@
 import artDurerSelfPortraitImg     from '../assets/art_durer_self_portrait.jpg?format=webp'
 import artFraAngelicoImg           from '../assets/art_fra_angelico_annunciation.jpg?format=webp'
 import artRembrandtProdigalImg     from '../assets/art_rembrandt_prodigal_son.jpg?format=webp'
-import artVermeerAstronomerImg     from '../assets/art_vermeer_astronomer.jpg?format=webp'
+import artRembrandtScholarImg      from '../assets/art_rembrandt_scholar_study.jpg?format=webp'
 import artFriedrichMonkSeaImg      from '../assets/art_friedrich_monk_sea.jpg?format=webp'
 import artFuseliNightmareImg       from '../assets/art_fuseli_nightmare.jpg?format=webp'
 import artRaphaelTransfigImg       from '../assets/art_raphael_transfiguration.jpg?format=webp'
@@ -279,10 +279,10 @@ export const ARTICLES = [
     metaTitle: 'Self-Observation: The Art of Watching Your Mind | Gnosis Tasmania',
     metaDescription: 'Self-observation is the foundational practice of the Gnostic path: the capacity to watch your own inner states clearly and non-judgementally as they arise. A practical guide to beginning.',
     excerpt: 'Self-observation is the foundational Gnostic practice: the disciplined, non-judgemental watching of inner states as they actually arise in present experience. Here is how to begin.',
-    image: artVermeerAstronomerImg,
-    imageAlt: 'Johannes Vermeer, The Astronomer (1668), Louvre. A scholar bends in focused attention over a celestial globe by candlelight, the quality of careful, patient observation at the heart of self-knowledge',
-    imagePosition: 'center 8%',
-    imageCredit: 'Public domain / Wikimedia Commons. Johannes Vermeer, The Astronomer (1668), Musée du Louvre, Paris.',
+    image: artRembrandtScholarImg,
+    imageAlt: 'Rembrandt van Rijn, A Scholar in His Study (1634), Sternberg Palace, Prague. A bearded sage in a deep blue robe and burgundy beret rests his hand at his chin in quiet contemplation, the classic image of inward observation and the examined mind',
+    imagePosition: 'center 20%',
+    imageCredit: 'Public domain / Wikimedia Commons. Rembrandt van Rijn, A Scholar in His Study (1634), Sternberg Palace, Prague.',
     date: '2026-05-23',
     readTime: '9 min read',
     intro: 'Self-observation is the foundational practical discipline of the Gnostic path. It is the capacity to watch one\'s own psychological states clearly, honestly, and without immediate identification or reaction, as they actually arise in present experience. Without this capacity, the deeper work of comprehension and psychological dissolution cannot proceed, because one cannot work with what one has not first clearly seen. Self-observation is therefore not merely one practice among others but the essential preparation for all other aspects of the inner work. Everything else depends on it, and everything else becomes more effective as it deepens.',
