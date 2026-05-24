@@ -34,7 +34,7 @@ const COURSES = [
   {
     title: 'Meditation Classes',
     subtitle: 'The Revolution of Meditation',
-    link: '/meditation-classes',
+    link: '/meditation-course',
     duration: 'Ongoing · weekly sessions',
     level: 'All levels welcome',
     description: 'A dedicated course in the theory and practice of Gnostic meditation. Learn the four stages of meditation practice - relaxation, concentration, meditation, and samadhi - and develop a sustainable daily practice that produces genuine, verifiable results.',

@@ -12,7 +12,8 @@ const CoreTeachingsPage = lazy(() => import('./pages/CoreTeachingsPage.jsx'))
 const PracticesPage     = lazy(() => import('./pages/PracticesPage.jsx'))
 const CoursesPage       = lazy(() => import('./pages/CoursesPage.jsx'))
 const CoursePage        = lazy(() => import('./pages/CoursePage.jsx'))
-const MeditationPage    = lazy(() => import('./pages/MeditationPage.jsx'))
+const MeditationPage       = lazy(() => import('./pages/MeditationPage.jsx'))
+const MeditationCoursePage = lazy(() => import('./pages/MeditationCoursePage.jsx'))
 const ContactPage       = lazy(() => import('./pages/ContactPage.jsx'))
 const CentresPage       = lazy(() => import('./pages/CentresPage.jsx'))
 const ResourcesPage     = lazy(() => import('./pages/ResourcesPage.jsx'))
@@ -38,6 +39,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/courses"                element={<CoursesPage />} />
           <Route path="/introduction-to-gnosis" element={<CoursePage />} />
           <Route path="/meditation-classes"     element={<MeditationPage />} />
+          <Route path="/meditation-course"      element={<MeditationCoursePage />} />
           <Route path="/contact"                element={<ContactPage />} />
           <Route path="/gnostic-centres"        element={<CentresPage />} />
           <Route path="/resources"              element={<ResourcesPage />} />
