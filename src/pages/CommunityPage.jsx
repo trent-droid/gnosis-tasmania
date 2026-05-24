@@ -6,6 +6,7 @@ import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import artBouguereauImg  from '../assets/art_bouguereau_angels.jpg?format=webp'
 import artCranachImg     from '../assets/art_cranach_garden_eden.jpg?format=webp'
+import ProtectedEmail from '../components/ProtectedEmail.jsx'
 
 const LOCATIONS = [
   {
@@ -181,12 +182,10 @@ export default function CommunityPage() {
                 </div>
                 <p className="text-sm text-[#4a3a26] leading-relaxed mb-4">{description}</p>
                 <p className="text-xs text-[#8a6f3f] font-medium mb-3">{schedule}</p>
-                <a
-                  href={`mailto:${contact}`}
+                <ProtectedEmail
+                  email={contact}
                   className="text-xs text-[#c9a96e] hover:text-[#b8963e] transition-colors font-medium"
-                >
-                  {contact}
-                </a>
+                />
               </div>
             ))}
           </div>

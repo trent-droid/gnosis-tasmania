@@ -10,6 +10,7 @@ import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, Secti
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import artHermesTrismegistusImg from '../assets/art_hermes_trismegistus.jpg?format=webp'
+import ProtectedEmail from '../components/ProtectedEmail.jsx'
 import artBirthVenusImg         from '../assets/art_birth_venus.jpg?format=webp'
 import esotericAdeptVaseImg     from '../assets/esoteric_adept_vase.jpg?format=webp'
 
@@ -270,12 +271,10 @@ export default function CoursesPage() {
                   <div className="w-2 h-2 rounded-full bg-[#c9a96e] shrink-0" aria-hidden="true" />
                   <h3 className="font-display text-base font-medium text-[#2a1e12]">{city}</h3>
                 </div>
-                <a
-                  href={`mailto:${email}`}
+                <ProtectedEmail
+                  email={email}
                   className="mt-auto text-sm font-semibold text-[#c9a96e] hover:text-[#b8963e] transition-colors break-all"
-                >
-                  {email}
-                </a>
+                />
               </div>
             ))}
           </div>

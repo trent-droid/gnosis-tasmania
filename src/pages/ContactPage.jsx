@@ -8,6 +8,7 @@ import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import esotericFlammarionImg from '../assets/esoteric_flammarion_colorized.jpg?format=webp'
+import ProtectedEmail from '../components/ProtectedEmail.jsx'
 
 const LOCATIONS = [
   {
@@ -78,12 +79,10 @@ export default function ContactPage() {
                 </div>
                 <p className="text-sm text-[#4a3a26] leading-relaxed mb-3">{description}</p>
                 <p className="text-xs text-[#8a6f3f] font-medium mb-5">{schedule}</p>
-                <a
-                  href={`mailto:${contact}`}
+                <ProtectedEmail
+                  email={contact}
                   className="mt-auto inline-block text-sm font-semibold text-[#c9a96e] hover:text-[#b8963e] transition-colors break-all"
-                >
-                  {contact}
-                </a>
+                />
               </div>
             ))}
           </div>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import gssawLogoImg from '../assets/gssaw_logo.png'
+import ProtectedEmail from './ProtectedEmail.jsx'
 
 const PAGES = [
   { to: '/',                       label: 'Home' },
@@ -61,10 +62,11 @@ export default function Footer() {
             <p className="text-xs font-bold text-[#c9a96e] uppercase tracking-widest mb-3">Connect</p>
             <address className="not-italic space-y-1.5 mb-4">
               <p>
-                <a href="mailto:gnosishobart@gmail.com"
-                  className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors break-all">
-                  gnosishobart@gmail.com
-                </a>
+                {/* Email obfuscated via ProtectedEmail — no plain mailto: in HTML */}
+                <ProtectedEmail
+                  email="gnosishobart@gmail.com"
+                  className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors break-all"
+                />
               </p>
               {/* Fixed: old URL /GnosticSocietyAustralia was wrong; official page is /GSSAW.Australia */}
               <p>
