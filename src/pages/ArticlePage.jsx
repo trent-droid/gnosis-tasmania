@@ -1,3 +1,4 @@
+// Cleanup (2026-05-24): removed all visible date and readTime metadata from hero, article body, and related-article cards
 import { useParams, Link, Navigate } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
@@ -22,7 +23,7 @@ function ArticleContent({ article }) {
   const {
     slug, title, metaTitle, metaDescription,
     image, imageAlt, imagePosition, imageCredit,
-    date, readTime,
+    date,
     intro, sections, keyPoints, relatedSlugs, siteLinks,
   } = article
 
@@ -54,10 +55,6 @@ function ArticleContent({ article }) {
     inLanguage: 'en-AU',
   })
 
-  const formattedDate = new Date(date).toLocaleDateString('en-AU', {
-    day: 'numeric', month: 'long', year: 'numeric',
-  })
-
   const relatedArticles = relatedSlugs
     .map(s => ARTICLES.find(a => a.slug === s))
     .filter(Boolean)
@@ -86,11 +83,6 @@ function ArticleContent({ article }) {
             {title}
           </h1>
           <GoldRule className="mb-5" />
-          <div className="flex justify-center gap-4 text-[#c8b89a] text-xs font-medium">
-            <time dateTime={date}>{formattedDate}</time>
-            <span aria-hidden="true">·</span>
-            <span>{readTime}</span>
-          </div>
         </div>
       </HeroParallax>
 
@@ -101,7 +93,6 @@ function ArticleContent({ article }) {
         itemType="https://schema.org/Article"
       >
         <meta itemProp="headline" content={title} />
-        <meta itemProp="datePublished" content={date} />
 
         <div className="max-w-3xl mx-auto">
 
@@ -190,7 +181,6 @@ function ArticleContent({ article }) {
                     />
                   </div>
                   <div className="p-4">
-                    <p className="text-xs text-[#a89a80] mb-2">{a.readTime}</p>
                     <h3 className="font-display text-sm font-medium text-[#2a1e12] leading-snug group-hover:text-[#c9a96e] transition-colors">
                       {a.title}
                     </h3>

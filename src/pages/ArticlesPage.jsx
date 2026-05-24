@@ -1,3 +1,4 @@
+// Cleanup (2026-05-24): removed date and readTime display from article cards
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
@@ -93,11 +94,7 @@ export default function ArticlesPage() {
 }
 
 function ArticleCard({ article }) {
-  const { slug, title, excerpt, image, imageAlt, imagePosition, date, readTime } = article
-
-  const formattedDate = new Date(date).toLocaleDateString('en-AU', {
-    day: 'numeric', month: 'long', year: 'numeric',
-  })
+  const { slug, title, excerpt, image, imageAlt, imagePosition } = article
 
   return (
     <article className="bg-white border border-[#e8d5b0] rounded-sm overflow-hidden flex flex-col group hover:border-[#c9a96e] transition-colors">
@@ -113,14 +110,6 @@ function ArticleCard({ article }) {
       </Link>
 
       <div className="p-6 flex flex-col flex-1">
-        <div className="flex items-center gap-3 mb-3">
-          <time dateTime={date} className="text-[10px] text-[#a89a80] font-medium uppercase tracking-wider">
-            {formattedDate}
-          </time>
-          <span className="text-[#e8d5b0]" aria-hidden="true">·</span>
-          <span className="text-[10px] text-[#a89a80] font-medium uppercase tracking-wider">{readTime}</span>
-        </div>
-
         <h2 className="font-display text-lg font-medium text-[#2a1e12] leading-snug mb-3 group-hover:text-[#c9a96e] transition-colors">
           <Link to={`/articles/${slug}`}>{title}</Link>
         </h2>
