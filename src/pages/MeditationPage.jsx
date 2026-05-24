@@ -22,7 +22,9 @@ import { useJsonLd } from '../hooks/useJsonLd.js'
 // Warm amber tones align with the earth-tone palette; strong symbolic resonance.
 import heroMeditationImg from '../assets/art_rembrandt_philosopher.jpg?format=webp'
 
-import hermesTrismegistusImg       from '../assets/art_hermes_trismegistus.jpg?format=webp'
+// Art banner: Friedrich "Wanderer above the Sea of Fog" (1818, public domain).
+// Solitary figure in perfect stillness before a vast misty landscape — the visual embodiment of meditation.
+import friedrichWandererImg from '../assets/art_friedrich_wanderer.jpg?format=webp'
 import artMonaLisaImg              from '../assets/art_mona_lisa.jpg'
 import artMonaLisaImgSrcset        from '../assets/art_mona_lisa.jpg?w=640;1024&format=webp&as=srcset'
 
@@ -378,14 +380,15 @@ export default function MeditationPage() {
           </div>
         </section>
 
-        {/* ── Quote parallax: Hermes Trismegistus / Corpus Hermeticum ─────────── */}
-        {/* Renaissance mosaic of Hermes Trismegistus (Siena Cathedral, c.1480–82, public domain). */}
+        {/* ── Quote parallax: Friedrich "Wanderer above the Sea of Fog" ───────── */}
+        {/* Caspar David Friedrich (1818, Kunsthalle Hamburg, public domain).
+            Parallax background with Lao Tzu quote overlaid. */}
         <QuoteParallax
-          src={hermesTrismegistusImg}
-          alt="Hermes Trismegistus mosaic, Siena Cathedral floor, circa 1480"
-          position="center 35%"
-          quote="Silence is a great sea of mystery. The one who enters into it perceives all, and becomes all."
-          cite="Hermes Trismegistus, Corpus Hermeticum"
+          src={friedrichWandererImg}
+          alt="Wanderer above the Sea of Fog by Caspar David Friedrich, 1818. A solitary figure stands in stillness on a rocky summit, contemplating a vast misty landscape below."
+          position="center 30%"
+          quote="To the mind that is still, the whole universe surrenders."
+          cite="Lao Tzu"
         />
 
         {/* ── The Essence & Ecstasy ─────────────────────────────────────────── */}
