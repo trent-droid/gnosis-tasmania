@@ -140,7 +140,7 @@ export default function WhatIsGnosisPage() {
             'name': 'Who is Samael Aun Weor?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Samael Aun Weor (1917–1977) was a Colombian-born author and teacher who produced more than seventy books synthesising Gnostic, Hermetic, Kabbalistic, Buddhist, and Hindu esoteric traditions into a single comprehensive practical system. His teachings are the foundation of the contemporary Gnostic movement worldwide, including in Australia.',
+              'text': 'Samael Aun Weor (1917-1977) was a Colombian-born author and teacher who produced more than seventy books synthesising Gnostic, Hermetic, Kabbalistic, Buddhist, and Hindu esoteric traditions into a single comprehensive practical system. His teachings are the foundation of the contemporary Gnostic movement worldwide, including in Australia.',
             },
           },
           {
@@ -170,7 +170,7 @@ export default function WhatIsGnosisPage() {
         'deathDate': '1977-12-24',
         'birthPlace': { '@type': 'Place', 'name': 'Bogotá, Colombia' },
         'nationality': 'Colombian',
-        'description': 'Samael Aun Weor (1917–1977) was a Colombian author and teacher who synthesised Gnostic, esoteric, and perennial wisdom traditions into a comprehensive practical system. He wrote more than seventy books on Gnosis, Kabbalah, alchemy, dream yoga, and meditation, founding the worldwide contemporary Gnostic movement.',
+        'description': 'Samael Aun Weor (1917-1977) was a Colombian author and teacher who synthesised Gnostic, esoteric, and perennial wisdom traditions into a comprehensive practical system. He wrote more than seventy books on Gnosis, Kabbalah, alchemy, dream yoga, and meditation, founding the worldwide contemporary Gnostic movement.',
         'url': `${BASE}/what-is-gnosis`,
         'sameAs': ['https://en.wikipedia.org/wiki/Samael_Aun_Weor'],
         'knowsAbout': [

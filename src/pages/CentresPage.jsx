@@ -23,8 +23,8 @@ const AU_STATES = [
       { city: 'Lismore', website: 'http://lismoregnosis.blogspot.com.au', email: 'lismoregnosis@gmail.com' },
       { city: 'Newcastle', website: 'https://www.newcastlegnosis.org', email: 'newcastlegnosis@gmail.com' },
       { city: 'Sydney', website: 'https://www.gnosissydney.com', email: 'gnosissydney@gmail.com' },
-      { city: 'Sydney – Western', email: 'selfknowledge2010@hotmail.com' },
-      { city: 'Sydney – South Western', email: 'swsgnosis@gmail.com' },
+      { city: 'Sydney -Western', email: 'selfknowledge2010@hotmail.com' },
+      { city: 'Sydney -South Western', email: 'swsgnosis@gmail.com' },
     ],
   },
   {
@@ -38,7 +38,7 @@ const AU_STATES = [
     state: 'South Australia', abbr: 'SA',
     centres: [
       { city: 'Adelaide', website: 'https://adelaide.gnosticsociety.org.au', email: 'gnosisadelaide@gmail.com' },
-      { city: 'Adelaide – Para Hills', email: 'gnosisparahills@gmail.com' },
+      { city: 'Adelaide -Para Hills', email: 'gnosisparahills@gmail.com' },
     ],
   },
   {
@@ -54,20 +54,20 @@ const AU_STATES = [
     state: 'Victoria', abbr: 'VIC',
     centres: [
       { city: 'Melbourne', website: 'https://www.melbournegnosis.com', email: 'info@melbournegnosis.com' },
-      { city: 'Melbourne – Chadstone', email: 'australiangnostic@gmail.com' },
-      { city: 'Melbourne – Heathmont', website: 'https://www.melbournegnosis.com', email: 'heathmontgnosis@outlook.com' },
-      { city: 'Melbourne – Mornington', website: 'https://www.melbournegnosis.com', email: 'gnosismtmartha@gmail.com' },
+      { city: 'Melbourne -Chadstone', email: 'australiangnostic@gmail.com' },
+      { city: 'Melbourne -Heathmont', website: 'https://www.melbournegnosis.com', email: 'heathmontgnosis@outlook.com' },
+      { city: 'Melbourne -Mornington', website: 'https://www.melbournegnosis.com', email: 'gnosismtmartha@gmail.com' },
     ],
   },
   {
     state: 'Western Australia', abbr: 'WA',
     centres: [
       { city: 'Mandurah', website: 'https://www.gnosismandurah.com', email: 'gnosismandurah@inbox.com' },
-      { city: 'Perth – Balga', email: 'holygrailseeker@me.com' },
-      { city: 'Perth – Como', email: 'gnosisaustralia@optusnet.com.au' },
-      { city: 'Perth – Darch' },
-      { city: 'Perth – Fremantle', website: 'https://www.gnosisperth.com', email: 'freognosis@gnosisperth.com' },
-      { city: 'Perth – Scarborough', email: 'gnosisforever@gmail.com' },
+      { city: 'Perth -Balga', email: 'holygrailseeker@me.com' },
+      { city: 'Perth -Como', email: 'gnosisaustralia@optusnet.com.au' },
+      { city: 'Perth -Darch' },
+      { city: 'Perth -Fremantle', website: 'https://www.gnosisperth.com', email: 'freognosis@gnosisperth.com' },
+      { city: 'Perth -Scarborough', email: 'gnosisforever@gmail.com' },
     ],
   },
   {
@@ -122,7 +122,7 @@ const INTERNATIONAL = [
     entries: [
       { country: 'Argentina', detail: 'Buenos Aires region: Cañuelas, La Plata, Quilmes' },
       { country: 'Brazil', detail: 'Belo Horizonte · Balneário Camboriú · Campinas' },
-      { country: 'Colombia', detail: 'Bogotá · Medellín–Rionegro' },
+      { country: 'Colombia', detail: 'Bogotá · Medellín · Rionegro' },
       { country: 'Costa Rica', detail: 'Alajuela · Liberia · San José' },
     ],
   },

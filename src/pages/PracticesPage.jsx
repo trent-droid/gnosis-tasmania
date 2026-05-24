@@ -143,7 +143,7 @@ export default function PracticesPage() {
       { '@type': 'ListItem', 'position': 4, 'name': 'Mantras',
         'description': 'Sacred sounds from Egyptian, Sanskrit, and Hebrew traditions that work directly with the subtle energies of the human organism for awakening and healing.' },
       { '@type': 'ListItem', 'position': 5, 'name': 'Inner Alchemy',
-        'description': 'The conscious transmutation of creative energies for the development of consciousness and the dissolution of the psychological ego — the practical heart of Gnostic inner alchemy.' },
+        'description': 'The conscious transmutation of creative energies for the development of consciousness and the dissolution of the psychological ego. The practical heart of Gnostic inner alchemy.' },
     ],
     'provider': {
       '@type': 'Organization',

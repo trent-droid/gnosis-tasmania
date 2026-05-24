@@ -248,10 +248,10 @@ export default function CoursesPage() {
             </h2>
             <GoldRule className="mb-6" />
             <p className="text-[#4a3a26] leading-relaxed mb-3 max-w-2xl mx-auto">
-              New courses form periodically when enough students are ready to begin together. Places are limited. If you are interested in joining, contact the centre closest to you — we will add your name to the waiting list and be in touch when a course is forming in your area.
+              New courses form periodically when enough students are ready to begin together. Places are limited. If you are interested in joining, contact the centre closest to you. We will add your name to the waiting list and be in touch when a course is forming in your area.
             </p>
             <p className="text-[#6b5535] text-sm leading-relaxed max-w-2xl mx-auto">
-              This course is for those with a genuine desire to study and apply the teachings — not as a passive intellectual exercise, but as a sustained, practical commitment to inner work. If that describes where you are, you are warmly welcome.
+              This course is for those with a genuine desire to study and apply the teachings, not as a passive intellectual exercise, but as a sustained, practical commitment to inner work. If that describes where you are, you are warmly welcome.
             </p>
           </div>
 
@@ -334,7 +334,7 @@ export default function CoursesPage() {
               If you are in a position to give, your generosity directly supports the continuation of these teachings and helps make them available to those who cannot afford to pay. If you cannot give at this time, you are still warmly welcome.
             </p>
             <p className="text-sm text-[#8a6f3f] italic">
-              "Freely you have received; freely give." — Matthew 10:8
+              "Freely you have received; freely give." Matthew 10:8
             </p>
           </div>
         </div>

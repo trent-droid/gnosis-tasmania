@@ -72,14 +72,14 @@ export default function Footer() {
               <p>
                 <a href="https://www.facebook.com/GSSAW.Australia/" target="_blank" rel="noopener noreferrer"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
-                  Facebook — Gnostic Society Australia
+                  Gnostic Society Australia on Facebook
                 </a>
               </p>
               {/* Fixed: gnosisaustralia.org.au is a dead domain; replaced with working national directory */}
               <p>
                 <a href="https://www.newcastlegnosis.org/about-us/australia-gnosis/" target="_blank" rel="noopener noreferrer"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
-                  Gnosis Australia — national centre directory
+                  Gnosis Australia national centre directory
                 </a>
               </p>
             </address>

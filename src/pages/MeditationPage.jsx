@@ -13,7 +13,7 @@ import artMonaLisaImgSrcset        from '../assets/art_mona_lisa.jpg?w=640;1024&
 export default function MeditationPage() {
   usePageMeta(
     'Meditation Classes in Hobart & Launceston | Gnosis Tasmania',
-    'Gnostic meditation classes in Hobart and Launceston, taught in the tradition of Samael Aun Weor. Learn relaxation, concentration, meditation, and samadhi. Weekly, donation-based.',
+    'Gnostic meditation classes in Hobart and Launceston. Learn the practical science of relaxation, concentration, meditation, and samadhi. Weekly, donation-based.',
     '/meditation-classes'
   )
   useJsonLd({
@@ -97,7 +97,7 @@ export default function MeditationPage() {
         <section className="py-20 px-4 bg-[#faf6ef] fade-section" aria-label="Opening teaching">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <SectionLabel>Samael Aun Weor · The Revolution of the Dialectic</SectionLabel>
+              <SectionLabel>The Revolution of the Dialectic</SectionLabel>
               <GoldRule />
             </div>
 
@@ -109,7 +109,7 @@ export default function MeditationPage() {
                   and the revolution of the dialectic.
                 </p>
                 <cite className="text-sm text-[#c9a96e] not-italic mt-3 block font-medium">
-                  — Samael Aun Weor, The Revolution of the Dialectic
+                  Samael Aun Weor, The Revolution of the Dialectic
                 </cite>
               </blockquote>
             </div>
@@ -136,7 +136,7 @@ export default function MeditationPage() {
                 the moment in doses.
               </p>
               <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">
-                — Samael Aun Weor, The Revolution of the Dialectic
+                Samael Aun Weor, The Revolution of the Dialectic
               </cite>
             </blockquote>
 
@@ -150,7 +150,7 @@ export default function MeditationPage() {
                 Master Ummom said to his disciples: <em>"If you walk, walk; if you sit, sit; but do not vacillate."</em>
               </p>
               <cite className="text-sm text-[#c9a96e] not-italic font-medium block border-t border-[#e8d5b0] pt-4">
-                — Samael Aun Weor, The Revolution of the Dialectic
+                Samael Aun Weor, The Revolution of the Dialectic
               </cite>
             </div>
           </div>
@@ -160,7 +160,7 @@ export default function MeditationPage() {
         <section className="py-20 px-4 bg-white fade-section" aria-labelledby="phases-heading">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-14">
-              <SectionLabel>Samael Aun Weor's systematic approach</SectionLabel>
+              <SectionLabel>The five phases of Gnostic meditation</SectionLabel>
               <h2 id="phases-heading" className="font-display text-4xl sm:text-5xl font-light text-[#2a1e12] mb-5">
                 The Five Phases of Gnostic Meditation
               </h2>
@@ -178,10 +178,10 @@ export default function MeditationPage() {
 
             <div className="space-y-5 text-base leading-relaxed text-[#4a3a26] mb-10">
               <p>
-                Samael Aun Weor grounded his teaching on meditation in the classical framework of
+                Gnostic teaching grounds its approach to meditation in the classical framework of
                 Patanjali's Yoga Sutras, specifically in the four inner limbs of yogic practice:
-                Pratyahara, Dharana, Dhyana, and Samadhi. To these he added the essential
-                preliminary of physical relaxation, giving the Gnostic student a complete five-phase
+                Pratyahara, Dharana, Dhyana, and Samadhi. To these it adds the essential
+                preliminary of physical relaxation, giving the student a complete five-phase
                 system that proceeds in a precise and verifiable order.
               </p>
               <p>
@@ -343,14 +343,14 @@ export default function MeditationPage() {
                 <p className="text-sm leading-relaxed text-[#c8b89a]">
                   This is the state the mystics of every genuine tradition have described under
                   different names: fana in Sufism, satori in Zen, union with God in Christian
-                  mysticism. Samael Aun Weor was unambiguous that this state is not reserved for
+                  mysticism. The Gnostic teaching is unambiguous that this state is not reserved for
                   a spiritual elite. It is the birthright of every sincere practitioner willing
                   to do the inner work that makes it possible. It begins to become accessible
                   through sustained and faithful daily practice.
                 </p>
               </div>
               <p className="text-sm leading-relaxed text-[#a89070] border-t border-[#3a2f1f] pt-6">
-                Samael Aun Weor taught that Samadhi comes in degrees. The first experiences may be
+                Gnostic teaching holds that Samadhi comes in degrees. The first experiences may be
                 brief: a few seconds of genuine stillness in which the habitual noise of the mind
                 is completely absent and a quality of pure, luminous awareness is present. These
                 early moments are unmistakable to anyone who has experienced them. They serve as
@@ -365,7 +365,7 @@ export default function MeditationPage() {
         {/* ── Quote parallax ────────────────────────────────────────────────────── */}
         <QuoteParallax
           src={zenBannerImg}
-          alt="A serene, contemplative zen scene — misty mountains and still water, evoking the atmosphere of deep meditation."
+          alt="A serene, contemplative zen scene of misty mountains and still water, evoking the atmosphere of deep meditation."
           position="center 40%"
           quote="Silence is a source of great strength."
           cite="Lao Tzu"
@@ -399,7 +399,7 @@ export default function MeditationPage() {
                     from the mind, and ecstasy arrives.
                   </p>
                   <cite className="text-sm text-[#c9a96e] not-italic mt-1 block font-medium">
-                    — Samael Aun Weor, The Revolution of the Dialectic
+                    Samael Aun Weor, The Revolution of the Dialectic
                   </cite>
                 </blockquote>
 
@@ -410,7 +410,7 @@ export default function MeditationPage() {
                     and the Essence remains free."
                   </p>
                   <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">
-                    — Samael Aun Weor, The Revolution of the Dialectic
+                    Samael Aun Weor, The Revolution of the Dialectic
                   </cite>
                 </blockquote>
 
@@ -426,7 +426,7 @@ export default function MeditationPage() {
                     of the divine peace that surpasses all knowledge.
                   </p>
                   <cite className="text-sm text-[#c9a96e] not-italic mt-1 block font-medium">
-                    — Samael Aun Weor, The Revolution of the Dialectic
+                    Samael Aun Weor, The Revolution of the Dialectic
                   </cite>
                 </blockquote>
               </div>
@@ -487,7 +487,7 @@ export default function MeditationPage() {
                 Examine each image, each memory, and each thought that comes to the mind.
               </p>
               <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">
-                — Samael Aun Weor, The Revolution of the Dialectic
+                Samael Aun Weor, The Revolution of the Dialectic
               </cite>
             </blockquote>
 
@@ -511,7 +511,7 @@ export default function MeditationPage() {
                 inevitably wither.
               </p>
               <cite className="text-sm text-[#c9a96e] not-italic font-medium block border-t border-[#e8d5b0] pt-4">
-                — Samael Aun Weor, The Revolution of the Dialectic
+                Samael Aun Weor, The Revolution of the Dialectic
               </cite>
             </div>
 
@@ -525,7 +525,7 @@ export default function MeditationPage() {
                 the "I" is exhausted in the end, and then the mind remains still and in silence.
               </p>
               <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">
-                — Samael Aun Weor, The Revolution of the Dialectic
+                Samael Aun Weor, The Revolution of the Dialectic
               </cite>
             </blockquote>
 
@@ -536,7 +536,7 @@ export default function MeditationPage() {
                 of time, and it is immeasurable. It is only then, when THAT which is, arrives."
               </p>
               <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">
-                — Samael Aun Weor, The Revolution of the Dialectic
+                Samael Aun Weor, The Revolution of the Dialectic
               </cite>
             </blockquote>
           </div>
@@ -656,8 +656,7 @@ export default function MeditationPage() {
                 exercise described below.
               </p>
               <p>
-                This is not an extreme or monastic schedule. It is, as Samael Aun Weor repeatedly
-                emphasised, the path of the ordinary person living an ordinary life. What it requires
+                This is not an extreme or monastic schedule. Gnostic teaching is clear that this is the path of the ordinary person living an ordinary life. What it requires
                 is not the abandonment of worldly responsibilities but the organisation of time and
                 attention around what genuinely matters.
               </p>

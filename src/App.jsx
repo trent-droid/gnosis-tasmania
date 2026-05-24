@@ -93,7 +93,7 @@ const FEATURES = [
 
 export default function App() {
   usePageMeta(
-    'Gnosis Tasmania — Gnostic Classes & Meditation in Hobart, Eastern Shore & Launceston',
+    'Gnosis Tasmania: Gnostic Classes & Meditation in Hobart, Eastern Shore & Launceston',
     'Donation-based Gnostic classes in Hobart, Hobart Eastern Shore, and Launceston, Tasmania. Meditation, self-knowledge, and the Three Factors of the Revolution of Consciousness.',
     '/'
   )

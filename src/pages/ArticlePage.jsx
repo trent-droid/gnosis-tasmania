@@ -256,7 +256,7 @@ function Section({ section }) {
             "{quote.text}"
           </p>
           <cite className="text-xs text-[#c9a96e] not-italic font-semibold tracking-wide">
-            — {quote.author}
+            {quote.author}
           </cite>
         </blockquote>
       )}
