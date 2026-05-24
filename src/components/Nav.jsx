@@ -3,7 +3,8 @@ import { Link, NavLink } from 'react-router-dom'
 import gssawLogoImg from '../assets/gssaw_logo.png'
 import { useScrollToTop, useScrollFadeIn } from '../hooks/useScrollBehavior.js'
 
-// Top-level items: Home · Teachings · Meditation · Articles · Centres · Courses · Contact
+// Top-level items: Home · Teachings · Meditation · Articles · Community · Courses · Contact
+// Change (2026-05-24): restored Community as a visible top-level nav item
 const NAV_ITEMS = [
   { to: '/', short: 'Home', full: 'Home', children: null },
   {
@@ -13,8 +14,9 @@ const NAV_ITEMS = [
     ],
   },
   { to: '/meditation-classes', short: 'Meditation', full: 'Meditation', children: null },
-  { to: '/articles',        short: 'Articles', full: 'Articles', children: null },
-  { to: '/courses',         short: 'Courses',  full: 'Courses',  children: null },
+  { to: '/articles',        short: 'Articles',  full: 'Articles',  children: null },
+  { to: '/community',       short: 'Community', full: 'Community', children: null },
+  { to: '/courses',         short: 'Courses',   full: 'Courses',   children: null },
   {
     to: '/contact', short: 'Contact', full: 'Contact',
     children: [
