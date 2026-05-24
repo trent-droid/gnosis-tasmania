@@ -38,7 +38,7 @@ const TOPICS = [
     label: '02 · Rhythmic Breathing',
     title: 'Rhythmic Breathing and Pranayama',
     body: [
-      'Breath is the bridge between the physical body and the subtler vehicles of consciousness. In every genuine contemplative tradition — Yogic, Taoist, Sufi, and Christian hesychast alike — the breath has been understood not merely as a mechanical process of gas exchange, but as the rhythmic expression of the vital force that animates the living organism.',
+      'Breath is the bridge between the physical body and the subtler vehicles of consciousness. In every genuine contemplative tradition, from the Yogic and Taoist to the Sufi and Christian hesychast, the breath has been understood not merely as a mechanical process of gas exchange, but as the rhythmic expression of the vital force that animates the living organism.',
       'Pranayama is the ancient science of conscious breath regulation. The word comes from Sanskrit: prana (the vital force, the living breath) and ayama (extension, expansion, or control). To practise pranayama is not simply to breathe slowly or deeply but to work directly and intentionally with the energy that underlies the breath.',
       'The course introduces students to the foundational principles of this science: the relationship between the rhythm of the breath and the rhythm of the nervous system, the way in which the breath influences mental activity, and the specific patterns of breathing that prepare consciousness for the deeper states of concentration and inner stillness. These are not breathing exercises in the ordinary sense, but a systematic training of the vital force.',
     ],
@@ -73,8 +73,8 @@ const TOPICS = [
     title: 'The Science of Meditation',
     body: [
       'Meditation is presented in the Gnostic tradition not as a vague spiritual practice or a technique for stress relief, but as a precise inner science with a clearly defined structure, progressive stages, and verifiable results. The course provides a thorough grounding in this understanding, so that students approach their practice with correct intention and realistic expectation.',
-      'The four stages of complete meditation — relaxation, concentration, meditation proper, and samadhi — are explained in depth. Each stage has its own nature, its own challenges, and its own fruits. Relaxation removes the gross obstacles. Concentration focuses and collects the mind. Meditation proper allows the concentrated mind to penetrate into the nature of its object. Samadhi is the state of union in which the division between the meditator, the act of meditation, and the object of meditation temporarily dissolves.',
-      'Students also learn the classical obstacles to meditation — distraction, dullness, restlessness, and the subtler forms of subtle identification — and the specific antidotes that the tradition provides for each. Understanding why meditation fails is often as valuable as understanding how it should work.',
+      'The four stages of complete meditation are explained in depth: relaxation, concentration, meditation proper, and samadhi. Each stage has its own nature, its own challenges, and its own fruits. Relaxation removes the gross obstacles. Concentration focuses and collects the mind. Meditation proper allows the concentrated mind to penetrate into the nature of its object. Samadhi is the state of union in which the division between the meditator, the act of meditation, and the object of meditation temporarily dissolves.',
+      'Students also learn the classical obstacles to meditation (distraction, dullness, restlessness, and the subtler forms of subtle identification) and the specific antidotes that the tradition provides for each. Understanding why meditation fails is often as valuable as understanding how it should work.',
     ],
     practices: [
       'The four stages: relaxation, concentration, meditation proper, and samadhi',
@@ -89,9 +89,9 @@ const TOPICS = [
     label: '05 · Interiorization',
     title: 'Interiorization, Concentration, and Silence of the Mind',
     body: [
-      'Ordinary consciousness is perpetually outward-moving: drawn toward sensory experience, absorbed in memory and anticipation, pulled by the currents of association and reaction that constitute the surface of the mind. Genuine meditation requires a reversal of this habitual direction of attention — a deliberate withdrawal of consciousness from the periphery toward the centre.',
+      'Ordinary consciousness is perpetually outward-moving: drawn toward sensory experience, absorbed in memory and anticipation, pulled by the currents of association and reaction that constitute the surface of the mind. Genuine meditation requires a reversal of this habitual direction of attention: a deliberate withdrawal of consciousness from the periphery toward the centre.',
       'The Gnostic tradition calls this movement interiorization, and it corresponds to the yogic concept of pratyahara: the withdrawal of the senses, the collecting of scattered attention into a single point. This is not suppression of experience but a change in the relationship between the observer and what is observed. The practitioner does not fight the senses but gently withdraws the fuel of attention from them.',
-      'One-pointed concentration — the sustained fixing of attention on a single object without wavering — is the direct result of successful interiorization. When concentration deepens sufficiently, the constant internal commentary of the mind begins to quiet. In the spaces between thoughts, a genuine silence opens: not the silence of suppression, but the natural silence of a mind that has momentarily ceased to generate its own noise. This is the doorway to meditation proper.',
+      'One-pointed concentration, the sustained fixing of attention on a single object without wavering, is the direct result of successful interiorization. When concentration deepens sufficiently, the constant internal commentary of the mind begins to quiet. In the spaces between thoughts, a genuine silence opens: not the silence of suppression, but the natural silence of a mind that has momentarily ceased to generate its own noise. This is the doorway to meditation proper.',
     ],
     practices: [
       'Pratyahara: the practice of withdrawing attention from the senses',
@@ -108,7 +108,7 @@ const TOPICS = [
     body: [
       'Self-observation in meditation has a distinct quality from self-observation in daily life. In daily life, the practice focuses on the external stream of reactions, emotions, and behaviours as they unfold in relationship with circumstances. In meditation, the same capacity is directed toward the subtler movements of the mind itself: the arising and dissolution of thoughts, the quality of attention, the presence or absence of genuine inner stillness.',
       'Students learn to maintain a dual awareness during practice: a part of consciousness that remains engaged with the meditation object while another part observes the meditating process itself. This is not division but depth. It is the same awareness functioning at two levels simultaneously, and its cultivation prevents the common error of becoming absorbed in pleasant inner states without genuine development occurring.',
-      'The material encountered in meditation — habitual thought patterns, emotional undercurrents, recurring images and associations — is treated not as distraction to be suppressed but as information about the psychological landscape. The course teaches students how to work constructively with what self-observation reveals during practice.',
+      'The material encountered in meditation, including habitual thought patterns, emotional undercurrents, and recurring images and associations, is treated not as distraction to be suppressed but as information about the psychological landscape. The course teaches students how to work constructively with what self-observation reveals during practice.',
     ],
     practices: [
       'The dual awareness: maintaining both the meditation object and the observer',
@@ -123,7 +123,7 @@ const TOPICS = [
     label: '07 · Higher Faculties',
     title: 'Development of Imagination, Inspiration, and Intuition',
     body: [
-      'The deeper purpose of meditation is not tranquillity alone but the awakening of faculties of knowing that transcend the ordinary intellect. The Gnostic tradition identifies three of these higher faculties — imagination, inspiration, and intuition — as successive stages in the development of a genuinely awakened inner life, and the meditation course provides a systematic introduction to their cultivation.',
+      'The deeper purpose of meditation is not tranquillity alone but the awakening of faculties of knowing that transcend the ordinary intellect. The Gnostic tradition identifies three of these higher faculties (imagination, inspiration, and intuition) as successive stages in the development of a genuinely awakened inner life, and the meditation course provides a systematic introduction to their cultivation.',
       'Creative imagination in the spiritual sense is not fantasy but the capacity of the awakened consciousness to perceive and work with inner realities through image and symbol. It is the faculty by which the spiritual world becomes perceptible to the practitioner, and its development is inseparable from the deepening of meditation. Inspiration is the faculty of genuine inner communication: the ability to receive understanding from higher aspects of the Being in a way that bypasses the limitations of discursive thought. Intuition is the most direct of the three: the immediate, non-inferential knowing of truth without intermediary process.',
       'These are not mystical abstractions but practical capacities that develop through sustained, sincere inner work. The course introduces the theoretical foundation of each faculty and provides specific practices designed to awaken and strengthen them through consistent daily meditation.',
     ],
@@ -201,7 +201,7 @@ export default function MeditationCoursePage() {
                 The Meditation Course is designed for students who have completed or are completing the Introduction to Gnosis and are ready to deepen their inner practice in a structured and sustained way. Where the introductory course covers the broad landscape of Gnostic teaching across thirty-four topics, the Meditation Course focuses with precision on a single subject: the systematic development of consciousness through meditation.
               </p>
               <p>
-                This is not a course for the casually curious. It is for students who have recognised, through their own early experience, that genuine inner transformation requires regular, daily practice — and who are committed to establishing exactly that. The teaching is serious, the approach methodical, and the fruits available to anyone who applies what is taught with sincerity and consistency.
+                This is not a course for the casually curious. It is for students who have recognised, through their own early experience, that genuine inner transformation requires regular, daily practice, and who are committed to establishing exactly that. The teaching is serious, the approach methodical, and the fruits available to anyone who applies what is taught with sincerity and consistency.
               </p>
             </div>
             <div>
@@ -220,9 +220,11 @@ export default function MeditationCoursePage() {
       <div className="relative h-64 overflow-hidden fade-section">
         <img
           src={artRembrandtPhilosopherImg}
-          alt="Philosopher in Meditation by Rembrandt van Rijn — a figure in quiet contemplation before a great arched window, warm amber light streaming into the interior"
+          alt="Philosopher in Meditation by Rembrandt van Rijn, a figure in quiet contemplation before a great arched window, warm amber light streaming into the interior"
           className="w-full h-full object-cover object-[center_20%]"
           style={{ filter: 'brightness(0.55)' }}
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <blockquote className="text-center px-6 max-w-2xl">
@@ -281,7 +283,7 @@ export default function MeditationCoursePage() {
             The Meditation Course is open to students who have completed or are currently attending the Introduction to Gnosis, and to any sincere aspirant who approaches with genuine intention and a willingness to commit to regular daily practice. No prior meditation experience is required, but a willingness to work seriously is essential.
           </p>
           <p className="text-[#9e8a6e] leading-relaxed max-w-3xl mx-auto mb-10">
-            Classes are held weekly. Students are expected to practise daily between sessions — even brief daily practice, done consistently, produces far more genuine development than occasional longer sessions. The teaching will meet you where you are, but the inner work itself must be your own.
+            Classes are held weekly. Students are expected to practise daily between sessions. Even brief daily practice, done consistently, produces far more genuine development than occasional longer sessions. The teaching will meet you where you are, but the inner work itself must be your own.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

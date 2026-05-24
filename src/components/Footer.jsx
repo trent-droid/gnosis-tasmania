@@ -70,9 +70,9 @@ export default function Footer() {
                 </Link>
               </p>
               <p>
-                <a href="https://www.facebook.com/GnosisTasmania" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.facebook.com/GnosticSocietyAustralia/" target="_blank" rel="noopener noreferrer"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
-                  Gnosis Tasmania on Facebook
+                  Gnostic Society Australia on Facebook
                 </a>
               </p>
               <p>
