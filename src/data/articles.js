@@ -11,7 +11,7 @@
 // art_rossetti_beata_beatrix.jpg    — Dante Gabriel Rossetti, Beata Beatrix (1864-70), Tate Britain.
 // art_ingres_apotheosis_homer.jpg   — J.-A.-D. Ingres, The Apotheosis of Homer (1827), Louvre, Paris.
 // art_millet_angelus.jpg            — Jean-François Millet, The Angelus (1857-59), Musée d'Orsay, Paris.
-// art_raphael_sposalizio.jpg        — Raphael, The Marriage of the Virgin (Lo Sposalizio, 1504), Brera, Milan.
+// art_hayez_kiss.jpg                 — Francesco Hayez, The Kiss (Il bacio, 1859), Pinacoteca di Brera, Milan.
 // art_bouguereau_charity.jpg        — W.-A. Bouguereau, Charity (1878). Wikimedia Commons.
 
 import artDurerSelfPortraitImg     from '../assets/art_durer_self_portrait.jpg?format=webp'
@@ -24,7 +24,7 @@ import artRaphaelTransfigImg       from '../assets/art_raphael_transfiguration.j
 import artRossettiBeatrixImg       from '../assets/art_rossetti_beata_beatrix.jpg?format=webp'
 import artIngresApotheosisImg      from '../assets/art_ingres_apotheosis_homer.jpg?format=webp'
 import artMilletAngelusImg         from '../assets/art_millet_angelus.jpg?format=webp'
-import artRaphaelSposalizioImg     from '../assets/art_raphael_sposalizio.jpg?format=webp'
+import artHayezKissImg             from '../assets/art_hayez_kiss.jpg?format=webp'
 import artBouguereauCharityImg     from '../assets/art_bouguereau_charity.jpg?format=webp'
 
 // Data structure per article:
@@ -47,6 +47,7 @@ export const ARTICLES = [
     image: artDurerSelfPortraitImg,
     imageAlt: 'Albrecht Dürer, Self-Portrait (1500), Alte Pinakothek, Munich. The artist gazes directly outward with an inner stillness that evokes the Delphic inscription: know thyself',
     imagePosition: 'center 20%',
+    imageCredit: 'Public domain / Wikimedia Commons. Albrecht Dürer, Self-Portrait (1500), Alte Pinakothek, Munich.',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'The word Gnosis comes from ancient Greek and means simply "knowledge," but it refers to a very specific kind of knowing: not the accumulation of facts or the adoption of beliefs, but direct, living experience of spiritual reality. Every genuine mystical tradition in history has pointed toward this inner knowing under different names. Every sincere aspirant who has followed a contemplative path deeply enough has arrived at the same recognition: that the most important truths of existence can be known firsthand, not merely believed or theorised about. This is the heart of what Gnosis offers, and it is as relevant today as it has ever been.',
@@ -129,7 +130,8 @@ export const ARTICLES = [
     excerpt: 'Genuine spiritual transformation requires three things working simultaneously: the dissolution of the false self, the development of genuine inner capacities, and sincere service to others.',
     image: artFraAngelicoImg,
     imageAlt: 'Fra Angelico, The Annunciation (c. 1425-26), Prado, Madrid. The angel and the Virgin face one another in a golden interior space, an image of the three factors meeting in one transforming moment',
-    imagePosition: 'center 30%',
+    imagePosition: 'center 25%',
+    imageCredit: 'Public domain / Wikimedia Commons. Fra Angelico, The Annunciation (c. 1425-26), Museo del Prado, Madrid.',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'Three fundamental and inseparable factors together produce genuine spiritual transformation. The first is the psychological death of the ego: the gradual dissolution of the accumulated patterns of selfishness, reactivity, and self-deception that obscure our true nature. The second is the birth of the soul: the active development of real inner capacities and the gradual construction of genuine inner vehicles of consciousness. The third is sacrifice for humanity: the living of one\'s inner development in a spirit of genuine service and love for others. These three factors are not stages to be completed in sequence. They are dimensions of a single living process that must be cultivated simultaneously and with equal seriousness.',
@@ -207,6 +209,7 @@ export const ARTICLES = [
     image: artRembrandtProdigalImg,
     imageAlt: 'Rembrandt van Rijn, Return of the Prodigal Son (c. 1668), Hermitage. The kneeling figure received in the embrace of the Father, the profound image of the ego dissolved and the soul returned to its source',
     imagePosition: 'center 25%',
+    imageCredit: 'Public domain / Wikimedia Commons. Rembrandt van Rijn, Return of the Prodigal Son (c. 1668), Hermitage Museum, St Petersburg.',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'Psychological death is one of the most central and distinctive teachings of Gnosis. It refers not to physical death but to the progressive, conscious dissolution of the psychological ego: the accumulated structure of habitual patterns, reactive states, fears, vanities, and conditioned behaviours that together constitute our ordinary sense of personal identity. This process of inner dissolution is the fundamental prerequisite for genuine spiritual awakening, because it is precisely this structure that prevents the authentic consciousness from expressing itself freely. The teaching is practical, not theoretical: it describes a real process that unfolds in the actual conditions of daily life.',
@@ -278,7 +281,8 @@ export const ARTICLES = [
     excerpt: 'Self-observation is the foundational Gnostic practice: the disciplined, non-judgemental watching of inner states as they actually arise in present experience. Here is how to begin.',
     image: artVermeerAstronomerImg,
     imageAlt: 'Johannes Vermeer, The Astronomer (1668), Louvre. A scholar bends in focused attention over a celestial globe by candlelight, the quality of careful, patient observation at the heart of self-knowledge',
-    imagePosition: 'center 30%',
+    imagePosition: 'center 25%',
+    imageCredit: 'Public domain / Wikimedia Commons. Johannes Vermeer, The Astronomer (1668), Musée du Louvre, Paris.',
     date: '2026-05-23',
     readTime: '9 min read',
     intro: 'Self-observation is the foundational practical discipline of the Gnostic path. It is the capacity to watch one\'s own psychological states clearly, honestly, and without immediate identification or reaction, as they actually arise in present experience. Without this capacity, the deeper work of comprehension and psychological dissolution cannot proceed, because one cannot work with what one has not first clearly seen. Self-observation is therefore not merely one practice among others but the essential preparation for all other aspects of the inner work. Everything else depends on it, and everything else becomes more effective as it deepens.',
@@ -362,6 +366,7 @@ export const ARTICLES = [
     image: artFriedrichMonkSeaImg,
     imageAlt: 'Caspar David Friedrich, The Monk by the Sea (1808-10), Nationalgalerie, Berlin. A solitary figure stands before the boundless ocean and sky, the quintessential image of the meditating consciousness before the infinite',
     imagePosition: 'center 60%',
+    imageCredit: 'Public domain / Wikimedia Commons. Caspar David Friedrich, The Monk by the Sea (1808-10), Nationalgalerie, Berlin.',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'Meditation occupies a central place in Gnosis, not primarily as a technique for relaxation or stress management, though it may produce these results as secondary benefits, but as a precise inner science capable of leading the sincere practitioner through progressively deeper states of consciousness toward direct inner knowledge. This science is understood in terms of a sequence of stages: relaxation, concentration, meditation proper, and samadhi. Understanding these stages and their relationship to one another provides an essential foundation for anyone wishing to establish a genuine and effective practice. Meditation without this understanding tends to plateau; with it, the practice deepens steadily over time.',
@@ -434,7 +439,8 @@ export const ARTICLES = [
     excerpt: 'Gnosis offers a complete science of conscious dreaming and astral exploration. This article introduces the methods and explains their significance for inner development.',
     image: artFuseliNightmareImg,
     imageAlt: 'Henry Fuseli, The Nightmare (1781), Detroit Institute of Arts. A sleeping figure illuminated while a dark being crouches upon her, the classic Western image of consciousness encountering the astral and dream worlds',
-    imagePosition: 'center 40%',
+    imagePosition: 'center 25%',
+    imageCredit: 'Public domain / Wikimedia Commons. Henry Fuseli, The Nightmare (1781), Detroit Institute of Arts.',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'One third of every human life is spent in sleep, and Gnosis regards this time as a significant and largely unexplored field of spiritual development. During sleep, the consciousness naturally disengages from the physical body and operates in the astral body: a subtler vehicle of experience that is not bound by the limitations of physical space and time. This process occurs involuntarily and unconsciously in the vast majority of people. The discipline of Gnostic dream work consists in learning to make this process conscious, so that the hours of sleep become a genuine extension of the inner work rather than a period of complete unconsciousness and lost opportunity.',
@@ -515,7 +521,8 @@ export const ARTICLES = [
     excerpt: 'The Gnostic path of inner transformation has a precise structure of stages and genuine thresholds. This article provides an honest overview of the path and what it genuinely asks of us.',
     image: artRaphaelTransfigImg,
     imageAlt: 'Raphael, The Transfiguration (1516-20), Vatican Museums. Christ luminous above the mountain while below, suffering humanity awaits the healing that only transformed consciousness can bring',
-    imagePosition: 'center 20%',
+    imagePosition: 'center 75%',
+    imageCredit: 'Public domain / Wikimedia Commons. Raphael, The Transfiguration (1516-20), Vatican Museums, Rome.',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'Every genuine spiritual tradition has understood that inner transformation is not an accidental process but one that follows a recognisable structure: that there are stages, thresholds, tests, and genuine arrivals on the path from ordinary unconscious existence to fully awakened consciousness. Gnostic teaching describes this structure with unusual precision, drawing on the initiatic traditions of Egypt, Kabbalah, Christianity, Buddhism, and classical antiquity to map a path that, while genuinely demanding, is entirely possible for those who are willing to engage with it honestly and consistently over an extended period of time.',
@@ -590,7 +597,8 @@ export const ARTICLES = [
     excerpt: 'Through retrospective meditation and conscious dreamwork, Gnosis offers practical methods for exploring the soul\'s continuity across many lifetimes.',
     image: artRossettiBeatrixImg,
     imageAlt: 'Dante Gabriel Rossetti, Beata Beatrix (1864-70), Tate Britain. A figure suspended between two worlds, eyes closed, bathed in golden light, the vision of a soul at the threshold between lives',
-    imagePosition: 'center 30%',
+    imagePosition: 'center 75%',
+    imageCredit: 'Public domain / Wikimedia Commons. Dante Gabriel Rossetti, Beata Beatrix (c. 1864-70), Tate Britain, London.',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'The doctrine of reincarnation, the teaching that the soul passes through successive lives in the process of its long evolution toward awakening, is one of the most ancient and widely attested teachings in the world\'s spiritual traditions. It appears in the major Eastern traditions of Hinduism and Buddhism, in the Platonic and Neoplatonic philosophy of ancient Greece, in the Kabbalistic understanding of the soul\'s path, and in the esoteric dimensions of early Christianity. Gnosis not only affirms this teaching but provides practical methods through which the sincere student can begin to explore, through direct inner experience, the continuity of their own soul across multiple lifetimes. These methods are gentle, systematic, and accessible to anyone willing to apply them consistently.',
@@ -665,6 +673,7 @@ export const ARTICLES = [
     image: artIngresApotheosisImg,
     imageAlt: 'Jean-Auguste-Dominique Ingres, The Apotheosis of Homer (1827), Louvre. Poets, philosophers, and spiritual teachers assembled across time around the source of wisdom, an image of the universal community of sincere seekers',
     imagePosition: 'center 25%',
+    imageCredit: 'Public domain / Wikimedia Commons. Jean-Auguste-Dominique Ingres, The Apotheosis of Homer (1827), Musée du Louvre, Paris.',
     date: '2026-05-23',
     readTime: '9 min read',
     intro: 'The Gnostic tradition has been actively studied in Australia for several decades. What began as small informal study groups has grown into a network of centres operating in most major Australian cities, from Tasmania in the south to Queensland in the north and across both the east and west coasts. These centres are not formal religious institutions but study communities: groups of sincere students who meet regularly to study the teachings, practise meditation together, and support one another in the challenges and discoveries of genuine inner work. The atmosphere is open, non-dogmatic, and welcoming to anyone who comes with a genuine question and a sincere desire to understand.',
@@ -744,6 +753,7 @@ export const ARTICLES = [
     image: artMilletAngelusImg,
     imageAlt: 'Jean-François Millet, The Angelus (1857-59), Musée d\'Orsay. Two figures pause in their daily labour to pray at the sound of the evening bell, the image of the sacred woven into the texture of ordinary working life',
     imagePosition: 'center 40%',
+    imageCredit: 'Public domain / Wikimedia Commons. Jean-François Millet, The Angelus (1857-59), Musée d\'Orsay, Paris.',
     date: '2026-05-23',
     readTime: '9 min read',
     intro: 'A common misunderstanding about spiritual practice is that it belongs to a special, protected category of activity, separate from the rest of life and conducted only in designated times and places. Genuine inner work is not an activity among other activities but a quality of consciousness that can and should permeate everything. The office, the family home, the supermarket, the daily commute, and the conversations that make up the fabric of an ordinary Australian day are not interruptions to the inner work. They are the inner work, and in many respects they are the most demanding and revealing arena in which it can be practised.',
@@ -823,9 +833,10 @@ export const ARTICLES = [
     metaTitle: 'The Sacred in Relationships and Sexuality | Gnosis Tasmania',
     metaDescription: 'In Gnosis, the creative force is sacred: not to be suppressed or indulged mechanically, but understood and consciously transformed as a vehicle for inner awakening.',
     excerpt: 'The creative force is sacred in Gnosis, and the relationship between man and woman is understood as a potential vehicle of genuine spiritual transformation. An introduction.',
-    image: artRaphaelSposalizioImg,
-    imageAlt: 'Raphael, The Marriage of the Virgin (Lo Sposalizio, 1504), Brera, Milan. Figures gathered in a sacred ceremony of union beneath an open sky, the classical image of love consecrated and spiritually purposeful',
+    image: artHayezKissImg,
+    imageAlt: 'Francesco Hayez, The Kiss (Il bacio, 1859), Pinacoteca di Brera, Milan. A man and woman in a tender, passionate embrace, the Romantic vision of love consecrated and spiritually purposeful',
     imagePosition: 'center 30%',
+    imageCredit: 'Public domain / Wikimedia Commons. Francesco Hayez, The Kiss (Il bacio, 1859), Pinacoteca di Brera, Milan.',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'The Gnostic approach to love, relationships, and sexuality stands in a genuinely distinctive position relative to the two dominant cultural attitudes of our time. It does not share the repressive position of much traditional religion, which regards sexuality primarily as a problem to be managed or an obstacle to be overcome on the path to holiness. Nor does it endorse the permissive attitude of much contemporary culture, which treats sexual energy as a natural appetite without particular spiritual significance. Something fundamentally different is proposed: that the creative force is sacred, that its conscious transformation is one of the most powerful vehicles of genuine inner development available to human beings, and that the relationship between a man and a woman can, when approached with understanding and sincere intention, become a genuine path of spiritual initiation.',
@@ -905,6 +916,7 @@ export const ARTICLES = [
     image: artBouguereauCharityImg,
     imageAlt: 'William-Adolphe Bouguereau, Charity (1878). A mother figure tenderly shelters children in her arms, the embodiment of freely given love and the third factor of conscious awakening lived in its most natural form',
     imagePosition: 'center 20%',
+    imageCredit: 'Public domain / Wikimedia Commons. William-Adolphe Bouguereau, Charity (1878).',
     date: '2026-05-23',
     readTime: '9 min read',
     intro: 'Sacrifice and service occupy a central and non-negotiable place in Gnosis. They constitute the third of the three factors of conscious awakening, standing alongside the psychological death of the ego and the birth of the soul as equal and indispensable dimensions of genuine inner development. A spiritual path which focuses exclusively on inner purification and self-development, without the corresponding outward movement of genuine service to others, is incomplete in a structural sense. Service is not an ethical adjunct to the real spiritual work; it is one of the pillars on which that work stands, and the inner development of one who genuinely serves is consistently deeper and more durable than that of one who does not.',

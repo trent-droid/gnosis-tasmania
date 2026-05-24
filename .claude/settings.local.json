@@ -50,7 +50,10 @@
       "Bash(curl -s -o art_raphael_sposalizio.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Raffaello_-_Spozalizio_-_Web_Gallery_of_Art.jpg/1280px-Raffaello_-_Spozalizio_-_Web_Gallery_of_Art.jpg\")",
       "Bash(curl -s -o art_bouguereau_charity.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/William-Adolphe_Bouguereau_%281825-1905%29_-_Charity_%281878%29.jpg/1280px-William-Adolphe_Bouguereau_%281825-1905%29_-_Charity_%281878%29.jpg\")",
       "Bash(curl -s -D - \"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Raffaello_-_Spozalizio_-_Web_Gallery_of_Art.jpg/1280px-Raffaello_-_Spozalizio_-_Web_Gallery_of_Art.jpg\")",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url&iiurlwidth=1280&format=json&titles=File:Francesco_Hayez_008.jpg\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); pages=d['query']['pages']; p=list\\(pages.values\\(\\)\\)[0]; ii=p.get\\('imageinfo',[{}]\\)[0]; print\\('thumburl:', ii.get\\('thumburl',''\\)\\); print\\('url:', ii.get\\('url',''\\)\\)\")",
+      "Bash(curl -L -o \"c:/Users/Carbil/gnosistasmania/src/assets/art_hayez_kiss.jpg\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Francesco_Hayez_008.jpg/1280px-Francesco_Hayez_008.jpg\" --user-agent \"Mozilla/5.0\")"
     ]
   }
 }

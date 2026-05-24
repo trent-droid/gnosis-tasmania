@@ -21,7 +21,7 @@ export default function ArticlePage() {
 function ArticleContent({ article }) {
   const {
     slug, title, metaTitle, metaDescription,
-    image, imageAlt, imagePosition,
+    image, imageAlt, imagePosition, imageCredit,
     date, readTime,
     intro, sections, keyPoints, relatedSlugs, siteLinks,
   } = article
@@ -152,6 +152,13 @@ function ArticleContent({ article }) {
                 ))}
               </ul>
             </aside>
+          )}
+
+          {/* Image credit */}
+          {imageCredit && (
+            <p className="mt-8 text-xs text-[#a89a80] leading-relaxed">
+              Image credit: {imageCredit}
+            </p>
           )}
         </div>
       </article>
