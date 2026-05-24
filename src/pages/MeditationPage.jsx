@@ -1,12 +1,15 @@
-// MeditationPage — updates in this revision:
-// 1. "Four Stages" replaced with "Five Phases of Gnostic Meditation" (SAW's Patanjali-based system,
-//    adds Pratyahara as explicit Phase 2; styled with phases 1-4 in a 2x2 grid + Samadhi full-width).
-// 2. "How Long to Practice" expanded into "Building Your Daily Practice" with morning/evening
-//    framework, guidance on dry periods, tracking progress, Gurdjieff and Ouspensky quotes.
-// 3. Lao Tzu quote added to Five Phases intro; Blavatsky added to Pratyahara explanation;
-//    Gurdjieff and Ouspensky integrated into the personal practice section.
-// 4. All em-dashes (—), en-dashes (–), and informal hyphens used as dashes rephrased throughout.
-//    Only genuine compound-word hyphens (self-observation, self-knowledge, one-pointed) remain.
+// MeditationPage — revision notes:
+// 1. Hero image: zen garden replaced with Rembrandt "Philosopher in Meditation" (1632, public domain).
+//    Warmer, more symbolically resonant. Image credit line rendered below the hero.
+// 2. Five Phases section expanded: Patanjali quote added to intro; each phase now includes a
+//    "How to practise" subsection with concrete steps and examples.
+// 3. Personal practice section significantly expanded: Retrospection Exercise detailed as a new
+//    subsection; mantra work at the sleep threshold added as a new subsection; dry periods deepened.
+// 4. Five named external quotes: Patanjali, Lao Tzu, Blavatsky, Gurdjieff, Ouspensky.
+// 5. Internal links: self-observation article, Three Factors article, related articles panel,
+//    articles index linked from CTA.
+// 6. All images remain outside fade-section / fade-content elements (no image fade-in).
+// 7. No em-dashes, en-dashes, or informal hyphens used as dashes anywhere in this file.
 
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
@@ -15,13 +18,14 @@ import { HeroParallax, GoldRule, SectionLabel } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 
-import heroZenImg                   from '../assets/hero_zen.jpg?format=webp'
-import esotericLaboratoryImg        from '../assets/esoteric_laboratory.jpg'
-import esotericLaboratoryImgWebp    from '../assets/esoteric_laboratory.jpg?format=webp'
-import esotericLaboratoryImgSrcset  from '../assets/esoteric_laboratory.jpg?w=640;1280&format=webp&as=srcset'
-import artMonaLisaImg               from '../assets/art_mona_lisa.jpg'
-import artMonaLisaImgWebp           from '../assets/art_mona_lisa.jpg?format=webp'
-import artMonaLisaImgSrcset         from '../assets/art_mona_lisa.jpg?w=640;1024&format=webp&as=srcset'
+// Hero changed: Rembrandt "Philosopher in Meditation" replaces the zen garden.
+// Warm amber tones align with the earth-tone palette; strong symbolic resonance.
+import heroMeditationImg from '../assets/art_rembrandt_philosopher.jpg?format=webp'
+
+import esotericLaboratoryImg       from '../assets/esoteric_laboratory.jpg'
+import esotericLaboratoryImgSrcset from '../assets/esoteric_laboratory.jpg?w=640;1280&format=webp&as=srcset'
+import artMonaLisaImg              from '../assets/art_mona_lisa.jpg'
+import artMonaLisaImgSrcset        from '../assets/art_mona_lisa.jpg?w=640;1024&format=webp&as=srcset'
 
 /* ─── Page ─────────────────────────────────────────────────────────────────── */
 
@@ -77,12 +81,14 @@ export default function MeditationPage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────────── */}
+        {/* Image: Rembrandt "Philosopher in Meditation" (1632). No fade-section on any
+            image in this file. Image credit rendered as a plain line below the hero. */}
         <HeroParallax
-          src={heroZenImg}
-          alt="A serene Zen garden of raked gravel and stone, evoking the inner stillness cultivated through Gnostic meditation"
-          position="center center"
+          src={heroMeditationImg}
+          alt="Philosopher in Meditation by Rembrandt van Rijn, 1632. A figure seated in contemplative stillness before a great arched window, warm amber light streaming into the interior, a winding staircase rising in the background."
+          position="center 40%"
           heightClass="h-[65vh] min-h-[500px]"
-          overlay="bg-gradient-to-b from-[#1c1409]/65 via-[#1c1409]/45 to-[#1c1409]/75"
+          overlay="bg-gradient-to-b from-[#1c1409]/60 via-[#1c1409]/40 to-[#1c1409]/70"
         >
           <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
             <p className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest mb-4">
@@ -103,6 +109,9 @@ export default function MeditationPage() {
             </blockquote>
           </div>
         </HeroParallax>
+        <p className="text-[10px] text-[#6b5535] italic text-right px-4 py-1.5 bg-[#f8f1e3] border-b border-[#e8d5b0]">
+          Philosopher in Meditation, Rembrandt van Rijn (1632). Louvre, Paris. Public domain.
+        </p>
 
         {/* ── Opening quote ────────────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-[#faf6ef] fade-section" aria-label="Opening teaching">
@@ -158,11 +167,10 @@ export default function MeditationPage() {
           </div>
         </section>
 
-        {/* ── The Five Phases of Gnostic Meditation ────────────────────────────
-             NEW: replaces the former "Four Stages" section with a more complete
-             and accurate presentation of SAW's five-phase system drawn from
-             Patanjali's Yoga Sutras. Pratyahara is now an explicit phase.
-             Lao Tzu quote added in the intro; Blavatsky in the phase grid. */}
+        {/* ── The Five Phases of Gnostic Meditation ────────────────────────── */}
+        {/* Expanded: Patanjali quote added to the intro to establish the historical lineage.
+            Each phase card now includes a "How to practise" subsection. No images inside
+            this section, so fade-section is safe to use here. */}
         <section className="py-20 px-4 bg-white fade-section" aria-labelledby="phases-heading">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-14">
@@ -172,6 +180,16 @@ export default function MeditationPage() {
               </h2>
               <GoldRule />
             </div>
+
+            {/* Patanjali quote: the direct textual source SAW drew from */}
+            <blockquote className="border-l-[3px] border-[#c9a96e] pl-6 py-3 bg-[#faf6ef] rounded-r-sm mb-10">
+              <p className="font-display text-[#2a1e12] italic text-lg leading-relaxed">
+                "Yoga is the cessation of the fluctuations of consciousness."
+              </p>
+              <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">
+                Patanjali, Yoga Sutras I.2
+              </cite>
+            </blockquote>
 
             <div className="space-y-5 text-base leading-relaxed text-[#4a3a26] mb-10">
               <p>
@@ -189,6 +207,12 @@ export default function MeditationPage() {
                 often demanding work of Pratyahara, is one of the most common errors of beginning
                 practitioners and the reason many students feel they are unable to meditate.
               </p>
+              <p>
+                What follows is a detailed account of each phase, together with practical guidance
+                on how to work with it. Students are encouraged to approach each phase not as
+                abstract theory but as a description of experiences they will directly encounter
+                and recognise in their own sittings.
+              </p>
             </div>
 
             <blockquote className="border-l-[3px] border-[#c9a96e] pl-6 py-3 bg-[#faf6ef] rounded-r-sm mb-12">
@@ -200,20 +224,33 @@ export default function MeditationPage() {
               </cite>
             </blockquote>
 
-            {/* Phases 1 to 4 in a 2x2 grid */}
+            {/* Phases 1 to 4 in a 2x2 grid. Each card includes a "How to practise" subsection. */}
             <div className="grid sm:grid-cols-2 gap-6 mb-6">
 
               <article className="bg-[#faf6ef] rounded-sm p-8 border border-[#e8d5b0] flex flex-col">
                 <span className="font-display text-4xl font-light text-[#c9a96e]/50 mb-3 block leading-none" aria-hidden="true">01</span>
                 <h3 className="font-display text-xl font-medium text-[#2a1e12] mb-4">Relaxation</h3>
-                <p className="text-sm leading-relaxed text-[#3a2f1f]">
+                <p className="text-sm leading-relaxed text-[#3a2f1f] mb-5">
                   Physical preparation is the foundation of everything that follows. With the body
                   settled and the spine upright, the student consciously releases tension from every
-                  part of the organism, moving upward from the feet to the crown of the head. This
-                  is not sleep or drowsiness. It is alert, conscious restfulness: the body genuinely
-                  at peace so that it ceases to create interference in the mind. A tense body produces
-                  a tense mind. Without this foundation, the deeper phases remain inaccessible.
+                  part of the organism. This is not sleep or drowsiness. It is alert, conscious
+                  restfulness: the body genuinely at peace so that it ceases to create interference
+                  in the mind. A tense body produces a tense mind. Without this foundation, the
+                  deeper phases remain inaccessible.
                 </p>
+                <div className="border-t border-[#d4c4a8] pt-5 mt-auto">
+                  <h4 className="text-xs font-semibold uppercase tracking-widest text-[#c9a96e] mb-3">How to practise</h4>
+                  <p className="text-xs leading-relaxed text-[#4a3a26]">
+                    Begin at the feet. Consciously release every tension in the toes, the soles,
+                    the ankles. Move upward through the calves, knees, and thighs. Soften the
+                    abdomen and lower back. Allow the chest to breathe naturally without forcing.
+                    Let the shoulders drop. Release the arms and hands and uncurl the fingers.
+                    Soften the neck and throat, relax the jaw, release the muscles around the eyes
+                    and the scalp. Allow the whole organism to settle and grow quiet. Beginners
+                    should expect this phase to take ten to fifteen minutes. With sustained
+                    practice, it deepens and quickens considerably.
+                  </p>
+                </div>
               </article>
 
               <article className="bg-[#faf6ef] rounded-sm p-8 border border-[#e8d5b0] flex flex-col">
@@ -228,7 +265,7 @@ export default function MeditationPage() {
                   to dissolve without being fed with reaction. This phase can be prolonged and
                   demanding. It cannot be bypassed.
                 </p>
-                <blockquote className="mt-auto border-l-2 border-[#c9a96e]/50 pl-4 py-2">
+                <blockquote className="mt-1 mb-4 border-l-2 border-[#c9a96e]/50 pl-4 py-2">
                   <p className="font-display text-sm text-[#2a1e12] italic leading-relaxed mb-1">
                     "The mind is the great slayer of the Real. Let the Disciple slay the slayer."
                   </p>
@@ -236,34 +273,72 @@ export default function MeditationPage() {
                     H.P. Blavatsky, The Voice of the Silence
                   </cite>
                 </blockquote>
+                <div className="border-t border-[#d4c4a8] pt-5 mt-auto">
+                  <h4 className="text-xs font-semibold uppercase tracking-widest text-[#c9a96e] mb-3">How to practise</h4>
+                  <p className="text-xs leading-relaxed text-[#4a3a26]">
+                    When a thought appears, do not push it away. Turn your attention fully toward it.
+                    Examine both of its poles: every thought has a positive and a negative aspect,
+                    two faces of the same coin. Through this examination, a synthesis becomes
+                    available and the thought can be released without leaving a residue. Example: a
+                    resentment arises. Examine it fully, including its opposite. The synthesis: this
+                    reaction belongs to a habitual ego state within me, not to my true awareness.
+                    It can be released. The stream of thoughts eventually exhausts itself. Beginners
+                    should expect this phase to occupy the first twenty to thirty minutes of a
+                    sitting. Do not be discouraged by this.
+                  </p>
+                </div>
               </article>
 
               <article className="bg-[#faf6ef] rounded-sm p-8 border border-[#e8d5b0] flex flex-col">
                 <span className="font-display text-4xl font-light text-[#c9a96e]/50 mb-3 block leading-none" aria-hidden="true">03</span>
                 <h3 className="font-display text-xl font-medium text-[#2a1e12] mb-4">Dharana (Concentration)</h3>
-                <p className="text-sm leading-relaxed text-[#3a2f1f]">
+                <p className="text-sm leading-relaxed text-[#3a2f1f] mb-5">
                   When the initial flood of mental visitors has subsided, the practitioner gathers
-                  attention and holds it on a single chosen point: a sacred mantra, a geometric
-                  form, a candle flame, or an inner image connected to the work of self-knowledge.
-                  This is Dharana. Concentration is not forced effort or strain. It is the patient,
-                  gentle return of awareness to the object each time it wanders. Over time, this
-                  creates a unified field of inner attention. That unified field is the necessary
-                  door to the next phase.
+                  attention and holds it on a single chosen point. This is Dharana. Concentration
+                  is not forced effort or strain. It is the patient, gentle return of awareness to
+                  the chosen object each time the mind wanders. Over time, this creates a unified
+                  field of inner attention. That unified field is the necessary door to the
+                  next phase.
                 </p>
+                <div className="border-t border-[#d4c4a8] pt-5 mt-auto">
+                  <h4 className="text-xs font-semibold uppercase tracking-widest text-[#c9a96e] mb-3">How to practise</h4>
+                  <p className="text-xs leading-relaxed text-[#4a3a26]">
+                    Choose your concentration object before the sitting begins. Options include: a
+                    sacred syllable or mantra held mentally without voicing, such as OM or HAMSA;
+                    a simple geometric form such as a golden point of light or an equilateral
+                    triangle; the sensation of the breath at a fixed point; or an inner image
+                    connected to the work of self-knowledge. When the mind wanders, note that it
+                    has wandered and return, without irritation and without self-criticism. This
+                    act of return is not a failure. The return is the practice. Each deliberate
+                    return strengthens the faculty of sustained attention.
+                  </p>
+                </div>
               </article>
 
               <article className="bg-[#faf6ef] rounded-sm p-8 border border-[#e8d5b0] flex flex-col">
                 <span className="font-display text-4xl font-light text-[#c9a96e]/50 mb-3 block leading-none" aria-hidden="true">04</span>
                 <h3 className="font-display text-xl font-medium text-[#2a1e12] mb-4">Dhyana (Meditation Proper)</h3>
-                <p className="text-sm leading-relaxed text-[#3a2f1f]">
+                <p className="text-sm leading-relaxed text-[#3a2f1f] mb-5">
                   When concentration has become sufficiently stable, Dhyana, or meditation proper,
                   begins of itself. The concentrated mind is allowed to penetrate into the inner
                   nature of the object of contemplation. This is not thinking about the subject
                   but resting within it in a state of open, receptive attention. Here the student
                   moves beyond ordinary analytical thought into a quality of comprehension that
-                  the thinking mind alone cannot reach. Genuine psychological insight becomes
-                  available in this phase.
+                  the thinking mind alone cannot reach.
                 </p>
+                <div className="border-t border-[#d4c4a8] pt-5 mt-auto">
+                  <h4 className="text-xs font-semibold uppercase tracking-widest text-[#c9a96e] mb-3">How to practise</h4>
+                  <p className="text-xs leading-relaxed text-[#4a3a26]">
+                    Dhyana cannot be forced. When the effort of Dharana has created a stable field
+                    of attention, there is a natural shift: the effort dissolves and a state of
+                    effortless attentiveness takes its place. The object of concentration seems to
+                    open, as though revealing an inner dimension. Do not grasp at this. Do not
+                    attempt to hold it or analyse it. Genuine insights about the nature of the ego
+                    and of one's own psychological patterns often arise here. Observe them with the
+                    same impartiality practised in Pratyahara. The distinction between thinking
+                    about something and truly being with it becomes vivid and unmistakable.
+                  </p>
+                </div>
               </article>
 
             </div>
@@ -273,7 +348,7 @@ export default function MeditationPage() {
               <div className="absolute inset-x-0 top-0 h-[3px] bg-[#c9a96e]" aria-hidden="true" />
               <span className="font-display text-4xl font-light text-[#c9a96e]/40 mb-3 block leading-none" aria-hidden="true">05</span>
               <h3 className="font-display text-2xl font-medium text-[#f8f1e3] mb-6">Samadhi (Ecstasy and Union)</h3>
-              <div className="grid sm:grid-cols-2 gap-8">
+              <div className="grid sm:grid-cols-2 gap-8 mb-6">
                 <p className="text-sm leading-relaxed text-[#c8b89a]">
                   Samadhi is not a state that can be produced by technique alone. It arrives as a
                   gift when the conditions created by the preceding four phases are sufficiently
@@ -291,12 +366,21 @@ export default function MeditationPage() {
                   through sustained and faithful daily practice.
                 </p>
               </div>
+              <p className="text-sm leading-relaxed text-[#a89070] border-t border-[#3a2f1f] pt-6">
+                Samael Aun Weor taught that Samadhi comes in degrees. The first experiences may be
+                brief: a few seconds of genuine stillness in which the habitual noise of the mind
+                is completely absent and a quality of pure, luminous awareness is present. These
+                early moments are unmistakable to anyone who has experienced them. They serve as
+                confirmation that the path is real and the practice is working. They are not the
+                destination. They are the first glimpse of what the whole journey is moving toward.
+              </p>
             </div>
 
           </div>
         </section>
 
         {/* ── Art banner: alchemical laboratory ────────────────────────────── */}
+        {/* Standalone figure with no fade-section wrapper: image must not fade in. */}
         <figure className="overflow-hidden shadow-xl border-y border-[#c8b89a]" aria-label="Artwork">
           <picture>
             <source srcSet={esotericLaboratoryImgSrcset} sizes="100vw" type="image/webp" />
@@ -314,7 +398,8 @@ export default function MeditationPage() {
         </figure>
 
         {/* ── The Essence & Ecstasy ─────────────────────────────────────────── */}
-        {/* No fade-section: Mona Lisa image is inside. Heading and text column use fade-content. */}
+        {/* No fade-section: Mona Lisa image is inside. Heading and text column use
+            fade-content individually so the image container never fades. */}
         <section className="py-20 px-4 bg-white" aria-labelledby="essence-heading">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-14 fade-content">
@@ -384,6 +469,7 @@ export default function MeditationPage() {
         </section>
 
         {/* ── The Method ───────────────────────────────────────────────────── */}
+        {/* Internal link added: "self-observation" links to the self-observation article. */}
         <section className="py-20 px-4 bg-[#f8f1e3] fade-section" aria-labelledby="method-heading">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-14">
@@ -405,7 +491,14 @@ export default function MeditationPage() {
                 stillness and silence cannot exist.
               </p>
               <p>
-                We must nullify the projector through <strong>self-observation and comprehension</strong>.
+                We must nullify the projector through{' '}
+                <Link
+                  to="/articles/self-observation-watching-your-mind"
+                  className="text-[#c9a96e] hover:text-[#a07040] underline underline-offset-2 transition-colors font-medium"
+                >
+                  self-observation
+                </Link>
+                {' '}and comprehension.
                 Examine each image, each memory, and each thought that comes to the mind.
               </p>
             </div>
@@ -442,7 +535,6 @@ export default function MeditationPage() {
               </p>
             </div>
 
-            {/* em-dash removed from the blockquote below: "in other words, the 'I'" now uses commas */}
             <blockquote className="mt-10 border-l-[3px] border-[#c9a96e] pl-6 py-3 bg-white rounded-r-sm">
               <p className="font-display text-[#2a1e12] italic text-xl leading-relaxed">
                 "Only when the projector, in other words the 'I', is completely absent, will the silence
@@ -455,6 +547,7 @@ export default function MeditationPage() {
         </section>
 
         {/* ── The Two Principles ───────────────────────────────────────────── */}
+        {/* Internal link added: Three Factors article linked from the closing paragraph. */}
         <section className="py-20 px-4 bg-[#faf6ef] fade-section" aria-labelledby="principles-heading">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-14">
@@ -471,7 +564,6 @@ export default function MeditationPage() {
               that produces the ecstasy.
             </p>
 
-            {/* Dashes removed from both card body texts */}
             <div className="grid sm:grid-cols-2 gap-8 mb-12">
               {[
                 {
@@ -499,16 +591,22 @@ export default function MeditationPage() {
             <p className="text-base text-center text-[#4a3a26] max-w-2xl mx-auto leading-relaxed">
               Remember that the central part of the mind is that which is called the Buddhata, the Essence,
               the Consciousness. When the Buddhata awakens, we remain illuminated. The entire work of
-              Gnostic Meditation is the awakening of this inner light.
+              Gnostic Meditation is inseparable from the broader path of inner transformation described
+              in our article on{' '}
+              <Link
+                to="/articles/three-factors-of-conscious-awakening"
+                className="text-[#c9a96e] hover:text-[#a07040] underline underline-offset-2 transition-colors font-medium"
+              >
+                the Three Factors of Conscious Awakening
+              </Link>.
             </p>
           </div>
         </section>
 
         {/* ── Building Your Daily Practice ──────────────────────────────────────
-             Expanded from the former "How Long to Practice" section.
-             Adds: morning/evening framework, guidance on dry periods, tracking
-             progress, and quotes from Gurdjieff and Ouspensky.
-             All em-dashes and informal hyphens used as dashes have been removed. */}
+             Significantly expanded: Retrospection Exercise and Transition to Sleep
+             added as new subsections. Dry periods guidance deepened. Related articles
+             panel added at the close. No images inside this section. */}
         <section className="py-20 px-4 bg-white fade-section" aria-labelledby="time-heading">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
@@ -534,11 +632,11 @@ export default function MeditationPage() {
               </p>
               <p>
                 This does not mean that shorter sittings have no value. Even fifteen minutes of genuine
-                inner work (real relaxation, real concentration, real self-observation) is far better
-                than an hour of mechanical sitting in which the mind has simply been left to wander.
-                Quality always precedes quantity. But as the practice deepens and the student begins to
-                recognise what genuine stillness actually feels like, the natural impulse becomes to sit
-                longer, not shorter.
+                inner work, meaning real relaxation, real concentration, and real self-observation, is
+                far better than an hour of mechanical sitting in which the mind has simply been left to
+                wander. Quality always precedes quantity. But as the practice deepens and the student
+                begins to recognise what genuine stillness actually feels like, the natural impulse
+                becomes to sit longer, not shorter.
               </p>
 
               <div className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-7 my-4">
@@ -566,10 +664,9 @@ export default function MeditationPage() {
                 relaxation and moving through Pratyahara toward sustained concentration. During the day:
                 self-observation maintained through ordinary work, conversation, and activity, watching
                 thoughts, emotions, and mechanical reactions without identifying with them. In the
-                evening: the retrospection exercise, a quiet review of the day's events in reverse
-                order, carried out impartially and without self-condemnation. Before sleep: a sacred
-                syllable or mantra, held in awareness as consciousness passes through the hypnagogic
-                state into the inner worlds.
+                evening: the retrospection exercise described below. Before sleep: a sacred syllable
+                or mantra, held in awareness as consciousness passes through the hypnagogic state
+                into the inner worlds.
               </p>
               <p>
                 This is not an extreme or monastic schedule. It is, as Samael Aun Weor repeatedly
@@ -596,14 +693,63 @@ export default function MeditationPage() {
                 gradually and with patience, develops the second.
               </p>
 
+              <h3 className="font-display text-2xl font-light text-[#2a1e12] pt-4">The Retrospection Exercise</h3>
+              <p>
+                The retrospection exercise is one of the most valuable practical tools in the Gnostic
+                student's daily work, and one of the most consistently underestimated. It is simple
+                in description and genuinely revealing in practice.
+              </p>
+              <p>
+                In the evening, before sleep, sit or lie quietly and review the events of the day in
+                reverse chronological order. Begin from the present moment and move backward: what
+                happened just before you sat down to review? Before that? Continue backward through
+                the afternoon, the midday, the morning, to the moment of waking. Do not rush. Do not
+                judge or condemn yourself for what you observe. Simply watch.
+              </p>
+              <p>
+                Pay particular attention to the moments of mechanical reaction: the frustration that
+                arose automatically in a difficult conversation, the anxiety that gripped you before
+                a task, the distraction that swept you away from what you intended to do. These are
+                not failures of character. They are the visible workings of the habitual ego states
+                that Gnostic psychology calls the "I's." The retrospection is how we learn to
+                recognise them, understand them, and gradually loosen their grip on our behaviour.
+              </p>
+              <p>
+                Used consistently over weeks and months, the retrospection exercise develops the same
+                impartial, witnessing quality of attention that the formal sitting cultivates in silence.
+                It creates continuity between the formal practice and the life of the day.
+              </p>
+
+              <h3 className="font-display text-2xl font-light text-[#2a1e12] pt-4">Working with the Transition to Sleep</h3>
+              <p>
+                Gnostic teaching places great importance on the state of consciousness at the moment
+                of falling asleep. The hypnagogic threshold, the brief passage between waking and
+                sleep, is understood in Gnostic psychology as a doorway between the physical and inner
+                dimensions of existence. What the consciousness holds at this moment matters.
+              </p>
+              <p>
+                The practice is simple. As you lie down to sleep, hold a sacred syllable or mantra
+                gently in mental awareness. FARAON is one traditional Gnostic mantra associated with
+                this practice. Repeat it silently and steadily, without force, as a quiet inner sound.
+                Allow the body to fall asleep naturally while maintaining the awareness of the mantra.
+                The part of the consciousness that holds the mantra does not need to follow the body
+                into unconsciousness. With patience and sustained practice over many months, this
+                awareness can carry forward across the sleep threshold, opening the possibility of
+                conscious inner experience during sleep.
+              </p>
+              <p>
+                This practice is not about forcing unusual experiences. It is about building the
+                continuity of awareness that is, in Gnostic understanding, one of the central aims
+                of the whole inner work.
+              </p>
+
               <h3 className="font-display text-2xl font-light text-[#2a1e12] pt-4">On the Dry Periods</h3>
               <p>
                 Every serious practitioner encounters periods when the inner work feels mechanical,
                 unrewarding, and distant. These are not failures. In Gnostic understanding, they are
                 precisely the moments when the work has the most value. The student who continues to sit,
                 to observe, and to apply the techniques during dry periods is building something far more
-                durable than the student who practises only when inspired or when inner states are
-                pleasant.
+                durable than the student who practises only when inspired or when inner states are pleasant.
               </p>
               <p>
                 P.D. Ouspensky, writing from within a tradition closely related to Gnostic psychology,
@@ -625,6 +771,13 @@ export default function MeditationPage() {
                 begins. The student who was previously carried along by the novelty and enthusiasm of
                 beginning now encounters the actual machinery of the mind in its ordinary, unadorned
                 state. This encounter, honestly faced, is itself a form of inner work.
+              </p>
+              <p>
+                When a sitting feels empty or flat, ask: what is actually happening in the mind right
+                now? What is the quality of attention? Is there boredom, restlessness, or resistance?
+                These states are not obstacles to self-knowledge. They are its subject matter. Turn
+                the attention toward the dry feeling itself with the same care and impartiality you
+                would bring to any other state. This is the practice.
               </p>
 
               <h3 className="font-display text-2xl font-light text-[#2a1e12] pt-4">Tracking Progress</h3>
@@ -651,12 +804,51 @@ export default function MeditationPage() {
                 consistently protect from distraction. What matters most is that you begin, and that
                 you return, day after day, with patience and sincerity.
               </p>
+
+              {/* Related articles panel: internal links for continued reading */}
+              <div className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-6 mt-4">
+                <h3 className="font-display text-base font-semibold text-[#2a1e12] mb-4">Related Articles</h3>
+                <ul className="space-y-2.5">
+                  <li>
+                    <Link
+                      to="/articles/self-observation-watching-your-mind"
+                      className="text-sm text-[#c9a96e] hover:text-[#a07040] font-medium transition-colors"
+                    >
+                      Self-Observation: Watching Your Own Mind
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/articles/three-factors-of-conscious-awakening"
+                      className="text-sm text-[#c9a96e] hover:text-[#a07040] font-medium transition-colors"
+                    >
+                      The Three Factors of Conscious Awakening
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/articles/meditation-practices-for-inner-peace"
+                      className="text-sm text-[#c9a96e] hover:text-[#a07040] font-medium transition-colors"
+                    >
+                      Meditation Practices for Inner Peace
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/articles"
+                      className="text-sm text-[#c9a96e] hover:text-[#a07040] font-medium transition-colors"
+                    >
+                      Browse all articles
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
             </div>
           </div>
         </section>
 
-        {/* ── Practical Guidance ───────────────────────────────────────────────
-             All informal hyphens used as dashes have been replaced. */}
+        {/* ── Practical Guidance ───────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-[#1c1409] fade-section" aria-labelledby="practice-heading">
           <div className="h-[2px] bg-gradient-to-r from-transparent via-[#c9a96e] to-transparent mb-16 max-w-xs mx-auto" aria-hidden="true" />
           <div className="max-w-3xl mx-auto">
@@ -726,6 +918,7 @@ export default function MeditationPage() {
         </section>
 
         {/* ── CTA ──────────────────────────────────────────────────────────── */}
+        {/* Second button changed to "Explore Our Articles" to strengthen internal linking. */}
         <section className="py-20 px-4 bg-[#faf6ef] fade-section" aria-label="Join our classes">
           <div className="max-w-2xl mx-auto text-center">
             <SectionLabel>Hobart &amp; Launceston · Donation-Based · Weekly</SectionLabel>
@@ -746,10 +939,10 @@ export default function MeditationPage() {
                 Register Your Interest
               </Link>
               <Link
-                to="/"
+                to="/articles"
                 className="border border-[#c9a96e]/60 text-[#4a3a26] px-8 py-3 rounded-sm text-sm font-medium hover:bg-[#f0e6d0] hover:border-[#c9a96e] transition-colors duration-200 tracking-wide"
               >
-                Return to Home
+                Explore Our Articles
               </Link>
             </div>
           </div>
