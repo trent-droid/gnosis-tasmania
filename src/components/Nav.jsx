@@ -14,13 +14,13 @@ const NAV_ITEMS = [
   },
   { to: '/meditation-classes', short: 'Meditation', full: 'Meditation', children: null },
   { to: '/articles',        short: 'Articles', full: 'Articles', children: null },
-  { to: '/gnostic-centres', short: 'Centres',  full: 'Centres',  children: null },
   { to: '/courses',         short: 'Courses',  full: 'Courses',  children: null },
   {
     to: '/contact', short: 'Contact', full: 'Contact',
     children: [
-      { to: '/contact', label: 'Contact Us' },
-      { to: '/faq',     label: 'FAQ' },
+      { to: '/contact',        label: 'Contact Us' },
+      { to: '/gnostic-centres', label: 'Centres' },
+      { to: '/faq',            label: 'FAQ' },
     ],
   },
 ]
