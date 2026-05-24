@@ -10,12 +10,6 @@ import heroImg from '../assets/hero_school_athens.jpg?format=webp'
 
 const AU_STATES = [
   {
-    state: 'Australian Capital Territory', abbr: 'ACT',
-    centres: [
-      { city: 'Canberra', website: 'https://gnosiscanberra.org', email: 'gnosiscanberra@gmail.com', phone: '0422 594 992' },
-    ],
-  },
-  {
     state: 'New South Wales', abbr: 'NSW',
     centres: [
       { city: 'Blue Mountains', email: 'australiangnosis@gmail.com', phone: '0401 243 119' },
@@ -68,6 +62,12 @@ const AU_STATES = [
       { city: 'Perth – Darch', phone: '0421 661 467' },
       { city: 'Perth – Fremantle', website: 'https://www.gnosisperth.com', email: 'freognosis@gnosisperth.com', phone: '0451 046 711' },
       { city: 'Perth – Scarborough', email: 'gnosisforever@gmail.com', phone: '0413 587 533' },
+    ],
+  },
+  {
+    state: 'Australian Capital Territory', abbr: 'ACT',
+    centres: [
+      { city: 'Canberra', website: 'https://gnosiscanberra.org', email: 'gnosiscanberra@gmail.com', phone: '0422 594 992' },
     ],
   },
 ]
@@ -302,12 +302,7 @@ export default function CentresPage() {
             </div>
 
             <p className="text-xs text-[#8a6f3f] text-center mt-8 italic">
-              Centre details sourced from{' '}
-              <a href="https://www.newcastlegnosis.org/about-us/australia-gnosis/" target="_blank" rel="noopener noreferrer"
-                className="underline underline-offset-2 hover:text-[#c9a96e] transition-colors">
-                newcastlegnosis.org
-              </a>
-              . Contact individual centres to confirm current venue and schedule.
+              Contact individual centres to confirm current venue and schedule.
             </p>
           </div>
         </section>

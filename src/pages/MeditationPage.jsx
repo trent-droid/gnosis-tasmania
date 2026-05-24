@@ -86,7 +86,7 @@ export default function MeditationPage() {
         <HeroParallax
           src={heroMeditationImg}
           alt="Philosopher in Meditation by Rembrandt van Rijn, 1632. A figure seated in contemplative stillness before a great arched window, warm amber light streaming into the interior, a winding staircase rising in the background."
-          position="center 40%"
+          position="center 10%"
           heightClass="h-[65vh] min-h-[500px]"
           overlay="bg-gradient-to-b from-[#1c1409]/60 via-[#1c1409]/40 to-[#1c1409]/70"
         >
