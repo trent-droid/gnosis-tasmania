@@ -281,7 +281,7 @@ export const ARTICLES = [
     excerpt: 'Self-observation is the foundational Gnostic practice: the disciplined, non-judgemental watching of inner states as they actually arise in present experience. Here is how to begin.',
     image: artVermeerAstronomerImg,
     imageAlt: 'Johannes Vermeer, The Astronomer (1668), Louvre. A scholar bends in focused attention over a celestial globe by candlelight, the quality of careful, patient observation at the heart of self-knowledge',
-    imagePosition: 'center 15%',
+    imagePosition: 'center 8%',
     imageCredit: 'Public domain / Wikimedia Commons. Johannes Vermeer, The Astronomer (1668), Musée du Louvre, Paris.',
     date: '2026-05-23',
     readTime: '9 min read',
