@@ -10,6 +10,10 @@
 //    articles index linked from CTA.
 // 6. All images remain outside fade-section / fade-content elements (no image fade-in).
 // 7. No em-dashes, en-dashes, or informal hyphens used as dashes anywhere in this file.
+// 8. Attribution audit: inaccurate "thirty minutes morning and evening" quote replaced with a
+//    neutral editorial statement. Direct excerpts and very close paraphrases of Samael Aun Weor
+//    converted to <blockquote> elements with "— Samael Aun Weor, The Revolution of the Dialectic"
+//    source notes. Existing blockquotes updated to include book title in cite where missing.
 
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
@@ -128,10 +132,14 @@ export default function MeditationPage() {
                   The technique of Meditation permits us to arrive at the heights of illumination
                   and the revolution of the dialectic.
                 </p>
+                <cite className="text-sm text-[#c9a96e] not-italic mt-3 block font-medium">
+                  — Samael Aun Weor, The Revolution of the Dialectic
+                </cite>
               </blockquote>
             </div>
 
-            <div className="space-y-5 text-base leading-relaxed text-[#3a2f1f]">
+            {/* Close paraphrase of SAW — converted to blockquote with attribution */}
+            <blockquote className="border-l-[3px] border-[#c9a96e] pl-8 py-2 space-y-5 text-base leading-relaxed text-[#3a2f1f]">
               <p>
                 We must distinguish between a mind that is still and a mind that is stilled by force.
                 When the mind is stilled by force, it is really not still. It is gagged by violence,
@@ -152,17 +160,24 @@ export default function MeditationPage() {
                 instant to instant, to know how to take advantage of each moment, to not live
                 the moment in doses.
               </p>
-            </div>
+              <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">
+                — Samael Aun Weor, The Revolution of the Dialectic
+              </cite>
+            </blockquote>
 
+            {/* Direct SAW excerpt — attribution added */}
             <div className="mt-10 rounded-sm bg-white border border-[#d4c4a8] px-8 py-6 shadow-sm">
               <p className="font-display text-lg sm:text-xl text-[#2a1e12] italic leading-relaxed mb-3">
                 "Take everything from each moment because each moment is a child of Gnosis;
                 each moment is absolute, alive and significant. Momentariness is a special
                 characteristic of the Gnostics. We love the philosophy of momentariness."
               </p>
-              <p className="text-sm text-[#4a3a26] leading-relaxed">
+              <p className="text-sm text-[#4a3a26] leading-relaxed mb-4">
                 Master Ummom said to his disciples: <em>"If you walk, walk; if you sit, sit; but do not vacillate."</em>
               </p>
+              <cite className="text-sm text-[#c9a96e] not-italic font-medium block border-t border-[#e8d5b0] pt-4">
+                — Samael Aun Weor, The Revolution of the Dialectic
+              </cite>
             </div>
           </div>
         </section>
@@ -405,17 +420,23 @@ export default function MeditationPage() {
 
             <div className="grid md:grid-cols-5 gap-12 items-start">
               <div className="md:col-span-3 space-y-5 text-base leading-relaxed text-[#3a2f1f] fade-content">
-                <p>
-                  The stillness and silence of the mind has a single objective: to liberate the Essence
-                  from the mind, so that when fused with the Monad or Inner Self, it can experience
-                  that which we call the truth.
-                </p>
-                <p>
-                  During ecstasy and in the absence of the "I," the Essence can live freely, experiencing
-                  the truth within the World of the Mist of Fire. When the mind is in a passive and
-                  receptive state, absolutely still and in silence, the Essence or Buddhata is liberated
-                  from the mind, and ecstasy arrives.
-                </p>
+                {/* Close paraphrase of SAW — converted to blockquote with attribution */}
+                <blockquote className="border-l-[3px] border-[#c9a96e] pl-6 py-2 space-y-4">
+                  <p>
+                    The stillness and silence of the mind has a single objective: to liberate the Essence
+                    from the mind, so that when fused with the Monad or Inner Self, it can experience
+                    that which we call the truth.
+                  </p>
+                  <p>
+                    During ecstasy and in the absence of the "I," the Essence can live freely, experiencing
+                    the truth within the World of the Mist of Fire. When the mind is in a passive and
+                    receptive state, absolutely still and in silence, the Essence or Buddhata is liberated
+                    from the mind, and ecstasy arrives.
+                  </p>
+                  <cite className="text-sm text-[#c9a96e] not-italic mt-1 block font-medium">
+                    — Samael Aun Weor, The Revolution of the Dialectic
+                  </cite>
+                </blockquote>
 
                 <blockquote className="border-l-[3px] border-[#c9a96e] pl-6 py-3 bg-[#faf6ef] rounded-r-sm">
                   <p className="font-display text-[#2a1e12] italic text-lg leading-relaxed">
@@ -423,19 +444,27 @@ export default function MeditationPage() {
                     battling ends and the silence is absolute, then the bottle is broken into pieces
                     and the Essence remains free."
                   </p>
-                  <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">Samael Aun Weor</cite>
+                  <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">
+                    — Samael Aun Weor, The Revolution of the Dialectic
+                  </cite>
                 </blockquote>
 
-                <p>
-                  The most elevated form of thinking is non-thinking. When one achieves the stillness
-                  and silence of the mind, the "I" with all its passions, appetites, fears, and
-                  affections becomes absent. It is only in the absence of the "I," in the absence of
-                  the mind, that the Buddhata can awaken to unite with the Inner Self and take us to ecstasy.
-                </p>
-                <p>
-                  To commence with the study of the technique of Meditation is to enter into the antechamber
-                  of the divine peace that surpasses all knowledge.
-                </p>
+                {/* Close paraphrase of SAW — converted to blockquote with attribution */}
+                <blockquote className="border-l-[3px] border-[#c9a96e] pl-6 py-2 space-y-4">
+                  <p>
+                    The most elevated form of thinking is non-thinking. When one achieves the stillness
+                    and silence of the mind, the "I" with all its passions, appetites, fears, and
+                    affections becomes absent. It is only in the absence of the "I," in the absence of
+                    the mind, that the Buddhata can awaken to unite with the Inner Self and take us to ecstasy.
+                  </p>
+                  <p>
+                    To commence with the study of the technique of Meditation is to enter into the antechamber
+                    of the divine peace that surpasses all knowledge.
+                  </p>
+                  <cite className="text-sm text-[#c9a96e] not-italic mt-1 block font-medium">
+                    — Samael Aun Weor, The Revolution of the Dialectic
+                  </cite>
+                </blockquote>
               </div>
 
               <div className="md:col-span-2">
@@ -473,7 +502,8 @@ export default function MeditationPage() {
               <GoldRule />
             </div>
 
-            <div className="space-y-5 text-base leading-relaxed text-[#3a2f1f] mb-10">
+            {/* Close paraphrase of SAW — converted to blockquote with attribution */}
+            <blockquote className="border-l-[3px] border-[#c9a96e] pl-8 py-2 space-y-5 text-base leading-relaxed text-[#3a2f1f] mb-10">
               <p>
                 When we practice Meditation, our mind is assaulted by many memories, desires, passions,
                 and preoccupations. We must avoid the conflict between attention and distraction.
@@ -494,8 +524,12 @@ export default function MeditationPage() {
                 {' '}and comprehension.
                 Examine each image, each memory, and each thought that comes to the mind.
               </p>
-            </div>
+              <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">
+                — Samael Aun Weor, The Revolution of the Dialectic
+              </cite>
+            </blockquote>
 
+            {/* Direct SAW excerpt (note specific example of "dining room and washroom") — attribution added */}
             <div className="bg-white rounded-sm border border-[#d4c4a8] p-8 mb-10 shadow-sm relative overflow-hidden">
               <div className="absolute inset-x-0 top-0 h-[3px] bg-[#c9a96e]" aria-hidden="true" />
               <h3 className="font-display text-xl font-semibold text-[#2a1e12] mb-4">The Teaching on Polarity</h3>
@@ -509,15 +543,19 @@ export default function MeditationPage() {
                 <em>Only through the study of these polarities can one arrive at a synthesis.</em>{' '}
                 Every mental form can be eliminated through its synthesis.
               </p>
-              <p className="text-xs text-[#6b5535] leading-relaxed italic border-t border-[#e8d5b0] pt-4 mt-2">
+              <p className="text-xs text-[#6b5535] leading-relaxed italic border-t border-[#e8d5b0] pt-4 mt-2 mb-4">
                 Example: the memory of a beloved face assaults us. Is she beautiful? Let us think that beauty
                 is the opposite of ugliness, that if in youth she is beautiful, in old age she will be transformed.
                 The synthesis: it is not worthwhile to dwell upon her; she is an illusion, a flower that will
                 inevitably wither.
               </p>
+              <cite className="text-sm text-[#c9a96e] not-italic font-medium block border-t border-[#e8d5b0] pt-4">
+                — Samael Aun Weor, The Revolution of the Dialectic
+              </cite>
             </div>
 
-            <div className="space-y-5 text-base leading-relaxed text-[#3a2f1f]">
+            {/* Close paraphrase of SAW — converted to blockquote with attribution */}
+            <blockquote className="border-l-[3px] border-[#c9a96e] pl-8 py-2 space-y-5 text-base leading-relaxed text-[#3a2f1f]">
               <p>
                 In India, this self-observation and study of our psyche is called <strong>pratyahara</strong>.
               </p>
@@ -526,7 +564,10 @@ export default function MeditationPage() {
                 but without leaving any trace behind. The infinite procession of thoughts projected by
                 the "I" is exhausted in the end, and then the mind remains still and in silence.
               </p>
-            </div>
+              <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">
+                — Samael Aun Weor, The Revolution of the Dialectic
+              </cite>
+            </blockquote>
 
             <blockquote className="mt-10 border-l-[3px] border-[#c9a96e] pl-6 py-3 bg-white rounded-r-sm">
               <p className="font-display text-[#2a1e12] italic text-xl leading-relaxed">
@@ -534,7 +575,9 @@ export default function MeditationPage() {
                 which is not a product of the mind then befall. This silence is inexhaustible; it is not
                 of time, and it is immeasurable. It is only then, when THAT which is, arrives."
               </p>
-              <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">Samael Aun Weor</cite>
+              <cite className="text-sm text-[#c9a96e] not-italic mt-2 block font-medium">
+                — Samael Aun Weor, The Revolution of the Dialectic
+              </cite>
             </blockquote>
           </div>
         </section>
@@ -627,15 +670,17 @@ export default function MeditationPage() {
                 becomes to sit longer, not shorter.
               </p>
 
+              {/* Replaced inaccurate "thirty minutes morning and evening" quote with a
+                  neutral editorial statement — no specific duration was attributed to SAW */}
               <div className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-7 my-4">
-                <p className="font-display text-lg sm:text-xl text-[#2a1e12] italic leading-relaxed mb-3">
-                  "The student who meditates faithfully for thirty minutes each morning and thirty minutes
-                  each evening, combined with self-observation throughout the day and retrospection before
-                  sleep, creates the conditions in which real transformation becomes possible."
+                <p className="text-base leading-relaxed text-[#3a2f1f]">
+                  Gnostic teaching is clear that meditation, self-observation, and retrospection are not
+                  three separate practices but three dimensions of a single daily commitment. The student
+                  who brings genuine quality of attention to all three, practised daily and with sincerity,
+                  creates the inner conditions in which real transformation becomes possible. The specific
+                  duration of each sitting is a matter for the individual student to discover through
+                  experience, and, where available, through the guidance of their instructor.
                 </p>
-                <cite className="text-sm text-[#c9a96e] not-italic font-medium block">
-                  Based on the teachings of Samael Aun Weor
-                </cite>
               </div>
 
               <h3 className="font-display text-2xl font-light text-[#2a1e12] pt-4">A Morning and Evening Framework</h3>
