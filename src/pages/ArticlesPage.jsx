@@ -42,7 +42,6 @@ export default function ArticlesPage() {
           <p className="text-[#4a3a26] text-lg leading-relaxed">
             The following articles are drawn from the Gnostic teachings of Samael Aun Weor and the perennial wisdom tradition, written for sincere aspirants at every stage of the path. Whether you are entirely new to Gnosis or deepening an existing practice, you are welcome here.
           </p>
-          {/* Lead qualifier: signals that the path involves real inner work */}
           <p className="text-[#6b5535] text-base leading-relaxed">
             The Gnostic path is a demanding one. These articles are written for those who come with a genuine desire to understand and apply the teachings in their own lives, not merely to read about them. Sustained inner work, honest self-observation, and consistent practice over time are what the path asks of those who would take it seriously.
           </p>

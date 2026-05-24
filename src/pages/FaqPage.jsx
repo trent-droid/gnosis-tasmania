@@ -1,5 +1,3 @@
-// src/pages/FaqPage.jsx
-// New page: FAQ at /faq — accordion layout, 9 questions, FAQPage JSON-LD schema
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
@@ -8,8 +6,7 @@ import { HeroParallax, GoldRule, SectionLabel } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import heroSchoolAthensImg from '../assets/hero_school_athens.jpg?format=webp'
-
-const BASE = 'https://gnosistasmania.com.au'
+import { BASE } from '../constants.js'
 
 const FAQS = [
   {

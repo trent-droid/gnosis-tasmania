@@ -1,8 +1,3 @@
-// CoursesPage — simplified per user request:
-// - Removed the waiting-list email form and all EmailJS / useState infrastructure
-// - Replaced form with a clean "Reserve Your Place" section: 3 email tiles + Facebook link
-// - All other sections (course cards, locations, FAQ, CTA, parallax) unchanged
-
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
@@ -243,10 +238,7 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* ── Reserve Your Place ────────────────────────────────────────────────────
-           Replaced the EmailJS waiting-list form with a simple, stateless contact
-           section. Courses run periodically; places are limited; the two ways to
-           connect are email (per centre) and Facebook. */}
+      {/* ── Reserve Your Place ───────────────────────────────────────────────── */}
       <section className="py-20 px-4 bg-white fade-section">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">

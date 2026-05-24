@@ -1,20 +1,3 @@
-// MeditationPage — revision notes:
-// 1. Hero image: zen garden replaced with Rembrandt "Philosopher in Meditation" (1632, public domain).
-//    Warmer, more symbolically resonant. Image credit line rendered below the hero.
-// 2. Five Phases section expanded: Patanjali quote added to intro; each phase now includes a
-//    "How to practise" subsection with concrete steps and examples.
-// 3. Personal practice section significantly expanded: Retrospection Exercise detailed as a new
-//    subsection; mantra work at the sleep threshold added as a new subsection; dry periods deepened.
-// 4. Five named external quotes: Patanjali, Lao Tzu, Blavatsky, Gurdjieff, Ouspensky.
-// 5. Internal links: self-observation article, Three Factors article, related articles panel,
-//    articles index linked from CTA.
-// 6. All images remain outside fade-section / fade-content elements (no image fade-in).
-// 7. No em-dashes, en-dashes, or informal hyphens used as dashes anywhere in this file.
-// 8. Attribution audit: inaccurate "thirty minutes morning and evening" quote replaced with a
-//    neutral editorial statement. Direct excerpts and very close paraphrases of Samael Aun Weor
-//    converted to <blockquote> elements with "— Samael Aun Weor, The Revolution of the Dialectic"
-//    source notes. Existing blockquotes updated to include book title in cite where missing.
-
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
@@ -22,16 +5,10 @@ import { HeroParallax, GoldRule, SectionLabel, QuoteParallax } from '../componen
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 
-// Hero changed: Rembrandt "Philosopher in Meditation" replaces the zen garden.
-// Warm amber tones align with the earth-tone palette; strong symbolic resonance.
 import heroMeditationImg from '../assets/art_rembrandt_philosopher.jpg?format=webp'
-
-// Art banner: Zen hero image — serene, misty, contemplative atmosphere aligned with the meditation theme.
 import zenBannerImg from '../assets/hero_zen.jpg?format=webp'
 import artMonaLisaImg              from '../assets/art_mona_lisa.jpg'
 import artMonaLisaImgSrcset        from '../assets/art_mona_lisa.jpg?w=640;1024&format=webp&as=srcset'
-
-/* ─── Page ─────────────────────────────────────────────────────────────────── */
 
 export default function MeditationPage() {
   usePageMeta(
@@ -85,8 +62,7 @@ export default function MeditationPage() {
       <main>
 
         {/* ── Hero ─────────────────────────────────────────────────────────── */}
-        {/* Image: Rembrandt "Philosopher in Meditation" (1632). No fade-section on any
-            image in this file. Image credit rendered as a plain line below the hero. */}
+        {/* No fade-section on any image in this file. */}
         <HeroParallax
           src={heroMeditationImg}
           alt="Philosopher in Meditation by Rembrandt van Rijn, 1632. A figure seated in contemplative stillness before a great arched window, warm amber light streaming into the interior, a winding staircase rising in the background."
@@ -138,7 +114,6 @@ export default function MeditationPage() {
               </blockquote>
             </div>
 
-            {/* Close paraphrase of SAW — converted to blockquote with attribution */}
             <blockquote className="border-l-[3px] border-[#c9a96e] pl-8 py-2 space-y-5 text-base leading-relaxed text-[#3a2f1f]">
               <p>
                 We must distinguish between a mind that is still and a mind that is stilled by force.
@@ -165,7 +140,6 @@ export default function MeditationPage() {
               </cite>
             </blockquote>
 
-            {/* Direct SAW excerpt — attribution added */}
             <div className="mt-10 rounded-sm bg-white border border-[#d4c4a8] px-8 py-6 shadow-sm">
               <p className="font-display text-lg sm:text-xl text-[#2a1e12] italic leading-relaxed mb-3">
                 "Take everything from each moment because each moment is a child of Gnosis;
@@ -183,9 +157,6 @@ export default function MeditationPage() {
         </section>
 
         {/* ── The Five Phases of Gnostic Meditation ────────────────────────── */}
-        {/* Expanded: Patanjali quote added to the intro to establish the historical lineage.
-            Each phase card now includes a "How to practise" subsection. No images inside
-            this section, so fade-section is safe to use here. */}
         <section className="py-20 px-4 bg-white fade-section" aria-labelledby="phases-heading">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-14">
@@ -196,7 +167,6 @@ export default function MeditationPage() {
               <GoldRule />
             </div>
 
-            {/* Patanjali quote: the direct textual source SAW drew from */}
             <blockquote className="border-l-[3px] border-[#c9a96e] pl-6 py-3 bg-[#faf6ef] rounded-r-sm mb-10">
               <p className="font-display text-[#2a1e12] italic text-lg leading-relaxed">
                 "Yoga is the cessation of the fluctuations of consciousness."
@@ -239,7 +209,6 @@ export default function MeditationPage() {
               </cite>
             </blockquote>
 
-            {/* Phases 1 to 4 in a 2x2 grid. Each card includes a "How to practise" subsection. */}
             <div className="grid sm:grid-cols-2 gap-6 mb-6">
 
               <article className="bg-[#faf6ef] rounded-sm p-8 border border-[#e8d5b0] flex flex-col">
@@ -358,7 +327,6 @@ export default function MeditationPage() {
 
             </div>
 
-            {/* Phase 5: Samadhi as a full-width featured dark panel */}
             <div className="relative bg-[#2a1e12] rounded-sm p-8 sm:p-10 border border-[#c9a96e]/30 overflow-hidden">
               <div className="absolute inset-x-0 top-0 h-[3px] bg-[#c9a96e]" aria-hidden="true" />
               <span className="font-display text-4xl font-light text-[#c9a96e]/40 mb-3 block leading-none" aria-hidden="true">05</span>
@@ -394,9 +362,7 @@ export default function MeditationPage() {
           </div>
         </section>
 
-        {/* ── Quote parallax: Zen contemplative scene ──────────────────────────── */}
-        {/* Serene zen imagery evoking a meditative figure in peaceful, misty surroundings.
-            Parallax background with Lao Tzu quote overlaid. */}
+        {/* ── Quote parallax ────────────────────────────────────────────────────── */}
         <QuoteParallax
           src={zenBannerImg}
           alt="A serene, contemplative zen scene — misty mountains and still water, evoking the atmosphere of deep meditation."
@@ -420,8 +386,7 @@ export default function MeditationPage() {
 
             <div className="grid md:grid-cols-5 gap-12 items-start">
               <div className="md:col-span-3 space-y-5 text-base leading-relaxed text-[#3a2f1f] fade-content">
-                {/* Close paraphrase of SAW — converted to blockquote with attribution */}
-                <blockquote className="border-l-[3px] border-[#c9a96e] pl-6 py-2 space-y-4">
+                    <blockquote className="border-l-[3px] border-[#c9a96e] pl-6 py-2 space-y-4">
                   <p>
                     The stillness and silence of the mind has a single objective: to liberate the Essence
                     from the mind, so that when fused with the Monad or Inner Self, it can experience
@@ -449,7 +414,6 @@ export default function MeditationPage() {
                   </cite>
                 </blockquote>
 
-                {/* Close paraphrase of SAW — converted to blockquote with attribution */}
                 <blockquote className="border-l-[3px] border-[#c9a96e] pl-6 py-2 space-y-4">
                   <p>
                     The most elevated form of thinking is non-thinking. When one achieves the stillness
@@ -491,7 +455,6 @@ export default function MeditationPage() {
         </section>
 
         {/* ── The Method ───────────────────────────────────────────────────── */}
-        {/* Internal link added: "self-observation" links to the self-observation article. */}
         <section className="py-20 px-4 bg-[#f8f1e3] fade-section" aria-labelledby="method-heading">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-14">
@@ -502,7 +465,6 @@ export default function MeditationPage() {
               <GoldRule />
             </div>
 
-            {/* Close paraphrase of SAW — converted to blockquote with attribution */}
             <blockquote className="border-l-[3px] border-[#c9a96e] pl-8 py-2 space-y-5 text-base leading-relaxed text-[#3a2f1f] mb-10">
               <p>
                 When we practice Meditation, our mind is assaulted by many memories, desires, passions,
@@ -529,7 +491,6 @@ export default function MeditationPage() {
               </cite>
             </blockquote>
 
-            {/* Direct SAW excerpt (note specific example of "dining room and washroom") — attribution added */}
             <div className="bg-white rounded-sm border border-[#d4c4a8] p-8 mb-10 shadow-sm relative overflow-hidden">
               <div className="absolute inset-x-0 top-0 h-[3px] bg-[#c9a96e]" aria-hidden="true" />
               <h3 className="font-display text-xl font-semibold text-[#2a1e12] mb-4">The Teaching on Polarity</h3>
@@ -554,7 +515,6 @@ export default function MeditationPage() {
               </cite>
             </div>
 
-            {/* Close paraphrase of SAW — converted to blockquote with attribution */}
             <blockquote className="border-l-[3px] border-[#c9a96e] pl-8 py-2 space-y-5 text-base leading-relaxed text-[#3a2f1f]">
               <p>
                 In India, this self-observation and study of our psyche is called <strong>pratyahara</strong>.
@@ -583,7 +543,6 @@ export default function MeditationPage() {
         </section>
 
         {/* ── The Two Principles ───────────────────────────────────────────── */}
-        {/* Internal link added: Three Factors article linked from the closing paragraph. */}
         <section className="py-20 px-4 bg-[#faf6ef] fade-section" aria-labelledby="principles-heading">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-14">
@@ -639,10 +598,7 @@ export default function MeditationPage() {
           </div>
         </section>
 
-        {/* ── Building Your Daily Practice ──────────────────────────────────────
-             Significantly expanded: Retrospection Exercise and Transition to Sleep
-             added as new subsections. Dry periods guidance deepened. Related articles
-             panel added at the close. No images inside this section. */}
+        {/* ── Building Your Daily Practice ─────────────────────────────────────── */}
         <section className="py-20 px-4 bg-white fade-section" aria-labelledby="time-heading">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
@@ -670,8 +626,6 @@ export default function MeditationPage() {
                 becomes to sit longer, not shorter.
               </p>
 
-              {/* Replaced inaccurate "thirty minutes morning and evening" quote with a
-                  neutral editorial statement — no specific duration was attributed to SAW */}
               <div className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-7 my-4">
                 <p className="text-base leading-relaxed text-[#3a2f1f]">
                   Gnostic teaching is clear that meditation, self-observation, and retrospection are not
@@ -838,7 +792,6 @@ export default function MeditationPage() {
                 you return, day after day, with patience and sincerity.
               </p>
 
-              {/* Related articles panel: internal links for continued reading */}
               <div className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-6 mt-4">
                 <h3 className="font-display text-base font-semibold text-[#2a1e12] mb-4">Related Articles</h3>
                 <ul className="space-y-2.5">
@@ -951,7 +904,6 @@ export default function MeditationPage() {
         </section>
 
         {/* ── CTA ──────────────────────────────────────────────────────────── */}
-        {/* Second button changed to "Explore Our Articles" to strengthen internal linking. */}
         <section className="py-20 px-4 bg-[#faf6ef] fade-section" aria-label="Join our classes">
           <div className="max-w-2xl mx-auto text-center">
             <SectionLabel>Hobart &amp; Launceston · Donation-Based · Weekly</SectionLabel>

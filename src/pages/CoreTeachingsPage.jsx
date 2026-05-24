@@ -105,7 +105,7 @@ const SELF_KNOWLEDGE = [
   'All suffering ultimately arises from ignorance of our own true nature; self-knowledge is therefore the foundation of liberation.',
 ]
 
-const BASE = 'https://gnosistasmania.com.au'
+import { BASE } from '../constants.js'
 
 export default function CoreTeachingsPage() {
   usePageMeta(

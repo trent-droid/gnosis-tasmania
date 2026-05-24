@@ -1,8 +1,3 @@
-// src/data/articles.js
-// Updated: expanded each article toward 1,600–2,000 words; fixed en-dash in article 8
-// title removed from metaTitle (title field preserved per user request); added siteLinks
-// for internal navigation; improved quotes; ensured no em-dashes or en-dashes in body content.
-
 // Article thumbnail images — each unique, no overlap with page hero/parallax images.
 // All works are public domain. Sources: Wikimedia Commons, existing project assets.
 //
@@ -332,7 +327,6 @@ export const ARTICLES = [
           'Students often discover, with some genuine surprise, that the simple act of clear observation changes the inner landscape significantly. When a psychological state is clearly seen and acknowledged without identification, it does not necessarily vanish immediately, but it loses a degree of its compulsive authority. This discovery is itself an important confirmation that the practice is real and that it works, and it usually provides the motivation needed to continue and deepen the work.',
           'A practical support for establishing this rhythm is to link the practice to three or four existing daily habits: the first cup of tea in the morning, the commute to work, the midday meal, the minutes before sleep. At each of these anchoring points, the practitioner pauses briefly and asks honestly: what inner state am I in right now? What am I feeling? What is the quality of attention I have been bringing to the past hour? These brief, regular returns to inner awareness train the habit of self-observation into the fabric of daily life more reliably than sporadic intensive sessions.',
         ],
-        // Replaced Jim Morrison quote with Lao Tzu — relevant to beginning the practice
         quote: { text: 'A path of a thousand miles begins with a single step.', author: 'Lao Tzu, Tao Te Ching 64' },
       },
       {

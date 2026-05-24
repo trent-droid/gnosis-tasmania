@@ -1,8 +1,3 @@
-// ContactPage — simplified per user request:
-// - Removed the "Send a message" email form and all EmailJS/reCAPTCHA infrastructure
-// - Removed the "Before You Come" section
-// - Now shows 3 location tiles (each with email) + a standalone Facebook section
-
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'

@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-
-const BASE = 'https://gnosistasmania.com.au'
+import { BASE } from '../constants.js'
 
 // Human-readable label for each route (used in BreadcrumbList JSON-LD)
 const PATH_LABELS = {

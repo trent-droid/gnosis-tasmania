@@ -29,7 +29,7 @@ const LOCATIONS = [
   },
 ]
 
-const BASE = 'https://gnosistasmania.com.au'
+import { BASE } from '../constants.js'
 
 export default function CommunityPage() {
   usePageMeta(

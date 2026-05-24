@@ -5,8 +5,7 @@ import { HeroParallax, GoldRule } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import { getArticleBySlug, ARTICLES } from '../data/articles.js'
-
-const BASE = 'https://gnosistasmania.com.au'
+import { BASE } from '../constants.js'
 
 export default function ArticlePage() {
   const { slug } = useParams()

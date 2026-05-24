@@ -38,7 +38,10 @@
       "Bash(curl -L -s -o art_friedrich_moon.jpg \"https://upload.wikimedia.org/wikipedia/commons/d/da/Caspar_David_Friedrich_-_Two_Men_Contemplating_the_Moon_-_Google_Art_Project.jpg\")",
       "Bash(curl -L -s -o art_burne_jones_fortune.jpg \"https://upload.wikimedia.org/wikipedia/commons/a/a8/Edward_Burne-Jones_-_La_ruota_della_fortuna%2C_1875-83.jpg\")",
       "Bash(curl -L -s -o art_friedrich_moon.jpg \"https://upload.wikimedia.org/wikipedia/commons/f/ff/Caspar_David_Friedrich_-_Two_Men_Contemplating_the_Moon_-_Google_Art_Project.jpg\")",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\src\" -Recurse -File)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Sort-Object)"
     ],
     "additionalDirectories": [
       "c:\\Users\\Carbil\\.claude\\projects\\c--Users-Carbil-gnosistasmania\\memory"

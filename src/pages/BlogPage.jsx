@@ -15,8 +15,7 @@ import artBlakeJacobsImg       from '../assets/art_blake_jacobs_ladder.jpg?forma
 import artKhunrathImg          from '../assets/art_khunrath_rebis.jpg'
 import artKhunrathImgWebp      from '../assets/art_khunrath_rebis.jpg?format=webp'
 import artCranachImg           from '../assets/art_cranach_garden_eden.jpg?format=webp'
-
-const BASE = 'https://gnosistasmania.com.au'
+import { BASE } from '../constants.js'
 
 const ARTICLES = [
   {
