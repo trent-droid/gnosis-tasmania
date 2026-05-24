@@ -6,7 +6,7 @@
 // art_rembrandt_prodigal_son.jpg    — Rembrandt, Return of the Prodigal Son (c. 1668), Hermitage, St Petersburg.
 // art_rembrandt_scholar_study.jpg   — Rembrandt van Rijn, A Scholar in His Study (1634), Sternberg Palace, Prague.
 // art_friedrich_monk_sea.jpg        — Caspar David Friedrich, The Monk by the Sea (1808-10), Nationalgalerie, Berlin.
-// art_fuseli_nightmare.jpg          — Henry Fuseli, The Nightmare (1781), Detroit Institute of Arts.
+// art_burne_jones_sleeping_beauty.jpg — Edward Burne-Jones, The Sleeping Beauty (c. 1871-73), Museo de Arte de Ponce. Serene figures in peaceful dream sleep among roses.
 // art_raphael_transfiguration.jpg   — Raphael, The Transfiguration (1516-20), Vatican Museums.
 // art_rossetti_beata_beatrix.jpg    — Dante Gabriel Rossetti, Beata Beatrix (1864-70), Tate Britain.
 // art_ingres_apotheosis_homer.jpg   — J.-A.-D. Ingres, The Apotheosis of Homer (1827), Louvre, Paris.
@@ -19,7 +19,7 @@ import artFraAngelicoImg           from '../assets/art_fra_angelico_annunciation
 import artRembrandtProdigalImg     from '../assets/art_rembrandt_prodigal_son.jpg?format=webp'
 import artRembrandtScholarImg      from '../assets/art_rembrandt_scholar_study.jpg?format=webp'
 import artFriedrichMonkSeaImg      from '../assets/art_friedrich_monk_sea.jpg?format=webp'
-import artFuseliNightmareImg       from '../assets/art_fuseli_nightmare.jpg?format=webp'
+import artBurneJonesSleepingImg    from '../assets/art_burne_jones_sleeping_beauty.jpg?format=webp'
 import artRaphaelTransfigImg       from '../assets/art_raphael_transfiguration.jpg?format=webp'
 import artRossettiBeatrixImg       from '../assets/art_rossetti_beata_beatrix.jpg?format=webp'
 import artIngresApotheosisImg      from '../assets/art_ingres_apotheosis_homer.jpg?format=webp'
@@ -437,10 +437,10 @@ export const ARTICLES = [
     metaTitle: 'Dream Work and Astral Exploration in Gnosis | Gnosis Tasmania',
     metaDescription: 'Conscious dreaming and astral exploration are genuine, learnable capacities taught in Gnosis. This article explains the methods and their role in inner development.',
     excerpt: 'Gnosis offers a complete science of conscious dreaming and astral exploration. This article introduces the methods and explains their significance for inner development.',
-    image: artFuseliNightmareImg,
-    imageAlt: 'Henry Fuseli, The Nightmare (1781), Detroit Institute of Arts. A sleeping figure illuminated while a dark being crouches upon her, the classic Western image of consciousness encountering the astral and dream worlds',
+    image: artBurneJonesSleepingImg,
+    imageAlt: 'Edward Burne-Jones, The Sleeping Beauty (c. 1871-73), Museo de Arte de Ponce. A serene figure lies in peaceful dream sleep on a rose-draped couch, attended by sleeping maidens in soft rose and ivory tones — a Pre-Raphaelite vision of the soul at rest in the inner worlds',
     imagePosition: 'center 25%',
-    imageCredit: 'Public domain / Wikimedia Commons. Henry Fuseli, The Nightmare (1781), Detroit Institute of Arts.',
+    imageCredit: 'Public domain / Wikimedia Commons. Edward Burne-Jones, The Sleeping Beauty, from the small Briar Rose series (c. 1871-73), Museo de Arte de Ponce, Puerto Rico.',
     date: '2026-05-23',
     readTime: '10 min read',
     intro: 'One third of every human life is spent in sleep, and Gnosis regards this time as a significant and largely unexplored field of spiritual development. During sleep, the consciousness naturally disengages from the physical body and operates in the astral body: a subtler vehicle of experience that is not bound by the limitations of physical space and time. This process occurs involuntarily and unconsciously in the vast majority of people. The discipline of Gnostic dream work consists in learning to make this process conscious, so that the hours of sleep become a genuine extension of the inner work rather than a period of complete unconsciousness and lost opportunity.',
