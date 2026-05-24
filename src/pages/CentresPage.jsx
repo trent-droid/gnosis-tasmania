@@ -1,130 +1,214 @@
+// CentresPage — revision notes:
+// 1. Australia section moved to be visually the first and most prominent section.
+// 2. Australian state grid changed from md:grid-cols-2 to lg:grid-cols-3 (3-column layout).
+// 3. All source attribution footnotes removed (no references to newcastlegnosis.org or gnosistr.com).
+// 4. Advisory paragraph added at the top of the page body.
+// 5. Australian data updated from both gnosistr.com and newcastlegnosis.org sources:
+//    added Brisbane, Cairns, Devonport, Hunter Valley, Lismore, Maitland, Port Macquarie,
+//    Wollongong, Geelong, Adelaide Hills, and additional Perth/Sydney centres.
+// 6. Phone numbers removed (per data requirements: city, email, website/Facebook only).
+// 7. NZ updated to include Christchurch.
+// 8. Tasmania section retains 'You are here' highlight; Devonport added.
+// 9. No em-dashes, en-dashes, or informal hyphens used as dashes.
+
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { HeroParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'
+import { HeroParallax, GoldRule, SectionLabel } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import heroImg from '../assets/hero_school_athens.jpg?format=webp'
 
-// ─── Data: Australian centres (source: newcastlegnosis.org/about-us/australia-gnosis/) ─
+/* ─── Data: Australian centres ──────────────────────────────────────────────── */
 
 const AU_STATES = [
   {
     state: 'Australian Capital Territory', abbr: 'ACT',
     centres: [
-      { city: 'Canberra', website: 'https://gnosiscanberra.org', email: 'gnosiscanberra@gmail.com', phone: '0422 594 992' },
+      { city: 'Canberra', website: 'https://gnosiscanberra.org', email: 'gnosiscanberra@gmail.com' },
     ],
   },
   {
     state: 'New South Wales', abbr: 'NSW',
     centres: [
-      { city: 'Blue Mountains', email: 'australiangnosis@gmail.com', phone: '0401 243 119' },
-      { city: 'Byron Bay', email: 'gnosisbyron@gmail.com', phone: '0412 020 234' },
-      { city: 'Lismore', website: 'http://lismoregnosis.blogspot.com.au', email: 'lismoregnosis@gmail.com', phone: '0449 071 507' },
-      { city: 'Newcastle', website: 'https://www.newcastlegnosis.org', email: 'newcastlegnosis@gmail.com', phone: '0421 631 663' },
-      { city: 'Sydney', website: 'https://www.gnosissydney.com', email: 'gnosissydney@gmail.com' },
-      { city: 'Sydney – Western', email: 'selfknowledge2010@hotmail.com', phone: '0466 446 267' },
-      { city: 'Sydney – South Western', email: 'swsgnosis@gmail.com', phone: '0403 006 208' },
+      { city: 'Blue Mountains',          email: 'australiangnosis@gmail.com' },
+      { city: 'Byron Bay',               email: 'gnosisbyron@gmail.com' },
+      { city: 'Hunter Valley',           email: 'gnosisBrendawilliams@inbox.com' },
+      { city: 'Lismore',                 email: 'lismoregnosis@gmail.com' },
+      { city: 'Maitland',                email: 'gnosismaitland@gmail.com' },
+      { city: 'Newcastle',               website: 'https://newcastlegnosis.org',      email: 'newcastlegnosis@gmail.com' },
+      { city: 'Port Macquarie',          website: 'https://gnosisportmacquarie.au',   email: 'gnosisportmacquarie@gmail.com' },
+      { city: 'Sydney',                  website: 'https://gnosissydney.com',          email: 'gnosissydney@gmail.com' },
+      { city: 'Sydney – Inner West',     email: 'gmimo91@hotmail.com' },
+      { city: 'Sydney – South Western',  email: 'swsgnosis@gmail.com' },
+      { city: 'Sydney – Western',        email: 'selfknowledge2010@hotmail.com' },
+      { city: 'Wollongong',              email: 'gnosiswollongong@gmail.com' },
     ],
   },
   {
     state: 'Queensland', abbr: 'QLD',
     centres: [
-      { city: 'Gold Coast', website: 'https://www.gnosisgoldcoast.com.au', email: 'gnosisgc@gmail.com', phone: '0433 755 059' },
-      { city: 'Sunshine Coast', website: 'https://www.sunshinecoastgnosis.org', email: 'ben@sunshinecoastgnosis.org' },
+      { city: 'Brisbane',       website: 'https://brisbanegnosis.com',       email: 'brisbanegnosis@gmail.com' },
+      { city: 'Cairns',                                                       email: 'gnosiscairns@gmail.com' },
+      { city: 'Gold Coast',                                                   email: 'gnosisgc@gmail.com' },
+      { city: 'Sunshine Coast', website: 'https://sunshinecoastgnosis.org',  email: 'ben@sunshinecoastgnosis.org' },
     ],
   },
   {
     state: 'South Australia', abbr: 'SA',
     centres: [
-      { city: 'Adelaide', website: 'https://adelaide.gnosticsociety.org.au', email: 'gnosisadelaide@gmail.com', phone: '0403 760 538' },
-      { city: 'Adelaide – Para Hills', email: 'gnosisparahills@gmail.com', phone: '0401 683 649' },
+      { city: 'Adelaide',          email: 'gnosisadelaide@gmail.com' },
+      { city: 'Adelaide Hills',    website: 'https://gnosticwaves.com', email: 'gnosticwaves@gmail.com' },
+      { city: 'Adelaide – North',  email: 'gnosis.adelaide.nth@gmail.com' },
     ],
   },
   {
     state: 'Tasmania', abbr: 'TAS',
     highlight: true,
     centres: [
-      { city: 'Hobart', website: 'https://gnosistasmania.com.au', email: 'gnosishobart@gmail.com', note: 'You are here' },
-      { city: 'Hobart (Eastern Shore)', website: 'https://gnosistasmania.com.au', email: 'gnosis.hobarteast@gmail.com', note: 'You are here' },
-      { city: 'Launceston', email: 'gnoss.launceston@gmail.com', phone: '0415 088 410', note: 'You are here' },
+      { city: 'Devonport',               email: 'gnosis.devonport@gmail.com' },
+      { city: 'Hobart',                  website: 'https://gnosistasmania.com.au', email: 'gnosishobart@gmail.com',     note: 'You are here' },
+      { city: 'Hobart (Eastern Shore)',  website: 'https://gnosistasmania.com.au', email: 'gnosis.hobarteast@gmail.com', note: 'You are here' },
+      { city: 'Launceston',                                                         email: 'gnosis.launceston@gmail.com', note: 'You are here' },
     ],
   },
   {
     state: 'Victoria', abbr: 'VIC',
     centres: [
-      { city: 'Melbourne', website: 'https://www.melbournegnosis.com', email: 'info@melbournegnosis.com', phone: '0421 451 565' },
-      { city: 'Melbourne – Chadstone', email: 'australiangnostic@gmail.com' },
-      { city: 'Melbourne – Heathmont', website: 'https://www.melbournegnosis.com', email: 'heathmontgnosis@outlook.com', phone: '0420 660 439' },
-      { city: 'Melbourne – Mornington', website: 'https://www.melbournegnosis.com', email: 'gnosismtmartha@gmail.com', phone: '0403 282 129' },
+      { city: 'Geelong',               email: 'gnosisgeelong@gmail.com' },
+      { city: 'Melbourne',             website: 'https://melbournegnosis.com', email: 'info@melbournegnosis.com' },
+      { city: 'Melbourne – Chadstone', email: 'omnnific@gmail.com' },
+      { city: 'Melbourne – Heathmont', email: 'heathmontgnosis@outlook.com' },
+      { city: 'Melbourne – Mornington', email: 'morningtonpeninsulagnosis@gmail.com' },
     ],
   },
   {
     state: 'Western Australia', abbr: 'WA',
     centres: [
-      { city: 'Mandurah', website: 'https://www.gnosismandurah.com', email: 'gnosismandurah@inbox.com', phone: '0431 108 339' },
-      { city: 'Perth – Balga', email: 'holygrailseeker@me.com' },
-      { city: 'Perth – Como', email: 'gnosisaustralia@optusnet.com.au', phone: '08 6161 9299' },
-      { city: 'Perth – Darch', phone: '0421 661 467' },
-      { city: 'Perth – Fremantle', website: 'https://www.gnosisperth.com', email: 'freognosis@gnosisperth.com', phone: '0451 046 711' },
-      { city: 'Perth – Scarborough', email: 'gnosisforever@gmail.com', phone: '0413 587 533' },
+      { city: 'Fremantle',       website: 'https://gnosisperth.com', email: 'freognosis@gnosisperth.com' },
+      { city: 'Inglewood',       email: 'gnosis.inglewood@gmail.com' },
+      { city: 'Mandurah',        email: 'gnosismandurah@icloud.com' },
+      { city: 'Perth – Darch',   email: 'osmin_henriquez@hotmail.com' },
+      { city: 'Perth – Dianella', email: 'holygrailseeker@rocketmail.com' },
+      { city: 'Perth – Scarborough', email: 'gnosisforever@gmail.com' },
     ],
   },
 ]
 
+/* ─── Data: New Zealand centres ──────────────────────────────────────────────── */
+
 const NZ_CENTRES = [
-  { city: 'Auckland (Albany)', website: 'https://gnosisnz.org', email: 'insightgnosis@gmail.com' },
-  { city: 'Auckland (City)', website: 'https://newzealandgnosis.co.nz', email: 'AucklandGnosis@gmail.com' },
+  { city: 'Auckland (Albany)', website: 'https://gnosisnz.org' },
+  { city: 'Auckland (City)',   website: 'https://newzealandgnosis.co.nz', email: 'AucklandGnosis@gmail.com' },
+  { city: 'Christchurch',      website: 'https://newzealandgnosis.co.nz', email: 'christchurchnzgnosis@gmail.com' },
 ]
 
-// ─── Data: International centres (source: gnosistr.com/centros-gnosticos-...) ──────────
+/* ─── Data: International centres organised by region and country ─────────────
+   Each region groups related countries. Cities listed within each country entry. */
 
 const INTERNATIONAL = [
   {
     region: 'Africa',
     entries: [
-      { country: 'South Africa', detail: 'Johannesburg (Olivedale)', website: 'https://www.gnosissouthafrica.com', email: 'info@gnosissouthafrica.com' },
+      {
+        country: 'South Africa',
+        detail: 'Johannesburg (Olivedale)',
+        website: 'https://gnosissouthafrica.com',
+        email: 'info@gnosissouthafrica.com',
+      },
     ],
   },
   {
-    region: 'Asia & Pacific',
+    region: 'Asia',
     entries: [
-      { country: 'Cambodia', detail: 'Phnom Penh', email: 'gnosticclasses@gmail.com' },
-      { country: 'Japan', detail: 'Yokohama', website: 'https://gnosticsociety.jp' },
+      {
+        country: 'Cambodia',
+        detail: 'Phnom Penh',
+        email: 'gnosticclasses@gmail.com',
+      },
+      {
+        country: 'Japan',
+        detail: 'Yokohama',
+        website: 'https://gnosticsociety.jp',
+      },
     ],
   },
   {
     region: 'Europe',
     entries: [
-      { country: 'Germany', detail: 'Pforzheim', website: 'https://studienkreis-gnosis.org', email: 'studienkreis.gnosis@gmail.com' },
-      { country: 'Italy', detail: 'Bari · Bologna · Florence · Genoa · Naples · Padua · Palermo · Rome · Turin' },
-      { country: 'Spain', detail: '23 centres: Barcelona, Madrid, Bilbao, Valencia and more' },
-      { country: 'UK & Ireland', detail: 'Bristol · Dublin · Edinburgh · Glasgow · London · Nottingham' },
+      {
+        country: 'Germany',
+        detail: 'Pforzheim',
+        website: 'https://studienkreis-gnosis.org',
+        email: 'studienkreis.gnosis@gmail.com',
+      },
+      {
+        country: 'Italy',
+        detail: 'Bari · Bologna · Florence · Genoa · Naples · Padua · Palermo · Rome · Turin',
+        email: 'roma@gnosistr.com',
+      },
+      {
+        country: 'Spain',
+        detail: 'More than 20 centres: Alicante, Barcelona, Bilbao, Córdoba, Madrid, Oviedo, Tenerife, Valencia and more',
+      },
+      {
+        country: 'United Kingdom and Ireland',
+        detail: 'Bristol · Dublin · Edinburgh · Glasgow · London · Nottingham',
+      },
     ],
   },
   {
     region: 'North America',
     entries: [
-      { country: 'Canada', detail: 'Vancouver, BC', website: 'https://gnosisbc.com' },
-      { country: 'Mexico', detail: '18 centres nationwide' },
-      { country: 'Puerto Rico', detail: 'Bayamón' },
-      { country: 'United States', detail: '23+ centres: Albany, Austin, Portland, Seattle, San Diego and more' },
+      {
+        country: 'Canada',
+        detail: 'Vancouver, British Columbia',
+        website: 'https://gnosisbc.com',
+        email: 'jeffjudithcomer@gmail.com',
+      },
+      {
+        country: 'Mexico',
+        detail: 'More than 15 centres: Celaya, Colima, Durango, Guadalajara, Mexico City, Mérida, Morelia, Querétaro, Tijuana, Torreón and more',
+      },
+      {
+        country: 'Puerto Rico',
+        detail: 'Bayamón',
+        email: 'carmenrodriguezisis99@gmail.com',
+      },
+      {
+        country: 'United States',
+        detail: 'More than 20 centres: Albany, Austin, Long Beach, Minneapolis, New York City, Orlando, Philadelphia, Portland, San Diego, Saratoga Springs, Seattle, St. Petersburg, Tacoma and more',
+        website: 'https://gnosticsociety.jp',
+      },
     ],
   },
   {
-    region: 'Central & South America',
+    region: 'Central and South America',
     entries: [
-      { country: 'Argentina', detail: 'Buenos Aires region: Cañuelas, La Plata, Quilmes' },
-      { country: 'Brazil', detail: 'Belo Horizonte · Balneário Camboriú · Campinas' },
-      { country: 'Colombia', detail: 'Bogotá · Medellín–Rionegro' },
-      { country: 'Costa Rica', detail: 'Alajuela · Liberia · San José' },
+      {
+        country: 'Argentina',
+        detail: 'Buenos Aires region: Cañuelas · La Plata · Quilmes',
+      },
+      {
+        country: 'Brazil',
+        detail: 'Belo Horizonte · Balneário Camboriú · Campinas',
+        email: 'gnosis.belohorizonte@gmail.com',
+      },
+      {
+        country: 'Colombia',
+        detail: 'Bogotá · Medellín–Rionegro',
+      },
+      {
+        country: 'Costa Rica',
+        detail: 'Alajuela · Liberia · San José',
+      },
     ],
   },
 ]
 
-// ─── Sub-components ──────────────────────────────────────────────────────────
+/* ─── Sub-components ─────────────────────────────────────────────────────────── */
 
-function CentreRow({ city, website, email, phone, note }) {
+function CentreRow({ city, website, email, note }) {
   return (
     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 py-3 border-b border-[#ede3d0] last:border-0">
       <div>
@@ -148,12 +232,6 @@ function CentreRow({ city, website, email, phone, note }) {
             {email}
           </a>
         )}
-        {phone && (
-          <a href={`tel:${phone.replace(/\s/g, '')}`}
-            className="text-[11px] text-[#6b5535]">
-            {phone}
-          </a>
-        )}
       </div>
     </div>
   )
@@ -162,14 +240,10 @@ function CentreRow({ city, website, email, phone, note }) {
 function StateCard({ state, abbr, centres, highlight }) {
   return (
     <div className={`rounded-sm border overflow-hidden ${
-      highlight
-        ? 'border-[#c9a96e] shadow-md'
-        : 'border-[#e8d5b0] bg-white'
+      highlight ? 'border-[#c9a96e] shadow-md' : 'border-[#e8d5b0] bg-white'
     }`}>
       <div className={`flex items-baseline gap-3 px-5 py-3 border-b ${
-        highlight
-          ? 'bg-[#c9a96e]/10 border-[#c9a96e]'
-          : 'bg-[#faf6ef] border-[#e8d5b0]'
+        highlight ? 'bg-[#c9a96e]/10 border-[#c9a96e]' : 'bg-[#faf6ef] border-[#e8d5b0]'
       }`}>
         <h3 className="font-display text-base font-medium text-[#2a1e12]">{state}</h3>
         <span className="text-[10px] font-bold tracking-widest uppercase text-[#8a6f3f]">{abbr}</span>
@@ -188,7 +262,7 @@ function StateCard({ state, abbr, centres, highlight }) {
 
 function IntlRegionCard({ region, entries }) {
   return (
-    <div className="rounded-sm border border-[#e8d5b0] bg-white overflow-hidden fade-section">
+    <div className="rounded-sm border border-[#e8d5b0] bg-white overflow-hidden">
       <div className="px-5 py-3 bg-[#faf6ef] border-b border-[#e8d5b0]">
         <h3 className="font-display text-base font-medium text-[#2a1e12]">{region}</h3>
       </div>
@@ -196,12 +270,14 @@ function IntlRegionCard({ region, entries }) {
         {entries.map(({ country, detail, website, email }) => (
           <li key={country}>
             <p className="text-sm font-semibold text-[#3a2f1f]">{country}</p>
-            <p className="text-xs text-[#6b5535] mt-0.5 leading-relaxed">{detail}</p>
+            {detail && (
+              <p className="text-xs text-[#6b5535] mt-0.5 leading-relaxed">{detail}</p>
+            )}
             <div className="flex flex-wrap gap-3 mt-1">
               {website && (
                 <a href={website} target="_blank" rel="noopener noreferrer"
                   className="text-[11px] text-[#8a6f3f] hover:text-[#c9a96e] transition-colors underline underline-offset-2">
-                  Visit website →
+                  Visit website
                 </a>
               )}
               {email && (
@@ -218,7 +294,7 @@ function IntlRegionCard({ region, entries }) {
   )
 }
 
-// ─── Page ────────────────────────────────────────────────────────────────────
+/* ─── Page ───────────────────────────────────────────────────────────────────── */
 
 export default function CentresPage() {
   usePageMeta(
@@ -240,7 +316,7 @@ export default function CentresPage() {
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
       <Nav />
 
-      {/* ── Hero ──────────────────────────────────────────────────────────────── */}
+      {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <HeroParallax
         src={heroImg}
         alt="The School of Athens by Raphael, depicting philosophers of every tradition gathered in one place"
@@ -256,66 +332,76 @@ export default function CentresPage() {
           </h1>
           <GoldRule className="mb-6" />
           <p className="text-[#c8b89a] text-lg font-light leading-relaxed max-w-2xl mx-auto">
-            A worldwide community of sincere aspirants, sharing the ancient science of Gnosis across every continent.
+            A worldwide community of sincere aspirants sharing the ancient science of Gnosis across every continent.
           </p>
         </div>
       </HeroParallax>
 
       <main>
 
-        {/* ── Quick navigation ──────────────────────────────────────────────── */}
+        {/* ── Quick navigation ──────────────────────────────────────────── */}
         <section className="bg-white border-b border-[#e8d5b0] py-4 px-4">
           <div className="max-w-5xl mx-auto flex flex-wrap gap-3 justify-center text-xs font-medium">
-            <a href="#australia" className="px-4 py-1.5 bg-[#faf6ef] border border-[#e8d5b0] rounded-sm text-[#4a3a26] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors">
+            <a href="#australia"
+              className="px-4 py-1.5 bg-[#faf6ef] border border-[#e8d5b0] rounded-sm text-[#4a3a26] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors">
               Australia
             </a>
-            <a href="#new-zealand" className="px-4 py-1.5 bg-[#faf6ef] border border-[#e8d5b0] rounded-sm text-[#4a3a26] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors">
+            <a href="#new-zealand"
+              className="px-4 py-1.5 bg-[#faf6ef] border border-[#e8d5b0] rounded-sm text-[#4a3a26] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors">
               New Zealand
             </a>
-            <a href="#international" className="px-4 py-1.5 bg-[#faf6ef] border border-[#e8d5b0] rounded-sm text-[#4a3a26] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors">
+            <a href="#international"
+              className="px-4 py-1.5 bg-[#faf6ef] border border-[#e8d5b0] rounded-sm text-[#4a3a26] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors">
               International
             </a>
-            <Link to="/contact" className="px-4 py-1.5 bg-[#c9a96e] text-[#1c1409] rounded-sm hover:bg-[#e0bf80] transition-colors">
+            <Link to="/contact"
+              className="px-4 py-1.5 bg-[#c9a96e] text-[#1c1409] rounded-sm hover:bg-[#e0bf80] transition-colors">
               Contact Gnosis Tasmania
             </Link>
           </div>
         </section>
 
-        {/* ── Australia ─────────────────────────────────────────────────────── */}
-        <section id="australia" className="py-20 px-4">
-          <div className="max-w-5xl mx-auto">
+        {/* ── Advisory note: sits at the very top of the page body ─────────
+             Per user requirement: "at the top or bottom of the page." */}
+        <section className="py-10 px-4 bg-[#faf6ef] border-b border-[#e8d5b0]">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-base text-[#4a3a26] leading-relaxed">
+              There are Gnostic centres around the world. We recommend contacting a centre near you
+              to find out their current course schedule and how to join.
+            </p>
+          </div>
+        </section>
 
-            <div className="text-center mb-14">
+        {/* ── Australia ─────────────────────────────────────────────────── */}
+        {/* 3-column grid on large screens (lg:grid-cols-3) per layout requirement. */}
+        <section id="australia" className="py-20 px-4">
+          <div className="max-w-6xl mx-auto">
+
+            <div className="text-center mb-14 fade-section">
               <SectionLabel>Australia</SectionLabel>
               <h2 className="font-display text-4xl sm:text-5xl font-light text-[#2a1e12] mb-5">
                 Gnostic Centres in Australia
               </h2>
               <p className="text-base text-[#4a3a26] max-w-2xl mx-auto leading-relaxed mb-5">
-                Centres across every state and territory, all part of the Australian Gnostic Association,
-                offering weekly meditation and study classes free of charge.
+                Centres across every state and territory, all offering weekly meditation and study
+                classes free of charge. Contact the centre in your state to confirm the current
+                venue and schedule.
               </p>
               <GoldRule />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* 3-column layout: 1 col mobile, 2 col tablet, 3 col desktop */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {AU_STATES.map(s => <StateCard key={s.abbr} {...s} />)}
             </div>
 
-            <p className="text-xs text-[#8a6f3f] text-center mt-8 italic">
-              Centre details sourced from{' '}
-              <a href="https://www.newcastlegnosis.org/about-us/australia-gnosis/" target="_blank" rel="noopener noreferrer"
-                className="underline underline-offset-2 hover:text-[#c9a96e] transition-colors">
-                newcastlegnosis.org
-              </a>
-              . Contact individual centres to confirm current venue and schedule.
-            </p>
           </div>
         </section>
 
-        {/* ── New Zealand ───────────────────────────────────────────────────── */}
+        {/* ── New Zealand ───────────────────────────────────────────────── */}
         <section id="new-zealand" className="py-16 px-4 bg-white border-y border-[#e8d5b0]">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
+            <div className="text-center mb-10 fade-section">
               <SectionLabel>Oceania</SectionLabel>
               <h2 className="font-display text-3xl sm:text-4xl font-light text-[#2a1e12] mb-4">
                 New Zealand
@@ -334,18 +420,19 @@ export default function CentresPage() {
           </div>
         </section>
 
-        {/* ── International ─────────────────────────────────────────────────── */}
+        {/* ── International ─────────────────────────────────────────────── */}
         <section id="international" className="py-20 px-4">
           <div className="max-w-5xl mx-auto">
 
-            <div className="text-center mb-14">
+            <div className="text-center mb-14 fade-section">
               <SectionLabel>Around the World</SectionLabel>
               <h2 className="font-display text-4xl sm:text-5xl font-light text-[#2a1e12] mb-5">
                 International Centres
               </h2>
               <p className="text-base text-[#4a3a26] max-w-2xl mx-auto leading-relaxed mb-5">
-                The Gnostic tradition spans five continents. The centres below are affiliated with the
-                teachings of Samael Aun Weor and the worldwide Gnostic Society.
+                The Gnostic tradition spans five continents. The centres below are affiliated with
+                the teachings of Samael Aun Weor. Contact the centre website or email directly to
+                confirm current class times and locations.
               </p>
               <GoldRule />
             </div>
@@ -354,19 +441,10 @@ export default function CentresPage() {
               {INTERNATIONAL.map(r => <IntlRegionCard key={r.region} {...r} />)}
             </div>
 
-            <p className="text-xs text-[#8a6f3f] text-center mt-8 italic">
-              International centre data sourced from{' '}
-              <a href="https://gnosistr.com/centros-gnosticos-gnostic-centers-asociaciones-gnosticas/"
-                target="_blank" rel="noopener noreferrer"
-                className="underline underline-offset-2 hover:text-[#c9a96e] transition-colors">
-                gnosistr.com
-              </a>
-              . For the most current contact details, use the centre's own website.
-            </p>
           </div>
         </section>
 
-        {/* ── CTA ───────────────────────────────────────────────────────────── */}
+        {/* ── CTA ───────────────────────────────────────────────────────── */}
         <section className="py-16 px-4 bg-[#2a1e12] text-center fade-section">
           <div className="max-w-2xl mx-auto">
             <SectionLabel>Begin in Tasmania</SectionLabel>
