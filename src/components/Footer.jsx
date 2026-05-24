@@ -1,6 +1,7 @@
 // Changes (2026-05-24):
 //   Facebook link → https://www.facebook.com/GnosisTasmania (Tasmanian page)
 //   Gnosis Australia link → internal /gnostic-centres (no longer external Newcastle URL)
+//   Contact emails expanded to list all three centres (Launceston, Hobart, Hobart Eastern Shore)
 import { Link } from 'react-router-dom'
 import gssawLogoImg from '../assets/gssaw_logo.png'
 import ProtectedEmail from './ProtectedEmail.jsx'
@@ -65,9 +66,23 @@ export default function Footer() {
             <p className="text-xs font-bold text-[#c9a96e] uppercase tracking-widest mb-3">Connect</p>
             <address className="not-italic space-y-1.5 mb-4">
               <p>
-                {/* Email obfuscated via ProtectedEmail — no plain mailto: in HTML */}
+                <span className="text-xs text-[#6b5535]">Launceston · </span>
+                <ProtectedEmail
+                  email="gnosis.launceston@gmail.com"
+                  className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors break-all"
+                />
+              </p>
+              <p>
+                <span className="text-xs text-[#6b5535]">Hobart · </span>
                 <ProtectedEmail
                   email="gnosishobart@gmail.com"
+                  className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors break-all"
+                />
+              </p>
+              <p>
+                <span className="text-xs text-[#6b5535]">Eastern Shore · </span>
+                <ProtectedEmail
+                  email="peterandhaidee@gmail.com"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors break-all"
                 />
               </p>
