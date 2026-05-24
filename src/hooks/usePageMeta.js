@@ -13,7 +13,6 @@ const PATH_LABELS = {
   '/community':             'Our Community',
   '/resources':             'Books & Resources',
   '/articles':              'Articles',
-  '/blog':                  'Blog',
   '/contact':               'Contact',
 }
 

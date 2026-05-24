@@ -93,7 +93,9 @@
       "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=Ingres+dream+ossian&srnamespace=6&srlimit=6&format=json\")",
       "Bash(curl -s \"https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url&iiurlwidth=1280&format=json&titles=File:Edward_Coley_Burne-Jones,_The_Sleeping_Beauty_from_the_small_Briar_Rose_series,_Museo_de_Arte_de_Ponce.jpg|File:Jean_Auguste_Dominique_Ingres_-_The_Dream_of_Ossian_-_WGA11840.jpg|File:Odilon_Redon_-_Orpheus.jpg\")",
       "Bash(curl -L -o \"c:/Users/Carbil/gnosistasmania/src/assets/art_temp_burne_jones.jpg\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Edward_Coley_Burne-Jones%2C_The_Sleeping_Beauty_from_the_small_Briar_Rose_series%2C_Museo_de_Arte_de_Ponce.jpg/1280px-Edward_Coley_Burne-Jones%2C_The_Sleeping_Beauty_from_the_small_Briar_Rose_series%2C_Museo_de_Arte_de_Ponce.jpg\" --user-agent \"Mozilla/5.0\")",
-      "Bash(curl -L -o \"c:/Users/Carbil/gnosistasmania/src/assets/art_temp_redon.jpg\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Odilon_Redon_-_Orpheus.jpg/1280px-Odilon_Redon_-_Orpheus.jpg\" --user-agent \"Mozilla/5.0\")"
+      "Bash(curl -L -o \"c:/Users/Carbil/gnosistasmania/src/assets/art_temp_redon.jpg\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Odilon_Redon_-_Orpheus.jpg/1280px-Odilon_Redon_-_Orpheus.jpg\" --user-agent \"Mozilla/5.0\")",
+      "Bash(Remove-Item \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\src\\\\MeditationPage.jsx\", \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\src\\\\CoursePage.jsx\", \"c:\\\\Users\\\\Carbil\\\\gnosistasmania\\\\src\\\\App.css\" -ErrorAction SilentlyContinue)",
+      "Bash(Write-Host \"Deleted dead files\")"
     ]
   }
 }

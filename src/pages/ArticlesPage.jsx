@@ -1,4 +1,3 @@
-// Cleanup (2026-05-24): removed date and readTime display from article cards
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'

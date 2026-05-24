@@ -1,16 +1,3 @@
-// MeditationCoursePage.jsx
-// New dedicated page for the Meditation Course (/meditation-course).
-// Covers the seven core topics taught in the course: relaxation, pranayama,
-// breathing exercises, the science of meditation, interiorisation/concentration,
-// self-observation, and the development of higher faculties.
-//
-// Changes (2026-05-24):
-//   1. "The course proceeds through seven carefully ordered areas of study and practice."
-//      → "The course proceeds through ordered stages."
-//   2. All instances of "interiorization/Interiorization" converted to
-//      "interiorisation/Interiorisation" (AU/UK spelling) — 7 occurrences total:
-//      topic id, label, title, body text (×2), JSON-LD description, and file comment.
-
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'

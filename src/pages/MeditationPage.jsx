@@ -1,10 +1,3 @@
-// Introductory SAW attribution reductions (2026-05-24):
-//   hero cite:       restored to "Samael Aun Weor" (2026-05-24)
-//   opening quote 1: "Samael Aun Weor, The Revolution of the Dialectic" → "The Revolution of the Dialectic"
-//   opening quote 2: "Samael Aun Weor, The Revolution of the Dialectic" → "The Revolution of the Dialectic"
-//   opening quote 3: "Samael Aun Weor, The Revolution of the Dialectic" → "The Revolution of the Dialectic"
-// Body-section cite attributions (lines 402-899) are unchanged.
-
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'

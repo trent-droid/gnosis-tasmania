@@ -1,7 +1,3 @@
-// Changes (2026-05-24):
-//   Facebook link → https://www.facebook.com/GnosisTasmania (Tasmanian page)
-//   Gnosis Australia link → internal /gnostic-centres (no longer external Newcastle URL)
-//   Connect section: removed all individual email addresses; replaced with a single internal "Contact Us" link
 import { Link } from 'react-router-dom'
 import gssawLogoImg from '../assets/gssaw_logo.png'
 

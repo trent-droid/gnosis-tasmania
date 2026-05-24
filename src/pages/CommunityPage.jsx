@@ -1,5 +1,4 @@
-﻿// Change (2026-05-24): "Visit Gnosis Australia" link changed from external gnosisaustralia.org.au to internal /gnostic-centres
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote, CheckIcon } from '../components/ui.jsx'

@@ -1,4 +1,3 @@
-// Cleanup (2026-05-24): removed all visible date and readTime metadata from hero, article body, and related-article cards
 import { useParams, Link, Navigate } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'

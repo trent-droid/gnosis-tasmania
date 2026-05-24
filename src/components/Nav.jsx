@@ -4,7 +4,6 @@ import gssawLogoImg from '../assets/gssaw_logo.png'
 import { useScrollToTop, useScrollFadeIn } from '../hooks/useScrollBehavior.js'
 
 // Top-level items: Home · Teachings · Meditation · Articles · Community · Courses · Contact
-// Change (2026-05-24): restored Community as a visible top-level nav item
 const NAV_ITEMS = [
   { to: '/', short: 'Home', full: 'Home', children: null },
   {
