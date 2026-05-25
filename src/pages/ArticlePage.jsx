@@ -28,7 +28,7 @@ function ArticleContent({ article }) {
 
   const canonicalPath = `/articles/${slug}`
 
-  usePageMeta(metaTitle, metaDescription, canonicalPath)
+  usePageMeta(metaTitle, metaDescription, canonicalPath, `${BASE}${image}`, imageAlt)
 
   // Article JSON-LD schema
   useJsonLd({

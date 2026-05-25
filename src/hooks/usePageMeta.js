@@ -21,9 +21,15 @@ function setMeta(selector, attr, value) {
   if (el) el.setAttribute(attr, value)
 }
 
-export function usePageMeta(title, description, path = '/') {
+const DEFAULT_OG_IMAGE     = 'https://gnosistasmania.com.au/og-image.jpg'
+const DEFAULT_OG_IMAGE_ALT = 'Gnosis Tasmania — Gnostic Classes in Hobart and Launceston'
+
+// ogImage: absolute URL. Omit to keep the site-wide default (og-image.jpg).
+export function usePageMeta(title, description, path = '/', ogImage = null, ogImageAlt = null) {
   useEffect(() => {
     const canonicalUrl = `${BASE}${path}`
+    const image    = ogImage    || DEFAULT_OG_IMAGE
+    const imageAlt = ogImageAlt || DEFAULT_OG_IMAGE_ALT
 
     document.title = title
     setMeta('meta[name="description"]',         'content', description)
@@ -31,6 +37,9 @@ export function usePageMeta(title, description, path = '/') {
     setMeta('meta[property="og:url"]',          'content', canonicalUrl)
     setMeta('meta[property="og:title"]',        'content', title)
     setMeta('meta[property="og:description"]',  'content', description)
+    setMeta('meta[property="og:image"]',        'content', image)
+    setMeta('meta[property="og:image:alt"]',    'content', imageAlt)
+    setMeta('meta[name="twitter:image"]',       'content', image)
     setMeta('meta[name="twitter:title"]',       'content', title)
     setMeta('meta[name="twitter:description"]', 'content', description)
 
@@ -101,5 +110,5 @@ export function usePageMeta(title, description, path = '/') {
       document.getElementById(pageId)?.remove()
       document.getElementById(breadId)?.remove()
     }
-  }, [title, description, path])
+  }, [title, description, path, ogImage, ogImageAlt])
 }
