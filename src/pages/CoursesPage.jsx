@@ -61,6 +61,7 @@ const LOCATIONS = [
       'Meditation Class, weekly',
     ],
     note: 'Contact us for current venue details and times.',
+    email: 'gnosishobart@gmail.com',
   },
   {
     city: 'Hobart (Eastern Shore)',
@@ -70,6 +71,7 @@ const LOCATIONS = [
       'Meditation Class, weekly',
     ],
     note: 'Contact us for current venue details and times.',
+    email: 'gnosis.hobarteast@gmail.com',
   },
   {
     city: 'Launceston',
@@ -79,14 +81,8 @@ const LOCATIONS = [
       'Meditation Class, weekly',
     ],
     note: 'Contact us for current venue details and times.',
+    email: 'gnosis.launceston@gmail.com',
   },
-]
-
-// Email addresses for each centre — kept in one place for easy maintenance
-const CENTRE_CONTACTS = [
-  { city: 'Hobart',                email: 'gnosishobart@gmail.com' },
-  { city: 'Hobart (Eastern Shore)', email: 'gnosis.hobarteast@gmail.com' },
-  { city: 'Launceston',             email: 'gnosis.launceston@gmail.com' },
 ]
 
 export default function CoursesPage() {
@@ -238,31 +234,43 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* ── Reserve Your Place ───────────────────────────────────────────────── */}
+      {/* ── Find a Class Near You ─────────────────────────────────────────────── */}
       <section className="py-20 px-4 bg-white fade-section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <SectionLabel>Introduction to Gnosis</SectionLabel>
             <h2 className="font-display text-3xl font-light text-[#2a1e12] mb-4">
-              Reserve Your Place
+              Find a Class Near You
             </h2>
             <GoldRule className="mb-6" />
             <p className="text-[#4a3a26] leading-relaxed mb-3 max-w-2xl mx-auto">
-              New courses form periodically when enough students are ready to begin together. Places are limited. If you are interested in joining, contact the centre closest to you. We will add your name to the waiting list and be in touch when a course is forming in your area.
+              Classes are held weekly across three locations in Tasmania. New courses form periodically when enough students are ready to begin together. Contact the centre closest to you and we will be in touch when a course is forming in your area.
+            </p>
+            <p className="text-[#4a3a26] leading-relaxed mb-3 max-w-2xl mx-auto">
+              The content covered in the Introductory Course is delivered differently at each centre according to the specific needs of the students and the inspiration of the instructor.
             </p>
             <p className="text-[#6b5535] text-sm leading-relaxed max-w-2xl mx-auto">
               This course is for those with a genuine desire to study and apply the teachings, not as a passive intellectual exercise, but as a sustained, practical commitment to inner work. If that describes where you are, you are warmly welcome.
             </p>
           </div>
 
-          {/* One email tile per centre */}
-          <div className="grid sm:grid-cols-3 gap-6 mb-10">
-            {CENTRE_CONTACTS.map(({ city, email }) => (
-              <div key={city} className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-6 flex flex-col">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-2 h-2 rounded-full bg-[#c9a96e] shrink-0" aria-hidden="true" />
-                  <h3 className="font-display text-base font-medium text-[#2a1e12]">{city}</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+            {LOCATIONS.map(({ city, region, schedule, note, email }) => (
+              <div key={city} className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-7 flex flex-col">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-2 h-2 rounded-full bg-[#c9a96e]" aria-hidden="true" />
+                  <h3 className="font-display text-2xl font-medium text-[#2a1e12]">{city}</h3>
                 </div>
+                <p className="text-xs text-[#c9a96e] font-medium mb-5">{region}</p>
+                <ul className="space-y-2 mb-5">
+                  {schedule.map(s => (
+                    <li key={s} className="flex items-start gap-2 text-sm text-[#4a3a26]">
+                      <span className="text-[#c9a96e] shrink-0 mt-0.5" aria-hidden="true">›</span>
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs text-[#8a6f3f] italic mb-4">{note}</p>
                 <ProtectedEmail
                   email={email}
                   className="mt-auto text-sm font-semibold text-[#c9a96e] hover:text-[#b8963e] transition-colors break-all"
@@ -271,7 +279,6 @@ export default function CoursesPage() {
             ))}
           </div>
 
-          {/* Facebook as secondary contact channel */}
           <div className="text-center">
             <p className="text-sm text-[#4a3a26] mb-5">You can also reach us through our Facebook page:</p>
             <a
@@ -286,37 +293,6 @@ export default function CoursesPage() {
                 <p className="text-xs text-[#8a6f3f]">facebook.com/GnosticSocietyAustralia</p>
               </div>
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Location Schedule ─────────────────────────────────────────────────── */}
-      <section className="py-20 px-4 bg-[#faf6ef] fade-section">
-        <div className="max-w-5xl mx-auto">
-          <SectionHeading
-            label="Where & When"
-            title="Find a Class Near You"
-            subtitle="Classes are held weekly across three locations in Tasmania. Contact us for current times and venue details."
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {LOCATIONS.map(({ city, region, schedule, note }) => (
-              <div key={city} className="bg-[#faf6ef] border border-[#e8d5b0] rounded-sm p-7">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-2 h-2 rounded-full bg-[#c9a96e]" aria-hidden="true" />
-                  <h3 className="font-display text-2xl font-medium text-[#2a1e12]">{city}</h3>
-                </div>
-                <p className="text-xs text-[#c9a96e] font-medium mb-5">{region}</p>
-                <ul className="space-y-2 mb-5">
-                  {schedule.map(s => (
-                    <li key={s} className="flex items-start gap-2 text-sm text-[#4a3a26]">
-                      <span className="text-[#c9a96e] shrink-0 mt-0.5" aria-hidden="true">›</span>
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-xs text-[#8a6f3f] italic">{note}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -188,6 +188,9 @@ export default function MeditationCoursePage() {
               Beyond the Introduction
             </h2>
             <GoldRule className="mb-8" />
+            <p className="text-[#4a3a26] leading-relaxed max-w-3xl mx-auto">
+              To join the Meditation Course, students must first have completed the Introductory Course.
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-10 text-[#4a3a26] leading-relaxed">
             <div>
