@@ -4,6 +4,7 @@ import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
+import { BASE } from '../constants.js'
 import artBouguereauImg  from '../assets/art_bouguereau_angels.jpg?format=webp'
 import artCranachImg     from '../assets/art_cranach_garden_eden.jpg?format=webp'
 import ProtectedEmail from '../components/ProtectedEmail.jsx'
@@ -28,8 +29,6 @@ const LOCATIONS = [
     contact: 'gnosis.launceston@gmail.com',
   },
 ]
-
-import { BASE } from '../constants.js'
 
 export default function CommunityPage() {
   usePageMeta(

@@ -5,6 +5,7 @@ import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
+import { BASE } from '../constants.js'
 import heroEgyptianImg            from '../assets/hero_egyptian.jpg?format=webp'
 import artFluddNaturaImg          from '../assets/art_fludd_natura.jpg?format=webp'
 import artDurerImg                from '../assets/art_durer_melencolia.jpg?format=webp'
@@ -130,8 +131,6 @@ const TIMELINE = [
     ],
   },
 ]
-
-import { BASE } from '../constants.js'
 
 export default function HistoryPage() {
   usePageMeta(

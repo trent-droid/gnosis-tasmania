@@ -1,14 +1,10 @@
-// CentresPage — email obfuscation handled by the shared <ProtectedEmail> component.
-// All phone numbers removed. Email addresses stored as plain strings and passed
-// to <ProtectedEmail>, which splits and reassembles them client-side so the full
-// address never appears as a static string in the rendered HTML.
-
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
+import { BASE } from '../constants.js'
 import heroImg from '../assets/hero_school_athens.jpg?format=webp'
 import ProtectedEmail from '../components/ProtectedEmail.jsx'
 
@@ -231,7 +227,7 @@ export default function CentresPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     'name': 'Gnostic Centres Worldwide',
-    'url': 'https://gnosistasmania.com.au/gnostic-centres',
+    'url': `${BASE}/gnostic-centres`,
     'description': 'A global directory of Gnostic study centres affiliated with the teachings of Samael Aun Weor, including every Australian centre and international centres across five continents.',
     'inLanguage': 'en-AU',
   })

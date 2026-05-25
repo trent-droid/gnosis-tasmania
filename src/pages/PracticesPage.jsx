@@ -5,6 +5,7 @@ import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
+import { BASE } from '../constants.js'
 import heroZenImg            from '../assets/hero_zen.jpg?format=webp'
 import artBlakeJacobsImg     from '../assets/art_blake_jacobs_ladder.jpg?format=webp'
 import artSplendorSolisImg   from '../assets/art_splendor_solis_resurrection.jpg?format=webp'
@@ -115,8 +116,6 @@ const PRACTICES = [
     ],
   },
 ]
-
-import { BASE } from '../constants.js'
 
 export default function PracticesPage() {
   usePageMeta(

@@ -5,6 +5,7 @@ import Footer from '../components/Footer.jsx'
 import { GoldRule, QuoteParallax, ParallaxImage } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
+import { BASE } from '../constants.js'
 
 import heroAngkorImg             from '../assets/hero_angkor.jpg?format=webp'
 import artTreeOfLifeImg          from '../assets/art_tree_of_life.png?format=webp'
@@ -277,9 +278,9 @@ export default function CoursePage() {
     'provider': {
       '@type': 'EducationalOrganization',
       'name': 'Gnosis Tasmania',
-      'url': 'https://gnosistasmania.com.au',
+      'url': BASE,
     },
-    'url': 'https://gnosistasmania.com.au/introduction-to-gnosis',
+    'url': `${BASE}/introduction-to-gnosis`,
     'courseMode': 'in-person',
     'offers': {
       '@type': 'Offer',

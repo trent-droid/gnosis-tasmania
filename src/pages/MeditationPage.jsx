@@ -4,6 +4,7 @@ import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel, QuoteParallax } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
+import { BASE } from '../constants.js'
 
 import heroMeditationImg from '../assets/art_rembrandt_philosopher.jpg?format=webp'
 import zenBannerImg from '../assets/hero_zen.jpg?format=webp'
@@ -24,9 +25,9 @@ export default function MeditationPage() {
     'provider': {
       '@type': 'EducationalOrganization',
       'name': 'Gnosis Tasmania',
-      'url': 'https://gnosistasmania.com.au',
+      'url': BASE,
     },
-    'url': 'https://gnosistasmania.com.au/meditation-classes',
+    'url': `${BASE}/meditation-classes`,
     'courseMode': 'in-person',
     'offers': {
       '@type': 'Offer',

@@ -4,6 +4,7 @@ import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
+import { BASE } from '../constants.js'
 import heroChristImg             from '../assets/hero_christ.jpg?format=webp'
 import artVitruvianManImg        from '../assets/art_vitruvian_man.jpg'
 import artVitruvianManImgWebp    from '../assets/art_vitruvian_man.jpg?format=webp'
@@ -91,8 +92,6 @@ const PILLARS = [
     ),
   },
 ]
-
-import { BASE } from '../constants.js'
 
 export default function WhatIsGnosisPage() {
   usePageMeta(

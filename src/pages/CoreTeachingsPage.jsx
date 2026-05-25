@@ -4,6 +4,7 @@ import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote, CheckIcon } from '../components/ui.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
+import { BASE } from '../constants.js'
 import artKhunrathImg              from '../assets/art_khunrath_rebis.jpg?format=webp'
 import artBouguereauVirginImg      from '../assets/art_bouguereau_virgin_child.jpg?format=webp'
 import artKircherTreeOfLifeImg        from '../assets/art_kircher_tree_of_life.png'
@@ -104,8 +105,6 @@ const SELF_KNOWLEDGE = [
   'The fundamental question of spiritual life is: Who am I? Not as a philosophical puzzle, but as a living inquiry.',
   'All suffering ultimately arises from ignorance of our own true nature; self-knowledge is therefore the foundation of liberation.',
 ]
-
-import { BASE } from '../constants.js'
 
 export default function CoreTeachingsPage() {
   usePageMeta(
