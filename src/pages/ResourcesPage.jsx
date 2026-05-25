@@ -109,7 +109,7 @@ const ONLINE_RESOURCES = [
 ]
 
 export default function ResourcesPage() {
-  usePageMeta(
+  const pageMeta = usePageMeta(
     'Gnostic Books & Resources | Gnosis Tasmania',
     'Recommended Gnostic books and resources: Samael Aun Weor, the Nag Hammadi Library, the Corpus Hermeticum, the Zohar, and more. For aspirants in Tasmania and worldwide.',
     '/resources'
@@ -117,6 +117,7 @@ export default function ResourcesPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

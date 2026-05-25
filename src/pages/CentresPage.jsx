@@ -217,7 +217,7 @@ function IntlRegionCard({ region, entries }) {
 // ─── Page ────────────────────────────────────────────────────────────────────
 
 export default function CentresPage() {
-  usePageMeta(
+  const pageMeta = usePageMeta(
     'Gnostic Centres Worldwide | Gnosis Tasmania',
     'Find Gnostic centres across Australia and worldwide, from Hobart and Launceston to every state in Australia, New Zealand, and international centres across Europe, the Americas, Asia, and Africa.',
     '/gnostic-centres'
@@ -234,6 +234,7 @@ export default function CentresPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

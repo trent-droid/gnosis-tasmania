@@ -118,7 +118,7 @@ const PRACTICES = [
 ]
 
 export default function PracticesPage() {
-  usePageMeta(
+  const pageMeta = usePageMeta(
     'Gnostic Practices: Meditation, Dream Yoga & Inner Alchemy | Gnosis Tasmania',
     'Gnostic practices taught in Tasmania: meditation, self-observation, dream yoga, mantras, and inner alchemy. Practical tools for genuine inner transformation.',
     '/practices'
@@ -153,6 +153,7 @@ export default function PracticesPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

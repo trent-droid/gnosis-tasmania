@@ -92,7 +92,7 @@ const FEATURES = [
 ]
 
 export default function App() {
-  usePageMeta(
+  const pageMeta = usePageMeta(
     'Gnosis Tasmania: Gnostic Classes & Meditation in Hobart, Eastern Shore & Launceston',
     'Donation-based Gnostic classes in Hobart, Hobart Eastern Shore, and Launceston, Tasmania. Meditation, self-knowledge, and the Three Factors of the Revolution of Consciousness.',
     '/'
@@ -117,6 +117,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
 
       <main id="top">

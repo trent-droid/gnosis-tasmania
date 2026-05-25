@@ -265,7 +265,7 @@ function ModuleCard({ number, title, points }) {
 /* ─── Page ─────────────────────────────────────────────────────────────────── */
 
 export default function CoursePage() {
-  usePageMeta(
+  const pageMeta = usePageMeta(
     'Introduction to Gnosis: 34-Session Course | Gnosis Tasmania',
     'Introduction to Gnosis: a 34-session course covering consciousness, Kabbalah, meditation, karma, and inner alchemy. Weekly classes in Hobart and Launceston, Tasmania.',
     '/introduction-to-gnosis'
@@ -312,6 +312,7 @@ export default function CoursePage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
       <main>
 

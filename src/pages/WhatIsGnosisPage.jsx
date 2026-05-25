@@ -94,7 +94,7 @@ const PILLARS = [
 ]
 
 export default function WhatIsGnosisPage() {
-  usePageMeta(
+  const pageMeta = usePageMeta(
     'What is Gnosis? | Gnosis Tasmania',
     'What is Gnosis? Direct, experiential self-knowledge: the universal wisdom at the heart of every tradition. Practical classes in Hobart and Launceston, Tasmania.',
     '/what-is-gnosis'
@@ -182,6 +182,7 @@ export default function WhatIsGnosisPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

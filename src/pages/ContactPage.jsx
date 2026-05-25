@@ -27,7 +27,7 @@ const LOCATIONS = [
 ]
 
 export default function ContactPage() {
-  usePageMeta(
+  const pageMeta = usePageMeta(
     'Contact | Gnosis Tasmania',
     'Find a weekly Gnostic class in Hobart, Hobart Eastern Shore, or Launceston. Email us or connect on Facebook. All sincere enquiries welcome.',
     '/contact'
@@ -35,6 +35,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

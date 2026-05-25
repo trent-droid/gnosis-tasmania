@@ -12,7 +12,7 @@ import artMonaLisaImg              from '../assets/art_mona_lisa.jpg'
 import artMonaLisaImgSrcset        from '../assets/art_mona_lisa.jpg?w=640;1024&format=webp&as=srcset'
 
 export default function MeditationPage() {
-  usePageMeta(
+  const pageMeta = usePageMeta(
     'Meditation Classes in Hobart & Launceston | Gnosis Tasmania',
     'Gnostic meditation classes in Hobart and Launceston. Learn the practical science of relaxation, concentration, meditation, and samadhi. Weekly, donation-based.',
     '/meditation-classes'
@@ -59,6 +59,7 @@ export default function MeditationPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
       <main>
 

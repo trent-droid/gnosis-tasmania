@@ -132,7 +132,7 @@ const TOPICS = [
 ]
 
 export default function MeditationCoursePage() {
-  usePageMeta(
+  const pageMeta = usePageMeta(
     'Meditation Course | Gnosis Tasmania',
     'A structured course in the theory and practice of Gnostic meditation: relaxation, pranayama, concentration, self-observation, and the development of higher inner faculties. For sincere students ready for daily practice.',
     '/meditation-course'
@@ -157,6 +157,7 @@ export default function MeditationCoursePage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

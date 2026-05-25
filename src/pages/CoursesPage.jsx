@@ -86,7 +86,7 @@ const LOCATIONS = [
 ]
 
 export default function CoursesPage() {
-  usePageMeta(
+  const pageMeta = usePageMeta(
     'Gnostic Courses in Hobart, Eastern Shore & Launceston | Gnosis Tasmania',
     'Gnostic courses in Hobart, Hobart Eastern Shore, and Launceston: Introduction to Gnosis (34 sessions) and weekly Meditation Classes. No experience needed. Donation-based.',
     '/courses'
@@ -140,6 +140,7 @@ export default function CoursesPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

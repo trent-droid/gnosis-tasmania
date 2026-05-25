@@ -50,7 +50,7 @@ const FAQS = [
 export default function FaqPage() {
   const [open, setOpen] = useState(null)
 
-  usePageMeta(
+  const pageMeta = usePageMeta(
     'Frequently Asked Questions | Gnosis Tasmania',
     'Answers to common questions about Gnostic classes in Hobart and Launceston: what to expect, time commitment, compatibility with other traditions, costs, and how to get started.',
     '/faq'
@@ -69,6 +69,7 @@ export default function FaqPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

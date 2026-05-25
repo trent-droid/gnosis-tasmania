@@ -31,7 +31,7 @@ const LOCATIONS = [
 ]
 
 export default function CommunityPage() {
-  usePageMeta(
+  const pageMeta = usePageMeta(
     'Gnostic Community in Hobart, Eastern Shore & Launceston | Gnosis Tasmania',
     'Join the Gnosis Tasmania community of sincere aspirants meeting weekly in Hobart, Hobart Eastern Shore, and Launceston, Tasmania. Donation-based Gnostic study, meditation retreats, and the teachings of Samael Aun Weor.',
     '/community'
@@ -64,6 +64,7 @@ export default function CommunityPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

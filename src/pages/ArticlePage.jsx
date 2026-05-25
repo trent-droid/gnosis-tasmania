@@ -28,7 +28,7 @@ function ArticleContent({ article }) {
 
   const canonicalPath = `/articles/${slug}`
 
-  usePageMeta(metaTitle, metaDescription, canonicalPath, `${BASE}${image}`, imageAlt)
+  const pageMeta = usePageMeta(metaTitle, metaDescription, canonicalPath, `${BASE}${image}`, imageAlt)
 
   // Article JSON-LD schema
   useJsonLd({
@@ -60,6 +60,7 @@ function ArticleContent({ article }) {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
+      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}
