@@ -213,16 +213,14 @@ export default function MeditationCoursePage() {
         </div>
       </section>
 
-      {/* ── Divider image ─────────────────────────────────────────────────────── */}
+      {/* ── Divider image — artRembrandtPhilosopherImg converted to CSS parallax background */}
       <div className="relative h-64 overflow-hidden fade-section">
-        <img
-          src={artRembrandtPhilosopherImg}
-          alt="Philosopher in Meditation by Rembrandt van Rijn, a figure in quiet contemplation before a great arched window, warm amber light streaming into the interior"
-          className="w-full h-full object-cover object-[center_20%]"
-          style={{ filter: 'brightness(0.55)' }}
-          loading="lazy"
-          decoding="async"
+        <div
+          className="absolute inset-0 bg-cover bg-no-repeat parallax-bg"
+          style={{ backgroundImage: `url(${artRembrandtPhilosopherImg})`, backgroundPosition: 'center 20%' }}
+          aria-hidden="true"
         />
+        <div className="absolute inset-0 bg-[#1c1409]/45" aria-hidden="true" />
         <div className="absolute inset-0 flex items-center justify-center">
           <blockquote className="text-center px-6 max-w-2xl">
             <p className="font-display text-xl sm:text-2xl font-light text-[#f8f1e3] italic leading-relaxed mb-3">
