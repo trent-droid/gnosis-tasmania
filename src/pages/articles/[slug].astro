@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ArticleContent from '../ArticlePage.jsx'
+import { ARTICLES } from '../../data/articles.js'
+
+export function getStaticPaths() {
+  return ARTICLES.map(article => ({
+    params: { slug: article.slug },
+    props: { article },
+  }))
+}
+
+const { article } = Astro.props
+const BASE = 'https://gnosistasmania.com.au'
+---
+<Layout
+  title={article.metaTitle}
+  description={article.metaDescription}
+  canonicalPath={`/articles/${article.slug}`}
+  ogImage={`${BASE}${article.imagePublicPath}`}
+  ogImageAlt={article.imageAlt}
+>
+  <ArticleContent article={article} client:load />
+</Layout>

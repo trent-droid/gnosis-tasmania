@@ -1,49 +1,57 @@
 import { useState, useEffect } from 'react'
-import { Link, NavLink } from 'react-router-dom'
 import gssawLogoImg from '../assets/gssaw_logo.png'
 import { useScrollToTop, useScrollFadeIn } from '../hooks/useScrollBehavior.js'
 
-// Top-level items: Home · Teachings · Meditation · Articles · Community · Courses · Contact
 const NAV_ITEMS = [
-  { to: '/', short: 'Home', full: 'Home', children: null },
+  { href: '/', short: 'Home', full: 'Home', children: null },
   {
-    to: '/core-teachings', short: 'Teachings', full: 'Teachings',
+    href: '/core-teachings', short: 'Teachings', full: 'Teachings',
     children: [
-      { to: '/practices', label: 'Practices' },
+      { href: '/practices', label: 'Practices' },
     ],
   },
-  { to: '/meditation-classes', short: 'Meditation', full: 'Meditation', children: null },
-  { to: '/articles',        short: 'Articles',  full: 'Articles',  children: null },
-  { to: '/community',       short: 'Community', full: 'Community', children: null },
-  { to: '/courses',         short: 'Courses',   full: 'Courses',   children: null },
+  { href: '/meditation-classes', short: 'Meditation', full: 'Meditation', children: null },
+  { href: '/articles',           short: 'Articles',  full: 'Articles',  children: null },
+  { href: '/community',          short: 'Community', full: 'Community', children: null },
+  { href: '/courses',            short: 'Courses',   full: 'Courses',   children: null },
   {
-    to: '/contact', short: 'Contact', full: 'Contact',
+    href: '/contact', short: 'Contact', full: 'Contact',
     children: [
-      { to: '/contact',        label: 'Contact Us' },
-      { to: '/gnostic-centres', label: 'Centres' },
-      { to: '/faq',            label: 'FAQ' },
+      { href: '/contact',         label: 'Contact Us' },
+      { href: '/gnostic-centres', label: 'Centres' },
+      { href: '/faq',             label: 'FAQ' },
     ],
   },
 ]
 
-const desktopCls = (isActive) =>
+const isActive = (href, pathname) => {
+  if (href === '/') return pathname === '/'
+  return pathname === href || pathname.startsWith(href + '/')
+}
+
+const desktopCls = (active) =>
   `text-[11px] font-medium tracking-wide transition-colors whitespace-nowrap ${
-    isActive ? 'text-[#c9a96e]' : 'text-[#4a3a26] hover:text-[#c9a96e]'
+    active ? 'text-[#c9a96e]' : 'text-[#4a3a26] hover:text-[#c9a96e]'
   }`
 
-const mobileCls = ({ isActive }) =>
+const mobileCls = (active) =>
   `block px-3 py-2 rounded-sm text-sm font-medium transition-colors ${
-    isActive
+    active
       ? 'bg-[#fdf8ef] text-[#c9a96e]'
       : 'text-[#3a2f1f] hover:bg-[#f8f1e3] hover:text-[#8a6f3f]'
   }`
 
 export default function Nav() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen]       = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [pathname, setPathname] = useState('/')
 
   useScrollToTop()
   useScrollFadeIn()
+
+  useEffect(() => {
+    setPathname(window.location.pathname)
+  }, [])
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 20)
@@ -61,8 +69,8 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 gap-6">
 
-          <Link
-            to="/"
+          <a
+            href="/"
             className="flex items-center gap-2.5 shrink-0 hover:opacity-80 transition-opacity"
             aria-label="Gnosis Tasmania home"
           >
@@ -70,47 +78,41 @@ export default function Nav() {
             <span className="font-display text-lg font-medium tracking-wide text-[#3a2f1f]">
               Gnosis Tasmania
             </span>
-          </Link>
+          </a>
 
           {/* Desktop nav — lg (1024px) so Articles tab is visible on standard laptops */}
           <ul className="hidden lg:flex items-center gap-6 flex-1 justify-end" role="list">
-            {NAV_ITEMS.map(({ to, short, children }) => {
+            {NAV_ITEMS.map(({ href, short, children }) => {
+              const active = isActive(href, pathname)
               if (!children) {
                 return (
-                  <li key={to}>
-                    <NavLink to={to} end={to === '/'} className={({ isActive }) => desktopCls(isActive)}>
-                      {short}
-                    </NavLink>
+                  <li key={href}>
+                    <a href={href} className={desktopCls(active)}>{short}</a>
                   </li>
                 )
               }
               return (
-                <li key={to} className="nav-item relative">
-                  <NavLink
-                    to={to}
-                    className={({ isActive }) =>
-                      `${desktopCls(isActive)} inline-flex items-center gap-1`
-                    }
-                  >
+                <li key={href} className="nav-item relative">
+                  <a href={href} className={`${desktopCls(active)} inline-flex items-center gap-1`}>
                     {short}
                     <svg className="w-3 h-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
-                  </NavLink>
+                  </a>
                   <div className="nav-dropdown absolute top-full left-0 pt-2 min-w-[180px]">
                     <div className="bg-white border border-[#e8d5b0] rounded-sm shadow-lg py-1">
-                      {children.map(({ to: childTo, label }) => (
-                        <NavLink
-                          key={childTo}
-                          to={childTo}
-                          className={({ isActive }) =>
-                            `block px-4 py-2 text-[11px] font-medium tracking-wide transition-colors ${
-                              isActive ? 'text-[#c9a96e] bg-[#fdf8ef]' : 'text-[#4a3a26] hover:text-[#c9a96e] hover:bg-[#fdf8ef]'
-                            }`
-                          }
+                      {children.map(({ href: childHref, label }) => (
+                        <a
+                          key={childHref}
+                          href={childHref}
+                          className={`block px-4 py-2 text-[11px] font-medium tracking-wide transition-colors ${
+                            isActive(childHref, pathname)
+                              ? 'text-[#c9a96e] bg-[#fdf8ef]'
+                              : 'text-[#4a3a26] hover:text-[#c9a96e] hover:bg-[#fdf8ef]'
+                          }`}
                         >
                           {label}
-                        </NavLink>
+                        </a>
                       ))}
                     </div>
                   </div>
@@ -139,31 +141,30 @@ export default function Nav() {
         {open && (
           <div className="lg:hidden border-t border-[#e8d5b0] pb-4" id="mobile-menu">
             <ul className="flex flex-col gap-0.5 pt-2" role="list">
-              {NAV_ITEMS.map(({ to, full, children }) => (
-                <li key={to}>
-                  <NavLink
-                    to={to}
-                    end={to === '/'}
+              {NAV_ITEMS.map(({ href, full, children }) => (
+                <li key={href}>
+                  <a
+                    href={href}
                     onClick={() => setOpen(false)}
-                    className={mobileCls}
+                    className={mobileCls(isActive(href, pathname))}
                   >
                     {full}
-                  </NavLink>
+                  </a>
                   {children && (
                     <ul className="pl-4">
-                      {children.map(({ to: childTo, label }) => (
-                        <li key={childTo}>
-                          <NavLink
-                            to={childTo}
+                      {children.map(({ href: childHref, label }) => (
+                        <li key={childHref}>
+                          <a
+                            href={childHref}
                             onClick={() => setOpen(false)}
-                            className={({ isActive }) =>
-                              `block px-3 py-1.5 rounded-sm text-sm transition-colors ${
-                                isActive ? 'text-[#c9a96e]' : 'text-[#6b5535] hover:text-[#8a6f3f]'
-                              }`
-                            }
+                            className={`block px-3 py-1.5 rounded-sm text-sm transition-colors ${
+                              isActive(childHref, pathname)
+                                ? 'text-[#c9a96e]'
+                                : 'text-[#6b5535] hover:text-[#8a6f3f]'
+                            }`}
                           >
                             {label}
-                          </NavLink>
+                          </a>
                         </li>
                       ))}
                     </ul>

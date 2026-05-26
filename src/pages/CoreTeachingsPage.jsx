@@ -1,4 +1,3 @@
-﻿import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote, CheckIcon } from '../components/ui.jsx'
@@ -358,12 +357,12 @@ export default function CoreTeachingsPage() {
               <p className="text-[#4a3a26] leading-relaxed mb-8">
                 The Gnostic teaching provides the specific knowledge and practices required for this inner work, not as a belief to be accepted, but as a science to be verified through your own direct experience.
               </p>
-              <Link
-                to="/practices"
+              <a
+                href="/practices"
                 className="inline-block bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold text-sm px-6 py-3 rounded-sm transition-colors tracking-wide"
               >
                 Explore the Practices →
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -388,18 +387,18 @@ export default function CoreTeachingsPage() {
             Our introductory course covers these teachings systematically over 34 sessions, from the foundations of self-knowledge to the most advanced aspects of inner cosmology.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/introduction-to-gnosis"
+            <a
+              href="/introduction-to-gnosis"
               className="bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               View the Course Outline
-            </Link>
-            <Link
-              to="/contact"
+            </a>
+            <a
+              href="/contact"
               className="border border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               Ask a Question
-            </Link>
+            </a>
           </div>
         </div>
       </section>

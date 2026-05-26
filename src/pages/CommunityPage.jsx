@@ -1,4 +1,3 @@
-﻿import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote, CheckIcon } from '../components/ui.jsx'
@@ -143,12 +142,12 @@ export default function CommunityPage() {
             <p className="text-[#4a3a26] leading-relaxed max-w-2xl mx-auto mb-4">
               The Gnostic Society operates through affiliated study groups across more than twenty countries, sharing a common body of teaching while remaining locally rooted. Gnosis Tasmania is part of this worldwide network, connected to sister organisations across Australia and beyond.
             </p>
-            <Link
-              to="/gnostic-centres"
+            <a
+              href="/gnostic-centres"
               className="inline-block text-sm text-[#c9a96e] hover:text-[#b8963e] transition-colors font-medium"
             >
               Visit Gnosis Australia →
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -214,15 +213,15 @@ export default function CommunityPage() {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
                   <CheckIcon />
-                  <span>A structured approach for sincere enquiry, beginning with our <Link to="/introduction-to-gnosis" className="text-[#c9a96e] hover:underline">Introduction to Gnosis course</Link></span>
+                  <span>A structured approach for sincere enquiry, beginning with our <a href="/introduction-to-gnosis" className="text-[#c9a96e] hover:underline">Introduction to Gnosis course</a></span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
                   <CheckIcon />
-                  <span>Practical <Link to="/meditation-classes" className="text-[#c9a96e] hover:underline">meditation and self-observation techniques</Link> taught weekly</span>
+                  <span>Practical <a href="/meditation-classes" className="text-[#c9a96e] hover:underline">meditation and self-observation techniques</a> taught weekly</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
                   <CheckIcon />
-                  <span>Study of the world's great esoteric and mystical traditions through our <Link to="/core-teachings" className="text-[#c9a96e] hover:underline">core Gnostic teachings</Link></span>
+                  <span>Study of the world's great esoteric and mystical traditions through our <a href="/core-teachings" className="text-[#c9a96e] hover:underline">core Gnostic teachings</a></span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
                   <CheckIcon />
@@ -230,7 +229,7 @@ export default function CommunityPage() {
                 </li>
                 <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
                   <CheckIcon />
-                  <span>Access to a rich body of <Link to="/resources" className="text-[#c9a96e] hover:underline">written teachings and recommended books</Link></span>
+                  <span>Access to a rich body of <a href="/resources" className="text-[#c9a96e] hover:underline">written teachings and recommended books</a></span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
                   <CheckIcon />
@@ -351,24 +350,24 @@ export default function CommunityPage() {
             The best way to learn if Gnosis is right for you is to attend one of our public lectures, held periodically throughout the year.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
+            <a
+              href="/contact"
               className="bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               Get in Touch
-            </Link>
-            <Link
-              to="/courses"
+            </a>
+            <a
+              href="/courses"
               className="border border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               View Courses & Classes
-            </Link>
-            <Link
-              to="/what-is-gnosis"
+            </a>
+            <a
+              href="/what-is-gnosis"
               className="border border-[#c9a96e]/50 text-[#c8b89a] hover:bg-[#c9a96e]/10 font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               What is Gnosis?
-            </Link>
+            </a>
           </div>
         </div>
       </section>

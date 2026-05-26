@@ -1,5 +1,4 @@
-﻿import { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { Fragment } from 'react'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote, CheckIcon } from '../components/ui.jsx'
@@ -250,18 +249,18 @@ export default function PracticesPage() {
             All of these practices are taught in our classes, not merely described, but demonstrated and guided. Come and experience them for yourself.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/courses"
+            <a
+              href="/courses"
               className="bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               View Our Courses
-            </Link>
-            <Link
-              to="/contact"
+            </a>
+            <a
+              href="/contact"
               className="border border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               Contact Us
-            </Link>
+            </a>
           </div>
         </div>
       </ParallaxCTA>

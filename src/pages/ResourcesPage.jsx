@@ -1,4 +1,3 @@
-﻿import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote } from '../components/ui.jsx'
@@ -269,18 +268,18 @@ export default function ResourcesPage() {
             Books are a wonderful beginning; but the Gnostic teaching is best studied in community, with guidance and the mutual support of fellow aspirants. Come and join us.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/courses"
+            <a
+              href="/courses"
               className="bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               View Our Courses
-            </Link>
-            <Link
-              to="/contact"
+            </a>
+            <a
+              href="/contact"
               className="border border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               Get in Touch
-            </Link>
+            </a>
           </div>
         </div>
       </section>

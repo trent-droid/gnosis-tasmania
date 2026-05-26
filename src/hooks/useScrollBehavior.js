@@ -1,15 +1,9 @@
 import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
 
-export function useScrollToTop() {
-  const { pathname } = useLocation()
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' })
-  }, [pathname])
-}
+// No-op: Astro page navigation is a full page load; the browser resets scroll automatically.
+export function useScrollToTop() {}
 
 export function useScrollFadeIn() {
-  const { pathname } = useLocation()
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -21,22 +15,12 @@ export function useScrollFadeIn() {
         })
       },
       {
-        // Lower threshold + less negative rootMargin = triggers slightly earlier,
-        // so the animation is already finishing by the time the element is fully
-        // in view rather than just starting. Eliminates the "pop-in" feel.
         threshold: 0.05,
         rootMargin: '0px 0px -20px 0px',
       }
     )
 
-    // requestAnimationFrame waits until after the browser has painted the new
-    // route, so all section elements are in the DOM before we observe them.
-    // This replaces the arbitrary 80ms setTimeout which could fire too early
-    // or too late depending on device speed.
     const rafId = requestAnimationFrame(() => {
-      // Observe text-only sections AND text-only div containers (.fade-content).
-      // .fade-content exists so that in mixed text+image layouts the text column
-      // can fade in without the image column being inside a fading ancestor.
       document.querySelectorAll('section.fade-section, .fade-content').forEach(el => {
         observer.observe(el)
       })
@@ -46,5 +30,5 @@ export function useScrollFadeIn() {
       cancelAnimationFrame(rafId)
       observer.disconnect()
     }
-  }, [pathname])
+  }, [])
 }

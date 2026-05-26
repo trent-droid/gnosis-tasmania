@@ -1,0 +1,304 @@
+---
+import '../index.css'
+
+interface Props {
+  title: string
+  description: string
+  canonicalPath: string
+  ogImage?: string
+  ogImageAlt?: string
+}
+
+const {
+  title,
+  description,
+  canonicalPath,
+  ogImage = 'https://gnosistasmania.com.au/og-image.jpg',
+  ogImageAlt = 'Gnosis Tasmania — Gnostic Classes in Hobart and Launceston',
+} = Astro.props
+
+const canonicalUrl = `https://gnosistasmania.com.au${canonicalPath}`
+const BASE = 'https://gnosistasmania.com.au'
+
+const webPageSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: canonicalUrl,
+  inLanguage: 'en-AU',
+  isPartOf: { '@type': 'WebSite', name: 'Gnosis Tasmania', url: BASE },
+  publisher: {
+    '@type': 'EducationalOrganization',
+    '@id': `${BASE}/#organization`,
+    name: 'Gnosis Tasmania',
+    url: BASE,
+    logo: { '@type': 'ImageObject', url: `${BASE}/favicon-512x512.png`, width: 512, height: 512 },
+  },
+})
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Gnosis Tasmania, Gnostic classes Hobart, Gnostic classes Launceston, Samael Aun Weor Australia, meditation Tasmania, self-knowledge, Three Factors Revolution of Consciousness, Kabbalah Tasmania, donation-based spiritual classes, esoteric philosophy Tasmania" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Gnosis Tasmania" />
+    <meta name="theme-color" content="#1c1409" />
+    <meta name="geo.region" content="AU-TAS" />
+    <meta name="geo.placename" content="Hobart, Tasmania, Australia" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type"         content="website" />
+    <meta property="og:url"          content={canonicalUrl} />
+    <meta property="og:title"        content={title} />
+    <meta property="og:description"  content={description} />
+    <meta property="og:locale"       content="en_AU" />
+    <meta property="og:site_name"    content="Gnosis Tasmania" />
+    <meta property="og:image"        content={ogImage} />
+    <meta property="og:image:width"  content="1200" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:image:alt"    content={ogImageAlt} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image"       content={ogImage} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" /></noscript>
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- JSON-LD: WebPage (page-specific) -->
+    <script type="application/ld+json" set:html={webPageSchema} />
+
+    <!-- JSON-LD: Organization + EducationalOrganization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "EducationalOrganization"],
+      "@id": "https://gnosistasmania.com.au/#organization",
+      "name": "Gnosis Tasmania",
+      "alternateName": "Gnostic Society of Tasmania",
+      "url": "https://gnosistasmania.com.au",
+      "email": "gnosis.launceston@gmail.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gnosistasmania.com.au/favicon-512x512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://gnosistasmania.com.au/og-image.jpg",
+      "sameAs": [
+        "https://www.facebook.com/GnosticSocietyAustralia",
+        "https://gnosisaustralia.org.au"
+      ],
+      "description": "Gnosis Tasmania offers practical, donation-based classes in meditation, self-knowledge, and the perennial Gnostic wisdom of Samael Aun Weor, open to all sincere seekers in Hobart and Launceston, Tasmania.",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Hobart",
+          "addressRegion": "TAS",
+          "addressCountry": "AU"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Launceston",
+          "addressRegion": "TAS",
+          "addressCountry": "AU"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "gnosis.launceston@gmail.com",
+        "contactType": "customer service",
+        "areaServed": "AU-TAS",
+        "availableLanguage": "English"
+      },
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Hobart, Tasmania, Australia"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Tasmania",
+        "containedInPlace": { "@type": "Country", "name": "Australia" }
+      },
+      "knowsAbout": [
+        "Gnosis", "Samael Aun Weor", "Meditation", "Self-knowledge",
+        "Three Factors of the Revolution of Consciousness", "Kabbalah",
+        "Dream Yoga", "Inner Alchemy", "Esoteric Philosophy",
+        "Hermetic Tradition", "Perennial Wisdom"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Gnostic Courses and Classes in Tasmania",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "Introduction to Gnosis",
+              "description": "A 34-session foundational course covering consciousness, psychology, cosmology, Kabbalah, meditation, dream yoga, and esoteric practice. Weekly classes in Hobart and Launceston."
+            },
+            "price": "0",
+            "priceCurrency": "AUD",
+            "description": "Donation-based — attend freely, give what you can"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "The Revolution of Meditation",
+              "description": "Weekly practical meditation classes — relaxation, concentration, meditation, and samadhi. The science of inner stillness in the Gnostic tradition."
+            },
+            "price": "0",
+            "priceCurrency": "AUD",
+            "description": "Donation-based — attend freely, give what you can"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Gnosis Tasmania",
+      "url": "https://gnosistasmania.com.au",
+      "description": "Practical Gnostic teachings in Tasmania — meditation, self-knowledge, the Three Factors of the Revolution of Consciousness, and the wisdom of Samael Aun Weor.",
+      "inLanguage": "en-AU",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gnosis Tasmania"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://gnosistasmania.com.au/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: LocalBusiness — Hobart -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "EducationalOrganization"],
+      "@id": "https://gnosistasmania.com.au/#hobart",
+      "name": "Gnosis Tasmania — Hobart",
+      "description": "Weekly Gnostic meditation and self-knowledge classes in Hobart, Tasmania. Donation-based and open to all. Taught in the tradition of Samael Aun Weor.",
+      "url": "https://gnosistasmania.com.au",
+      "email": "gnosis.launceston@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hobart",
+        "addressRegion": "TAS",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -42.8821,
+        "longitude": 147.3272
+      },
+      "priceRange": "Free",
+      "image": "https://gnosistasmania.com.au/favicon-512x512.png",
+      "logo": "https://gnosistasmania.com.au/favicon-512x512.png",
+      "parentOrganization": { "@id": "https://gnosistasmania.com.au/#organization" },
+      "sameAs": ["https://gnosisaustralia.org.au"]
+    }
+    </script>
+
+    <!-- JSON-LD: LocalBusiness — Launceston -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "EducationalOrganization"],
+      "@id": "https://gnosistasmania.com.au/#launceston",
+      "name": "Gnosis Tasmania — Launceston",
+      "description": "Weekly Gnostic meditation and self-knowledge classes in Launceston, Tasmania. Donation-based and open to all. Taught in the tradition of Samael Aun Weor.",
+      "url": "https://gnosistasmania.com.au",
+      "email": "gnosis.launceston@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Launceston",
+        "addressRegion": "TAS",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -41.4332,
+        "longitude": 147.1441
+      },
+      "priceRange": "Free",
+      "image": "https://gnosistasmania.com.au/favicon-512x512.png",
+      "logo": "https://gnosistasmania.com.au/favicon-512x512.png",
+      "parentOrganization": { "@id": "https://gnosistasmania.com.au/#organization" },
+      "sameAs": ["https://gnosisaustralia.org.au"]
+    }
+    </script>
+
+    <!-- JSON-LD: Event — weekly classes -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Introduction to Gnosis — Weekly Classes",
+      "description": "Weekly Gnostic classes covering meditation, self-knowledge, the Three Factors of the Revolution of Consciousness, dream yoga, Kabbalah, and inner alchemy. Taught in the tradition of Samael Aun Weor. All levels welcome, donation-based.",
+      "url": "https://gnosistasmania.com.au/courses",
+      "organizer": { "@id": "https://gnosistasmania.com.au/#organization" },
+      "isAccessibleForFree": true,
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": [
+        {
+          "@type": "Place",
+          "name": "Gnosis Tasmania — Hobart",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hobart",
+            "addressRegion": "TAS",
+            "addressCountry": "AU"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Gnosis Tasmania — Launceston",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Launceston",
+            "addressRegion": "TAS",
+            "addressCountry": "AU"
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

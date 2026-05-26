@@ -1,4 +1,3 @@
-﻿import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote, CheckIcon } from '../components/ui.jsx'
@@ -322,12 +321,12 @@ export default function WhatIsGnosisPage() {
                   </li>
                 ))}
               </ul>
-              <Link
-                to="/practices"
+              <a
+                href="/practices"
                 className="inline-block bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold text-sm px-6 py-3 rounded-sm transition-colors tracking-wide"
               >
                 Explore the Practices
-              </Link>
+              </a>
             </div>
             <div>
               <ArtBanner
@@ -422,18 +421,18 @@ export default function WhatIsGnosisPage() {
             No prior background required. Simply bring sincerity and a genuine desire to know yourself.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/courses"
+            <a
+              href="/courses"
               className="bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               View Courses & Classes
-            </Link>
-            <Link
-              to="/contact"
+            </a>
+            <a
+              href="/contact"
               className="border border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               Get in Touch
-            </Link>
+            </a>
           </div>
         </div>
       </ParallaxCTA>

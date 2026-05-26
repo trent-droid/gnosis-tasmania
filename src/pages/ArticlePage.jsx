@@ -1,42 +1,26 @@
-import { useParams, Link, Navigate } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
-import { getArticleBySlug, ARTICLES } from '../data/articles.js'
+import { ARTICLES } from '../data/articles.js'
 import { BASE } from '../constants.js'
 
-export default function ArticlePage() {
-  const { slug } = useParams()
-  const article = getArticleBySlug(slug)
-
-  // 404 for unknown slugs
-  if (!article) return <Navigate to="/articles" replace />
-
-  return <ArticleContent article={article} />
-}
-
-// Separate component so hooks run after the null-guard above
-function ArticleContent({ article }) {
+export default function ArticleContent({ article }) {
   const {
     slug, title, metaTitle, metaDescription,
-    image, imageAlt, imagePosition, imageCredit,
+    image, imageAlt, imagePosition, imageCredit, imagePublicPath,
     date,
     intro, sections, keyPoints, relatedSlugs, siteLinks,
   } = article
 
   const canonicalPath = `/articles/${slug}`
 
-  const pageMeta = usePageMeta(metaTitle, metaDescription, canonicalPath, `${BASE}${image}`, imageAlt)
-
-  // Article JSON-LD schema
   useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: title,
     description: metaDescription,
-    image: `${BASE}${image}`,
+    image: `${BASE}${imagePublicPath}`,
     author: {
       '@type': 'Organization',
       name: 'Gnosis Tasmania',
@@ -60,7 +44,6 @@ function ArticleContent({ article }) {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}
@@ -74,9 +57,9 @@ function ArticleContent({ article }) {
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="flex justify-center gap-2 text-[11px] text-[#c9a96e] font-medium uppercase tracking-widest mb-4">
-            <Link to="/" className="hover:text-[#e8d5b0] transition-colors">Home</Link>
+            <a href="/" className="hover:text-[#e8d5b0] transition-colors">Home</a>
             <span aria-hidden="true">·</span>
-            <Link to="/articles" className="hover:text-[#e8d5b0] transition-colors">Articles</Link>
+            <a href="/articles" className="hover:text-[#e8d5b0] transition-colors">Articles</a>
           </nav>
 
           <h1 className="font-display text-3xl sm:text-5xl font-light text-[#f8f1e3] mb-5 leading-tight">
@@ -115,13 +98,13 @@ function ArticleContent({ article }) {
               </div>
               <div className="flex flex-wrap gap-2">
                 {siteLinks.map(({ to, label }) => (
-                  <Link
+                  <a
                     key={to}
-                    to={to}
+                    href={to}
                     className="text-xs font-semibold text-[#c9a96e] hover:text-[#b8963e] border border-[#e8d5b0] hover:border-[#c9a96e] px-3 py-1.5 rounded-sm transition-colors tracking-wide uppercase"
                   >
                     {label}
-                  </Link>
+                  </a>
                 ))}
               </div>
             </aside>
@@ -155,8 +138,7 @@ function ArticleContent({ article }) {
       </article>
 
       {/* ── Related articles ─────────────────────────────────────────────────────
-           No fade-section: thumbnail images must not be hidden by opacity inheritance.
-           The section appears immediately; hover states are handled at the card level. */}
+           No fade-section: thumbnail images must not be hidden by opacity inheritance. */}
       {relatedArticles.length > 0 && (
         <section className="py-16 px-4 bg-[#faf6ef]" aria-label="Related articles">
           <div className="max-w-5xl mx-auto">
@@ -166,9 +148,9 @@ function ArticleContent({ article }) {
             </div>
             <div className="grid sm:grid-cols-3 gap-6">
               {relatedArticles.map(a => (
-                <Link
+                <a
                   key={a.slug}
-                  to={`/articles/${a.slug}`}
+                  href={`/articles/${a.slug}`}
                   className="bg-white border border-[#e8d5b0] rounded-sm overflow-hidden group hover:border-[#c9a96e] transition-colors block"
                 >
                   <div className="h-32 overflow-hidden">
@@ -185,7 +167,7 @@ function ArticleContent({ article }) {
                       {a.title}
                     </h3>
                   </div>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
@@ -201,18 +183,18 @@ function ArticleContent({ article }) {
             Reading opens the door. The living teaching unfolds in practice, in community, and in the inner work of day-to-day life. We meet weekly in Hobart, Eastern Shore, and Launceston. All are welcome.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/courses"
+            <a
+              href="/courses"
               className="bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               View Our Courses
-            </Link>
-            <Link
-              to="/contact"
+            </a>
+            <a
+              href="/contact"
               className="border border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               Get in Touch
-            </Link>
+            </a>
           </div>
         </div>
       </section>

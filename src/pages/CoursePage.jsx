@@ -1,5 +1,4 @@
 import { Fragment } from 'react'
-import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { GoldRule, QuoteParallax, ParallaxImage } from '../components/ui.jsx'
@@ -327,15 +326,15 @@ export default function CoursePage() {
           </div>
 
           <div className="relative z-10 max-w-3xl mx-auto py-16">
-            <Link
-              to="/"
+            <a
+              href="/"
               className="inline-flex items-center gap-1.5 text-xs font-medium text-[#c8b89a] hover:text-[#c9a96e] transition-colors mb-8 tracking-wide uppercase"
             >
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
               Back to Gnosis Tasmania
-            </Link>
+            </a>
             <p className="text-[#c9a96e] text-xs font-semibold uppercase tracking-widest mb-3">
               Beginner Series · Open to All
             </p>
@@ -449,18 +448,18 @@ export default function CoursePage() {
               or ask any questions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
+              <a
+                href="/contact"
                 className="bg-[#c9a96e] text-[#1c1409] px-8 py-3 rounded-sm text-sm font-semibold hover:bg-[#e0bf80] transition-colors duration-200 tracking-wide shadow-lg"
               >
                 Register Your Interest
-              </Link>
-              <Link
-                to="/"
+              </a>
+              <a
+                href="/"
                 className="border border-[#c9a96e]/70 text-[#e8d5b0] px-8 py-3 rounded-sm text-sm font-medium hover:bg-white/10 hover:border-[#c9a96e] transition-colors duration-200 tracking-wide"
               >
                 Return to Home
-              </Link>
+              </a>
             </div>
           </div>
         </section>

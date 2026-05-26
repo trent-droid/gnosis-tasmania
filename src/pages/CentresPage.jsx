@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'
@@ -272,9 +271,9 @@ export default function CentresPage() {
             <a href="#international" className="px-4 py-1.5 bg-[#faf6ef] border border-[#e8d5b0] rounded-sm text-[#4a3a26] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors">
               International
             </a>
-            <Link to="/contact" className="px-4 py-1.5 bg-[#c9a96e] text-[#1c1409] rounded-sm hover:bg-[#e0bf80] transition-colors">
+            <a href="/contact" className="px-4 py-1.5 bg-[#c9a96e] text-[#1c1409] rounded-sm hover:bg-[#e0bf80] transition-colors">
               Contact Gnosis Tasmania
-            </Link>
+            </a>
           </div>
         </section>
 
@@ -371,14 +370,14 @@ export default function CentresPage() {
               We would love to welcome you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact"
+              <a href="/contact"
                 className="bg-[#c9a96e] text-[#1c1409] px-8 py-3 rounded-sm text-sm font-semibold hover:bg-[#e0bf80] transition-colors tracking-wide">
                 Get in Touch
-              </Link>
-              <Link to="/meditation-classes"
+              </a>
+              <a href="/meditation-classes"
                 className="border border-[#c9a96e]/70 text-[#e8d5b0] px-8 py-3 rounded-sm text-sm font-medium hover:bg-white/10 hover:border-[#c9a96e] transition-colors tracking-wide">
                 View Meditation Classes
-              </Link>
+              </a>
             </div>
           </div>
         </section>

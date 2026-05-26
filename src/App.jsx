@@ -1,5 +1,4 @@
-﻿import { useState, useEffect, useCallback } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect, useCallback } from 'react'
 import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
 import { GoldRule, SectionLabel, CheckIcon, Blockquote, ParallaxImage } from './components/ui.jsx'
@@ -165,12 +164,12 @@ export default function App() {
               unveiling every authentic spiritual tradition.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/courses" className="bg-[#c9a96e] text-[#1c1409] px-8 py-3 rounded-sm text-sm font-semibold hover:bg-[#e0bf80] transition-colors duration-200 tracking-wide shadow-lg">
+              <a href="/courses" className="bg-[#c9a96e] text-[#1c1409] px-8 py-3 rounded-sm text-sm font-semibold hover:bg-[#e0bf80] transition-colors duration-200 tracking-wide shadow-lg">
                 Join a Class
-              </Link>
-              <Link to="/what-is-gnosis" className="border border-[#c9a96e]/70 text-[#e8d5b0] px-8 py-3 rounded-sm text-sm font-medium hover:bg-white/10 hover:border-[#c9a96e] transition-colors duration-200 tracking-wide backdrop-blur-sm">
+              </a>
+              <a href="/what-is-gnosis" className="border border-[#c9a96e]/70 text-[#e8d5b0] px-8 py-3 rounded-sm text-sm font-medium hover:bg-white/10 hover:border-[#c9a96e] transition-colors duration-200 tracking-wide backdrop-blur-sm">
                 What is Gnosis?
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -207,9 +206,9 @@ export default function App() {
                   <div className="mb-4" aria-hidden="true">{icon}</div>
                   <h3 className="font-display text-xl font-medium text-[#f8f1e3] mb-3">{title}</h3>
                   <p className="text-sm text-[#9e8a6e] leading-relaxed mb-6 flex-1">{body}</p>
-                  <Link to={link} className="text-xs font-semibold text-[#c9a96e] hover:text-[#e0bf80] transition-colors tracking-wide">
+                  <a href={link} className="text-xs font-semibold text-[#c9a96e] hover:text-[#e0bf80] transition-colors tracking-wide">
                     {linkLabel} →
-                  </Link>
+                  </a>
                 </div>
               ))}
             </div>
@@ -234,9 +233,9 @@ export default function App() {
                 <p className="text-base leading-relaxed text-[#3a2f1f] mb-8">
                   In our time, Gnostic teachings have been synthesised into a complete, practical system, drawing on the insights of Hermes Trismegistus, the Buddha, the Christ, G.I. Gurdjieff, H.P. Blavatsky, and the 20th-century teacher Samael Aun Weor. The path is the same: <em>turn inward, observe honestly, and transform.</em>
                 </p>
-                <Link to="/what-is-gnosis" className="inline-block bg-[#c9a96e] text-[#1c1409] px-6 py-2.5 rounded-sm text-sm font-semibold hover:bg-[#b8963e] transition-colors tracking-wide">
+                <a href="/what-is-gnosis" className="inline-block bg-[#c9a96e] text-[#1c1409] px-6 py-2.5 rounded-sm text-sm font-semibold hover:bg-[#b8963e] transition-colors tracking-wide">
                   Explore Gnosis →
-                </Link>
+                </a>
               </div>
               <div className="md:col-span-2">
                 <figure className="flex flex-col gap-3">
@@ -321,12 +320,12 @@ export default function App() {
               ))}
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-              <Link to="/courses" className="inline-block bg-[#c9a96e] text-[#1c1409] px-8 py-3 rounded-sm text-sm font-semibold hover:bg-[#b8963e] transition-colors duration-200 tracking-wide shadow-sm">
+              <a href="/courses" className="inline-block bg-[#c9a96e] text-[#1c1409] px-8 py-3 rounded-sm text-sm font-semibold hover:bg-[#b8963e] transition-colors duration-200 tracking-wide shadow-sm">
                 View All Courses & Classes →
-              </Link>
-              <Link to="/core-teachings" className="inline-block border border-[#c9a96e] text-[#c9a96e] px-8 py-3 rounded-sm text-sm font-semibold hover:bg-[#c9a96e] hover:text-[#1c1409] transition-colors tracking-wide">
+              </a>
+              <a href="/core-teachings" className="inline-block border border-[#c9a96e] text-[#c9a96e] px-8 py-3 rounded-sm text-sm font-semibold hover:bg-[#c9a96e] hover:text-[#1c1409] transition-colors tracking-wide">
                 Explore Core Teachings →
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -348,15 +347,15 @@ export default function App() {
               Whether you are curious, seeking, or ready to begin, reach out. We welcome sincere aspirants of every background. Just honest inner work and genuine community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact" className="bg-[#c9a96e] text-[#1c1409] px-8 py-3 rounded-sm text-sm font-semibold hover:bg-[#e0bf80] transition-colors duration-200 tracking-wide shadow-lg">
+              <a href="/contact" className="bg-[#c9a96e] text-[#1c1409] px-8 py-3 rounded-sm text-sm font-semibold hover:bg-[#e0bf80] transition-colors duration-200 tracking-wide shadow-lg">
                 Contact Us
-              </Link>
-              <Link to="/courses" className="border border-[#c9a96e]/70 text-[#e8d5b0] px-8 py-3 rounded-sm text-sm font-medium hover:bg-white/10 hover:border-[#c9a96e] transition-colors duration-200 tracking-wide">
+              </a>
+              <a href="/courses" className="border border-[#c9a96e]/70 text-[#e8d5b0] px-8 py-3 rounded-sm text-sm font-medium hover:bg-white/10 hover:border-[#c9a96e] transition-colors duration-200 tracking-wide">
                 View Classes
-              </Link>
-              <Link to="/gnostic-centres" className="border border-[#c9a96e]/40 text-[#c8b89a] px-8 py-3 rounded-sm text-sm font-medium hover:bg-white/10 hover:border-[#c9a96e]/70 transition-colors duration-200 tracking-wide">
+              </a>
+              <a href="/gnostic-centres" className="border border-[#c9a96e]/40 text-[#c8b89a] px-8 py-3 rounded-sm text-sm font-medium hover:bg-white/10 hover:border-[#c9a96e]/70 transition-colors duration-200 tracking-wide">
                 Find a Centre Near You
-              </Link>
+              </a>
             </div>
             <p className="text-xs text-[#9e8a6e] mt-6 italic">
               Song of the Angels, William-Adolphe Bouguereau (1881). Public domain.

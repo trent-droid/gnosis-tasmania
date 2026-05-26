@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel } from '../components/ui.jsx'
@@ -72,18 +71,18 @@ export default function ArticlesPage() {
             Reading is a beginning. The deeper teaching unfolds in practice, in meditation, and in the company of fellow aspirants. Join us in Hobart, Eastern Shore, or Launceston.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/courses"
+            <a
+              href="/courses"
               className="bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               View Our Courses
-            </Link>
-            <Link
-              to="/contact"
+            </a>
+            <a
+              href="/contact"
               className="border border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               Get in Touch
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -99,7 +98,7 @@ function ArticleCard({ article }) {
   return (
     <article className="bg-white border border-[#e8d5b0] rounded-sm overflow-hidden flex flex-col group hover:border-[#c9a96e] transition-colors">
       {/* Thumbnail */}
-      <Link to={`/articles/${slug}`} className="block overflow-hidden h-44 shrink-0" tabIndex={-1} aria-hidden="true">
+      <a href={`/articles/${slug}`} className="block overflow-hidden h-44 shrink-0" tabIndex={-1} aria-hidden="true">
         <img
           src={image}
           alt={imageAlt}
@@ -107,22 +106,22 @@ function ArticleCard({ article }) {
           style={{ objectPosition: imagePosition || 'center center' }}
           loading="lazy"
         />
-      </Link>
+      </a>
 
       <div className="p-6 flex flex-col flex-1">
         <h2 className="font-display text-lg font-medium text-[#2a1e12] leading-snug mb-3 group-hover:text-[#c9a96e] transition-colors">
-          <Link to={`/articles/${slug}`}>{title}</Link>
+          <a href={`/articles/${slug}`}>{title}</a>
         </h2>
 
         <p className="text-sm text-[#4a3a26] leading-relaxed flex-1 mb-4">{excerpt}</p>
 
-        <Link
-          to={`/articles/${slug}`}
+        <a
+          href={`/articles/${slug}`}
           className="text-xs font-semibold text-[#c9a96e] hover:text-[#b8963e] transition-colors tracking-wide uppercase mt-auto"
           aria-label={`Read article: ${title}`}
         >
           Read Article →
-        </Link>
+        </a>
       </div>
     </article>
   )

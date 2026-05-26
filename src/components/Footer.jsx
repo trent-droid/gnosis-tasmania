@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import gssawLogoImg from '../assets/gssaw_logo.png'
 
 const PAGES = [
@@ -48,9 +47,9 @@ export default function Footer() {
             <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
               {PAGES.map(({ to, label }) => (
                 <li key={to}>
-                  <Link to={to} className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
+                  <a href={to} className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
                     {label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -61,9 +60,9 @@ export default function Footer() {
             <p className="text-xs font-bold text-[#c9a96e] uppercase tracking-widest mb-3">Connect</p>
             <address className="not-italic space-y-1.5 mb-4">
               <p>
-                <Link to="/contact" className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
+                <a href="/contact" className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
                   Contact Us
-                </Link>
+                </a>
               </p>
               <p>
                 <a href="https://www.facebook.com/GnosticSocietyAustralia/" target="_blank" rel="noopener noreferrer"
@@ -72,21 +71,21 @@ export default function Footer() {
                 </a>
               </p>
               <p>
-                <Link to="/gnostic-centres"
+                <a href="/gnostic-centres"
                   className="text-xs text-[#c8b89a] hover:text-[#e8d5b0] transition-colors">
                   Gnostic Centres Worldwide
-                </Link>
+                </a>
               </p>
             </address>
             <p className="text-xs text-[#6b5535] leading-relaxed mb-4">
               Hobart · Eastern Shore · Launceston · Tasmania, Australia
             </p>
-            <Link
-              to="/contact"
+            <a
+              href="/contact"
               className="inline-block text-xs font-semibold text-[#1c1409] bg-[#c9a96e] hover:bg-[#b8963e] px-4 py-2 rounded-sm transition-colors tracking-wide"
             >
               Get Involved →
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -106,9 +105,9 @@ export default function Footer() {
           <p className="text-xs text-[#4a3a26]">
             © {new Date().getFullYear()} Gnosis Tasmania · Gnostic Society of Tasmania. All teachings shared openly.
           </p>
-          <Link to="/" className="text-xs text-[#6b5535] hover:text-[#c9a96e] transition-colors">
+          <a href="/" className="text-xs text-[#6b5535] hover:text-[#c9a96e] transition-colors">
             gnosistasmania.com.au
-          </Link>
+          </a>
         </div>
       </div>
     </footer>

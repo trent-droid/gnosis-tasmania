@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'
@@ -219,8 +218,8 @@ export default function CoursesPage() {
                     </div>
                   ))}
                 </div>
-                <Link
-                  to={link}
+                <a
+                  href={link}
                   className={`inline-block text-sm font-semibold px-6 py-3 rounded-sm transition-colors tracking-wide text-center ${
                     highlight
                       ? 'bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409]'
@@ -228,7 +227,7 @@ export default function CoursesPage() {
                   }`}
                 >
                   View Course Details →
-                </Link>
+                </a>
               </div>
             ))}
           </div>
@@ -374,18 +373,18 @@ export default function CoursesPage() {
             Come to your first class with an open mind and a genuine desire to understand yourself more deeply.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
+            <a
+              href="/contact"
               className="bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               Contact Us to Enrol
-            </Link>
-            <Link
-              to="/introduction-to-gnosis"
+            </a>
+            <a
+              href="/introduction-to-gnosis"
               className="border border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               View Course Outline
-            </Link>
+            </a>
           </div>
         </div>
       </ParallaxCTA>

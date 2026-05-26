@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel } from '../components/ui.jsx'
@@ -119,12 +118,12 @@ export default function FaqPage() {
           <p className="text-[#4a3a26] leading-relaxed mb-6">
             If your question is not answered here, please reach out directly. We are glad to hear from anyone who is genuinely interested.
           </p>
-          <Link
-            to="/contact"
+          <a
+            href="/contact"
             className="inline-block bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
           >
             Contact Us
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -137,18 +136,18 @@ export default function FaqPage() {
             The surest way to understand what the Gnostic teaching offers is to attend a class. All are welcome, all classes are donation-based, and no experience is required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
+            <a
+              href="/contact"
               className="bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               Get in Touch
-            </Link>
-            <Link
-              to="/courses"
+            </a>
+            <a
+              href="/courses"
               className="border border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#1c1409] font-semibold px-8 py-3 rounded-sm transition-colors tracking-wide text-sm"
             >
               View Our Courses
-            </Link>
+            </a>
           </div>
         </div>
       </section>
