@@ -110,6 +110,13 @@ export default function CommunityPage() {
               Tradition and Revelation
             </h2>
             <GoldRule className="mb-8" />
+            <div className="flex justify-center mb-8">
+              <img
+                src="/gssaw_logo.png"
+                alt="Gnostic Society Samael Aun Weor emblem"
+                className="h-36 sm:h-44 w-auto object-contain"
+              />
+            </div>
             <p className="text-[#4a3a26] text-lg leading-relaxed max-w-3xl mx-auto mb-6">
               The Gnostic Society Samael Aun Weor teaches that Gnosis rests on two inseparable pillars: Tradition and Revelation. Neither is sufficient alone. Together, they constitute a living path of inner transformation.
             </p>
