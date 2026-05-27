@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Fuse from 'fuse.js'
 import { SEARCH_INDEX } from '../data/searchIndex.js'
 
@@ -13,22 +13,8 @@ const fuse = new Fuse(SEARCH_INDEX, {
   includeScore: true,
 })
 
-const CATEGORY_COLOURS = {
-  Article:       'bg-[#f8f1e3] text-[#8a6f3f]',
-  Page:          'bg-[#eef4f0] text-[#3a6b4a]',
-  Home:          'bg-[#eef4f0] text-[#3a6b4a]',
-  'About Gnosis':'bg-[#eef4f0] text-[#3a6b4a]',
-  Teachings:     'bg-[#eef4f0] text-[#3a6b4a]',
-  Classes:       'bg-[#eef4f0] text-[#3a6b4a]',
-  Courses:       'bg-[#eef4f0] text-[#3a6b4a]',
-  Community:     'bg-[#eef4f0] text-[#3a6b4a]',
-  History:       'bg-[#eef4f0] text-[#3a6b4a]',
-  Resources:     'bg-[#eef4f0] text-[#3a6b4a]',
-  FAQ:           'bg-[#eef4f0] text-[#3a6b4a]',
-  Contact:       'bg-[#eef4f0] text-[#3a6b4a]',
-  Centres:       'bg-[#eef4f0] text-[#3a6b4a]',
-  Articles:      'bg-[#eef4f0] text-[#3a6b4a]',
-}
+const PAGE_CLS    = 'bg-[#eef4f0] text-[#3a6b4a]'
+const ARTICLE_CLS = 'bg-[#f8f1e3] text-[#8a6f3f]'
 
 export default function Search() {
   const [open, setOpen]       = useState(false)
@@ -38,8 +24,6 @@ export default function Search() {
   const inputRef              = useRef(null)
   const listRef               = useRef(null)
 
-  // Open/close
-  const openSearch  = () => setOpen(true)
   const closeSearch = () => { setOpen(false); setQuery(''); setResults([]); setActive(0) }
 
   // Auto-focus input when modal opens
@@ -50,20 +34,18 @@ export default function Search() {
     }
   }, [open])
 
-  // Global keyboard shortcuts
+  // Global keyboard shortcuts: ⌘K / Ctrl+K to open, Escape to close
   useEffect(() => {
     const handler = (e) => {
-      // ⌘K / Ctrl+K to open
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault()
         setOpen(o => !o)
       }
-      // Escape to close
       if (e.key === 'Escape' && open) closeSearch()
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
-  }, [open])
+  }, [open, closeSearch])
 
   // Live search
   const handleInput = (e) => {
@@ -100,13 +82,11 @@ export default function Search() {
     }
   }, [active])
 
-  const isMac = typeof navigator !== 'undefined' && /Mac/.test(navigator.platform)
-
   return (
     <>
       {/* ── Trigger button ───────────────────────────────────────────────────── */}
       <button
-        onClick={openSearch}
+        onClick={() => setOpen(true)}
         aria-label="Search site"
         className="flex items-center gap-1.5 text-[#4a3a26] hover:text-[#c9a96e] transition-colors group"
       >
@@ -173,7 +153,7 @@ export default function Search() {
                     >
                       <span
                         className={`shrink-0 mt-0.5 text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded-sm ${
-                          CATEGORY_COLOURS[item.category] ?? 'bg-[#f5ede0] text-[#8a6f3f]'
+                          item.category === 'Article' ? ARTICLE_CLS : PAGE_CLS
                         }`}
                       >
                         {item.category}

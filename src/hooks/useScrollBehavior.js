@@ -1,8 +1,5 @@
 import { useEffect } from 'react'
 
-// No-op: Astro page navigation is a full page load; the browser resets scroll automatically.
-export function useScrollToTop() {}
-
 export function useScrollFadeIn() {
   useEffect(() => {
     const observer = new IntersectionObserver(

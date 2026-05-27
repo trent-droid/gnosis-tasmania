@@ -1,20 +1,12 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { ARTICLES } from '../data/articles.js'
 import heroSchoolAthensImg from '../assets/hero_school_athens.jpg?format=webp'
 
 export default function ArticlesPage() {
-  const pageMeta = usePageMeta(
-    'Gnostic Articles & Teachings | Gnosis Tasmania',
-    'Explore our library of Gnostic articles covering inner awakening, meditation, self-observation, the ego, astral exploration, and more. Based on the teachings of Samael Aun Weor.',
-    '/articles'
-  )
-
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

@@ -1,7 +1,6 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import artFluddNaturaImg  from '../assets/art_fludd_natura.jpg?format=webp'
 import heroMysticLambImg  from '../assets/hero_mystic_lamb.jpg?format=webp'
 
@@ -108,15 +107,8 @@ const ONLINE_RESOURCES = [
 ]
 
 export default function ResourcesPage() {
-  const pageMeta = usePageMeta(
-    'Gnostic Books & Resources | Gnosis Tasmania',
-    'Recommended Gnostic books and resources: Samael Aun Weor, the Nag Hammadi Library, the Corpus Hermeticum, the Zohar, and more. For aspirants in Tasmania and worldwide.',
-    '/resources'
-  )
-
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

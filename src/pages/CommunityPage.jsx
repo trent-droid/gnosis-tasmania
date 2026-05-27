@@ -1,7 +1,6 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote, CheckIcon } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import { BASE } from '../constants.js'
 import artBouguereauImg  from '../assets/art_bouguereau_angels.jpg?format=webp'
@@ -29,14 +28,7 @@ const LOCATIONS = [
   },
 ]
 
-export default function CommunityPage() {
-  const pageMeta = usePageMeta(
-    'Gnostic Community in Hobart, Eastern Shore & Launceston | Gnosis Tasmania',
-    'Join the Gnosis Tasmania community of sincere aspirants meeting weekly in Hobart, Hobart Eastern Shore, and Launceston, Tasmania. Donation-based Gnostic study, meditation retreats, and the teachings of Samael Aun Weor.',
-    '/community'
-  )
-
-  useJsonLd({
+export default function CommunityPage() {  useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     'url': `${BASE}/community`,
@@ -63,7 +55,6 @@ export default function CommunityPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

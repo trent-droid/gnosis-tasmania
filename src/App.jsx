@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react'
 import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
 import { GoldRule, SectionLabel, CheckIcon, Blockquote, ParallaxImage } from './components/ui.jsx'
-import { usePageMeta } from './hooks/usePageMeta.js'
 
 import fourThreeTwoOneImg           from './assets/esoteric_four_three_two_one.jpg'
 import fourThreeTwoOneImgWebp       from './assets/esoteric_four_three_two_one.jpg?format=webp'
@@ -90,14 +89,7 @@ const FEATURES = [
   },
 ]
 
-export default function App() {
-  const pageMeta = usePageMeta(
-    'Gnosis Tasmania: Gnostic Classes & Meditation in Hobart, Eastern Shore & Launceston',
-    'Donation-based Gnostic classes in Hobart, Hobart Eastern Shore, and Launceston, Tasmania. Meditation, self-knowledge, and the Three Factors of the Revolution of Consciousness.',
-    '/'
-  )
-
-  const [currentBg, setCurrentBg] = useState(0)
+export default function App() {  const [currentBg, setCurrentBg] = useState(0)
   const [paused,    setPaused]    = useState(false)
   const [mounted,   setMounted]   = useState(() => new Set([0]))
 
@@ -116,7 +108,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       <main id="top">

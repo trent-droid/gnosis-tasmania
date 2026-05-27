@@ -1,7 +1,6 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import artHermesTrismegistusImg from '../assets/art_hermes_trismegistus.jpg?format=webp'
 import ProtectedEmail from '../components/ProtectedEmail.jsx'
@@ -85,11 +84,6 @@ const LOCATIONS = [
 ]
 
 export default function CoursesPage() {
-  const pageMeta = usePageMeta(
-    'Gnostic Courses in Hobart, Eastern Shore & Launceston | Gnosis Tasmania',
-    'Gnostic courses in Hobart, Hobart Eastern Shore, and Launceston: Introduction to Gnosis (34 sessions) and weekly Meditation Classes. No experience needed. Donation-based.',
-    '/courses'
-  )
   useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -139,7 +133,6 @@ export default function CoursesPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

@@ -1,7 +1,6 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import { BASE } from '../constants.js'
 import heroImg from '../assets/hero_school_athens.jpg?format=webp'
@@ -215,14 +214,7 @@ function IntlRegionCard({ region, entries }) {
 
 // ─── Page ────────────────────────────────────────────────────────────────────
 
-export default function CentresPage() {
-  const pageMeta = usePageMeta(
-    'Gnostic Centres Worldwide | Gnosis Tasmania',
-    'Find Gnostic centres across Australia and worldwide, from Hobart and Launceston to every state in Australia, New Zealand, and international centres across Europe, the Americas, Asia, and Africa.',
-    '/gnostic-centres'
-  )
-
-  useJsonLd({
+export default function CentresPage() {  useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     'name': 'Gnostic Centres Worldwide',
@@ -233,7 +225,6 @@ export default function CentresPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

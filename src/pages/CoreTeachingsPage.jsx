@@ -1,7 +1,6 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote, CheckIcon } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import { BASE } from '../constants.js'
 import artKhunrathImg              from '../assets/art_khunrath_rebis.jpg?format=webp'
@@ -105,14 +104,7 @@ const SELF_KNOWLEDGE = [
   'All suffering ultimately arises from ignorance of our own true nature; self-knowledge is therefore the foundation of liberation.',
 ]
 
-export default function CoreTeachingsPage() {
-  const pageMeta = usePageMeta(
-    'Three Factors of the Revolution of Consciousness | Gnosis Tasmania',
-    'The core teachings of Gnosis: the Three Factors of the Revolution of Consciousness, the Tree of Life, Kabbalah, and self-knowledge. Classes in Tasmania.',
-    '/core-teachings'
-  )
-
-  useJsonLd({
+export default function CoreTeachingsPage() {  useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     'name': 'Three Factors of the Revolution of Consciousness | Gnosis Tasmania',
@@ -147,7 +139,6 @@ export default function CoreTeachingsPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

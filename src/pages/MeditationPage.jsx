@@ -1,7 +1,6 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel, QuoteParallax } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import { BASE } from '../constants.js'
 
@@ -10,13 +9,7 @@ import zenBannerImg from '../assets/hero_zen.jpg?format=webp'
 import artMonaLisaImg              from '../assets/art_mona_lisa.jpg'
 import artMonaLisaImgSrcset        from '../assets/art_mona_lisa.jpg?w=640;1024&format=webp&as=srcset'
 
-export default function MeditationPage() {
-  const pageMeta = usePageMeta(
-    'Meditation Classes in Hobart & Launceston | Gnosis Tasmania',
-    'Gnostic meditation classes in Hobart and Launceston. Learn the practical science of relaxation, concentration, meditation, and samadhi. Weekly, donation-based.',
-    '/meditation-classes'
-  )
-  useJsonLd({
+export default function MeditationPage() {  useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'Course',
     'name': 'The Revolution of Meditation',
@@ -58,7 +51,6 @@ export default function MeditationPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
       <main>
 

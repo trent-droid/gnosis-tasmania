@@ -2,7 +2,6 @@ import { Fragment } from 'react'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, Blockquote, CheckIcon } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import { BASE } from '../constants.js'
 import heroZenImg            from '../assets/hero_zen.jpg?format=webp'
@@ -116,14 +115,7 @@ const PRACTICES = [
   },
 ]
 
-export default function PracticesPage() {
-  const pageMeta = usePageMeta(
-    'Gnostic Practices: Meditation, Dream Yoga & Inner Alchemy | Gnosis Tasmania',
-    'Gnostic practices taught in Tasmania: meditation, self-observation, dream yoga, mantras, and inner alchemy. Practical tools for genuine inner transformation.',
-    '/practices'
-  )
-
-  useJsonLd({
+export default function PracticesPage() {  useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     'name': 'Gnostic Practices: Meditation, Dream Yoga & Inner Alchemy',
@@ -152,7 +144,6 @@ export default function PracticesPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

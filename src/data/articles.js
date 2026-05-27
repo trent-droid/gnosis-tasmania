@@ -1002,6 +1002,3 @@ export const ARTICLES = [
   },
 ]
 
-export function getArticleBySlug(slug) {
-  return ARTICLES.find(a => a.slug === slug) ?? null
-}

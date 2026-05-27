@@ -1,7 +1,6 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, GoldRule, SectionLabel, CheckIcon } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import { BASE } from '../constants.js'
 
@@ -130,14 +129,7 @@ const TOPICS = [
   },
 ]
 
-export default function MeditationCoursePage() {
-  const pageMeta = usePageMeta(
-    'Meditation Course | Gnosis Tasmania',
-    'A structured course in the theory and practice of Gnostic meditation: relaxation, pranayama, concentration, self-observation, and the development of higher inner faculties. For sincere students ready for daily practice.',
-    '/meditation-course'
-  )
-
-  useJsonLd({
+export default function MeditationCoursePage() {  useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'Course',
     name: 'Meditation Course',
@@ -156,7 +148,6 @@ export default function MeditationCoursePage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

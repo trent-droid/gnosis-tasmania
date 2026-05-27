@@ -2,7 +2,6 @@ import { Fragment } from 'react'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import { BASE } from '../constants.js'
 import heroEgyptianImg            from '../assets/hero_egyptian.jpg?format=webp'
@@ -131,14 +130,7 @@ const TIMELINE = [
   },
 ]
 
-export default function HistoryPage() {
-  const pageMeta = usePageMeta(
-    'History of Gnosis: Egypt to Samael Aun Weor | Gnosis Tasmania',
-    'The history of Gnostic wisdom: from ancient Egypt and Greece through Kabbalah, Sufism, and the Renaissance, to Samael Aun Weor\'s modern synthesis. Taught in Tasmania.',
-    '/history'
-  )
-
-  useJsonLd({
+export default function HistoryPage() {  useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'Article',
     'headline': 'History of Gnosis: From Ancient Egypt to Samael Aun Weor',
@@ -173,7 +165,6 @@ export default function HistoryPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

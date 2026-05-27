@@ -2,7 +2,6 @@ import { Fragment } from 'react'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { GoldRule, QuoteParallax, ParallaxImage } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import { BASE } from '../constants.js'
 
@@ -263,13 +262,7 @@ function ModuleCard({ number, title, points }) {
 
 /* ─── Page ─────────────────────────────────────────────────────────────────── */
 
-export default function CoursePage() {
-  const pageMeta = usePageMeta(
-    'Introduction to Gnosis: 34-Session Course | Gnosis Tasmania',
-    'Introduction to Gnosis: a 34-session course covering consciousness, Kabbalah, meditation, karma, and inner alchemy. Weekly classes in Hobart and Launceston, Tasmania.',
-    '/introduction-to-gnosis'
-  )
-  useJsonLd({
+export default function CoursePage() {  useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'Course',
     'name': 'Introduction to Gnosis',
@@ -311,7 +304,6 @@ export default function CoursePage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
       <main>
 

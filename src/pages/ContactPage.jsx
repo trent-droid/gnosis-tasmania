@@ -1,7 +1,6 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel, SectionHeading } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import esotericFlammarionImg from '../assets/esoteric_flammarion_colorized.jpg?format=webp'
 import ProtectedEmail from '../components/ProtectedEmail.jsx'
 
@@ -27,15 +26,8 @@ const LOCATIONS = [
 ]
 
 export default function ContactPage() {
-  const pageMeta = usePageMeta(
-    'Contact | Gnosis Tasmania',
-    'Find a weekly Gnostic class in Hobart, Hobart Eastern Shore, or Launceston. Email us or connect on Facebook. All sincere enquiries welcome.',
-    '/contact'
-  )
-
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

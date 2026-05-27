@@ -1,7 +1,6 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, ParallaxCTA, QuoteParallax, GoldRule, SectionLabel, SectionHeading, ArtBanner, Blockquote, CheckIcon } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import { BASE } from '../constants.js'
 import heroChristImg             from '../assets/hero_christ.jpg?format=webp'
@@ -92,14 +91,7 @@ const PILLARS = [
   },
 ]
 
-export default function WhatIsGnosisPage() {
-  const pageMeta = usePageMeta(
-    'What is Gnosis? | Gnosis Tasmania',
-    'What is Gnosis? Direct, experiential self-knowledge: the universal wisdom at the heart of every tradition. Practical classes in Hobart and Launceston, Tasmania.',
-    '/what-is-gnosis'
-  )
-
-  // @graph bundles multiple schemas into one <script> tag.
+export default function WhatIsGnosisPage() {  // @graph bundles multiple schemas into one <script> tag.
   // FAQPage enables Google FAQ rich results for high-value queries.
   // Person schema for Samael Aun Weor strengthens E-E-A-T and topic authority.
   useJsonLd({
@@ -181,7 +173,6 @@ export default function WhatIsGnosisPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}

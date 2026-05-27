@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useScrollToTop, useScrollFadeIn } from '../hooks/useScrollBehavior.js'
+import { useScrollFadeIn } from '../hooks/useScrollBehavior.js'
 import Search from './Search.jsx'
 
 const NAV_ITEMS = [
@@ -46,7 +46,6 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [pathname, setPathname] = useState('/')
 
-  useScrollToTop()
   useScrollFadeIn()
 
   useEffect(() => {

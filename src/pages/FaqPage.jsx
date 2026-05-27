@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule, SectionLabel } from '../components/ui.jsx'
-import { usePageMeta } from '../hooks/usePageMeta.js'
 import { useJsonLd } from '../hooks/useJsonLd.js'
 import heroSchoolAthensImg from '../assets/hero_school_athens.jpg?format=webp'
 import { BASE } from '../constants.js'
@@ -48,13 +47,6 @@ const FAQS = [
 
 export default function FaqPage() {
   const [open, setOpen] = useState(null)
-
-  const pageMeta = usePageMeta(
-    'Frequently Asked Questions | Gnosis Tasmania',
-    'Answers to common questions about Gnostic classes in Hobart and Launceston: what to expect, time commitment, compatibility with other traditions, costs, and how to get started.',
-    '/faq'
-  )
-
   useJsonLd({
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -68,7 +60,6 @@ export default function FaqPage() {
 
   return (
     <div className="min-h-screen bg-[#faf6ef] text-[#3a2f1f]">
-      {pageMeta}
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}
