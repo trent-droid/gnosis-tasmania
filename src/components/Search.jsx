@@ -117,9 +117,6 @@ export default function Search() {
         <span className="hidden xl:inline text-[11px] font-medium tracking-wide whitespace-nowrap">
           Search
         </span>
-        <kbd className="hidden xl:inline text-[9px] font-mono text-[#9e8a6e] bg-[#f5ede0] border border-[#e0ccaa] rounded px-1 py-0.5 leading-none">
-          {isMac ? '⌘K' : 'Ctrl K'}
-        </kbd>
       </button>
 
       {/* ── Modal ─────────────────────────────────────────────────────────────── */}
