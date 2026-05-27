@@ -88,15 +88,13 @@ export default function Search() {
       <button
         onClick={() => setOpen(true)}
         aria-label="Search site"
-        className="flex items-center gap-1.5 text-[#4a3a26] hover:text-[#c9a96e] transition-colors group"
+        className="flex items-center gap-1.5 text-[11px] font-medium tracking-wide text-[#4a3a26] hover:text-[#c9a96e] transition-colors whitespace-nowrap"
       >
-        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+        <svg className="w-3 h-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
           <circle cx="11" cy="11" r="7" />
           <path strokeLinecap="round" d="M21 21l-4.35-4.35" />
         </svg>
-        <span className="hidden xl:inline text-[11px] font-medium tracking-wide whitespace-nowrap">
-          Search
-        </span>
+        <span className="hidden lg:inline">Search</span>
       </button>
 
       {/* ── Modal ─────────────────────────────────────────────────────────────── */}
