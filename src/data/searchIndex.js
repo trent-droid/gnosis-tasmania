@@ -89,9 +89,9 @@ export const SEARCH_INDEX = [
     type: 'page',
     category: 'Resources',
     title: 'Recommended Books & Resources',
-    description: 'Curated reading list of Gnostic and Hermetic texts: Samael Aun Weor, the Nag Hammadi library, the Zohar, the Corpus Hermeticum, and more.',
+    description: 'Essential reading: the top 9 Samael Aun Weor books plus sacred scriptures, Hermetic texts, and modern works he referenced throughout his teachings.',
     href: '/resources',
-    keywords: 'books resources reading list samael aun weor perfect matrimony corpus hermeticum emerald tablet zohar gospel of thomas nag hammadi blavatsky ouspensky perennial philosophy',
+    keywords: 'books resources reading list samael aun weor perfect matrimony revolution dialectic tarot kabbalah major mysteries three mountains introduction gnosis mystery golden blossom hermetic astrology corpus hermeticum emerald tablet zohar gospel of thomas bhagavad gita popol vuh tibetan book dead blavatsky secret doctrine',
   },
   {
     type: 'page',
