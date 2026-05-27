@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useScrollToTop, useScrollFadeIn } from '../hooks/useScrollBehavior.js'
+import Search from './Search.jsx'
 
 const NAV_ITEMS = [
   { href: '/', short: 'Home', full: 'Home', children: null },
@@ -120,20 +121,29 @@ export default function Nav() {
             })}
           </ul>
 
-          {/* Hamburger — hidden at lg+ where desktop nav shows */}
-          <button
-            className="lg:hidden p-2 text-[#3a2f1f] hover:bg-[#f8f1e3] rounded-sm transition-colors"
-            onClick={() => setOpen(o => !o)}
-            aria-expanded={open}
-            aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
-          >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              {open
-                ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              }
-            </svg>
-          </button>
+          {/* Search — desktop (always visible at lg+) */}
+          <div className="hidden lg:flex items-center shrink-0">
+            <Search />
+          </div>
+
+          {/* Mobile right-side controls */}
+          <div className="flex lg:hidden items-center gap-1">
+            <Search />
+            {/* Hamburger */}
+            <button
+              className="p-2 text-[#3a2f1f] hover:bg-[#f8f1e3] rounded-sm transition-colors"
+              onClick={() => setOpen(o => !o)}
+              aria-expanded={open}
+              aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                {open
+                  ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                }
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
