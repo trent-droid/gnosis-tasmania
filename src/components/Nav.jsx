@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import gssawLogoImg from '../assets/gssaw_logo.png'
 import { useScrollToTop, useScrollFadeIn } from '../hooks/useScrollBehavior.js'
 
 const NAV_ITEMS = [
@@ -74,7 +73,7 @@ export default function Nav() {
             className="flex items-center gap-2.5 shrink-0 hover:opacity-80 transition-opacity"
             aria-label="Gnosis Tasmania home"
           >
-            <img src={gssawLogoImg} alt="" className="h-9 w-auto object-contain" aria-hidden="true" />
+            <img src="/gssaw_logo.png" alt="" className="h-9 w-auto object-contain" aria-hidden="true" />
             <span className="font-display text-lg font-medium tracking-wide text-[#3a2f1f]">
               Gnosis Tasmania
             </span>

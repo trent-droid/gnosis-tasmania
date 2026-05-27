@@ -1,5 +1,3 @@
-import gssawLogoImg from '../assets/gssaw_logo.png'
-
 const PAGES = [
   { to: '/',                       label: 'Home' },
   { to: '/what-is-gnosis',         label: 'What is Gnosis?' },
@@ -27,7 +25,7 @@ export default function Footer() {
           {/* Brand & donation note */}
           <div>
             <div className="flex items-center gap-2.5 mb-3">
-              <img src={gssawLogoImg} alt="" className="h-9 w-auto object-contain opacity-90" aria-hidden="true" />
+              <img src="/gssaw_logo.png" alt="" className="h-9 w-auto object-contain opacity-90" aria-hidden="true" />
               <p className="font-display text-lg font-medium text-[#f8f1e3]">Gnosis Tasmania</p>
             </div>
             <p className="text-xs leading-relaxed text-[#9e8a6e] mb-4">

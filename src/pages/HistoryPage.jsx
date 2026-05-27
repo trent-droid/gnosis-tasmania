@@ -292,8 +292,17 @@ export default function HistoryPage() {
             <p className="text-[#4a3a26] leading-relaxed mb-5">
               Throughout history, this body of knowledge has survived persecution, suppression, and the destruction of entire civilisations. The knowledge that was burned in Alexandria lived on in the hands of monks and alchemists. The Gnostic texts buried at Nag Hammadi waited fifteen centuries for the moment of their rediscovery.
             </p>
-            <p className="text-[#4a3a26] leading-relaxed mb-8">
+            <p className="text-[#4a3a26] leading-relaxed mb-6">
               Today, the complete synthesis of this wisdom is available to anyone who seeks it. The teachings that were once reserved for initiates of the mystery schools can now be studied openly - though the inner work they require remains as demanding and as transformative as it has always been.
+            </p>
+            <p className="text-[#4a3a26] leading-relaxed mb-8">
+              Begin your own study with our{' '}
+              <a href="/articles" className="text-[#c9a96e] hover:text-[#b8963e] underline underline-offset-2 transition-colors">articles on Gnostic teachings</a>
+              , browse our{' '}
+              <a href="/resources" className="text-[#c9a96e] hover:text-[#b8963e] underline underline-offset-2 transition-colors">recommended reading list</a>
+              , or explore the{' '}
+              <a href="/core-teachings" className="text-[#c9a96e] hover:text-[#b8963e] underline underline-offset-2 transition-colors">core teachings</a>
+              {' '}as they are practised today.
             </p>
             <Blockquote cite="Gospel of Philip">
               "Truth did not come into the world naked, but it came in types and images. The world will not receive truth in any other way."

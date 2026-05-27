@@ -143,8 +143,15 @@ export default function ResourcesPage() {
           <p className="text-[#4a3a26] text-lg leading-relaxed max-w-3xl mx-auto mb-6">
             The following resources have been carefully selected as reliable, high-quality introductions to the various aspects of Gnostic and Hermetic wisdom. No list can substitute for personal study and direct practice; but a good book at the right moment can illuminate the path ahead.
           </p>
-          <p className="text-sm text-[#8a6f3f]">
+          <p className="text-sm text-[#8a6f3f] max-w-3xl mx-auto mb-3">
             Many of these texts are available online. Where possible, we have indicated where they can be found.
+          </p>
+          <p className="text-sm text-[#4a3a26] max-w-3xl mx-auto">
+            For accessible introductions to the core teachings themselves, explore our{' '}
+            <a href="/articles" className="text-[#c9a96e] hover:text-[#b8963e] underline underline-offset-2 transition-colors">Gnostic articles</a>
+            {' '}or visit the{' '}
+            <a href="/core-teachings" className="text-[#c9a96e] hover:text-[#b8963e] underline underline-offset-2 transition-colors">Core Teachings</a>
+            {' '}page.
           </p>
         </div>
       </section>
