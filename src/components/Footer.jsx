@@ -10,7 +10,6 @@ const PAGES = [
   { to: '/history',                label: 'History of Gnosis' },
   { to: '/contact',                label: 'Contact' },
   { to: '/gnostic-centres',        label: 'Gnostic Centres Worldwide' },
-  { to: '/resources',              label: 'Resources' },
   { to: '/articles',               label: 'Articles' },
 ]
 

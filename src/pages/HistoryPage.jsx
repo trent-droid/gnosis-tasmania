@@ -289,9 +289,7 @@ export default function HistoryPage() {  useJsonLd({
             <p className="text-[#4a3a26] leading-relaxed mb-8">
               Begin your own study with our{' '}
               <a href="/articles" className="text-[#c9a96e] hover:text-[#b8963e] underline underline-offset-2 transition-colors">articles on Gnostic teachings</a>
-              , browse our{' '}
-              <a href="/resources" className="text-[#c9a96e] hover:text-[#b8963e] underline underline-offset-2 transition-colors">recommended reading list</a>
-              , or explore the{' '}
+              {' '}or explore the{' '}
               <a href="/core-teachings" className="text-[#c9a96e] hover:text-[#b8963e] underline underline-offset-2 transition-colors">core teachings</a>
               {' '}as they are practised today.
             </p>

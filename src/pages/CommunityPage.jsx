@@ -227,7 +227,7 @@ export default function CommunityPage() {  useJsonLd({
                 </li>
                 <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
                   <CheckIcon />
-                  <span>Access to a rich body of <a href="/resources" className="text-[#c9a96e] hover:underline">written teachings and recommended books</a></span>
+                  <span>Access to a rich body of written teachings and recommended books</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-[#4a3a26]">
                   <CheckIcon />
