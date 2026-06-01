@@ -191,14 +191,6 @@ const webPageSchema = JSON.stringify({
       "publisher": {
         "@type": "Organization",
         "name": "Gnosis Tasmania"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://gnosistasmania.com.au/?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
       }
     }
     </script>
@@ -212,7 +204,7 @@ const webPageSchema = JSON.stringify({
       "name": "Gnosis Tasmania — Hobart",
       "description": "Weekly Gnostic meditation and self-knowledge classes in Hobart, Tasmania. Donation-based and open to all. Taught in the tradition of Samael Aun Weor.",
       "url": "https://gnosistasmania.com.au",
-      "email": "gnosis.launceston@gmail.com",
+      "email": "gnosishobart@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Hobart",
@@ -261,42 +253,6 @@ const webPageSchema = JSON.stringify({
     }
     </script>
 
-    <!-- JSON-LD: Event — weekly classes -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "Introduction to Gnosis — Weekly Classes",
-      "description": "Weekly Gnostic classes covering meditation, self-knowledge, the Three Factors of the Revolution of Consciousness, dream yoga, Kabbalah, and inner alchemy. Taught in the tradition of Samael Aun Weor. All levels welcome, donation-based.",
-      "url": "https://gnosistasmania.com.au/courses",
-      "organizer": { "@id": "https://gnosistasmania.com.au/#organization" },
-      "isAccessibleForFree": true,
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": [
-        {
-          "@type": "Place",
-          "name": "Gnosis Tasmania — Hobart",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Hobart",
-            "addressRegion": "TAS",
-            "addressCountry": "AU"
-          }
-        },
-        {
-          "@type": "Place",
-          "name": "Gnosis Tasmania — Launceston",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Launceston",
-            "addressRegion": "TAS",
-            "addressCountry": "AU"
-          }
-        }
-      ]
-    }
-    </script>
   </head>
   <body>
     <slot />

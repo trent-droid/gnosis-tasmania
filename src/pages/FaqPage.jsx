@@ -49,13 +49,18 @@ export default function FaqPage() {
   const [open, setOpen] = useState(null)
   useJsonLd({
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    url: `${BASE}/faq`,
-    mainEntity: FAQS.map(({ q, a }) => ({
-      '@type': 'Question',
-      name: q,
-      acceptedAnswer: { '@type': 'Answer', text: a },
-    })),
+    '@type': 'WebPage',
+    'name': 'Frequently Asked Questions — Gnosis Tasmania',
+    'url': `${BASE}/faq`,
+    'description': 'Common questions answered about Gnosis Tasmania classes: format, cost, time commitment, compatibility with other traditions, and how to start.',
+    'inLanguage': 'en-AU',
+    'about': [
+      { '@type': 'Thing', 'name': 'Gnostic classes' },
+      { '@type': 'Thing', 'name': 'Meditation classes Tasmania' },
+      { '@type': 'Thing', 'name': 'Gnosis Tasmania' },
+    ],
+    'isPartOf': { '@type': 'WebSite', 'name': 'Gnosis Tasmania', 'url': BASE },
+    'provider': { '@type': 'Organization', '@id': `${BASE}/#organization`, 'name': 'Gnosis Tasmania' },
   })
 
   return (

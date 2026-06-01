@@ -91,65 +91,26 @@ const PILLARS = [
   },
 ]
 
-export default function WhatIsGnosisPage() {  // @graph bundles multiple schemas into one <script> tag.
-  // FAQPage enables Google FAQ rich results for high-value queries.
-  // Person schema for Samael Aun Weor strengthens E-E-A-T and topic authority.
+export default function WhatIsGnosisPage() {
   useJsonLd({
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'FAQPage',
+        '@type': 'WebPage',
+        '@id': `${BASE}/what-is-gnosis`,
         'url': `${BASE}/what-is-gnosis`,
-        'mainEntity': [
-          {
-            '@type': 'Question',
-            'name': 'What is Gnosis?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Gnosis (from the Greek γνῶσις) is direct, experiential knowledge of oneself and of truth, not belief or dogma, but lived inner experience. It is the universal thread running through every authentic spiritual tradition, from ancient Egypt and Greece to the teachings of Buddha, Jesus, and the perennial wisdom masters.',
-            },
-          },
-          {
-            '@type': 'Question',
-            'name': 'Is Gnosis a religion?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Gnosis is not a religion, nor is it opposed to any religion. It is the esoteric heart, the living mystical core, at the centre of every authentic spiritual tradition. Gnostic students may come from any religious background or none. No belief is required, only sincerity and a genuine desire for self-knowledge.',
-            },
-          },
-          {
-            '@type': 'Question',
-            'name': 'What are the Four Pillars of Gnosis?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'The four pillars of Gnosis are: Science (verifiable through direct inner experience), Philosophy (a coherent map of the cosmos and human being), Art (sacred works as vehicles of esoteric transmission), and Mysticism (direct living contact with the sacred at the heart of every authentic tradition).',
-            },
-          },
-          {
-            '@type': 'Question',
-            'name': 'Who is Samael Aun Weor?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Samael Aun Weor (1917-1977) was a Colombian-born author and teacher who produced more than seventy books synthesising Gnostic, Hermetic, Kabbalistic, Buddhist, and Hindu esoteric traditions into a single comprehensive practical system. His teachings are the foundation of the contemporary Gnostic movement worldwide, including in Australia.',
-            },
-          },
-          {
-            '@type': 'Question',
-            'name': 'What are the Gnostic classes offered in Tasmania?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'Gnosis Tasmania offers weekly Gnostic classes in Hobart and Launceston. Classes cover meditation, self-knowledge, the Three Factors of the Revolution of Consciousness, Kabbalah, dream yoga, and inner alchemy. All classes are donation-based and open to everyone. No prior experience required.',
-            },
-          },
-          {
-            '@type': 'Question',
-            'name': 'What are the Three Factors of the Revolution of Consciousness?',
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': 'The Three Factors of the Revolution of Consciousness are: (1) Psychological Death, the dissolution of the ego through self-observation and inner work; (2) Second Birth, the emergence of the soul as the false self is dissolved; and (3) Sacrifice for Humanity, living in compassionate service to others. These three factors are the foundation of the Gnostic path as taught by Samael Aun Weor.',
-            },
-          },
+        'name': 'What is Gnosis? — Gnosis Tasmania',
+        'description': 'An introduction to Gnosis: the direct, experiential knowledge of spiritual reality. Explores the meaning of Gnosis, its four pillars, and its expression in the teaching of Samael Aun Weor.',
+        'inLanguage': 'en-AU',
+        'about': [
+          { '@type': 'Thing', 'name': 'Gnosis' },
+          { '@type': 'Thing', 'name': 'Direct inner knowledge' },
+          { '@type': 'Thing', 'name': 'Perennial wisdom' },
+          { '@type': 'Thing', 'name': 'Samael Aun Weor' },
         ],
+        'mentions': { '@type': 'Person', '@id': `${BASE}/#samael-aun-weor`, 'name': 'Samael Aun Weor' },
+        'isPartOf': { '@type': 'WebSite', 'name': 'Gnosis Tasmania', 'url': BASE },
+        'provider': { '@type': 'Organization', '@id': `${BASE}/#organization`, 'name': 'Gnosis Tasmania' },
       },
       {
         '@type': 'Person',

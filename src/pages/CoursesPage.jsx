@@ -86,46 +86,35 @@ const LOCATIONS = [
 export default function CoursesPage() {
   useJsonLd({
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    'mainEntity': [
+    '@type': 'ItemList',
+    'name': 'Gnostic Courses and Classes in Tasmania',
+    'description': 'Overview of all Gnostic courses and classes offered in Hobart, Eastern Shore, and Launceston by Gnosis Tasmania.',
+    'url': `${BASE}/courses`,
+    'inLanguage': 'en-AU',
+    'numberOfItems': 2,
+    'itemListElement': [
       {
-        '@type': 'Question',
-        'name': 'Do I need any prior knowledge of Gnosis or spirituality?',
-        'acceptedAnswer': {
-          '@type': 'Answer',
-          'text': 'Not at all. Our introductory course is designed for complete beginners. The only requirement is a sincere desire to learn and a willingness to engage honestly with the practice.',
+        '@type': 'ListItem',
+        'position': 1,
+        'item': {
+          '@type': 'Course',
+          'name': 'Introduction to Gnosis',
+          'description': 'A 34-session foundational course covering consciousness, psychology, cosmology, Kabbalah, meditation, dream yoga, and esoteric practice. Weekly classes in Hobart and Launceston.',
+          'url': `${BASE}/introduction-to-gnosis`,
+          'provider': { '@type': 'EducationalOrganization', '@id': `${BASE}/#organization`, 'name': 'Gnosis Tasmania' },
+          'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'AUD', 'description': 'Donation-based — attend freely, give what you can' },
         },
       },
       {
-        '@type': 'Question',
-        'name': 'How long does the Introduction to Gnosis course run?',
-        'acceptedAnswer': {
-          '@type': 'Answer',
-          'text': 'The Introduction to Gnosis course consists of 34 sessions, running weekly. This takes approximately 8 to 9 months to complete.',
-        },
-      },
-      {
-        '@type': 'Question',
-        'name': 'What should I bring to my first Gnosis class?',
-        'acceptedAnswer': {
-          '@type': 'Answer',
-          'text': 'Just yourself and an open mind. You may wish to bring a notebook, but this is entirely optional. Dress comfortably as we sometimes include physical relaxation exercises.',
-        },
-      },
-      {
-        '@type': 'Question',
-        'name': 'Are Gnosis classes available online?',
-        'acceptedAnswer': {
-          '@type': 'Answer',
-          'text': 'Many resources are available online and we encourage their use. However, working together in a group creates a shared energy that genuinely supports the inner work in a way that solitary study cannot replicate.',
-        },
-      },
-      {
-        '@type': 'Question',
-        'name': 'How much do the Gnosis classes cost?',
-        'acceptedAnswer': {
-          '@type': 'Answer',
-          'text': 'All classes are offered on a voluntary donation basis. There is no fixed fee. Give what you can, when you can. No one is ever turned away for financial reasons.',
+        '@type': 'ListItem',
+        'position': 2,
+        'item': {
+          '@type': 'Course',
+          'name': 'The Revolution of Meditation',
+          'description': 'Weekly practical Gnostic meditation classes covering relaxation, concentration, meditation, and samadhi. Open to all levels.',
+          'url': `${BASE}/meditation-classes`,
+          'provider': { '@type': 'EducationalOrganization', '@id': `${BASE}/#organization`, 'name': 'Gnosis Tasmania' },
+          'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'AUD', 'description': 'Donation-based — attend freely, give what you can' },
         },
       },
     ],
