@@ -17,9 +17,7 @@ const {
   ogImageAlt = 'Gnosis Tasmania — Gnostic Classes in Hobart and Launceston',
 } = Astro.props
 
-const canonicalUrl = canonicalPath === '/'
-  ? 'https://gnosistasmania.com.au/'
-  : `https://gnosistasmania.com.au${canonicalPath}/`
+const canonicalUrl = `https://gnosistasmania.com.au${canonicalPath}`
 const BASE = 'https://gnosistasmania.com.au'
 
 const webPageSchema = JSON.stringify({
