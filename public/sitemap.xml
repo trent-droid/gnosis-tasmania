@@ -11,28 +11,28 @@
 
   <!-- Primary course pages — highest conversion value -->
   <url>
-    <loc>https://gnosistasmania.com.au/courses</loc>
+    <loc>https://gnosistasmania.com.au/courses/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/introduction-to-gnosis</loc>
+    <loc>https://gnosistasmania.com.au/introduction-to-gnosis/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/meditation-classes</loc>
+    <loc>https://gnosistasmania.com.au/meditation-classes/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/meditation-course</loc>
+    <loc>https://gnosistasmania.com.au/meditation-course/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -40,28 +40,28 @@
 
   <!-- High-value educational pages -->
   <url>
-    <loc>https://gnosistasmania.com.au/what-is-gnosis</loc>
+    <loc>https://gnosistasmania.com.au/what-is-gnosis/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/core-teachings</loc>
+    <loc>https://gnosistasmania.com.au/core-teachings/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/practices</loc>
+    <loc>https://gnosistasmania.com.au/practices/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/history</loc>
+    <loc>https://gnosistasmania.com.au/history/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.75</priority>
@@ -69,21 +69,21 @@
 
   <!-- Community, contact, and local SEO -->
   <url>
-    <loc>https://gnosistasmania.com.au/community</loc>
+    <loc>https://gnosistasmania.com.au/community/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/contact</loc>
+    <loc>https://gnosistasmania.com.au/contact/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/gnostic-centres</loc>
+    <loc>https://gnosistasmania.com.au/gnostic-centres/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -91,7 +91,7 @@
 
   <!-- Supporting informational pages -->
   <url>
-    <loc>https://gnosistasmania.com.au/faq</loc>
+    <loc>https://gnosistasmania.com.au/faq/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -99,91 +99,91 @@
 
   <!-- Articles section -->
   <url>
-    <loc>https://gnosistasmania.com.au/articles</loc>
+    <loc>https://gnosistasmania.com.au/articles/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/articles/what-is-gnosis-direct-inner-knowledge</loc>
+    <loc>https://gnosistasmania.com.au/articles/what-is-gnosis-direct-inner-knowledge/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/articles/three-factors-of-conscious-awakening</loc>
+    <loc>https://gnosistasmania.com.au/articles/three-factors-of-conscious-awakening/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/articles/psychological-death-letting-go-of-the-ego</loc>
+    <loc>https://gnosistasmania.com.au/articles/psychological-death-letting-go-of-the-ego/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/articles/self-observation-watching-your-mind</loc>
+    <loc>https://gnosistasmania.com.au/articles/self-observation-watching-your-mind/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/articles/meditation-practices-for-inner-peace</loc>
+    <loc>https://gnosistasmania.com.au/articles/meditation-practices-for-inner-peace/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/articles/dream-work-and-astral-exploration</loc>
+    <loc>https://gnosistasmania.com.au/articles/dream-work-and-astral-exploration/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/articles/path-of-inner-transformation</loc>
+    <loc>https://gnosistasmania.com.au/articles/path-of-inner-transformation/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/articles/remembering-past-lives-retrospection</loc>
+    <loc>https://gnosistasmania.com.au/articles/remembering-past-lives-retrospection/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/articles/gnostic-centres-in-australia</loc>
+    <loc>https://gnosistasmania.com.au/articles/gnostic-centres-in-australia/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/articles/living-the-gnostic-path-in-australia</loc>
+    <loc>https://gnosistasmania.com.au/articles/living-the-gnostic-path-in-australia/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/articles/the-sacred-in-relationships-and-sexuality</loc>
+    <loc>https://gnosistasmania.com.au/articles/the-sacred-in-relationships-and-sexuality/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://gnosistasmania.com.au/articles/sacrifice-and-service-heart-of-the-gnostic-way</loc>
+    <loc>https://gnosistasmania.com.au/articles/sacrifice-and-service-heart-of-the-gnostic-way/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
