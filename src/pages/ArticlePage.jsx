@@ -56,10 +56,12 @@ export default function ArticleContent({ article }) {
       >
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="flex justify-center gap-2 text-[11px] text-[#c9a96e] font-medium uppercase tracking-widest mb-4">
+          <nav aria-label="Breadcrumb" className="flex justify-center items-center gap-2 text-[11px] text-[#c9a96e] font-medium uppercase tracking-widest mb-4 flex-wrap">
             <a href="/" className="hover:text-[#e8d5b0] transition-colors">Home</a>
             <span aria-hidden="true">·</span>
             <a href="/articles" className="hover:text-[#e8d5b0] transition-colors">Articles</a>
+            <span aria-hidden="true">·</span>
+            <span className="text-[#e8d5b0] normal-case tracking-normal max-w-[260px] overflow-hidden text-ellipsis whitespace-nowrap" aria-current="page">{title}</span>
           </nav>
 
           <h1 className="font-display text-3xl sm:text-5xl font-light text-[#f8f1e3] mb-5 leading-tight">
