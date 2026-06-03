@@ -132,22 +132,11 @@ const TIMELINE = [
 
 export default function HistoryPage() {  useJsonLd({
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    'headline': 'History of Gnosis: From Ancient Egypt to Samael Aun Weor',
+    '@type': 'WebPage',
+    'name': 'History of Gnosis: From Ancient Egypt to Samael Aun Weor',
     'description': 'The history of Gnostic wisdom: from ancient Egypt and Greece through Kabbalah, Sufism, and the Renaissance, to the modern synthesis of Samael Aun Weor.',
     'url': `${BASE}/history`,
     'inLanguage': 'en-AU',
-    'author': {
-      '@type': 'Organization',
-      '@id': `${BASE}/#organization`,
-      'name': 'Gnosis Tasmania',
-    },
-    'publisher': {
-      '@type': 'Organization',
-      '@id': `${BASE}/#organization`,
-      'name': 'Gnosis Tasmania',
-      'logo': { '@type': 'ImageObject', 'url': `${BASE}/favicon-512x512.png` },
-    },
     'about': [
       { '@type': 'Thing', 'name': 'History of Gnosis' },
       { '@type': 'Thing', 'name': 'Ancient Mystery Schools' },
@@ -161,6 +150,8 @@ export default function HistoryPage() {  useJsonLd({
       '@id': `${BASE}/#samael-aun-weor`,
       'name': 'Samael Aun Weor',
     },
+    'isPartOf': { '@type': 'WebSite', 'name': 'Gnosis Tasmania', 'url': BASE },
+    'provider': { '@type': 'Organization', '@id': `${BASE}/#organization`, 'name': 'Gnosis Tasmania' },
   })
 
   return (

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
 
   <!-- Homepage -->
   <url>
@@ -9,7 +12,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Primary course pages — highest conversion value -->
+  <!-- Primary course pages -->
   <url>
     <loc>https://gnosistasmania.com.au/courses</loc>
     <lastmod>2026-06-01</lastmod>
@@ -97,7 +100,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Articles section -->
+  <!-- Articles index -->
   <url>
     <loc>https://gnosistasmania.com.au/articles</loc>
     <lastmod>2026-06-01</lastmod>
@@ -105,11 +108,16 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- Individual articles (with image metadata) -->
   <url>
     <loc>https://gnosistasmania.com.au/articles/what-is-gnosis-direct-inner-knowledge</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://gnosistasmania.com.au/images/articles/art_durer_self_portrait.jpg</image:loc>
+      <image:title>What is Gnosis? Direct Inner Knowledge for Modern Life</image:title>
+    </image:image>
   </url>
 
   <url>
@@ -117,6 +125,10 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://gnosistasmania.com.au/images/articles/art_fra_angelico_annunciation.jpg</image:loc>
+      <image:title>The Three Factors of Conscious Awakening</image:title>
+    </image:image>
   </url>
 
   <url>
@@ -124,6 +136,10 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://gnosistasmania.com.au/images/articles/art_rembrandt_prodigal_son.jpg</image:loc>
+      <image:title>Psychological Death: Letting Go of the Inner Ego</image:title>
+    </image:image>
   </url>
 
   <url>
@@ -131,6 +147,10 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://gnosistasmania.com.au/images/articles/art_rembrandt_scholar_study.jpg</image:loc>
+      <image:title>Self-Observation: The Art of Watching Your Mind</image:title>
+    </image:image>
   </url>
 
   <url>
@@ -138,6 +158,10 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://gnosistasmania.com.au/images/articles/art_friedrich_monk_sea.jpg</image:loc>
+      <image:title>Meditation Practices for Inner Peace and Clarity</image:title>
+    </image:image>
   </url>
 
   <url>
@@ -145,6 +169,10 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://gnosistasmania.com.au/images/articles/art_burne_jones_sleeping_beauty.jpg</image:loc>
+      <image:title>Dream Work and Astral Exploration in Gnosis</image:title>
+    </image:image>
   </url>
 
   <url>
@@ -152,6 +180,10 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://gnosistasmania.com.au/images/articles/art_raphael_transfiguration.jpg</image:loc>
+      <image:title>The Path of Inner Transformation</image:title>
+    </image:image>
   </url>
 
   <url>
@@ -159,6 +191,10 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://gnosistasmania.com.au/images/articles/art_rossetti_beata_beatrix.jpg</image:loc>
+      <image:title>Remembering Past Lives: Gentle Retrospection Methods</image:title>
+    </image:image>
   </url>
 
   <url>
@@ -166,6 +202,10 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://gnosistasmania.com.au/images/articles/art_ingres_apotheosis_homer.jpg</image:loc>
+      <image:title>Gnostic Centres and Communities in Australia</image:title>
+    </image:image>
   </url>
 
   <url>
@@ -173,6 +213,10 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://gnosistasmania.com.au/images/articles/art_millet_angelus.jpg</image:loc>
+      <image:title>Living the Gnostic Path in Everyday Australian Life</image:title>
+    </image:image>
   </url>
 
   <url>
@@ -180,6 +224,10 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://gnosistasmania.com.au/images/articles/art_rosarium_king_queen.jpg</image:loc>
+      <image:title>The Sacred in Relationships and Sexuality</image:title>
+    </image:image>
   </url>
 
   <url>
@@ -187,6 +235,10 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://gnosistasmania.com.au/images/articles/art_bouguereau_charity.jpg</image:loc>
+      <image:title>Sacrifice and Service: The Heart of the Gnostic Way</image:title>
+    </image:image>
   </url>
 
 </urlset>

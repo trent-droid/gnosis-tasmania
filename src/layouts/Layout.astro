@@ -6,6 +6,7 @@ interface Props {
   description: string
   canonicalPath: string
   breadcrumbName?: string
+  pageSchema?: string
   ogImage?: string
   ogImageAlt?: string
 }
@@ -15,9 +16,12 @@ const {
   description,
   canonicalPath,
   breadcrumbName,
+  pageSchema,
   ogImage = 'https://gnosistasmania.com.au/og-image.jpg',
   ogImageAlt = 'Gnosis Tasmania — Gnostic Classes in Hobart and Launceston',
 } = Astro.props
+
+const GA4_ID = import.meta.env.PUBLIC_GA4_ID
 
 const canonicalUrl = `https://gnosistasmania.com.au${canonicalPath}`
 const BASE = 'https://gnosistasmania.com.au'
@@ -126,11 +130,17 @@ const webPageSchema = JSON.stringify({
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
 
+    {GA4_ID && <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>}
+    {GA4_ID && <script set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA4_ID}');`}></script>}
+
     <!-- JSON-LD: WebPage (page-specific) -->
     <script type="application/ld+json" set:html={webPageSchema} />
 
     <!-- JSON-LD: BreadcrumbList (all non-homepage pages) -->
     {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema} />}
+
+    <!-- JSON-LD: page-specific schema passed from individual page templates -->
+    {pageSchema && <script type="application/ld+json" set:html={pageSchema} />}
 
     <!-- JSON-LD: Organization + EducationalOrganization -->
     <script type="application/ld+json">

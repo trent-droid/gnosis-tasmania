@@ -117,29 +117,22 @@ const PRACTICES = [
 
 export default function PracticesPage() {  useJsonLd({
     '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    'name': 'Gnostic Practices: Meditation, Dream Yoga & Inner Alchemy',
-    'description': 'Gnostic practices taught in Hobart and Launceston, Tasmania: meditation, self-observation, dream yoga, mantras, and inner alchemy. Practical tools for genuine inner transformation in the tradition of Samael Aun Weor.',
+    '@type': 'HowTo',
+    'name': 'How to Begin Gnostic Inner Practice: Six Core Methods',
+    'description': 'Practical Gnostic methods for inner transformation taught in Tasmania: meditation, self-observation, dream yoga, mantras, inner alchemy, and daily practice.',
     'url': `${BASE}/practices`,
     'inLanguage': 'en-AU',
-    'numberOfItems': 5,
-    'itemListElement': [
-      { '@type': 'ListItem', 'position': 1, 'name': 'Meditation',
-        'description': 'The systematic development of consciousness through relaxation, concentration, meditation, and samadhi. The cornerstone of all Gnostic inner work.' },
-      { '@type': 'ListItem', 'position': 2, 'name': 'Self-Observation',
-        'description': 'Dividing attention to be simultaneously aware of what is happening around us and within us: the foundational practice of the Gnostic path.' },
-      { '@type': 'ListItem', 'position': 3, 'name': 'Dream Yoga',
-        'description': 'Cultivating conscious awareness in sleep through mantras and retrospection; developing lucid dreaming and conscious out-of-body experience.' },
-      { '@type': 'ListItem', 'position': 4, 'name': 'Mantras',
-        'description': 'Sacred sounds from Egyptian, Sanskrit, and Hebrew traditions that work directly with the subtle energies of the human organism for awakening and healing.' },
-      { '@type': 'ListItem', 'position': 5, 'name': 'Inner Alchemy',
-        'description': 'The conscious transmutation of creative energies for the development of consciousness and the dissolution of the psychological ego. The practical heart of Gnostic inner alchemy.' },
-    ],
-    'provider': {
-      '@type': 'Organization',
-      '@id': `${BASE}/#organization`,
-      'name': 'Gnosis Tasmania',
-    },
+    'provider': { '@type': 'Organization', '@id': `${BASE}/#organization`, 'name': 'Gnosis Tasmania' },
+    'step': PRACTICES.map((p, i) => ({
+      '@type': 'HowToStep',
+      'position': i + 1,
+      'name': p.title,
+      'text': p.body[0],
+      'itemListElement': p.practices.map(text => ({
+        '@type': 'HowToDirection',
+        'text': text,
+      })),
+    })),
   })
 
   return (

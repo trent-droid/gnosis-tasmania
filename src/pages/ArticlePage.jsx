@@ -1,9 +1,7 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { HeroParallax, GoldRule } from '../components/ui.jsx'
-import { useJsonLd } from '../hooks/useJsonLd.js'
 import { ARTICLES } from '../data/articles.js'
-import { BASE } from '../constants.js'
 
 export default function ArticleContent({ article }) {
   const {
@@ -12,31 +10,6 @@ export default function ArticleContent({ article }) {
     date,
     intro, sections, keyPoints, relatedSlugs, siteLinks,
   } = article
-
-  const canonicalPath = `/articles/${slug}`
-
-  useJsonLd({
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: title,
-    description: metaDescription,
-    image: `${BASE}${imagePublicPath}`,
-    author: {
-      '@type': 'Organization',
-      name: 'Gnosis Tasmania',
-      url: BASE,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Gnosis Tasmania',
-      url: BASE,
-      logo: { '@type': 'ImageObject', url: `${BASE}/favicon-512x512.png` },
-    },
-    datePublished: date,
-    dateModified: date,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}${canonicalPath}` },
-    inLanguage: 'en-AU',
-  })
 
   const relatedArticles = relatedSlugs
     .map(s => ARTICLES.find(a => a.slug === s))

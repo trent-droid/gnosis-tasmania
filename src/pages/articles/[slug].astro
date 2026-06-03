@@ -12,12 +12,37 @@ export function getStaticPaths() {
 
 const { article } = Astro.props
 const BASE = 'https://gnosistasmania.com.au'
+
+const articleSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: article.title,
+  description: article.metaDescription,
+  image: `${BASE}${article.imagePublicPath}`,
+  author: {
+    '@type': 'Organization',
+    '@id': `${BASE}/#organization`,
+    name: 'Gnosis Tasmania',
+    url: BASE,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Gnosis Tasmania',
+    url: BASE,
+    logo: { '@type': 'ImageObject', url: `${BASE}/favicon-512x512.png`, width: 512, height: 512 },
+  },
+  datePublished: article.date,
+  dateModified: article.dateModified ?? article.date,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}/articles/${article.slug}` },
+  inLanguage: 'en-AU',
+})
 ---
 <Layout
   title={article.metaTitle}
   description={article.metaDescription}
   canonicalPath={`/articles/${article.slug}`}
   breadcrumbName={article.title}
+  pageSchema={articleSchema}
   ogImage={`${BASE}${article.imagePublicPath}`}
   ogImageAlt={article.imageAlt}
 >
