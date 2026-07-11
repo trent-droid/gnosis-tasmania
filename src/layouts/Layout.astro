@@ -9,6 +9,7 @@ interface Props {
   pageSchema?: string
   ogImage?: string
   ogImageAlt?: string
+  robots?: string
 }
 
 const {
@@ -19,6 +20,7 @@ const {
   pageSchema,
   ogImage = 'https://gnosistasmania.com.au/og-image.jpg',
   ogImageAlt = 'Gnosis Tasmania — Gnostic Classes in Hobart and Launceston',
+  robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
 } = Astro.props
 
 const GA4_ID = import.meta.env.PUBLIC_GA4_ID
@@ -90,7 +92,7 @@ const webPageSchema = JSON.stringify({
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content="Gnosis Tasmania, Gnostic classes Hobart, Gnostic classes Launceston, Samael Aun Weor Australia, meditation Tasmania, self-knowledge, Three Factors Revolution of Consciousness, Kabbalah Tasmania, donation-based spiritual classes, esoteric philosophy Tasmania" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="robots" content={robots} />
     <meta name="author" content="Gnosis Tasmania" />
     <meta name="theme-color" content="#1c1409" />
     <meta name="geo.region" content="AU-TAS" />
