@@ -51,6 +51,20 @@ const COURSES = [
   },
 ]
 
+const UPCOMING_COURSES = [
+  {
+    title: 'An Introduction to Gnosis',
+    centre: 'Hobart (Eastern Shore)',
+    schedule: 'Saturdays, 7:30pm',
+    dateRange: '15 Aug – 26 Sep 2026',
+    venue: 'Lindisfarne Community Hall',
+    address: '37A Lincoln St, Lindisfarne',
+    entry: 'Entry by donation',
+    phone: '0400 518 413',
+    phoneHref: 'tel:+61400518413',
+  },
+]
+
 const LOCATIONS = [
   {
     city: 'Hobart',
@@ -87,36 +101,63 @@ const LOCATIONS = [
 export default function CoursesPage() {
   useJsonLd({
     '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    'name': 'Gnostic Courses and Classes in Tasmania',
-    'description': 'Overview of all Gnostic courses and classes offered in Hobart, Eastern Shore, and Launceston by Gnosis Tasmania.',
-    'url': `${BASE}/courses`,
-    'inLanguage': 'en-AU',
-    'numberOfItems': 2,
-    'itemListElement': [
+    '@graph': [
       {
-        '@type': 'ListItem',
-        'position': 1,
-        'item': {
-          '@type': 'Course',
-          'name': 'Introduction to Gnosis',
-          'description': 'A 34-session foundational course covering consciousness, psychology, cosmology, Kabbalah, meditation, dream yoga, and esoteric practice. Weekly classes in Hobart and Launceston.',
-          'url': `${BASE}/introduction-to-gnosis`,
-          'provider': { '@type': 'EducationalOrganization', '@id': `${BASE}/#organization`, 'name': 'Gnosis Tasmania' },
-          'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'AUD', 'description': 'Donation-based — attend freely, give what you can' },
-        },
+        '@type': 'ItemList',
+        'name': 'Gnostic Courses and Classes in Tasmania',
+        'description': 'Overview of all Gnostic courses and classes offered in Hobart, Eastern Shore, and Launceston by Gnosis Tasmania.',
+        'url': `${BASE}/courses`,
+        'inLanguage': 'en-AU',
+        'numberOfItems': 2,
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'item': {
+              '@type': 'Course',
+              'name': 'Introduction to Gnosis',
+              'description': 'A 34-session foundational course covering consciousness, psychology, cosmology, Kabbalah, meditation, dream yoga, and esoteric practice. Weekly classes in Hobart and Launceston.',
+              'url': `${BASE}/introduction-to-gnosis`,
+              'provider': { '@type': 'EducationalOrganization', '@id': `${BASE}/#organization`, 'name': 'Gnosis Tasmania' },
+              'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'AUD', 'description': 'Donation-based — attend freely, give what you can' },
+            },
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'item': {
+              '@type': 'Course',
+              'name': 'The Revolution of Meditation',
+              'description': 'Weekly practical Gnostic meditation classes covering relaxation, concentration, meditation, and samadhi. Open to all levels.',
+              'url': `${BASE}/meditation-classes`,
+              'provider': { '@type': 'EducationalOrganization', '@id': `${BASE}/#organization`, 'name': 'Gnosis Tasmania' },
+              'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'AUD', 'description': 'Donation-based — attend freely, give what you can' },
+            },
+          },
+        ],
       },
       {
-        '@type': 'ListItem',
-        'position': 2,
-        'item': {
-          '@type': 'Course',
-          'name': 'The Revolution of Meditation',
-          'description': 'Weekly practical Gnostic meditation classes covering relaxation, concentration, meditation, and samadhi. Open to all levels.',
-          'url': `${BASE}/meditation-classes`,
-          'provider': { '@type': 'EducationalOrganization', '@id': `${BASE}/#organization`, 'name': 'Gnosis Tasmania' },
-          'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'AUD', 'description': 'Donation-based — attend freely, give what you can' },
+        '@type': 'Event',
+        'name': 'An Introduction to Gnosis — Hobart (Eastern Shore)',
+        'description': 'A weekly introductory course in Gnostic teachings, held Saturday evenings at Lindisfarne Community Hall. Includes a talk and meditation practice. No prior experience needed; entry by donation.',
+        'startDate': '2026-08-15T19:30:00+10:00',
+        'endDate': '2026-09-26T21:00:00+10:00',
+        'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
+        'eventStatus': 'https://schema.org/EventScheduled',
+        'location': {
+          '@type': 'Place',
+          'name': 'Lindisfarne Community Hall',
+          'address': {
+            '@type': 'PostalAddress',
+            'streetAddress': '37A Lincoln St',
+            'addressLocality': 'Lindisfarne',
+            'addressRegion': 'TAS',
+            'addressCountry': 'AU',
+          },
         },
+        'organizer': { '@id': `${BASE}/#organization` },
+        'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'AUD', 'description': 'Entry by donation', 'url': `${BASE}/contact` },
+        'image': `${BASE}/og-image.jpg`,
       },
     ],
   })
@@ -214,6 +255,56 @@ export default function CoursesPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Upcoming Courses ──────────────────────────────────────────────────── */}
+      <section className="py-20 px-4 bg-[#2a1e12] fade-section">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <SectionLabel>Enrolling Now</SectionLabel>
+            <h2 className="font-display text-3xl sm:text-4xl font-light text-[#f8f1e3] mb-4">
+              Upcoming Course
+            </h2>
+            <GoldRule className="mb-6" />
+          </div>
+
+          {UPCOMING_COURSES.map(({ title, centre, schedule, dateRange, venue, address, entry, phone, phoneHref }) => (
+            <div key={`${title}-${centre}`} className="bg-[#1c1409] border border-[#c9a96e] rounded-sm p-8 sm:p-10">
+              <span className="text-[10px] font-bold text-[#1c1409] bg-[#c9a96e] uppercase tracking-widest px-2.5 py-1 rounded-sm inline-block mb-4">
+                {centre}
+              </span>
+              <h3 className="font-display text-2xl sm:text-3xl font-medium text-[#f8f1e3] mb-6">
+                {title}
+              </h3>
+              <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-8">
+                <div>
+                  <dt className="text-[10px] uppercase tracking-widest text-[#c9a96e] font-semibold mb-1">When</dt>
+                  <dd className="text-sm text-[#e8d5b0]">{schedule}<br />{dateRange}</dd>
+                </div>
+                <div>
+                  <dt className="text-[10px] uppercase tracking-widest text-[#c9a96e] font-semibold mb-1">Where</dt>
+                  <dd className="text-sm text-[#e8d5b0]">{venue}<br />{address}</dd>
+                </div>
+                <div>
+                  <dt className="text-[10px] uppercase tracking-widest text-[#c9a96e] font-semibold mb-1">Cost</dt>
+                  <dd className="text-sm text-[#e8d5b0]">{entry}</dd>
+                </div>
+                <div>
+                  <dt className="text-[10px] uppercase tracking-widest text-[#c9a96e] font-semibold mb-1">Enquire</dt>
+                  <dd className="text-sm text-[#e8d5b0]">
+                    <a href={phoneHref} className="hover:text-[#c9a96e] transition-colors">{phone}</a>
+                  </dd>
+                </div>
+              </dl>
+              <a
+                href="/contact"
+                className="inline-block bg-[#c9a96e] hover:bg-[#b8963e] text-[#1c1409] font-semibold px-6 py-3 rounded-sm transition-colors tracking-wide text-sm text-center"
+              >
+                Enquire About This Course →
+              </a>
+            </div>
+          ))}
         </div>
       </section>
 
