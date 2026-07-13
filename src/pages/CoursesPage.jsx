@@ -7,6 +7,7 @@ import artHermesTrismegistusImg from '../assets/art_hermes_trismegistus.jpg?form
 import ProtectedEmail from '../components/ProtectedEmail.jsx'
 import artBirthVenusImg         from '../assets/art_birth_venus.jpg?format=webp'
 import esotericAdeptVaseImg     from '../assets/esoteric_adept_vase.jpg?format=webp'
+import artFriedrichWandererImg  from '../assets/art_friedrich_wanderer.jpg?format=webp'
 
 const COURSES = [
   {
@@ -259,7 +260,11 @@ export default function CoursesPage() {
       </section>
 
       {/* ── Upcoming Courses ──────────────────────────────────────────────────── */}
-      <section className="py-20 px-4 bg-[#2a1e12] fade-section">
+      <ParallaxCTA
+        src={artFriedrichWandererImg}
+        alt="Wanderer above the Sea of Fog by Caspar David Friedrich - a solitary figure pausing at the edge of an unknown path, looking out over the mist"
+        position="center 25%"
+      >
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <SectionLabel>Enrolling Now</SectionLabel>
@@ -306,7 +311,7 @@ export default function CoursesPage() {
             </div>
           ))}
         </div>
-      </section>
+      </ParallaxCTA>
 
       {/* ── Find a Class Near You ─────────────────────────────────────────────── */}
       <section className="py-20 px-4 bg-white fade-section">
